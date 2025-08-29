@@ -9,6 +9,7 @@ second_violin_root = [10, 8, 5, 7, 2, 5]
 viola_root = [11, 7, 2, 5, 8]
 cello_root = [1, 6, 3, 0, 4, 9, 10]
 
+
 def pitch_class_segment_to_sieve(pitch_class_segment):
     denominator = sum(pitch_class_segment) + 1
     interval_list = []
@@ -22,6 +23,7 @@ def pitch_class_segment_to_sieve(pitch_class_segment):
 
     pattern = abjad.index(interval_list, denominator)
     return pattern
+
 
 def make_vector_list(sieve):
     if isinstance(sieve, list):
@@ -51,7 +53,7 @@ vc_sieve = pitch_class_segment_to_sieve(cello_root)
 first_violin_sieve_a = v1_sieve | vc_sieve
 first_violin_sieve_b = va_sieve & v2_sieve
 first_violin_final_sieve = first_violin_sieve_a ^ first_violin_sieve_b
-first_violin_final_sieve = ~ first_violin_final_sieve
+first_violin_final_sieve = ~first_violin_final_sieve
 
 partitioned_violin_1_sieve = abjad.select.partition_by_counts(
     make_vector_list(first_violin_final_sieve), [5], cyclic=True, overhang=True
@@ -109,7 +111,7 @@ for subgroup in partitioned_violin_2_sieve:
 viola_sieve_a = v2_sieve | va_sieve
 viola_sieve_b = v1_sieve & vc_sieve
 viola_final_sieve = viola_sieve_a ^ viola_sieve_b
-viola_final_sieve = ~ viola_final_sieve
+viola_final_sieve = ~viola_final_sieve
 
 partitioned_viola_sieve = abjad.select.partition_by_counts(
     make_vector_list(viola_final_sieve), [5], cyclic=True, overhang=True
@@ -167,7 +169,7 @@ for subgroup in partitioned_cello_sieve:
 time_signature_sieve_a = v1_sieve | vc_sieve
 time_signature_sieve_b = va_sieve & v2_sieve
 time_signature_final_sieve = time_signature_sieve_a ^ time_signature_sieve_b
-time_signature_final_sieve = ~ time_signature_final_sieve
+time_signature_final_sieve = ~time_signature_final_sieve
 
 partitioned_time_signature_sieve = abjad.select.partition_by_counts(
     make_vector_list(time_signature_final_sieve), [4], cyclic=True, overhang=True
@@ -196,7 +198,7 @@ for subgroup in partitioned_time_signature_sieve:
 tempo_sieve_a = v2_sieve | va_sieve
 tempo_sieve_b = v1_sieve & vc_sieve
 tempo_final_sieve = tempo_sieve_a ^ tempo_sieve_b
-tempo_final_sieve = ~ tempo_final_sieve
+tempo_final_sieve = ~tempo_final_sieve
 
 partitioned_tempo_sieve = abjad.select.partition_by_counts(
     make_vector_list(tempo_final_sieve), [4], cyclic=True, overhang=True
