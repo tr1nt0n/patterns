@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=11in,paperheight=8.5in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begingroup
+\begin{center}
+\end{center}
+\endgroup
+
+\vspace{3\baselineskip}
+
+\begingroup
+\begin{center}
+\huge F O R E W O R D
+\end{center}
+\endgroup
+
+\vspace{2\baselineskip}
+
+\begingroup
+``There is no single mind: The five senses run simultaneously, so the mind cannot be one."
+\phantom{text} \hfill - \textbf{Yinzi} \\ \phantom{text} \hfill ( English approximation ) \\
+\endgroup
+
+\begingroup
+``. . . the identical becomes non-identical just as the non-identical can become
+the identical . . ."
+\phantom{text} \hfill - \textbf{Theodor W. Adorno} \\ \phantom{text} \hfill ( English approximation )
+\endgroup
+
+\end{document}
