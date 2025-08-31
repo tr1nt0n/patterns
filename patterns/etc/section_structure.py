@@ -8,11 +8,11 @@ from patterns import sieve_structures
 
 section_measures = []
 
-for _ in sieve_structures.time_signature_move_list:
+for _ in trinton.remove_adjacent(sieve_structures.first_violin_move_list[1300:]):
     if sum(section_measures) >= 300:
         pass
     else:
-        measure_number = _ * 4
+        measure_number = _ * 3
         section_measures.append(measure_number)
 
 
@@ -22,7 +22,10 @@ viola_material_amounts = []
 cello_material_amounts = []
 
 partitioned_tempo_list = abjad.select.partition_by_counts(
-    sieve_structures.tempo_move_list, [4], cyclic=True, overhang=True
+    trinton.remove_adjacent(sieve_structures.cello_move_list[1200:]),
+    [4],
+    cyclic=True,
+    overhang=True,
 )
 
 rotation_counter = 0
@@ -40,6 +43,9 @@ for group in partitioned_tempo_list:
         rotation_counter += 1
 
 section_number_counter = 1
+
+print(f"Amount of measures in piece: {sum(section_measures)}")
+print("\n")
 
 for (
     measure_amount,
