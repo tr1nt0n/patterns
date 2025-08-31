@@ -1,0 +1,636 @@
+Section 1.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 4
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 4
+
+
+
+
+Section 2.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 3.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 4.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 4
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 1
+
+
+
+
+Section 5.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 6.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 4
+
+
+
+
+Section 7.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 8.
+
+
+Amount of measures in section: 16
+
+
+Amount of materials in first violin: 2
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 4
+
+
+Amount of materials in cello: 2
+
+
+
+
+Section 9.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 10.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 1
+
+
+
+
+Section 11.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 2
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 4
+
+
+
+
+Section 12.
+
+
+Amount of measures in section: 4
+
+
+Amount of materials in first violin: 1
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 4
+
+
+
+
+Section 13.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 4
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 14.
+
+
+Amount of measures in section: 16
+
+
+Amount of materials in first violin: 1
+
+
+Amount of materials in second violin: 4
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 15.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 1
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 16.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 4
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 2
+
+
+
+
+Section 17.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 2
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 18.
+
+
+Amount of measures in section: 4
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 19.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 1
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 20.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 4
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 21.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 1
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 22.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 4
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 2
+
+
+
+
+Section 23.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 24.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 4
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 25.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 2
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 1
+
+
+
+
+Section 26.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
+
+
+
+
+Section 27.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 2
+
+
+Amount of materials in cello: 4
+
+
+
+
+Section 28.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 4
+
+
+
+
+Section 29.
+
+
+Amount of measures in section: 8
+
+
+Amount of materials in first violin: 2
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 2
+
+
+
+
+Section 30.
+
+
+Amount of measures in section: 4
+
+
+Amount of materials in first violin: 4
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 1
+
+
+
+
+Section 31.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 2
+
+
+Amount of materials in viola: 4
+
+
+Amount of materials in cello: 2
+
+
+
+
+Section 32.
+
+
+Amount of measures in section: 12
+
+
+Amount of materials in first violin: 3
+
+
+Amount of materials in second violin: 3
+
+
+Amount of materials in viola: 3
+
+
+Amount of materials in cello: 3
