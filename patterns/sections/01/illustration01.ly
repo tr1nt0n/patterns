@@ -1,0 +1,233 @@
+  %! abjad.LilyPondFile._get_format_pieces()
+\version "2.23.81"
+  %! abjad.LilyPondFile._get_format_pieces()
+\language "english"
+  %! abjad.LilyPondFile._get_format_pieces()
+\version "2.23.81"
+  %! abjad.LilyPondFile._get_format_pieces()
+\language "english"
+\include "/Users/trintonprater/scores/patterns/patterns/build/patterns-stylesheet.ily"
+\include "/Users/trintonprater/abjad/abjad/scm/abjad.ily"
+  %! abjad.LilyPondFile._get_format_pieces()
+\score
+  %! abjad.LilyPondFile._get_format_pieces()
+{
+    \context Score = "Score"
+    <<
+        \context TimeSignatureContext = "Global Context"
+        {
+            \time 10/16
+            s1 * 5/8
+            \time 6/4
+            s1 * 3/2
+            \time 12/8
+            s1 * 3/2
+            \once \override Score.BarLine.transparent = ##f
+            \once \override MultiMeasureRest.transparent = ##t
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 1/4
+            R1 * 1/4
+            - \tweak font-size #'10
+            _ \middle-fermata
+            \bar "||"
+            \once \override Score.BarLine.transparent = ##f
+        }
+        \tag #'group1
+        {
+            \context StaffGroup = "Staff Group"
+            <<
+                \tag #'group2
+                {
+                    \context GrandStaff = "sub group 1"
+                    <<
+                        \tag #'voice1
+                        {
+                            \context Staff = "violin 1 staff"
+                            {
+                                \context Voice = "violin 1 voice"
+                                {
+                                    \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin 1 }
+                                      %! +SCORE
+                                    \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V1 }
+                                    r1 * 5/8
+                                      %! +SCORE
+                                    ^ \markup {
+                                      %! +SCORE
+                                    \hspace #0
+                                      %! +SCORE
+                                      \raise #2 \with-dimensions-from \null
+                                      %! +SCORE
+                                      \override #'(font-size . 5.5)
+                                      %! +SCORE
+                                      \concat {
+                                      %! +SCORE
+                                          \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
+                                      %! +SCORE
+                                      }
+                                      %! +SCORE
+                                    }
+                                    r1 * 3/2
+                                    - \tweak padding #5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 160 "   }}
+                                    \startTextSpan
+                                    r1 * 3/2
+                                    \stopTextSpan
+                                      %! +SCORE
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                      %! +SCORE
+                                    \once \override Rest.transparent = ##t
+                                      %! +SCORE
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    r1 * 1/4
+                                      %! +SCORE
+                                    \stopStaff \startStaff
+                                }
+                            }
+                        }
+                        \tag #'voice2
+                        {
+                            \context Staff = "violin 2 staff"
+                            {
+                                \context Voice = "violin 2 voice"
+                                {
+                                    \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin 2 }
+                                      %! +SCORE
+                                    \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V2 }
+                                    r1 * 5/8
+                                      %! +SCORE
+                                    ^ \markup {
+                                      %! +SCORE
+                                    \hspace #0
+                                      %! +SCORE
+                                      \raise #2 \with-dimensions-from \null
+                                      %! +SCORE
+                                      \override #'(font-size . 5.5)
+                                      %! +SCORE
+                                      \concat {
+                                      %! +SCORE
+                                          \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
+                                      %! +SCORE
+                                      }
+                                      %! +SCORE
+                                    }
+                                    r1 * 3/2
+                                    - \tweak padding #5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 160 "   }}
+                                    \startTextSpan
+                                    r1 * 3/2
+                                    \stopTextSpan
+                                      %! +SCORE
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                      %! +SCORE
+                                    \once \override Rest.transparent = ##t
+                                      %! +SCORE
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    r1 * 1/4
+                                      %! +SCORE
+                                    \stopStaff \startStaff
+                                }
+                            }
+                        }
+                    >>
+                }
+                \tag #'voice3
+                {
+                    \context Staff = "viola staff"
+                    {
+                        \context Voice = "viola voice"
+                        {
+                            \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Viola }
+                              %! +SCORE
+                            \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { VA }
+                            r1 * 5/8
+                              %! +SCORE
+                            ^ \markup {
+                              %! +SCORE
+                            \hspace #0
+                              %! +SCORE
+                              \raise #2 \with-dimensions-from \null
+                              %! +SCORE
+                              \override #'(font-size . 5.5)
+                              %! +SCORE
+                              \concat {
+                              %! +SCORE
+                                  \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
+                              %! +SCORE
+                              }
+                              %! +SCORE
+                            }
+                            r1 * 3/2
+                            - \tweak padding #5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 160 "   }}
+                            \startTextSpan
+                            r1 * 3/2
+                            \stopTextSpan
+                              %! +SCORE
+                            \once \override MultiMeasureRest.transparent = ##t
+                              %! +SCORE
+                            \once \override Rest.transparent = ##t
+                              %! +SCORE
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                            r1 * 1/4
+                              %! +SCORE
+                            \stopStaff \startStaff
+                        }
+                    }
+                }
+                \tag #'voice4
+                {
+                    \context Staff = "cello staff"
+                    {
+                        \context Voice = "cello voice"
+                        {
+                            \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violoncello }
+                              %! +SCORE
+                            \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { VC }
+                            r1 * 5/8
+                              %! +SCORE
+                            ^ \markup {
+                              %! +SCORE
+                            \hspace #0
+                              %! +SCORE
+                              \raise #2 \with-dimensions-from \null
+                              %! +SCORE
+                              \override #'(font-size . 5.5)
+                              %! +SCORE
+                              \concat {
+                              %! +SCORE
+                                  \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
+                              %! +SCORE
+                              }
+                              %! +SCORE
+                            }
+                            r1 * 3/2
+                            - \tweak padding #5
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 160 "   }}
+                            \startTextSpan
+                            r1 * 3/2
+                            \stopTextSpan
+                              %! +SCORE
+                            \once \override MultiMeasureRest.transparent = ##t
+                              %! +SCORE
+                            \once \override Rest.transparent = ##t
+                              %! +SCORE
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                            r1 * 1/4
+                              %! +SCORE
+                            \stopStaff \startStaff
+                        }
+                    }
+                }
+            >>
+        }
+    >>
+  %! abjad.LilyPondFile._get_format_pieces()
+}

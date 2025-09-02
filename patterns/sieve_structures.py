@@ -2,12 +2,13 @@ import abjad
 import baca
 import evans
 import trinton
+from patterns import library
 
 
-first_violin_root = [0, 9, 4, 3, 6, 1]
-second_violin_root = [10, 8, 5, 7, 2, 5]
-viola_root = [11, 7, 2, 5, 8]
-cello_root = [1, 6, 3, 0, 4, 9, 10]
+# first_violin_root = [0, 9, 4, 3, 6, 1]
+# second_violin_root = [10, 8, 5, 7, 2, 5]
+# viola_root = [11, 7, 2, 5, 8]
+# cello_root = [1, 6, 3, 0, 4, 9, 10]
 
 
 def pitch_class_segment_to_sieve(pitch_class_segment):
@@ -43,10 +44,10 @@ def make_vector_list(sieve):
     return vector_list
 
 
-v1_sieve = pitch_class_segment_to_sieve(first_violin_root)
-v2_sieve = pitch_class_segment_to_sieve(second_violin_root)
-va_sieve = pitch_class_segment_to_sieve(viola_root)
-vc_sieve = pitch_class_segment_to_sieve(cello_root)
+v1_sieve = pitch_class_segment_to_sieve(library.first_violin_root)
+v2_sieve = pitch_class_segment_to_sieve(library.second_violin_root)
+va_sieve = pitch_class_segment_to_sieve(library.viola_root)
+vc_sieve = pitch_class_segment_to_sieve(library.cello_root)
 
 # first violin's traversal
 
