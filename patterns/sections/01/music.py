@@ -226,7 +226,7 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([1]),
     ),
     trinton.hooked_spanner_command(
-        string="""CL""",
+        string="""CLDP""",
         selector=trinton.select_leaves_by_index([0, 4], pitched=True, grace=False),
         padding=0,
         direction="down",
@@ -496,7 +496,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1], pitched=True, grace=False),
     ),
-    # trinton.annotate_leaves_locally(selector=abjad.select.leaves),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves()),
     trinton.linear_attachment_command(
         attachments=itertools.cycle(
             [
@@ -508,21 +508,27 @@ trinton.make_music(
             [0, 2, 4, 8, 10, 13, 14, 15, 16, 19, 20, 23, 24, 35], grace=False
         ),
     ),
-    # trinton.attachment_command(
-    #     attachments=[
-    #         abjad.Articulation("staccato")
-    #     ],
-    #     selector=trinton.select_leaves_by_index([0, 1,], pitched=True),
-    #     direction=abjad.UP
-    # ),
-    # trinton.attachment_command(
-    #     attachments=[
-    #         abjad.Articulation("staccato")
-    #     ],
-    #     selector=trinton.select_leaves_by_index([4], pitched=True),
-    # ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.select_leaves_by_index(
+            [0, 1, 3, 4, 5, 6, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
+            pitched=True,
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.select_leaves_by_index([9, 10, 11, 13], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=2, right=1),
+            abjad.BeamCount(left=1, right=2),
+        ],
+        selector=trinton.select_leaves_by_index([26, 27], pitched=True),
+    ),
     trinton.hooked_spanner_command(
-        string="""CL""",
+        string="""CLDP""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True, grace=False),
         padding=0,
         direction="down",

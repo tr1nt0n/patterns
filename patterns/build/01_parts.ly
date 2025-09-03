@@ -202,7 +202,7 @@
                                             - \tweak font-size 2
                                             - \tweak padding #0
                                             - \abjad-dashed-line-with-up-hook
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "CL" } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLDP" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
                                             \startTextSpan
                                             \set stemLeftBeamCount = 1
@@ -557,17 +557,19 @@
                                             \textSpannerDown
                                             \tweak style #'cross
                                             e32
+                                            ^ \staccato
                                             - \tweak Y-extent ##f
                                             - \tweak Y-offset -13
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
                                             - \tweak padding #0
                                             - \abjad-dashed-line-with-up-hook
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "CL" } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLDP" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -1
                                             \startTextSpan
                                             \tweak style #'cross
                                             e32
+                                            ^ \staccato
                                             ]
                                             e4
                                             \once \override TupletBracket.padding = #3
@@ -575,14 +577,18 @@
                                             {
                                                 \tweak style #'cross
                                                 e16
+                                                ^ \staccato
                                                 [
                                                 r16
                                                 \tweak style #'cross
                                                 e16
+                                                ^ \staccato
                                                 \tweak style #'cross
                                                 e16
+                                                ^ \staccato
                                                 \tweak style #'cross
                                                 e16
+                                                ^ \staccato
                                                 ]
                                             }
                                             e4
@@ -594,16 +600,20 @@
                                                 [
                                                 \tweak style #'cross
                                                 e32
+                                                - \staccato
                                                 \tweak style #'cross
                                                 e32
+                                                - \staccato
                                                 \tweak style #'cross
                                                 e32
+                                                - \staccato
                                                 ]
                                             }
                                             e8.
                                             [
                                             \tweak style #'cross
                                             e16
+                                            - \staccato
                                             ]
                                             \once \override DynamicLineSpanner.staff-padding = 12
                                             e8.
@@ -620,33 +630,50 @@
                                             r8.
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             ]
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             [
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
+                                            \set stemLeftBeamCount = 2
+                                            \set stemRightBeamCount = 1
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 2
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             \tweak style #'cross
                                             e16
+                                            ^ \staccato
                                             \tweak style #'cross
                                             e16
                                             \!
+                                            ^ \staccato
                                             \stopTextSpan
                                             ]
                                             \textSpannerUp
