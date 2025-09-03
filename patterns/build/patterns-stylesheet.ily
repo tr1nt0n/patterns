@@ -11,10 +11,10 @@
 \include "/Users/trintonprater/abjad-ext-microtones/abjadext/microtones/lilypond/ekmelos-ji-accidental-markups.ily"
 
 \header {
-    dedication = \markup \column {\line \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #2 { "to" \override #'(font-name . "Bodoni72 Book") "the JACK Quartet"  } } \line { \fontsize #0.01 \with-color #white "."} }
-    title = \markup \override #'(font-name . "Bodoni72 Book") \center-column { \line \fontsize #8 { "String Quartet III" } \fontsize #0.01 \with-color #white "."}
+    dedication = \markup \column {\line \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #0 { "to" \override #'(font-name . "Bodoni72 Book") "the JACK Quartet"  } } \line { \fontsize #0.01 \with-color #white "."} }
+    title = \markup \override #'(font-name . "Bodoni72 Book") \center-column { \line \fontsize #6 { "String Quartet III" } \fontsize #0.01 \with-color #white "."}
     subtitle = \markup \fontsize #0 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { "( five patterns )" } } \fontsize #0.01 \with-color #white "."}
-    composer = \markup \column { \override #'(font-name . "Bodoni72") \fontsize #0 {"Trinity Hlynn Prater (*2000)"} \fontsize #25 \with-color #white "."}
+    composer = \markup \column { \override #'(font-name . "Bodoni72") \fontsize #0 {"Trinity Hlynn Prater (*2000)"} \fontsize #-10 \with-color #white "."}
 }
 
 afterGraceFraction = #(cons 15 16)
@@ -68,7 +68,7 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.layer = 3
         \override Accidental.whiteout-style = #'outline
         \override Accidental.whiteout = 1
-        \override Accidental.X-extent = ##f
+        % \override Accidental.X-extent = ##f
 
         \override Script.layer = 2
         \override Script.whiteout-style = #'outline
@@ -98,7 +98,7 @@ afterGraceFraction = #(cons 15 16)
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
 
-        \override DynamicText.font-size = #-2
+        \override DynamicText.font-size = #1
         \override DynamicText.layer = 2
         \override DynamicText.whiteout-style = #'outline
         \override DynamicText.whiteout = 1
@@ -269,9 +269,9 @@ afterGraceFraction = #(cons 15 16)
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
-    left-margin = 15\mm
+    left-margin = 10\mm
     right-margin = 10\mm
-    top-margin = 30\mm
+    top-margin = 10\mm
 
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""
@@ -285,7 +285,7 @@ afterGraceFraction = #(cons 15 16)
                 " - Trinity Hlynn Prater"
             }
             \concat {
-                \fontsize #3
+                \fontsize #1
                 \override #'(font-name . "Bodoni72 Book")
                     \fromproperty #'page:page-number-string
             }
@@ -294,7 +294,7 @@ afterGraceFraction = #(cons 15 16)
         evenFooterMarkup = \markup
             \fill-line {
                 \concat {
-                    \fontsize #3
+                    \fontsize #1
                     \override #'(font-name . "Bodoni72 Book")
                         \fromproperty #'page:page-number-string
                 }
