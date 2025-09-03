@@ -35,30 +35,19 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin 1 }
                                       %! +SCORE
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V1 }
-                                    r1 * 5/8
+                                    r8.
                                       %! +SCORE
-                                %%% ^ \markup {
-                                      %! +SCORE
-                                %%% \hspace #0
-                                      %! +SCORE
-                                  %%% \raise #2 \with-dimensions-from \null
-                                      %! +SCORE
-                                  %%% \override #'(font-size . 5.5)
-                                      %! +SCORE
-                                  %%% \concat {
-                                      %! +SCORE
-                                      %%% \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
-                                      %! +SCORE
-                                  %%% }
-                                      %! +SCORE
-                                %%% }
-                                    r1 * 3/2
+                                %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 60" } } }
+                                    r8
+                                    r8.
+                                    r8
+                                    r1.
                                     - \tweak padding #5
                                     - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 160 "   }}
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 160 )" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 160" } } }
                                     \startTextSpan
-                                    r1 * 3/2
+                                    r1.
                                     \stopTextSpan
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
@@ -66,7 +55,7 @@
                                 %%% \once \override Rest.transparent = ##t
                                       %! +SCORE
                                 %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    r1 * 1/4
+                                    r4
                                       %! +SCORE
                                 %%% \stopStaff \startStaff
                                 }
@@ -81,30 +70,19 @@
                                     \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin 2 }
                                       %! +SCORE
                                 %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V2 }
-                                    r1 * 5/8
+                                    r8.
                                       %! +SCORE
-                                %%% ^ \markup {
-                                      %! +SCORE
-                                %%% \hspace #0
-                                      %! +SCORE
-                                  %%% \raise #2 \with-dimensions-from \null
-                                      %! +SCORE
-                                  %%% \override #'(font-size . 5.5)
-                                      %! +SCORE
-                                  %%% \concat {
-                                      %! +SCORE
-                                      %%% \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
-                                      %! +SCORE
-                                  %%% }
-                                      %! +SCORE
-                                %%% }
-                                    r1 * 3/2
+                                %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 60" } } }
+                                    r8
+                                    r8.
+                                    r8
+                                    r1.
                                     - \tweak padding #5
                                     - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 160 "   }}
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 160 )" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 160" } } }
                                     \startTextSpan
-                                    r1 * 3/2
+                                    r1.
                                     \stopTextSpan
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
@@ -112,7 +90,7 @@
                                 %%% \once \override Rest.transparent = ##t
                                       %! +SCORE
                                 %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                                    r1 * 1/4
+                                    r4
                                       %! +SCORE
                                 %%% \stopStaff \startStaff
                                 }
@@ -129,30 +107,19 @@
                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Viola }
                               %! +SCORE
                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { VA }
-                            r1 * 5/8
+                            r8.
                               %! +SCORE
-                        %%% ^ \markup {
-                              %! +SCORE
-                        %%% \hspace #0
-                              %! +SCORE
-                          %%% \raise #2 \with-dimensions-from \null
-                              %! +SCORE
-                          %%% \override #'(font-size . 5.5)
-                              %! +SCORE
-                          %%% \concat {
-                              %! +SCORE
-                              %%% \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
-                              %! +SCORE
-                          %%% }
-                              %! +SCORE
-                        %%% }
-                            r1 * 3/2
+                        %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 60" } } }
+                            r8
+                            r8.
+                            r8
+                            r1.
                             - \tweak padding #5
                             - \abjad-solid-line-with-arrow
-                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } } \hspace #0.5 }
-                            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 160 "   }}
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 160 )" } } } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 160" } } }
                             \startTextSpan
-                            r1 * 3/2
+                            r1.
                             \stopTextSpan
                               %! +SCORE
                         %%% \once \override MultiMeasureRest.transparent = ##t
@@ -160,7 +127,7 @@
                         %%% \once \override Rest.transparent = ##t
                               %! +SCORE
                         %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                            r1 * 1/4
+                            r4
                               %! +SCORE
                         %%% \stopStaff \startStaff
                         }
@@ -175,30 +142,19 @@
                             \set Staff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violoncello }
                               %! +SCORE
                         %%% \set Staff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { VC }
-                            r1 * 5/8
+                            r8.
                               %! +SCORE
-                        %%% ^ \markup {
-                              %! +SCORE
-                        %%% \hspace #0
-                              %! +SCORE
-                          %%% \raise #2 \with-dimensions-from \null
-                              %! +SCORE
-                          %%% \override #'(font-size . 5.5)
-                              %! +SCORE
-                          %%% \concat {
-                              %! +SCORE
-                              %%% \abjad-metronome-mark-markup #3 #0 #2 #" 60 " 
-                              %! +SCORE
-                          %%% }
-                              %! +SCORE
-                        %%% }
-                            r1 * 3/2
+                        %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 60" } } }
+                            r8
+                            r8.
+                            r8
+                            r1.
                             - \tweak padding #5
                             - \abjad-solid-line-with-arrow
-                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } } \hspace #0.5 }
-                            - \tweak bound-details.right.text \markup {  \raise #0 \with-dimensions-from \null  \override #'(font-size . 5.5)  \concat {      \abjad-metronome-mark-markup #3 #0 #2 #" 160 "   }}
+                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 160 )" } } } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #5.5 { "= 160" } } }
                             \startTextSpan
-                            r1 * 3/2
+                            r1.
                             \stopTextSpan
                               %! +SCORE
                         %%% \once \override MultiMeasureRest.transparent = ##t
@@ -206,7 +162,7 @@
                         %%% \once \override Rest.transparent = ##t
                               %! +SCORE
                         %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                            r1 * 1/4
+                            r4
                               %! +SCORE
                         %%% \stopStaff \startStaff
                         }

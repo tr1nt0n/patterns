@@ -24,6 +24,12 @@ score = library.patterns_score(
 
 # second violin music
 
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1,)),
+#     trinton.rewrite_meter_command(boundary_depth=-2),
+#     voice=score["violin 2 voice"]
+# )
+
 # viola music
 
 # cello music
@@ -66,14 +72,20 @@ for voice_name, padding in zip(library.voice_names, [2, 2, 2, 2]):
         lambda _: trinton.select_target(_, (1,)),
         trinton.attachment_command(
             attachments=[
-                trinton.return_metronome_markup(
-                    note_value="eighth",
+                trinton.tempo_markup(
+                    note_value=8,
                     tempo=60,
                     padding=padding,
+                    note_head_fontsize=0.5,
+                    stem_length=1.5,
+                    text_fontsize=5.5,
+                    dotted=False,
+                    fraction=None,
+                    tempo_change=None,
                     site="after",
                     hspace=0,
                     string_only=False,
-                )
+                ),
             ],
             selector=trinton.select_leaves_by_index([0]),
             direction=abjad.UP,
@@ -82,22 +94,50 @@ for voice_name, padding in zip(library.voice_names, [2, 2, 2, 2]):
         voice=score[voice_name],
     )
 
-for voice_name, padding in zip(library.voice_names, [5, 5, 5, 5]):
+for voice_name, padding, end_anchor in zip(
+    library.voice_names,
+    [5, 5, 5, 5],
+    [
+        -1,
+        -1,
+        -1,
+        -1,
+    ],
+):
     trinton.make_music(
         lambda _: trinton.select_target(_, (2, 3)),
         trinton.spanner_command(
             strings=[
-                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #3 { "accel. ( to " } \fontsize #-0.5 { \note {8} #1.5 } \fontsize #3 { "= 160 )" } }""",
-                trinton.return_metronome_markup(
-                    note_value="eighth",
+                trinton.tempo_markup(
+                    note_value=8,
                     tempo=160,
                     padding=0,
+                    note_head_fontsize=-0.5,
+                    stem_length=1.5,
+                    text_fontsize=3,
+                    dotted=False,
+                    fraction=None,
+                    tempo_change="accel.",
                     site="after",
-                    hspace=None,
+                    hspace=0,
+                    string_only=True,
+                ),
+                trinton.tempo_markup(
+                    note_value=8,
+                    tempo=160,
+                    padding=0,
+                    note_head_fontsize=0.5,
+                    stem_length=1.5,
+                    text_fontsize=5.5,
+                    dotted=False,
+                    fraction=None,
+                    tempo_change=None,
+                    site="after",
+                    hspace=0,
                     string_only=True,
                 ),
             ],
-            selector=trinton.select_leaves_by_index([0, -1]),
+            selector=trinton.select_leaves_by_index([0, end_anchor]),
             style="solid-line-with-arrow",
             padding=padding,
             tweaks=None,
@@ -108,42 +148,6 @@ for voice_name, padding in zip(library.voice_names, [5, 5, 5, 5]):
         ),
         voice=score[voice_name],
     )
-
-
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (1,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             trinton.return_metronome_markup(
-#                 note_value="dotted quarter",
-#                 tempo=48,
-#                 padding=15,
-#                 site="after",
-#                 hspace=0.5,
-#                 string_only=False,
-#             )
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#         direction=abjad.UP,
-#         tag=abjad.Tag("+SCORE"),
-#     ),
-#     trinton.attachment_command(
-#         attachments=[
-#             trinton.return_metronome_markup(
-#                 note_value="dotted quarter",
-#                 tempo=48,
-#                 padding=5.5,
-#                 site="after",
-#                 hspace=0,
-#                 string_only=False,
-#             )
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#         direction=abjad.UP,
-#         tag=abjad.Tag("+PARTS"),
-#     ),
-#     voice=score["Global Context"],
-# )
 
 # breaking
 
@@ -218,7 +222,6 @@ library.write_short_instrument_names(score=score)
 # beautification
 
 trinton.remove_redundant_time_signatures(score=score)
-# library.clean_time_signatures(score=score)
 
 # extract parts
 
