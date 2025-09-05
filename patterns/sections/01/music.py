@@ -18,19 +18,18 @@ section_ts = abjad.sequence.flatten(
     ],
 )
 
-# score = library.patterns_score(
-#     section_ts,
-# )
-score = library.patterns_score(ts.return_b_material_ts(measure_amount=16, index=0))
+score = library.patterns_score(
+    section_ts,
+)
+# score = library.patterns_score(ts.return_b_material_ts(measure_amount=16, index=0))
 
 # first violin music
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 16)),
-    evans.RhythmHandler(rhythm.rhythm_d(instrument="violin 2", stage=1)),
-    trinton.rewrite_meter_command(),
-    # rmakers.rewrite_dots,
-    # trinton.respell_tuplets_command(rewrite_brackets=False),
+    lambda _: trinton.select_target(_, (1, 3)),
+    evans.RhythmHandler(rhythm.rhythm_d(instrument="violin 1", stage=3, index=4)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.respell_tuplets_by_hand(tuplets=[-1], multipliers=[(12, 15)]),
     # evans.PitchHandler(
     #     [
     #         "eqf'''",
@@ -49,24 +48,31 @@ trinton.make_music(
     #         "d''",
     #     ]
     # ),
-    # trinton.linear_attachment_command(
-    #     attachments=itertools.cycle(
-    #         [
-    #             abjad.StartBeam(),
-    #             abjad.StopBeam(),
-    #         ]
-    #     ),
-    #     selector=trinton.select_leaves_by_index(
-    #         [0, 7, 8, 13], pitched=True, grace=False
-    #     ),
-    # ),
-    # trinton.linear_attachment_command(
-    #     attachments=[
-    #         abjad.BeamCount(left=2, right=1),
-    #         abjad.BeamCount(left=1, right=2),
-    #     ],
-    #     selector=trinton.select_leaves_by_index([4, 5]),
-    # ),
+    trinton.annotate_leaves_locally(selector=abjad.select.leaves),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.StartBeam(),
+                abjad.StopBeam(),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index(
+            [0, 3, 4, 7, 8, 13, 15, 16, 18, 19, 20, 22, 23, 26, 28, 30, 32, 37],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=3, right=1),
+            abjad.BeamCount(left=2, right=0),
+            abjad.BeamCount(left=3, right=1),
+            abjad.BeamCount(left=1, right=2),
+            abjad.BeamCount(left=2, right=1),
+            abjad.BeamCount(left=1, right=3),
+        ],
+        selector=trinton.select_leaves_by_index([12, 13, 33, 34, 35, 36]),
+    ),
     # trinton.continuous_glissando(
     #     selector=trinton.select_leaves_by_index([0, 1, 2, 3, 4, 5]), zero_padding=True
     # ),
@@ -81,21 +87,19 @@ trinton.make_music(
     #         [0, 5, 6, 7, 10, 13], pitched=True, grace=False
     #     ),
     # ),
-    # trinton.linear_attachment_command(
-    #     attachments=itertools.cycle(
-    #         [
-    #             abjad.bundle(
-    #                 abjad.Articulation("punta-to-talon"), r"- \tweak padding #1"
-    #             ),
-    #             abjad.bundle(
-    #                 abjad.Articulation("talon-to-punta"), r"- \tweak padding #1"
-    #             ),
-    #         ]
-    #     ),
-    #     selector=trinton.select_leaves_by_index(
-    #         [0, 6, 8, 9, 10], pitched=True, grace=False
-    #     ),
-    # ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.bundle(
+                    abjad.Articulation("punta-to-talon"), r"- \tweak padding #1"
+                ),
+                abjad.bundle(
+                    abjad.Articulation("talon-to-punta"), r"- \tweak padding #1"
+                ),
+            ]
+        ),
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
     # trinton.continuous_glissando(
     #     selector=trinton.select_leaves_by_index([6, 7]), zero_padding=True
     # ),
@@ -110,12 +114,12 @@ trinton.make_music(
     #     ],
     #     selector=trinton.select_leaves_by_index([8, 9], pitched=True),
     # ),
-    # trinton.attachment_command(
-    #     attachments=[
-    #         abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
-    #     ],
-    #     selector=trinton.pleaves(),
-    # ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
     # trinton.hooked_spanner_command(
     #     string="""MSP""",
     #     selector=trinton.select_leaves_by_index([0, 13], pitched=True, grace=False),
@@ -585,19 +589,19 @@ trinton.make_music(
 
 # fermate
 
-# trinton.fermata_measures(
-#     score=score,
-#     measures=[4],
-#     fermata="middle-fermata",
-#     voice_names=library.voice_names,
-#     font_size=10,
-#     clef_whitespace=True,
-#     blank=True,
-#     last_measure=False,
-#     # padding=-5,
-#     # extra_offset=2.5,
-#     tag=abjad.Tag("+SCORE"),
-# )
+trinton.fermata_measures(
+    score=score,
+    measures=[4],
+    fermata="middle-fermata",
+    voice_names=library.voice_names,
+    font_size=10,
+    clef_whitespace=True,
+    blank=True,
+    last_measure=False,
+    # padding=-5,
+    # extra_offset=2.5,
+    tag=abjad.Tag("+SCORE"),
+)
 
 # tempi
 
@@ -632,7 +636,7 @@ for voice_name, padding, end_anchor in zip(
     library.voice_names,
     [5, 5, 5, 5],
     [
-        -1,
+        15,
         -1,
         -1,
         -1,
