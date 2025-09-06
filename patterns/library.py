@@ -121,3 +121,49 @@ def write_short_instrument_names(score):
             attachment=markup,
             tag=abjad.Tag("+SCORE"),
         )
+
+
+def column_trill(pressures, selector, bound_details=None):
+    def make_column_trill(argument):
+        selections = selector(argument)
+
+        _pressure_to_notehead_string = {
+            "harmonic": "##xe0d9",
+            "half": "##xe0e3",
+            "full": "##xe0a4",
+        }
+
+        markup_string = r"""\markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { """
+        counter = 1
+        for pressure in pressures:
+            if pressure == "half":
+                fontsize = 8
+            else:
+                fontsize = 6
+            if counter == len(pressures):
+                markup_string += rf"""\fontsize #{fontsize} \line {{ \char {_pressure_to_notehead_string[pressure]} }}"""
+            else:
+                markup_string += rf"""\fontsize #{fontsize} \line {{ \concat {{ ( \char {_pressure_to_notehead_string[pressure]} ) }} }} """
+            counter += 1
+
+        markup_string += r"} } }"
+
+        start_trill = abjad.bundle(
+            abjad.StartTrillSpan(),
+            rf"""- \tweak bound-details.left.text {markup_string}""",
+        )
+
+        if bound_details is not None:
+            start_trill = abjad.bundle(
+                start_trill,
+                r"- \tweak Y-extent ##f",
+                rf"""- \tweak bound-details.left.Y #{bound_details[0]}""",
+                rf"""- \tweak bound-details.right.Y #{bound_details[-1]}""",
+            )
+
+        stop_trill = abjad.StopTrillSpan()
+
+        abjad.attach(start_trill, selections[0])
+        abjad.attach(stop_trill, selections[-1])
+
+    return make_column_trill
