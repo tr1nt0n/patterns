@@ -201,7 +201,7 @@ grace-half-harmonic = {
                 )
             )
         )
-    \once \override NoteHead.font-size = #3
+    \once \override NoteHead.font-size = #0.01
 }
 
 big-half-harmonic = {
@@ -235,7 +235,7 @@ big-half-harmonic = {
                 )
             )
         )
-    \once \override NoteHead.font-size = #2
+    \once \override NoteHead.font-size = #2.5
 }
 
 #(define-markup-command (double-box layout props text) (markup?)
