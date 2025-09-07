@@ -1043,8 +1043,12 @@ trinton.make_music(
     trinton.force_accidentals_command(
         selector=trinton.logical_ties(pitched=True, first=True)
     ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartBeam(), abjad.StopBeam()],
+        selector=trinton.select_leaves_by_index([3, 4]),
+    ),
     library.tablature_staff(
-        selector=trinton.select_leaves_by_index([0], pitched=True),
+        selector=trinton.select_leaves_by_index([0]),
         reset=True,
         reset_staff_lines=5,
     ),
@@ -1053,10 +1057,6 @@ trinton.make_music(
             abjad.Clef("bass"),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True),
-    ),
-    trinton.linear_attachment_command(
-        attachments=[abjad.StartBeam(), abjad.StopBeam()],
-        selector=trinton.select_leaves_by_index([3, 4]),
     ),
     trinton.hooked_spanner_command(
         string="""diagonal bow, touching bridge for added air sound""",

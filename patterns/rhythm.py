@@ -166,10 +166,13 @@ def rhythm_c(stage, instrument="violin 1", index=0):
 
             music = rmakers.wrap_in_time_signature_staff([container], time_signatures)
             rmakers.rewrite_meter(music)
-            for leaf in abjad.select.leaves(container):
+            for leaf in abjad.select.leaves(music):
                 abjad.detach(abjad.Tie, leaf)
                 abjad.detach(abjad.StartBeam, leaf)
                 abjad.detach(abjad.StopBeam, leaf)
+
+            container = abjad.Container()
+            container.extend(abjad.select.leaves(music))
 
         if stage == 4:
             for i, leaf in enumerate(abjad.select.leaves(container)):
@@ -302,6 +305,8 @@ def rhythm_d(instrument, stage=1, index=0):
             # print("")
 
             tuplet_durations = []
+            if gesture_space == 0:
+                tuplet_durations.append("None")
             if gesture_space < abjad.Duration((3, 8)):
                 tuplet_durations.append(gesture_space)
                 new_base_rhythm = []
@@ -368,27 +373,30 @@ def rhythm_d(instrument, stage=1, index=0):
             # print(f"new base rhythm: {new_base_rhythm}")
             # print("")
             tuplet_counter = 0
-            # components = []
+            components = []
             for rhythm in new_base_rhythm:
                 if len(rhythm) > 1:
-                    tuplet = rmakers.tuplet(
-                        [tuplet_durations[tuplet_counter]], [tuple(rhythm)]
-                    )
-                    container.extend(tuplet)
-                    # components.append(tuplet)
-                    tuplet_counter += 1
+                    if gesture_space == 0:
+                        pass
+                    else:
+                        tuplet = rmakers.tuplet(
+                            [tuplet_durations[tuplet_counter]], [tuple(rhythm)]
+                        )
+                        container.extend(tuplet)
+                        components.append(tuplet)
+                        tuplet_counter += 1
                 else:
                     note = rmakers.note(
                         [abjad.Duration(rhythm[0], subdivision_denominator)]
                     )
-                    # components.append(note)
+                    components.append(note)
                     container.extend(note[0])
 
-            # print("")
-            # print(f"components: {components}")
-            # print(f"time_signature: {(time_signature.numerator, time_signature.denominator)}")
-            # print(f"duration of components: {abjad.get.duration(components)}")
-            # print("")
+        #     print("")
+        #     print(f"components: {components}")
+        #     print(f"time_signature: {(time_signature.numerator, time_signature.denominator)}")
+        #     print(f"duration of components: {abjad.get.duration(components)}")
+        #     print("")
         # breakpoint()
 
         if stage == 4:
@@ -422,6 +430,60 @@ def rhythm_d(instrument, stage=1, index=0):
         treat_tuplets = trinton.treat_tuplets()
         treat_tuplets(abjad.select.tuplets(container))
         trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+        rhythm_selections = abjad.mutate.eject_contents(container)
+        return rhythm_selections
+
+    return return_rhythm_selections
+
+
+def rhythm_e(lower_voice=False, index=0):
+    def return_rhythm_selections(durations):
+
+        base_polyrhythm = [6, 5, 4, 3]
+
+        all_orderings = list(itertools.permutations(base_polyrhythm))
+
+        polyrhythm_sequence = []
+        for ordering in all_orderings:
+            for _ in ordering:
+                polyrhythm_sequence.append(_)
+
+        polyrhythm_sequence = trinton.rotated_sequence(
+            polyrhythm_sequence, index % len(polyrhythm_sequence)
+        )
+
+        polyrhythm_pairs = []
+
+        for i, _ in enumerate(polyrhythm_sequence):
+            if i == len(polyrhythm_sequence) - 1:
+                pass
+            else:
+                polyrhythm_pair = (polyrhythm_sequence[i], polyrhythm_sequence[i + 1])
+                polyrhythm_pairs.append(polyrhythm_pair)
+
+        upper_voice_amounts = [_[0] for _ in polyrhythm_pairs]
+        lower_voice_amounts = [_[-1] for _ in polyrhythm_pairs]
+
+        if lower_voice is True:
+            relevant_amounts = lower_voice_amounts
+        else:
+            relevant_amounts = upper_voice_amounts
+
+        tuplets = []
+
+        for amount in relevant_amounts:
+            tuplet = [1 for _ in range(0, amount)]
+            tuplet = tuple(tuplet)
+            tuplets.append(tuplet)
+
+        container = abjad.Container()
+        rhythm_selections = rmakers.tuplet(durations, tuplets)
+        container.extend(rhythm_selections)
+
+        treat_tuplets = trinton.treat_tuplets()
+        treat_tuplets(container)
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+
         rhythm_selections = abjad.mutate.eject_contents(container)
         return rhythm_selections
 

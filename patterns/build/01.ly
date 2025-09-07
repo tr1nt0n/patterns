@@ -917,7 +917,7 @@
                                     \startTextSpan
                                     - \tweak Y-extent ##f
                                     - \tweak bound-details.left.Y #8
-                                    - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { \fontsize #6 \line { \concat { ( \char ##xe0d9 ) } } \fontsize #6 \line { \concat { ( \char ##xe0a4 ) } } \fontsize #8 \line { \char ##xe0e3 }} } }
+                                    - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0d9 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a4 } \fontsize #6 { ) } } }\fontsize #8 \line { \char ##xe0e3 }} } }
                                     - \tweak bound-details.right.Y #10
                                     \startTrillSpan
                                     cqs32
@@ -1095,7 +1095,7 @@
                                       %! abjad.glissando(7)
                                     \glissando
                                     ~
-                                    - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { \fontsize #6 \line { \concat { ( \char ##xe0d9 ) } } \fontsize #8 \line { \char ##xe0e3 }} } }
+                                    - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0d9 } \fontsize #6 { ) } } }\fontsize #8 \line { \char ##xe0e3 }} } }
                                     \startTrillSpan
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -1246,7 +1246,7 @@
                                       %! abjad.glissando(7)
                                     \glissando
                                     ~
-                                    - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { \fontsize #6 \line { \concat { ( \char ##xe0d9 ) } } \fontsize #6 \line { \concat { ( \char ##xe0d9 ) } } \fontsize #8 \line { \char ##xe0e3 }} } }
+                                    - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0d9 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0d9 } \fontsize #6 { ) } } }\fontsize #8 \line { \char ##xe0e3 }} } }
                                     \startTrillSpan
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -1414,7 +1414,7 @@
                                     ~
                                     - \tweak Y-extent ##f
                                     - \tweak bound-details.left.Y #9
-                                    - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { \fontsize #8 \line { \concat { ( \char ##xe0e3 ) } } \fontsize #6 \line { \concat { ( \char ##xe0d9 ) } } \fontsize #8 \line { \char ##xe0e3 }} } }
+                                    - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #8 { \char ##xe0e3 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0d9 } \fontsize #6 { ) } } }\fontsize #8 \line { \char ##xe0e3 }} } }
                                     - \tweak bound-details.right.Y #13
                                     \startTrillSpan
                                       %! abjad.glissando(1)
@@ -1788,17 +1788,18 @@
                                 \stopTextSpan
                                 \stopTextSpanOne
                             }
+                            \staff-line-count 5
+                            \revert Staff.StaffSymbol.line-positions
+                            \revert Rest.staff-position
+                            \revert Staff.Accidental.stencil
+                            \revert Staff.Clef.stencil
                             r2
                             - \tweak padding #13.5
                             - \abjad-solid-line-with-arrow
                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 160 )" } } } \hspace #0.5 }
                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 160" } } }
                             \startTextSpanThree
-                            \staff-line-count 5
-                            \revert Staff.StaffSymbol.line-positions
-                            \revert Rest.staff-position
-                            \revert Staff.Accidental.stencil
-                            \revert Staff.Clef.stencil
+                            \override Staff.BarLine.bar-extent = #'(-2 . 2)
                             \clef "bass"
                             <
                                 \tweak Accidental.stencil #ly:text-interface::print
@@ -1819,7 +1820,6 @@
                             - \tweak bound-details.right.padding -10
                             \startTextSpanOne
                             ~
-                            \override Staff.BarLine.bar-extent = #'(-2 . 2)
                             <
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \markup { \abjad-natural  }

@@ -185,7 +185,7 @@ def column_trill(pressures, selector, bound_details=None):
             if counter == len(pressures):
                 markup_string += rf"""\fontsize #{fontsize} \line {{ \char {_pressure_to_notehead_string[pressure]} }}"""
             else:
-                markup_string += rf"""\fontsize #{fontsize} \line {{ \concat {{ ( \char {_pressure_to_notehead_string[pressure]} ) }} }} """
+                markup_string += rf"""\line {{ \concat {{ \fontsize #6 {{ ( }} \fontsize #{fontsize} {{ \char {_pressure_to_notehead_string[pressure]} }} \fontsize #6 {{ ) }} }} }}"""
             counter += 1
 
         markup_string += r"} } }"
