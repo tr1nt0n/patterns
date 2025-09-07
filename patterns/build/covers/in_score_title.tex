@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=11in,paperheight=8.5in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begingroup
+\begin{center}
+\end{center}
+\endgroup
+
+\vspace{5\baselineskip}
+
+\begingroup
+\begin{center}
+\fontsize{0.5cm}{1em}\selectfont{
+	\textit{to} the JACK Quartet
+}
+\end{center}
+\endgroup
+
+\begingroup
+\begin{center}
+\fontsize{1.4cm}{1em}\selectfont{String Quartet III}
+\end{center}
+\endgroup
+
+\begingroup
+\begin{center}
+\fontsize{0.5cm}{1em}\selectfont{
+	 ( five patterns )
+} \\
+\end{center}
+\phantom{text} \hfill Trinity Hlynn Prater (*2000)
+\endgroup
+
+\end{document}

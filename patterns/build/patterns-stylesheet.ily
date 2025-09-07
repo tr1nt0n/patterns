@@ -10,12 +10,12 @@
 \include "/Users/trintonprater/trinton/lilypond/trinton-spanners.ily"
 \include "/Users/trintonprater/abjad-ext-microtones/abjadext/microtones/lilypond/ekmelos-ji-accidental-markups.ily"
 
-\header {
-    dedication = \markup \column {\line \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #0 { "to" \override #'(font-name . "Bodoni72 Book") "the JACK Quartet"  } } \line { \fontsize #0.01 \with-color #white "."} }
-    title = \markup \override #'(font-name . "Bodoni72 Book") \center-column { \line \fontsize #6 { "String Quartet III" } \fontsize #0.01 \with-color #white "."}
-    subtitle = \markup \fontsize #0 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { "( five patterns )" } } \fontsize #0.01 \with-color #white "."}
-    composer = \markup \column { \override #'(font-name . "Bodoni72") \fontsize #0 {"Trinity Hlynn Prater (*2000)"} \fontsize #-10 \with-color #white "."}
-}
+% \header {
+%     dedication = \markup \column {\line \override #'(font-name . "Bodoni72 Book Italic") { \fontsize #0 { "to" \override #'(font-name . "Bodoni72 Book") "the JACK Quartet"  } } \line { \fontsize #0.01 \with-color #white "."} }
+%     title = \markup \override #'(font-name . "Bodoni72 Book") \center-column { \line \fontsize #6 { "String Quartet III" } \fontsize #0.01 \with-color #white "."}
+%     subtitle = \markup \fontsize #0 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { "( five patterns )" } } \fontsize #0.01 \with-color #white "."}
+%     composer = \markup \column { \override #'(font-name . "Bodoni72") \fontsize #0 {"Trinity Hlynn Prater (*2000)"} \fontsize #-10 \with-color #white "."}
+% }
 
 afterGraceFraction = #(cons 15 16)
 
@@ -276,7 +276,7 @@ afterGraceFraction = #(cons 15 16)
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""
 
-    oddFooterMarkup = \markup
+    evenFooterMarkup = \markup
         \fill-line {
             \concat {
                 \override #'(font-name . "Bodoni72 Book Italic")
@@ -291,7 +291,7 @@ afterGraceFraction = #(cons 15 16)
             }
         }
 
-        evenFooterMarkup = \markup
+        oddFooterMarkup = \markup
             \fill-line {
                 \concat {
                     \fontsize #1

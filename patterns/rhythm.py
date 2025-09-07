@@ -4,11 +4,184 @@ import baca
 import evans
 import trinton
 import itertools
+from patterns import library
 
-# v1_d_base_rhythm = [[1, 1, 1], [5], [1], [3], [1, 1, 1, 1, 1]]
-# v2_d_base_rhythm = [[1, 1], [3], [1, 1], [5], [1, 1, 1]]
-# va_d_base_rhythm = [[1, 1, 1, 1], [5], [1, 1, 1], [1]]
-# vc_d_base_rhythm = [[1, 1, 1, 1, 1], [3], [1, 1, 1], [4], [1, 1, 1, 1, 1], [1]]
+
+def rhythm_b(stage, instrument, index=0):
+    def return_rhythm_b(time_signatures):
+        durations = []
+
+        container = abjad.Container()
+        for time_signature in time_signatures:
+            time_signature_duration = abjad.Duration(
+                (time_signature.numerator, time_signature.denominator)
+            )
+            split_duration = time_signature_duration / 2
+            durations.append(split_duration)
+            durations.append(split_duration)
+
+        if stage == 1:
+            notes = rmakers.note(durations)
+            for note in notes:
+                container.extend(note)
+
+        if stage > 1:
+            _instrument_to_root = {
+                "violin 1": library.first_violin_root,
+                "violin 2": library.second_violin_root,
+                "viola": library.viola_root,
+                "cello": library.cello_root,
+            }
+
+            intervalic_root = _instrument_to_root[instrument]
+
+            tuplet_amounts = trinton.get_intervals_from_numbers(
+                numbers=intervalic_root, ordered=False, interval_classes=True
+            )
+
+            tuplets = []
+
+            for amount in tuplet_amounts:
+                tuplet = []
+
+                if amount < 2:
+                    amount = amount + 2
+
+                for _ in range(0, amount):
+                    tuplet.append(1)
+
+                tuplet = tuple(tuplet)
+
+                tuplets.append(tuplet)
+
+            tuplets = trinton.rotated_sequence(tuplets, index % len(tuplets))
+
+            rhythm_selections = rmakers.tuplet(durations, tuplets)
+
+            container.extend(rhythm_selections)
+
+            treat_tuplets = trinton.treat_tuplets()
+            treat_tuplets(abjad.select.tuplets(container))
+            trinton.respell_tuplets(
+                abjad.select.tuplets(container), rewrite_brackets=False
+            )
+
+            if stage > 2:
+                extended_index = index + 2
+                extended_index = index % len(tuplet_amounts)
+                tuplet_amounts = trinton.rotated_sequence(
+                    tuplet_amounts, extended_index
+                )
+
+                for i, leaf in enumerate(abjad.select.leaves(container)):
+                    if i % 3 == 0 or i % 5 == 0:
+                        if i != 0:
+                            nested_tuplet_index = index + 3
+                            nested_tuplet = tuplets[nested_tuplet_index % len(tuplets)]
+                            duration = abjad.get.duration(leaf, preprolated=True)
+                            nested_tuplet = rmakers.tuplet([duration], [nested_tuplet])
+                            abjad.mutate.replace(leaf, nested_tuplet)
+
+                treat_tuplets = trinton.treat_tuplets()
+                treat_tuplets(abjad.select.tuplets(container))
+                trinton.respell_tuplets(
+                    abjad.select.tuplets(container), rewrite_brackets=False
+                )
+
+        rhythm_selections = abjad.mutate.eject_contents(container)
+        return rhythm_selections
+
+    return return_rhythm_b
+
+
+def rhythm_c(stage, instrument="violin 1", index=0):
+    def return_rhythm_selections(time_signatures):
+        container = abjad.Voice()
+
+        if stage == 1:
+            rhythm_selections = rmakers.note(time_signatures)
+            for note in rhythm_selections:
+                container.extend(note)
+
+        if stage == 2:
+            durations = []
+            for time_signature in time_signatures:
+                ts_numerator = time_signature.numerator
+                ts_denominator = time_signature.denominator
+                meter = abjad.Meter(time_signature)
+
+                if (
+                    trinton.is_power_of(a=ts_numerator, b=2) is True
+                    or ts_numerator == 1
+                    or ts_numerator == 3
+                ):
+                    for _ in range(0, ts_numerator):
+                        durations.append(abjad.Duration((1, ts_denominator)))
+
+                if meter.is_compound is True:
+                    range_limit = int(ts_numerator / 3)
+                    for _ in range(0, range_limit):
+                        durations.append(abjad.Duration((3, ts_denominator)))
+
+                if (
+                    trinton.is_power_of(a=ts_numerator, b=2) is False
+                    and ts_numerator != 1
+                    and ts_numerator != 3
+                    and meter.is_compound is False
+                ):
+                    durations.append(abjad.Duration((3, denominator)))
+
+                    regions = []
+                    for _ in range(0, numerator):
+                        if sum(regions) == ts_numerator / ts_denominator:
+                            pass
+                        else:
+                            regions.append(abjad.Duration((2, ts_denominator)))
+
+                    for duration in regions:
+                        durations.append(duration)
+
+            rhythm_selections = rmakers.note(durations)
+            for note in rhythm_selections:
+                container.extend(note)
+
+        if stage > 2:
+            _instrument_to_talea_counts = {
+                "violin 1": [-1, 9, 8, 3, 6, 1],
+                "violin 2": [10, 8, 5, 7, 2, 5],
+                "viola": [11, 7, 2, 5, 8],
+                "cello": [1, 6, 3, -1, 4, 9, 10],
+            }
+
+            talea_counts = _instrument_to_talea_counts[instrument]
+            talea_counts = trinton.rotated_sequence(
+                talea_counts, index % len(talea_counts)
+            )
+
+            rhythm_selections = rmakers.talea(time_signatures, talea_counts, 16)
+            container.extend(rhythm_selections)
+
+            treat_tuplets = trinton.treat_tuplets()
+            treat_tuplets(container)
+
+            music = rmakers.wrap_in_time_signature_staff([container], time_signatures)
+            rmakers.rewrite_meter(music)
+            for leaf in abjad.select.leaves(container):
+                abjad.detach(abjad.Tie, leaf)
+                abjad.detach(abjad.StartBeam, leaf)
+                abjad.detach(abjad.StopBeam, leaf)
+
+        if stage == 4:
+            for i, leaf in enumerate(abjad.select.leaves(container)):
+                if i % 2 == 0:
+                    rmakers.force_rest(leaf)
+                else:
+                    pass
+
+        rhythm_selections = abjad.mutate.eject_contents(container)
+        return rhythm_selections
+
+    return return_rhythm_selections
 
 
 def process_d_base_rhythm(base_rhythm, partition):

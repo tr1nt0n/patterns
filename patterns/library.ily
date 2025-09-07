@@ -88,7 +88,7 @@ boxed-markup = #(
 
 string-clef = \markup {
     % \hspace #0.6
-    \fontsize #6.6
+    \fontsize #9
     \override #'(font-name . "ekmelos")
     \override #'(whiteout-style . "outline")
     \override #'(whiteout . 1)

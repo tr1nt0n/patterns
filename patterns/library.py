@@ -47,6 +47,48 @@ voice_names = eval(
 # notation tools
 
 
+def tablature_staff(selector, reset_staff_lines=5, reset=False):
+    def tablature(argument):
+        selections = selector(argument)
+
+        if reset is False:
+            literal_strings = [
+                r"\override Staff.Clef.stencil = #ly:text-interface::print",
+                r"\override Staff.Clef.text = \string-clef",
+                r"\staff-line-count 4",
+                r"\override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)",
+                r"\override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)",
+                r"\override Rest.staff-position = #0",
+                r"\override Staff.Accidental.stencil = ##f",
+            ]
+
+        if reset is True:
+            literal_strings = [
+                rf"\staff-line-count {reset_staff_lines}",
+                r"\revert Staff.StaffSymbol.line-positions",
+                r"\revert Rest.staff-position",
+                r"\revert Staff.Accidental.stencil",
+            ]
+
+            if reset_staff_lines != 1:
+                literal_strings.append(r"\revert Staff.Clef.stencil")
+
+        start_literal = abjad.LilyPondLiteral(literal_strings, site="before")
+
+        abjad.attach(start_literal, selections[0])
+
+        if reset is True:
+            abjad.attach(
+                abjad.LilyPondLiteral(
+                    r"\override Staff.BarLine.bar-extent = #'(-2 . 2)",
+                    site="absolute_after",
+                ),
+                selections[0],
+            )
+
+    return tablature
+
+
 # markups
 
 all_instrument_names = [
