@@ -53,6 +53,8 @@ def pitch_b(instrument, selector=trinton.pleaves(), base_pitch=0, index=0):
             pitch = pitch % 12
             pitch_list.append(pitch)
 
+        pitch_list = trinton.rotated_sequence(pitch_list, index % len(pitch_list))
+
         handler = evans.PitchHandler(pitch_list=pitch_list)
 
         handler(selections)

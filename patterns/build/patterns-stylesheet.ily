@@ -40,11 +40,11 @@ afterGraceFraction = #(cons 15 16)
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
         \override BarNumber.Y-extent = ##f
         \override BarNumber.Y-offset = 0
-        \override BarNumber.extra-offset = #'(0 . 4)
-        \override BarNumber.font-size = 1
+        \override BarNumber.X-extent = ##f
+        \override BarNumber.X-offset = -4
+        \override BarNumber.font-size = 2
         \override BarNumber.padding = 1
         \override BarNumber.font-name = "Bodoni72 Book"
-        % \override BarNumber.transparent = ##t
         \override MetronomeMark.stencil = ##f
         \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
         \override TimeSignature.font-size = 1
@@ -199,6 +199,7 @@ afterGraceFraction = #(cons 15 16)
         fontSize = #-1
         % \remove Time_signature_engraver
         % \consists Measure_spanner_engraver
+        % \consists Bar_number_engraver
         \consists Duration_line_engraver
         \consists Grid_point_engraver
         \consists Grob_pq_engraver
