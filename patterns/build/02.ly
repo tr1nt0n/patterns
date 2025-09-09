@@ -25,7 +25,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 18 23 28)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 28 23 28)))
             \time 10/8
             s1 * 5/4
               %! +SCORE
@@ -34,6 +34,8 @@
             s1 * 1/4
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 30 30 30)))
             \time 2/2
             s1 * 1
               %! +SCORE
@@ -51,6 +53,7 @@
             s1 * 1
               %! +SCORE
             \break
+            \once \override BarNumber.Y-offset = #5
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/2
             s1 * 1
@@ -771,10 +774,89 @@
                                         }
                                     >>
                                     \oneVoice
-                                    r1
-                                    r1
-                                    r1
-                                    r1
+                                    \staff-line-count 5
+                                    \revert Staff.StaffSymbol.line-positions
+                                    \revert Rest.staff-position
+                                    \revert Staff.Accidental.stencil
+                                    \revert Staff.Clef.stencil
+                                    r16
+                                    [
+                                    \override Staff.BarLine.bar-extent = #'(-2 . 2)
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!8.
+                                    \pp
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #7
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Bowing IV (tasto) + Waist" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -4
+                                    \startTextSpanOne
+                                    r4
+                                    r8
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!4.
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    r8
+                                    [
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!8
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    r16
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!8.
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    ]
+                                    r8.
+                                    [
+                                    \set stemLeftBeamCount = 2
+                                    \set stemRightBeamCount = 1
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!16
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 2
+                                    r16
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!8.
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    ]
+                                    r4.
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!8
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    r4.
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!8
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    r16
+                                    [
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!8.
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    r8.
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!16
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    ]
+                                    r16
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
+                                    c'!4..
+                                    ^ \markup \center-align { \concat { +16 } }
+                                    \stopTextSpanOne
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -815,7 +897,7 @@
                                             \once \override Rest.staff-position = #0
                                             \voiceOne
                                             r4.
-                                            - \tweak padding #5
+                                            - \tweak padding #15
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 83 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
@@ -829,65 +911,119 @@
                                             \once \override Rest.staff-position = #0
                                             r4
                                             e''4
-                                            ^ \markup 0
+                                            _ \staccato
                                             \stopTextSpanThree
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #11.5
+                                            - \abjad-solid-line-with-arrow
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "3/4 Batt." } \hspace #0.5 }
+                                            \startTextSpanOne
                                             a''4
-                                            ^ \markup 1
+                                            _ \staccato
                                             fs'''4
-                                            ^ \markup 2
+                                            _ \staccato
                                             af''4
-                                            ^ \markup 3
+                                            _ \staccato
                                             ef'''2
-                                            ^ \markup 4
+                                            - \staccato
+                                            - \tenuto
                                             a'2
-                                            ^ \markup 5
+                                            _ \staccato
+                                            _ \tenuto
+                                            \stopTextSpanOne
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #11.5
+                                            - \abjad-solid-line-with-arrow
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Batt." } \hspace #0.5 }
+                                            \startTextSpanOne
                                             cs''2
-                                            ^ \markup 6
+                                            - \staccato
+                                            - \tenuto
                                             \times 4/6
                                             {
                                                 a'4
-                                                ^ \markup 7
+                                                _ \staccato
+                                                - \tweak padding 10
+                                                \startBowSpan #'((0 . 0.75) (0.041666666666666664 . 0.5) (0.08333333333333333 . 0.8) (0.14583333333333331 . 0.1) (0.18749999999999997 . 0.5) (0.24999999999999997 . 0.1) (0.875 . 0.5) (1.0 . 2))
                                                 af'4
-                                                ^ \markup 8
+                                                _ \staccato
+                                                \stopTextSpanOne
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #11.5
+                                                - \abjad-solid-line-with-arrow
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "3/4 Batt." } \hspace #0.5 }
+                                                \startTextSpanOne
                                                 g'4
-                                                ^ \markup 9
+                                                _ \staccato
                                                 c'4
-                                                ^ \markup 10
+                                                _ \staccato
                                                 fs'4
-                                                ^ \markup 11
+                                                _ \staccato
                                                 b'4
-                                                ^ \markup 12
+                                                _ \staccato
+                                                _ \tenuto
                                             }
                                             \times 4/5
                                             {
                                                 af4
-                                                ^ \markup 13
+                                                _ \staccato
+                                                _ \tenuto
                                                 fs'4
-                                                ^ \markup 14
+                                                _ \staccato
+                                                _ \tenuto
                                                 af'4
-                                                ^ \markup 15
+                                                _ \staccato
+                                                _ \tenuto
+                                                \stopTextSpanOne
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #11.5
+                                                - \abjad-solid-line-with-arrow
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/4 Batt." } \hspace #0.5 }
+                                                \startTextSpanOne
                                                 ef''4
-                                                ^ \markup 16
+                                                _ \staccato
+                                                _ \tenuto
                                                 fs'4
-                                                ^ \markup 17
+                                                _ \staccato
+                                                _ \tenuto
+                                                \stopBowSpan
                                             }
                                             \times 2/3
                                             {
                                                 b2
-                                                ^ \markup 18
+                                                _ \staccato
+                                                _ \tenuto
                                                 a2
-                                                ^ \markup 19
+                                                _ \staccato
+                                                _ \tenuto
+                                                \stopTextSpanOne
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #11.5
+                                                - \abjad-solid-line-with-arrow
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Batt." } \hspace #0.5 }
+                                                \startTextSpanOne
                                                 fs'2
-                                                ^ \markup 20
+                                                _ \staccato
+                                                _ \tenuto
                                             }
                                             g4
-                                            ^ \markup 21
                                             c''4
-                                            ^ \markup 22
+                                            \stopTextSpanOne
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #11.5
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -6
+                                            \startTextSpanOne
                                             a'4
-                                            ^ \markup 23
                                             b'4
-                                            ^ \markup 24
+                                            \stopTextSpanOne
                                         }
                                         \context Voice = "violin 2 polyrhythm voice"
                                         {
@@ -910,68 +1046,86 @@
                                             \times 2/3
                                             {
                                                 a''2
-                                                _ \markup 0
+                                                \p
+                                                ^ \staccato
+                                                - \tweak padding 10.5
+                                                \startBowSpan #'((0 . 0.5) (0.08333333333333333 . 0.75) (0.1111111111111111 . 1) (0.2222222222222222 . 0.1) (0.25 . 0.5) (0.3055555555555556 . 0.1) (0.8611111111111112 . 2) (1.0 . 0))
+                                                \>
                                                 a''2
-                                                _ \markup 1
+                                                ^ \staccato
                                                 af''2
-                                                _ \markup 2
+                                                \ppp
+                                                ^ \staccato
                                             }
                                             f''4
-                                            _ \markup 3
+                                            - \staccato
+                                            - \tenuto
+                                            \<
                                             fs''4
-                                            _ \markup 4
+                                            ^ \staccato
+                                            ^ \tenuto
                                             e''''4
-                                            _ \markup 5
+                                            ^ \staccato
+                                            ^ \tenuto
                                             a'''4
-                                            _ \markup 6
+                                            \p
+                                            ^ \staccato
+                                            ^ \tenuto
                                             a'4
-                                            _ \markup 7
+                                            - \staccato
+                                            - \tenuto
                                             gs'4
-                                            _ \markup 8
+                                            ^ \staccato
+                                            ^ \tenuto
+                                            \stopBowSpan
+                                            \>
                                             \times 4/5
                                             {
                                                 c'''4
-                                                _ \markup 9
+                                                ^ \staccato
                                                 gf'4
-                                                _ \markup 10
+                                                ^ \staccato
                                                 fs'4
-                                                _ \markup 11
+                                                \pp
+                                                ^ \staccato
                                                 a'4
-                                                _ \markup 12
+                                                ^ \staccato
                                                 fs'4
-                                                _ \markup 13
+                                                ^ \staccato
                                             }
                                             \times 2/3
                                             {
                                                 af'2
-                                                _ \markup 14
+                                                ^ \staccato
+                                                ^ \tenuto
                                                 c''2
-                                                _ \markup 15
+                                                ^ \staccato
+                                                ^ \tenuto
                                                 a'2
-                                                _ \markup 16
+                                                ^ \staccato
+                                                ^ \tenuto
                                             }
                                             e'4
-                                            _ \markup 17
+                                            ^ \staccato
+                                            ^ \tenuto
+                                            - \tweak padding 10.5
+                                            \startBowSpan #'((0 . 2) (0.023809523809523808 . 1) (0.07142857142857142 . 2) (0.11904761904761904 . 1) (0.14285714285714285 . 3) (0.19047619047619047 . 2) (0.23809523809523808 . 3.5) (0.26190476190476186 . 1) (0.738095238095238 . 5) (0.8095238095238094 . 4) (0.9047619047619047 . 5) (0.9999999999999999 . 5))
                                             a'4
-                                            _ \markup 18
+                                            ^ \staccato
+                                            ^ \tenuto
                                             fs'4
-                                            _ \markup 19
+                                            ^ \staccato
+                                            ^ \tenuto
                                             g'4
-                                            _ \markup 20
                                             \times 4/6
                                             {
                                                 ef'4
-                                                _ \markup 21
                                                 a'4
-                                                _ \markup 22
                                                 b'4
-                                                _ \markup 23
                                                 a4
-                                                _ \markup 24
                                                 a'4
-                                                _ \markup 25
                                                 a'4
-                                                _ \markup 26
+                                                \stopBowSpan
                                             }
                                         }
                                     >>
@@ -1282,19 +1436,156 @@
                             ~
                             d'2
                             )
-                            r1
-                            r1
-                            r1
-                            r1
+                            <<
+                                \context Voice = "viola voice temp"
+                                {
+                                    \times 2/3
+                                    {
+                                        \override Staff.Clef.stencil = #ly:text-interface::print
+                                        \override Staff.Clef.text = \bow-clef
+                                        \staff-line-count 2
+                                        \override Staff.StaffSymbol.line-positions = #'(9 0 -9)
+                                        \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
+                                        \override Staff.Accidental.stencil = ##f
+                                        \override Staff.NoteHead.no-ledgers = ##t
+                                        \voiceOne
+                                        \tweak style #'cross
+                                        b2
+                                        _ \staccato
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 1
+                                        - \tweak padding #12
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \upright { "Drumstick on Bowhair" } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -14
+                                        \startTextSpanOne
+                                        \tweak style #'cross
+                                        af'2
+                                        _ \staccato
+                                        \tweak style #'cross
+                                        a2
+                                        _ \staccato
+                                    }
+                                    \times 4/6
+                                    {
+                                        \tweak style #'cross
+                                        a'4
+                                        _ \staccato
+                                        \tweak style #'cross
+                                        cs4
+                                        _ \staccato
+                                        \tweak style #'cross
+                                        e'4
+                                        _ \staccato
+                                        \tweak style #'cross
+                                        g4
+                                        _ \staccato
+                                        \tweak style #'cross
+                                        g'4
+                                        _ \staccato
+                                        \tweak style #'cross
+                                        ef4
+                                        _ \staccato
+                                    }
+                                    \tweak style #'cross
+                                    ef'4
+                                    _ \staccato
+                                    \tweak style #'cross
+                                    ef4
+                                    _ \staccato
+                                    \tweak style #'cross
+                                    g'4
+                                    _ \staccato
+                                    \tweak style #'cross
+                                    ef4
+                                    _ \staccato
+                                    \times 2/3
+                                    {
+                                        \tweak style #'cross
+                                        a'2
+                                        _ \staccato
+                                        \tweak style #'cross
+                                        fs2
+                                        _ \staccato
+                                        \tweak style #'cross
+                                        g'2
+                                        _ \staccato
+                                        \stopTextSpanOne
+                                    }
+                                }
+                                \context Voice = "viola polyrhythm voice"
+                                {
+                                    \times 4/6
+                                    {
+                                        \voiceTwo
+                                        r4
+                                        \pp
+                                        \tweak style #'cross
+                                        af4
+                                        ^ \staccato
+                                        r4
+                                        \tweak style #'cross
+                                        a4
+                                        ^ \staccato
+                                        \once \override Rest.staff-position = #-10
+                                        r4
+                                        \tweak style #'cross
+                                        e4
+                                        ^ \staccato
+                                    }
+                                    r4
+                                    \tweak style #'cross
+                                    g4
+                                    ^ \staccato
+                                    \once \override Rest.staff-position = #-10
+                                    r4
+                                    \tweak style #'cross
+                                    ef4
+                                    ^ \staccato
+                                    \times 2/3
+                                    {
+                                        r2
+                                        \tweak style #'cross
+                                        g2
+                                        ^ \staccato
+                                        \tweak style #'cross
+                                        ef'2
+                                        ^ \staccato
+                                    }
+                                    \times 4/5
+                                    {
+                                        r4
+                                        \tweak style #'cross
+                                        fs'4
+                                        ^ \staccato
+                                        \tweak style #'cross
+                                        g4
+                                        ^ \staccato
+                                        \tweak style #'cross
+                                        af'4
+                                        ^ \staccato
+                                        \tweak style #'cross
+                                        c4
+                                        ^ \staccato
+                                    }
+                                }
+                            >>
+                            \oneVoice
                               %! +SCORE
                             \once \override MultiMeasureRest.transparent = ##t
                               %! +SCORE
                             \once \override Rest.transparent = ##t
+                            \staff-line-count 5
+                            \revert Staff.StaffSymbol.line-positions
+                            \revert Staff.Accidental.stencil
+                            \revert Staff.NoteHead.no-ledgers
+                            \revert Staff.Clef.stencil
                               %! +SCORE
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                             r4
                               %! +SCORE
                             \stopStaff \startStaff
+                            \override Staff.BarLine.bar-extent = #'(-2 . 2)
                         }
                     }
                 }

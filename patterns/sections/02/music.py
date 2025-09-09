@@ -440,6 +440,53 @@ trinton.make_music(
     voice=score["violin 1 vibrator voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 12)),
+    evans.RhythmHandler(rhythm.rhythm_c(stage=4, instrument="violin 1", index=0)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(["a"]),
+    evans.PitchHandler(["6/5"], as_ratios=True),
+    # trinton.annotate_leaves_locally(selector=abjad.select.leaves),
+    trinton.force_accidentals_command(
+        selector=trinton.logical_ties(first=True, pitched=True)
+    ),
+    library.tablature_staff(
+        selector=trinton.select_leaves_by_index([0]), reset_staff_lines=5, reset=True
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([0, 1, 5, 8, 9, 12, 17, 20]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=2, right=1),
+            abjad.BeamCount(left=1, right=2),
+        ],
+        selector=trinton.select_leaves_by_index([10, 11]),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Dynamic("pp")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.hooked_spanner_command(
+        string="""Bowing IV (tasto) + Waist""",
+        selector=trinton.select_logical_ties_by_index(
+            [0, -1], first=True, pitched=True
+        ),
+        padding=7,
+        direction=None,
+        right_padding=4,
+        full_string=False,
+        style="dashed-line-with-hook",
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
+    voice=score["violin 1 voice"],
+)
 
 # second violin music
 
@@ -498,7 +545,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (7, 12)),
     pitch.pitch_e(instrument="violin 2", index=0),
-    trinton.annotate_leaves_locally(selector=trinton.pleaves(), direction=abjad.UP),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves(), direction=abjad.UP),
     trinton.octavation(
         octave=-1,
         selector=trinton.select_leaves_by_index([13, 18, 19, 21], pitched=True),
@@ -517,13 +564,60 @@ trinton.make_music(
             pitched=True,
         ),
     ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.select_leaves_by_index(
+            [5, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        ),
+        direction=abjad.DOWN,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.select_leaves_by_index(
+            [0, 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        ),
+        direction=abjad.DOWN,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.select_leaves_by_index([4, 6]),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.select_leaves_by_index([4, 6]),
+    ),
+    trinton.spanner_command(
+        strings=[
+            "3/4 Batt.",
+            "1/2 Batt.",
+            "3/4 Batt.",
+            "1/4 Batt.",
+            "1/2 Batt.",
+            "Norm.",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [0, 5, 5, 8, 8, 15, 15, 19, 19, 22, 22, -1],
+        ),
+        style="solid-line-with-arrow",
+        padding=11.5,
+        right_padding=0,
+        direction=None,
+        full_string=False,
+        end_hook=True,
+        end_hook_right_padding=6,
+        command="One",
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
     voice=score["violin 2 voice temp"],
 )
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (7, 12)),
     pitch.pitch_e(instrument="violin 2", index=295),
-    trinton.annotate_leaves_locally(selector=trinton.pleaves(), direction=abjad.DOWN),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves(), direction=abjad.DOWN),
     trinton.octavation(
         octave=-1, selector=trinton.select_leaves_by_index([24], pitched=True)
     ),
@@ -541,6 +635,98 @@ trinton.make_music(
                 10,
             ]
         )
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.select_leaves_by_index([4, 5, 6, 8, 14, 15, 16, 17, 18, 19]),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.select_leaves_by_index(
+            [0, 1, 2, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.select_leaves_by_index([3, 7]),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.select_leaves_by_index([3, 7]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("p"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("ppp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("p"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("pp"),
+        ],
+        selector=trinton.select_leaves_by_index([0, 0, 2, 3, 6, 8, 11]),
+    ),
+    voice=score["violin 2 polyrhythm voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 8)),
+    trinton.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[0.5, 0.75, 1, 0.1, 0.5, 0.1, 2, 0],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[3, 1, 4, 1, 2, 20, 5],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=10.5,
+        forget=False,
+    ),
+    voice=score["violin 2 polyrhythm voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 10)),
+    trinton.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[0.75, 0.5, 0.8, 0.1, 0.5, 0.1, 0.5, 2],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[2, 2, 3, 2, 3, 30, 6],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=10,
+        forget=False,
+    ),
+    voice=score["violin 2 voice temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (11, 12)),
+    trinton.graphic_bow_pressure_spanner(
+        selector=trinton.logical_ties(),
+        peaks=[2, 1, 2, 1, 3, 2, 3.5, 1, 5, 4, 5, 5],
+        peak_direction=abjad.DOWN,
+        anchor_point_step_sizes=[1, 2, 2, 1, 2, 2, 1, 20, 3, 4, 4],
+        divisions=None,
+        counts=None,
+        cyclic=True,
+        left_broken_text=None,
+        left_text=None,
+        right_padding=None,
+        right_text=None,
+        padding=10.5,
+        forget=False,
     ),
     voice=score["violin 2 polyrhythm voice"],
 )
@@ -730,6 +916,92 @@ trinton.make_music(
     ),
     voice=score["viola voice"],
     beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 12)),
+    evans.RhythmHandler(rhythm.rhythm_e(index=11)),
+    pitch.pitch_e(instrument="viola", index=0),
+    trinton.octavation(
+        octave=-1, selector=trinton.patterned_leaf_index_selector([0], 2)
+    ),
+    # trinton.octavation(octave=-2, selector=trinton.patterned_leaf_index_selector([1], 2)),
+    library.bow_staff(selector=trinton.select_leaves_by_index([0])),
+    trinton.change_notehead_command(notehead="cross", selector=trinton.pleaves()),
+    trinton.hooked_spanner_command(
+        string="""Drumstick on Bowhair""",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=12,
+        direction=None,
+        right_padding=14,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
+    trinton.IntermittentVoiceHandler(
+        evans.RhythmHandler(rhythm.rhythm_e(index=11, lower_voice=True)),
+        direction=abjad.DOWN,
+        voice_name="viola polyrhythm voice",
+        preprocessor=trinton.fuse_quarters_preprocessor((4,)),
+    ),
+    voice=score["viola voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 12)),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.logical_ties(first=True, pitched=True),
+        direction=abjad.DOWN,
+    ),
+    voice=score["viola voice temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 12)),
+    pitch.pitch_e(instrument="viola", index=0),
+    trinton.octavation(
+        octave=-1, selector=trinton.patterned_leaf_index_selector([1], 2)
+    ),
+    trinton.force_rest(
+        selector=trinton.select_leaves_by_index([0, 2, 4, 6, 8, 10, 13])
+    ),
+    trinton.change_notehead_command(notehead="cross", selector=trinton.pleaves()),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.logical_ties(first=True, pitched=True),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\voiceTwo",
+            ),
+            abjad.Dynamic("pp"),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #-10", site="before"
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([4, 8]),
+    ),
+    voice=score["viola polyrhythm voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    library.bow_staff(selector=trinton.select_leaves_by_index([0]), reset=True),
+    voice=score["viola voice"],
 )
 
 # cello music
@@ -1239,7 +1511,7 @@ for voice_name, padding, end_anchor in zip(
         "viola voice",
         "cello voice",
     ],
-    [11, 5, 15, 10.75],
+    [11, 15, 15, 10.75],
     [
         13,
         5,
@@ -1374,7 +1646,22 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 18 23 28)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 28 23 28)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 30 30 30)))",
                 site="absolute_before",
             ),
         ],
@@ -1426,6 +1713,19 @@ for measure in [1, 3]:
         ),
         voice=score["Global Context"],
     )
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (11,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override BarNumber.Y-offset = #5", site="before"
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["Global Context"],
+)
 
 # extract parts
 

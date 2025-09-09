@@ -99,6 +99,17 @@ string-clef = \markup {
     }
 }
 
+bow-clef = \markup {
+    \fontsize #-3
+    \raise #4.25 {
+        \center-column {
+            \line { "punta d'arco" }
+            \vspace #2.30
+            \line { "au talon" }
+        }
+    }
+}
+
 stringing-clef = \markup {
     \fontsize #-8
     \raise #2.5 {
