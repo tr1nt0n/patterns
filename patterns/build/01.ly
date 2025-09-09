@@ -1656,13 +1656,13 @@
                         {
                             \override Dots.staff-position = #2
                             \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
                             \once \override NoteHead.no-ledgers = ##t
+                            \once \override Stem.stencil = ##f
                             \override Staff.Clef.stencil = #ly:text-interface::print
                             \override Staff.Clef.text = \string-clef
                             \staff-line-count 4
@@ -1700,16 +1700,9 @@
                             \glissando
                             - \tweak font-name "Bodoni72 Book" 
                             - \tweak font-size 1
-                            - \tweak padding #6
+                            - \tweak padding #6.5
                             - \abjad-dashed-line-with-hook
-                            - \tweak bound-details.left.text \markup \concat { \upright { "IV" } \hspace #0.5 }
-                            - \tweak bound-details.right.padding -0.75
-                            \startTextSpanOne
-                            - \tweak font-name "Bodoni72 Book" 
-                            - \tweak font-size 1
-                            - \tweak padding #8
-                            - \abjad-dashed-line-with-hook
-                            - \tweak bound-details.left.text \markup \concat { \upright { "Vib. on jawharp, jawharp on string" } \hspace #0.5 }
+                            - \tweak bound-details.left.text \markup \concat { \upright { "Vib. on jawharp, jawharp on IV" } \hspace #0.5 }
                             - \tweak bound-details.right.padding -0.75
                             \startTextSpan
                             - \tweak stencil #constante-hairpin
@@ -1717,13 +1710,13 @@
                             ~
                             \once \override NoteHead.no-ledgers = ##t
                             \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
                             \once \override NoteHead.no-ledgers = ##t
+                            \once \override Stem.stencil = ##f
                             \once \override NoteHead.transparent = ##t
                               %! abjad.glissando(1)
                             \hide NoteHead
@@ -1736,13 +1729,13 @@
                             c'16
                             \big-half-harmonic
                             \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
                             \once \override NoteHead.no-ledgers = ##t
+                            \once \override Stem.stencil = ##f
                               %! abjad.glissando(6)
                             \revert Accidental.stencil
                               %! abjad.glissando(6)
@@ -1759,13 +1752,13 @@
                             - \tweak circled-tip ##t
                             \>
                             \once \override RepeatTie.transparent = ##t
-                            \once \override Stem.stencil = ##f
                             \once \override Beam.stencil = ##f
                             \once \override Flag.stencil = ##f
                             \once \override Dots.stencil = ##f
                             \once \override Tie.stencil = ##f
                             \once \override NoteHead.duration-log = 2
                             \once \override NoteHead.no-ledgers = ##t
+                            \once \override Stem.stencil = ##f
                             \afterGrace
                             \tweak style #'harmonic
                             a'8
@@ -1776,19 +1769,18 @@
                             {
                                 \big-half-harmonic
                                 \once \override RepeatTie.transparent = ##t
-                                \once \override Stem.stencil = ##f
                                 \once \override Beam.stencil = ##f
                                 \once \override Flag.stencil = ##f
                                 \once \override Dots.stencil = ##f
                                 \once \override Tie.stencil = ##f
                                 \once \override NoteHead.duration-log = 2
                                 \once \override NoteHead.no-ledgers = ##t
+                                \once \override Stem.stencil = ##f
                                 \revert Dots.staff-position
                                 g''16
                                 \!
                                 )
                                 \stopTextSpan
-                                \stopTextSpanOne
                             }
                             \staff-line-count 5
                             \revert Staff.StaffSymbol.line-positions
