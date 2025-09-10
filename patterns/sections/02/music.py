@@ -1714,18 +1714,18 @@ for measure in [1, 3]:
         voice=score["Global Context"],
     )
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (11,)),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override BarNumber.Y-offset = #5", site="before"
-            )
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-    ),
-    voice=score["Global Context"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (11,)),
+#     trinton.attachment_command(
+#         attachments=[
+#             abjad.LilyPondLiteral(
+#                 r"\once \override BarNumber.Y-offset = #5", site="before"
+#             )
+#         ],
+#         selector=trinton.select_leaves_by_index([0]),
+#     ),
+#     voice=score["Global Context"],
+# )
 
 # extract parts
 

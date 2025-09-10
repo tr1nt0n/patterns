@@ -67,7 +67,6 @@
             s1 * 1
               %! +SCORE
             \break
-            \once \override BarNumber.Y-offset = #5
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/2
             s1 * 1
