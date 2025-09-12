@@ -100,13 +100,13 @@ string-clef = \markup {
 }
 
 bow-clef = \markup {
-    \fontsize #-3
-    \raise #4.25 {
-        \center-column {
-            \line { "punta d'arco" }
-            \vspace #2.30
-            \line { "au talon" }
-        }
+    \fontsize #20
+    \override #'(font-name . "ekmelos")
+    \override #'(whiteout-style . "outline")
+    \override #'(whiteout . 1)
+    \raise #-7.75
+    {
+        \char ##xe7de
     }
 }
 

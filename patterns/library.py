@@ -13,13 +13,30 @@ def patterns_score(time_signatures):
         instruments=[
             abjad.Violin(),
             abjad.Violin(),
+            abjad.Violin(),
+            abjad.Violin(),
             abjad.Viola(),
+            abjad.Viola(),
+            abjad.Cello(),
             abjad.Cello(),
         ],
         groups=[
             2,
-            1,
-            1,
+            2,
+            2,
+            2,
+        ],
+        staff_types=[
+            ["bowContactStaff", "Staff"],
+            ["bowContactStaff", "Staff"],
+            [
+                "bowContactStaff",
+                "Staff",
+            ],
+            [
+                "bowContactStaff",
+                "Staff",
+            ],
         ],
         time_signatures=time_signatures,
         filler=abjad.Rest,
@@ -58,48 +75,6 @@ def tablature_staff(selector, reset_staff_lines=5, reset=False):
                 r"\staff-line-count 4",
                 r"\override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)",
                 r"\override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)",
-                r"\override Rest.staff-position = #0",
-                r"\override Staff.Accidental.stencil = ##f",
-            ]
-
-        if reset is True:
-            literal_strings = [
-                rf"\staff-line-count {reset_staff_lines}",
-                r"\revert Staff.StaffSymbol.line-positions",
-                r"\revert Rest.staff-position",
-                r"\revert Staff.Accidental.stencil",
-            ]
-
-            if reset_staff_lines != 1:
-                literal_strings.append(r"\revert Staff.Clef.stencil")
-
-        start_literal = abjad.LilyPondLiteral(literal_strings, site="before")
-
-        abjad.attach(start_literal, selections[0])
-
-        if reset is True:
-            abjad.attach(
-                abjad.LilyPondLiteral(
-                    r"\override Staff.BarLine.bar-extent = #'(-2 . 2)",
-                    site="absolute_after",
-                ),
-                selections[0],
-            )
-
-    return tablature
-
-
-def bow_staff(selector, reset_staff_lines=5, reset=False):
-    def tablature(argument):
-        selections = selector(argument)
-
-        if reset is False:
-            literal_strings = [
-                r"\override Staff.Clef.stencil = #ly:text-interface::print",
-                r"\override Staff.Clef.text = \bow-clef",
-                r"\staff-line-count 2",
-                r"\override Staff.StaffSymbol.line-positions = #'(9 0 -9)",
-                r"\override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)",
                 # r"\override Rest.staff-position = #0",
                 r"\override Staff.Accidental.stencil = ##f",
                 r"\override Staff.NoteHead.no-ledgers = ##t",
@@ -137,25 +112,25 @@ def bow_staff(selector, reset_staff_lines=5, reset=False):
 
 all_instrument_names = [
     abjad.InstrumentName(
-        context="Staff",
+        context="GrandStaff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { Violin 1 }'
         ),
     ),
     abjad.InstrumentName(
-        context="Staff",
+        context="GrandStaff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { Violin 2 }'
         ),
     ),
     abjad.InstrumentName(
-        context="Staff",
+        context="GrandStaff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { Viola }'
         ),
     ),
     abjad.InstrumentName(
-        context="Staff",
+        context="GrandStaff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { Violoncello }'
         ),
@@ -164,25 +139,25 @@ all_instrument_names = [
 
 all_short_instrument_names = [
     abjad.ShortInstrumentName(
-        context="Staff",
+        context="GrandStaff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { V1 }'
         ),
     ),
     abjad.ShortInstrumentName(
-        context="Staff",
+        context="GrandStaff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { V2 }'
         ),
     ),
     abjad.ShortInstrumentName(
-        context="Staff",
+        context="GrandStaff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { VA }'
         ),
     ),
     abjad.ShortInstrumentName(
-        context="Staff",
+        context="GrandStaff",
         markup=abjad.Markup(
             '\markup \\fontsize #2 \override #\'(font-name . "Bodoni72 Book") { VC }'
         ),
@@ -191,7 +166,10 @@ all_short_instrument_names = [
 
 
 def write_instrument_names(score):
-    for voice_name, markup in zip(voice_names, all_instrument_names):
+    for voice_name, markup in zip(
+        ["violin 1 voice", "violin 3 voice", "viola 1 voice", "cello 1 voice"],
+        all_instrument_names,
+    ):
         trinton.attach(
             voice=score[voice_name],
             leaves=[0],
@@ -200,7 +178,10 @@ def write_instrument_names(score):
 
 
 def write_short_instrument_names(score):
-    for voice_name, markup in zip(voice_names, all_short_instrument_names):
+    for voice_name, markup in zip(
+        ["violin 1 voice", "violin 3 voice", "viola 1 voice", "cello 1 voice"],
+        all_short_instrument_names,
+    ):
         trinton.attach(
             voice=score[voice_name],
             leaves=[0],
@@ -209,7 +190,7 @@ def write_short_instrument_names(score):
         )
 
 
-def column_trill(pressures, selector, bound_details=None):
+def column_trill(pressures, selector, bound_details=None, direction=abjad.DOWN):
     def make_column_trill(argument):
         selections = selector(argument)
 
@@ -217,9 +198,10 @@ def column_trill(pressures, selector, bound_details=None):
             "harmonic": "##xe0d9",
             "half": "##xe0e3",
             "full": "##xe0a4",
+            "unstick": "##xe0be",
         }
 
-        markup_string = r"""\markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \override #'(baseline-skip . 0) { \center-column { """
+        markup_string = r"""\markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { """
         counter = 1
         for pressure in pressures:
             if pressure == "half":
@@ -249,7 +231,7 @@ def column_trill(pressures, selector, bound_details=None):
 
         stop_trill = abjad.StopTrillSpan()
 
-        abjad.attach(start_trill, selections[0])
-        abjad.attach(stop_trill, selections[-1])
+        abjad.attach(start_trill, selections[0], direction=direction)
+        abjad.attach(stop_trill, selections[-1], direction=direction)
 
     return make_column_trill

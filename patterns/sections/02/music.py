@@ -37,7 +37,7 @@ trinton.make_music(
         voice_name="violin 1 polyrhythm voice",
         preprocessor=trinton.fuse_eighths_preprocessor((8, 10, 8, 11)),
     ),
-    voice=score["violin 1 voice"],
+    voice=score["violin 2 voice"],
 )
 
 trinton.make_music(
@@ -118,7 +118,7 @@ trinton.make_music(
         ],
         selector=trinton.select_tuplets_by_index([-1]),
     ),
-    voice=score["violin 1 voice temp"],
+    voice=score["violin 2 voice temp"],
 )
 
 trinton.make_music(
@@ -334,7 +334,7 @@ trinton.make_music(
         voice_name="violin 1 vibrator voice",
         temp_name="temp 1",
     ),
-    voice=score["violin 1 voice"],
+    voice=score["violin 2 voice"],
 )
 
 trinton.make_music(
@@ -485,7 +485,7 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    voice=score["violin 1 voice"],
+    voice=score["violin 2 voice"],
 )
 
 # second violin music
@@ -502,7 +502,7 @@ trinton.make_music(
         voice_name="violin 2 polyrhythm voice",
         preprocessor=trinton.fuse_quarters_preprocessor((5, 1, 4, 6, 4, 4, 4, 4)),
     ),
-    voice=score["violin 2 voice"],
+    voice=score["violin 4 voice"],
 )
 
 trinton.make_music(
@@ -539,7 +539,7 @@ trinton.make_music(
         ],
         selector=abjad.select.rests,
     ),
-    voice=score["violin 2 voice temp"],
+    voice=score["violin 4 voice temp"],
 )
 
 trinton.make_music(
@@ -611,7 +611,7 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    voice=score["violin 2 voice temp"],
+    voice=score["violin 4 voice temp"],
 )
 
 trinton.make_music(
@@ -708,7 +708,7 @@ trinton.make_music(
         padding=10,
         forget=False,
     ),
-    voice=score["violin 2 voice temp"],
+    voice=score["violin 4 voice temp"],
 )
 
 trinton.make_music(
@@ -781,7 +781,7 @@ trinton.make_music(
             [0, 0, 1, 1, 2, 2, 3, 3], first=True, pitched=True
         ),
     ),
-    voice=score["viola voice"],
+    voice=score["viola 2 voice"],
 )
 
 trinton.make_music(
@@ -914,7 +914,7 @@ trinton.make_music(
         attachments=[abjad.Articulation("tenuto")],
         selector=trinton.select_logical_ties_by_index([3], pitched=True, first=True),
     ),
-    voice=score["viola voice"],
+    voice=score["viola 2 voice"],
     beam_meter=True,
 )
 
@@ -950,7 +950,7 @@ trinton.make_music(
         voice_name="viola polyrhythm voice",
         preprocessor=trinton.fuse_quarters_preprocessor((4,)),
     ),
-    voice=score["viola voice"],
+    voice=score["viola 2 voice"],
 )
 
 trinton.make_music(
@@ -960,7 +960,7 @@ trinton.make_music(
         selector=trinton.logical_ties(first=True, pitched=True),
         direction=abjad.DOWN,
     ),
-    voice=score["viola voice temp"],
+    voice=score["viola 2 voice temp"],
 )
 
 trinton.make_music(
@@ -1001,7 +1001,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (13,)),
     library.bow_staff(selector=trinton.select_leaves_by_index([0]), reset=True),
-    voice=score["viola voice"],
+    voice=score["viola 2 voice"],
 )
 
 # cello music
@@ -1011,19 +1011,19 @@ trinton.make_music(
     evans.RhythmHandler(rhythm.rhythm_c(stage=4, instrument="cello", index=0)),
     evans.PitchHandler(["a,"]),
     trinton.rewrite_meter_command(boundary_depth=-1),
-    voice=score["cello voice"],
+    voice=score["cello 2 voice"],
 )
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (1, 3)),
     evans.PitchHandler([["1/1", "69/64"]], as_ratios=True),
-    voice=score["cello voice"],
+    voice=score["cello 2 voice"],
 )
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (4, 6)),
     evans.PitchHandler([["69/64", "6/5"]], as_ratios=True),
-    voice=score["cello voice"],
+    voice=score["cello 2 voice"],
 )
 
 trinton.make_music(
@@ -1100,7 +1100,7 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    voice=score["cello voice"],
+    voice=score["cello 2 voice"],
 )
 
 trinton.make_music(
@@ -1205,7 +1205,7 @@ trinton.make_music(
         selector=trinton.logical_ties(first=True, pitched=True, grace=False),
         direction=abjad.UP,
     ),
-    voice=score["cello voice"],
+    voice=score["cello 2 voice"],
 )
 
 trinton.make_music(
@@ -1247,7 +1247,7 @@ trinton.make_music(
             r"""- \tweak font-size 2""",
         ],
     ),
-    voice=score["cello voice"],
+    voice=score["cello 2 voice"],
 )
 
 trinton.make_music(
@@ -1295,7 +1295,7 @@ trinton.make_music(
         direction=abjad.DOWN,
         voice_name="cello legno voice",
     ),
-    voice=score["cello voice"],
+    voice=score["cello 2 voice"],
 )
 
 trinton.make_music(
@@ -1334,7 +1334,7 @@ trinton.make_music(
             r"""- \tweak font-size 2""",
         ],
     ),
-    voice=score["cello voice temp"],
+    voice=score["cello 2 voice temp"],
 )
 
 trinton.make_music(
@@ -1463,7 +1463,7 @@ trinton.fermata_measures(
     score=score,
     measures=[13],
     fermata="very-short-fermata",
-    voice_names=library.voice_names,
+    voice_names=["violin 2 voice", "violin 4 voice", "viola 2 voice", "cello 2 voice"],
     font_size=10,
     clef_whitespace=True,
     blank=True,
@@ -1476,7 +1476,9 @@ trinton.fermata_measures(
 # tempi
 
 for voice_name, padding, hspace in zip(
-    library.voice_names, [2, 1, 5, 3], [-7, 0, 0, -3.5]
+    ["violin 2 voice", "violin 4 voice", "viola 2 voice", "cello 2 voice"],
+    [2, 1, 5, 3],
+    [-7, 0, 0, -3.5],
 ):
     trinton.make_music(
         lambda _: trinton.select_target(_, (1,)),
@@ -1507,9 +1509,9 @@ for voice_name, padding, hspace in zip(
 for voice_name, padding, end_anchor in zip(
     [
         "violin 1 vibrator voice",
-        "violin 2 voice temp",
-        "viola voice",
-        "cello voice",
+        "violin 4 voice temp",
+        "viola 2 voice",
+        "cello 2 voice",
     ],
     [11, 15, 15, 10.75],
     [

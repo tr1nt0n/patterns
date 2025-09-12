@@ -197,9 +197,7 @@ afterGraceFraction = #(cons 15 16)
     \context {
         \Staff
         fontSize = #-1
-        % \remove Time_signature_engraver
-        % \consists Measure_spanner_engraver
-        % \consists Bar_number_engraver
+        \accepts bowContactStaff
         \consists Duration_line_engraver
         \consists Grid_point_engraver
         \consists Grob_pq_engraver
@@ -231,9 +229,43 @@ afterGraceFraction = #(cons 15 16)
     }
 
     \context{
+        \Staff
+        \name bowContactStaff
+
+        \override Accidental.stencil = ##f
+
+        \override BarLine.stencil = ##f
+        \override BarLine.bar-extent = #'(-4.5 . 4.5)
+
+        \override Beam.stencil = ##f
+
+        \override Clef.stencil = #ly:text-interface::print
+        \override Clef.text = \bow-clef
+
+        \override Dots.stencil = ##f
+
+        \override Flag.stencil = ##f
+
+        \override Glissando.bound-details.left.padding = #0.5
+        \override Glissando.bound-details.right.padding = #0.5
+
+        \override NoteHead.no-ledgers = ##t
+        \override NoteHead.transparent = ##t
+        \override NoteHead.X-extent = #'(0 . 0)
+
+        \override StaffSymbol.line-count = #3
+        \override StaffSymbol.line-positions = #'(9 0 -9)
+        \override Stem.stencil = ##f
+
+        \override TimeSignature.stencil = ##f
+
+        \RemoveAllEmptyStaves
+    }
+
+    \context{
         \GrandStaff
         % \remove Time_signature_engraver
-        \accepts timeSignatureStaff
+        \accepts bowContactStaff
         \consists Grob_pq_engraver
         % \consists Measure_spanner_engraver
 

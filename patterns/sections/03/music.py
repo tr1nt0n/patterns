@@ -163,13 +163,13 @@ trinton.make_music(
         voice_name="violin 1 vibrator voice",
         temp_name="temp 1",
     ),
-    voice=score["violin 1 voice"],
+    voice=score["violin 2 voice"],
 )
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (4,)),
     library.tablature_staff(selector=trinton.select_leaves_by_index([0]), reset=True),
-    voice=score["violin 1 voice"],
+    voice=score["violin 2 voice"],
 )
 
 trinton.make_music(
@@ -284,7 +284,7 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    voice=score["violin 2 voice"],
+    voice=score["violin 4 voice"],
 )
 
 trinton.make_music(
@@ -385,7 +385,7 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    voice=score["violin 2 voice"],
+    voice=score["violin 4 voice"],
 )
 
 trinton.make_music(
@@ -427,7 +427,7 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    voice=score["violin 2 voice"],
+    voice=score["violin 4 voice"],
 )
 
 # viola music
@@ -596,7 +596,7 @@ trinton.make_music(
             [0, 0, 2, 4, 4, 5, -1], first=True, pitched=True
         ),
     ),
-    voice=score["viola voice"],
+    voice=score["viola 2 voice"],
     beam_meter=True,
 )
 
@@ -685,7 +685,7 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    voice=score["cello voice"],
+    voice=score["cello 2 voice"],
 )
 
 # globals
@@ -709,7 +709,7 @@ trinton.fermata_measures(
     score=score,
     measures=[4],
     fermata="long-fermata",
-    voice_names=library.voice_names,
+    voice_names=["violin 2 voice", "violin 4 voice", "viola 2 voice", "cello 2 voice"],
     font_size=10,
     clef_whitespace=True,
     blank=True,
@@ -724,9 +724,9 @@ trinton.fermata_measures(
 for voice_name, padding, end_anchor in zip(
     [
         "violin 1 vibrator voice",
-        "violin 2 voice",
-        "viola voice",
-        "cello voice",
+        "violin 4 voice",
+        "viola 2 voice",
+        "cello 2 voice",
     ],
     [10, 16.5, 14.5, 12.5],
     [-4, 14, 2, 7],

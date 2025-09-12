@@ -7,6 +7,131 @@ import itertools
 from patterns import library
 
 
+def rhythm_a(stage, extra_count=0):
+    def return_rhythm_a(time_signatures):
+        container = abjad.Container()
+
+        durations = []
+        tuplet_ratios = []
+        for time_signature in time_signatures:
+            numerator = time_signature.numerator
+            denominator = time_signature.denominator
+            meter = abjad.Meter(time_signature)
+            if numerator == 1:
+                durations.append(time_signature)
+
+            if trinton.is_power_of(a=numerator, b=2) is True:
+                new_duration = abjad.Duration((numerator, denominator)) / 2
+                durations.append(new_duration)
+                durations.append(new_duration)
+
+            if numerator == 3:
+                larger_duration = abjad.Duration((2, denominator))
+                shorter_duration = abjad.Duration((1, denominator))
+                durations.append(larger_duration)
+                durations.append(shorter_duration)
+
+            if meter.is_compound is True:
+                base_duration = abjad.Duration((3, denominator))
+                for _ in range(0, numerator / 3):
+                    durations.append(base_duration)
+
+            if numerator % 5 == 0 and numerator != 5:
+                if numerator % 2 == 0:
+                    new_duration = abjad.Duration((numerator, denominator)) / 2
+                    durations.append(new_duration)
+                    durations.append(new_duration)
+                else:
+                    larger_numerator = numerator / 2
+                    larger_numerator = round(larger_numerator)
+                    larger_numerator = int(larger_numerator)
+                    smaller_numerator = larger_numerator - 1
+
+                    durations.append(abjad.Duration((smaller_numerator, denominator)))
+                    durations.append(abjad.Duration((larger_numerator, denominator)))
+
+            def is_prime(n):
+                for i in range(2, n):
+                    if (n % i) == 0:
+                        return False
+                    else:
+                        return True
+
+            if is_prime(numerator) is True and numerator != 3 and numerator != 9:
+                larger_numerator = numerator / 2
+                larger_numerator = round(larger_numerator)
+                larger_numerator = int(larger_numerator)
+                smaller_numerator = larger_numerator - 1
+
+                durations.append(abjad.Duration((smaller_numerator, denominator)))
+                durations.append(abjad.Duration((larger_numerator, denominator)))
+
+            tuplet_ratio = []
+            range_end = numerator + extra_count
+            for _ in range(0, range_end):
+                tuplet_ratio.append(-1)
+            tuplet_ratio = tuple(tuplet_ratio)
+
+            tuplet_ratios.append(tuplet_ratio)
+            tuplet_ratios.append(tuplet_ratio)
+
+        rhythm_selections = rmakers.tuplet(durations, tuplet_ratios)
+        container.extend(rhythm_selections)
+        trinton.respell_tuplets(container, rewrite_brackets=False)
+
+        modulo = 0
+        for i, tuplet in enumerate(abjad.select.tuplets(container)):
+            modulo = modulo % 2
+            relevant_leaves = [abjad.select.leaf(tuplet, _) for _ in [0, -1]]
+            rmakers.force_note(relevant_leaves)
+            if i % 2 != modulo:
+                if len(abjad.select.leaves(tuplet)) < 5:
+                    pass
+                else:
+                    additional_note_amount = len(abjad.select.leaves(tuplet)) - 4
+                    new_range = additional_note_amount + 1
+                    relevant_leaves = [
+                        abjad.select.leaf(tuplet, _) for _ in list(range(1, new_range))
+                    ]
+                    rmakers.force_note(relevant_leaves)
+
+            if stage > 1:
+                if len(abjad.select.leaves(tuplet)) < 5:
+                    pass
+                else:
+                    center_index = len(abjad.select.leaves(tuplet)) / 2
+                    center_index = round(center_index)
+                    center_index = center_index - 1
+                    center_index = int(center_index)
+                    rmakers.force_note(abjad.select.leaf(tuplet, center_index))
+
+                    if i % 2 != modulo:
+                        rmakers.force_note(abjad.select.leaf(tuplet, -2))
+
+            if stage > 2:
+                contiguous_notes = abjad.select.group_by_contiguity(
+                    abjad.select.leaves(tuplet, pitched=True)
+                )
+                for group in contiguous_notes:
+                    abjad.mutate.fuse(group)
+
+            if i % 2 != 0:
+                modulo += 1
+
+        if stage > 2:
+            for tuplet in abjad.select.exclude(abjad.select.tuplets(container), [-1]):
+                abjad.attach(abjad.Tie(), abjad.select.leaf(tuplet, -1))
+
+        trinton.fuse_tuplet_rests(abjad.select.tuplets(container))
+        trinton.respell_tuplets(container, rewrite_brackets=False)
+        treat_tuplets = trinton.treat_tuplets()
+        treat_tuplets(container)
+        rhythm_selections = abjad.mutate.eject_contents(container)
+        return rhythm_selections
+
+    return return_rhythm_a
+
+
 def rhythm_b(stage, instrument, index=0):
     def return_rhythm_b(time_signatures):
         durations = []
