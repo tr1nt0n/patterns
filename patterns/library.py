@@ -61,7 +61,50 @@ voice_names = eval(
     ]"""
 )
 
+# dictionaries
+
+_scale_degree_to_ratio = {
+    0: "1/1",
+    1: "4431/4064",
+    2: "1151/1016",
+    3: "1185/1016",
+    4: "327/254",
+    5: "1403/1016",
+    6: "366/254",
+    7: "6227/4064",
+    8: "405/254",
+    9: "3483/2032",
+    10: "1819/1016",
+    11: "233/127",
+}
+
 # notation tools
+
+
+def d_stage_3_noteheads(selector=abjad.select.chords):
+    def change_noteheads(argument):
+        selections = selector(argument)
+
+        for chord in abjad.select.chords(selections):
+            for leaf in abjad.select.leaves(chord):
+                leaf_duration = abjad.get.duration(leaf)
+                if leaf_duration < abjad.Duration(
+                    (7, 16)
+                ) and leaf_duration > abjad.Duration((7, 32)):
+                    head_shape = "harmonic-mixed"
+                else:
+                    head_shape = "harmonic"
+
+                if len(chord.note_heads) == 2:
+                    for head in leaf.note_heads:
+                        abjad.tweak(head, rf"\tweak style #'{head_shape}")
+                if len(chord.note_heads) == 3:
+                    noteheads = leaf.note_heads
+                    relevant_noteheads = noteheads[1:]
+                    for head in relevant_noteheads:
+                        abjad.tweak(head, rf"\tweak style #'{head_shape}")
+
+    return change_noteheads
 
 
 def tablature_staff(selector, reset_staff_lines=5, reset=False):

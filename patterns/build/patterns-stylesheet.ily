@@ -68,6 +68,7 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.layer = 3
         \override Accidental.whiteout-style = #'outline
         \override Accidental.whiteout = 1
+        \override Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
         % \override Accidental.X-extent = ##f
 
         \override Script.layer = 2

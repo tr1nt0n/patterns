@@ -4,6 +4,7 @@ import baca
 import evans
 import trinton
 import itertools
+import random
 from patterns import library
 from patterns import sieve_structures
 
@@ -58,6 +59,257 @@ def pitch_b(instrument, selector=trinton.pleaves(), base_pitch=0, index=0):
         handler = evans.PitchHandler(pitch_list=pitch_list)
 
         handler(selections)
+
+    return do_pitching
+
+
+def pitch_d(
+    instrument,
+    string_range_pairs,
+    stage=1,
+    index=0,
+    initial_seed=5,
+    selector=trinton.logical_ties(pitched=True, grace=False),
+):
+    def do_pitching(argument):
+        selections = selector(argument)
+        _instrument_to_string_dict = {
+            "violin": {
+                "IV": [
+                    "af",
+                    "aqf",
+                    "a",
+                    "aqs",
+                    "bf",
+                    "bqf",
+                    "b",
+                    "bqs",
+                    "c'",
+                    "cqs'",
+                    "cs'",
+                    "dqs'",
+                ],
+                "III": [
+                    "ef'",
+                    "eqf'",
+                    "e'",
+                    "eqs'",
+                    "f'",
+                    "fqs'",
+                    "fs'",
+                    "gqf'",
+                    "g'",
+                    "gqs'",
+                    "af'",
+                    "aqf'",
+                ],
+                "II": [
+                    "bf'",
+                    "bqf'",
+                    "b'",
+                    "bqs'",
+                    "c''",
+                    "cqs''",
+                    "cs''",
+                    "dqf''",
+                    "d''",
+                    "dqs''",
+                    "ef''",
+                    "eqf''",
+                ],
+                "I": [
+                    "f''",
+                    "fqs''",
+                    "fs''",
+                    "gqf''",
+                    "g''",
+                    "gqs''",
+                    "af''",
+                    "aqf''",
+                    "a''",
+                    "aqs''",
+                    "bf''",
+                    "bqf''",
+                ],
+            },
+            "viola": {
+                "IV": [
+                    "cs",
+                    "cqs",
+                    "d",
+                    "dqs",
+                    "ef",
+                    "eqf",
+                    "e",
+                    "eqs",
+                    "f",
+                    "fqs",
+                    "fs",
+                    "gqf",
+                ],
+                "III": [
+                    "af",
+                    "aqf",
+                    "a",
+                    "aqs",
+                    "bf",
+                    "bqf",
+                    "b",
+                    "bqs",
+                    "c'",
+                    "cqs'",
+                    "cs'",
+                    "dqs'",
+                ],
+                "II": [
+                    "ef'",
+                    "eqf'",
+                    "e'",
+                    "eqs'",
+                    "f'",
+                    "fqs'",
+                    "fs'",
+                    "gqf'",
+                    "g'",
+                    "gqs'",
+                    "af'",
+                    "aqf'",
+                ],
+                "I": [
+                    "bf'",
+                    "bqf'",
+                    "b'",
+                    "bqs'",
+                    "c''",
+                    "cqs''",
+                    "cs''",
+                    "dqf''",
+                    "d''",
+                    "dqs''",
+                    "ef''",
+                    "eqf''",
+                ],
+            },
+            "cello": {
+                "IV": [
+                    "cs,",
+                    "cqs,",
+                    "d,",
+                    "dqs,",
+                    "ef,",
+                    "eqf,",
+                    "e,",
+                    "eqs,",
+                    "f,",
+                    "fqs,",
+                    "fs,",
+                    "gqf,",
+                ],
+                "III": [
+                    "af,",
+                    "aqf,",
+                    "a,",
+                    "aqs,",
+                    "bf,",
+                    "bqf,",
+                    "b,",
+                    "bqs,",
+                    "c",
+                    "cqs",
+                    "cs",
+                    "dqs",
+                ],
+                "II": [
+                    "ef",
+                    "eqf",
+                    "e",
+                    "eqs",
+                    "f",
+                    "fqs",
+                    "fs",
+                    "gqf",
+                    "g",
+                    "gqs",
+                    "af",
+                    "aqf",
+                ],
+                "I": [
+                    "bf",
+                    "bqf",
+                    "b",
+                    "bqs",
+                    "c'",
+                    "cqs'",
+                    "cs'",
+                    "dqf'",
+                    "d'",
+                    "dqs'",
+                    "ef'",
+                    "eqf'",
+                ],
+            },
+        }
+
+        seed = initial_seed
+        for pair in string_range_pairs:
+            random.seed(seed)
+            selection_range = pair[-1]
+            start_range = selection_range[0]
+            stop_range = selection_range[-1] + 1
+            relevant_selections = selections[start_range:stop_range]
+
+            instrument_string_key = pair[0]
+            chord = _instrument_to_string_dict[instrument][instrument_string_key]
+            divisor = len(chord)
+            distance = 1 / divisor
+            threshholds = []
+            threshhold_counter = 0
+            for _ in range(0, divisor):
+                threshholds.append(threshhold_counter)
+                threshhold_counter += distance
+
+            _threshhold_to_index = dict(zip(threshholds, list(range(0, divisor))))
+            # print(f"dictionary: {_threshhold_to_index}")
+
+            pitch_list = []
+            pitch_list_range = len(relevant_selections) + 1
+            for _ in range(0, pitch_list_range):
+                random_float = random.random()
+                muting_collection = []
+                for threshhold in threshholds:
+                    if random_float <= threshhold:
+                        pitch_index = _threshhold_to_index[threshhold]
+                        pitch = chord[pitch_index]
+
+                        muting_collection.append(pitch)
+                        if _ % 3 == 0:
+                            process_range = 2
+                        else:
+                            process_range = 1
+
+                        for _ in range(0, process_range):
+                            if pitch_index >= len(chord) - 3:
+                                lower_limit = 0
+                                upper_limit = pitch_index - 2
+                            else:
+                                lower_limit = pitch_index + 2
+                                upper_limit = len(chord) - 1
+                            secondary_index = random.randint(lower_limit, upper_limit)
+                            secondary_pitch = chord[secondary_index]
+                            muting_collection.append(secondary_pitch)
+
+                        pitch_list.append(muting_collection)
+
+                        break
+
+            seed += 1
+            if stage < 3:
+                pitch_list = [_[0] for _ in pitch_list]
+
+            pitch_list = trinton.rotated_sequence(pitch_list, index % len(pitch_list))
+            pitch_list = trinton.remove_adjacent(pitch_list)
+            pitch_handler = evans.PitchHandler(pitch_list=pitch_list)
+            pitch_handler(relevant_selections)
 
     return do_pitching
 
