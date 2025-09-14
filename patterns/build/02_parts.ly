@@ -3,8 +3,7 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 20 15 32)))
-            \once \override BarNumber.Y-offset = #-12
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 17 17 15 30)))
             \time 8/8
             s1 * 1
               %! +SCORE
@@ -14,8 +13,7 @@
               %! +SCORE
         %%% \break
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 20 15 32)))
-            \once \override BarNumber.Y-offset = #-12
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (14 17 17 12 30)))
             \time 4/4
             s1 * 1
               %! +SCORE
@@ -24,8 +22,6 @@
             s1 * 11/8
               %! +SCORE
         %%% \break
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 28 23 28)))
             \time 10/8
             s1 * 5/4
               %! +SCORE
@@ -34,8 +30,6 @@
             s1 * 1/4
               %! +SCORE
         %%% \break
-              %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 30 30 30)))
             \time 2/2
             s1 * 1
               %! +SCORE
@@ -89,20 +83,406 @@
                             {
                                 \context Voice = "violin 1 voice"
                                 {
-                                    \set GrandStaff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin 1 }
-                                      %! +SCORE
-                                %%% \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V1 }
-                                    r1
-                                    r4.
-                                    r4
-                                    r4.
-                                    r4
-                                    r1
-                                    r4.
-                                    r4
-                                    r4
-                                    r4
-                                    r4
+                                    <<
+                                        \context Voice = "violin 1 voice temp"
+                                        {
+                                            \times 4/6
+                                            {
+                                                \set GrandStaff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin 1 }
+                                                  %! +SCORE
+                                            %%% \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V1 }
+                                                \voiceOne
+                                                c'4
+                                                  %! +SCORE
+                                            %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
+                                                c'4
+                                                c'4
+                                                \override Dots.staff-position = #2
+                                                a4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                ~
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \afterGrace
+                                                a4
+                                                {
+                                                    #(define afterGraceFraction (cons 1 2))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    \revert Accidental.stencil
+                                                    \revert NoteColumn.glissando-skip
+                                                    \revert NoteHead.no-ledgers
+                                                    \undo \hide NoteHead
+                                                    c'''16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                e'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 3 4))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    g''16
+                                                }
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/4
+                                            {
+                                                c'4
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                g''4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 5 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    f'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                g''4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 5 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    f'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                g''4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 3 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    g'16
+                                                }
+                                            }
+                                            \times 4/5
+                                            {
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                e''4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 2))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    b'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                a'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 4))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    d''16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                b'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 2))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    f''16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                f''4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 5 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    a'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                g''4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                ~
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 11/12
+                                            {
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \afterGrace
+                                                g''2
+                                                {
+                                                    #(define afterGraceFraction (cons 7 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    \revert Accidental.stencil
+                                                    \revert NoteColumn.glissando-skip
+                                                    \revert NoteHead.no-ledgers
+                                                    \undo \hide NoteHead
+                                                    f'16
+                                                }
+                                                c'2
+                                                c'2
+                                            }
+                                        }
+                                        \context Voice = "violin 1 voice 2"
+                                        {
+                                            \override Dots.staff-position = #2
+                                            \voiceTwo
+                                            c'''4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            ~
+                                            \hide NoteHead
+                                            \override Accidental.stencil = ##f
+                                            \override NoteColumn.glissando-skip = ##t
+                                            \override NoteHead.no-ledgers = ##t
+                                            \afterGrace
+                                            c'''4
+                                            {
+                                                #(define afterGraceFraction (cons 15 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                \revert Accidental.stencil
+                                                \revert NoteColumn.glissando-skip
+                                                \revert NoteHead.no-ledgers
+                                                \undo \hide NoteHead
+                                                a16
+                                            }
+                                            c'4
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'''4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 5 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                c'16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            g''4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 3 4))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                d'16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            d'4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 1 4))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                g''16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            f'4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 1 2))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                g''16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            f'4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 1 2))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                g''16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            g'4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 1 2))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                e''16
+                                            }
+                                            \times 2/3
+                                            {
+                                                c'2
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                d''2
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    b'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                a'2
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 5 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    g''16
+                                                }
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 11/12
+                                            {
+                                                c'4
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                f'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 2))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    d''16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                c''4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 4))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    a'16
+                                                }
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                b''4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                g''4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                d''4
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
                                     r4.
                                     r4
                                     r4.
@@ -131,18 +511,14 @@
                                             {
                                                 \voiceOne
                                                 cs'4
-                                                  %! +SCORE
-                                            %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
-                                                - \tweak font-name "Bodoni72 Book" 
-                                                - \tweak font-size 1
-                                                - \tweak padding #10
-                                                - \abjad-solid-line-with-arrow
-                                                - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
-                                                \startTextSpanOne
+                                                (
                                                 a'4
                                                 bf'4
+                                                )
                                                 e'4
+                                                (
                                                 a'4
+                                                )
                                                 d'4
                                             }
                                             \tweak text #tuplet-number::calc-fraction-text
@@ -152,13 +528,6 @@
                                                 f'4
                                                 _ \staccato
                                                 _ \tenuto
-                                                \stopTextSpanOne
-                                                - \tweak font-name "Bodoni72 Book" 
-                                                - \tweak font-size 1
-                                                - \tweak padding #10
-                                                - \abjad-solid-line-with-arrow
-                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Batt." } \hspace #0.5 }
-                                                \startTextSpanOne
                                                 c''4
                                                 _ \staccato
                                                 _ \tenuto
@@ -174,14 +543,6 @@
                                                 bf'4
                                                 _ \staccato
                                                 _ \tenuto
-                                                \stopTextSpanOne
-                                                - \tweak font-name "Bodoni72 Book" 
-                                                - \tweak font-size 1
-                                                - \tweak padding #10
-                                                - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/4 Batt." } \hspace #0.5 }
-                                                - \tweak bound-details.right.padding 1
-                                                \startTextSpanOne
                                                 d'4
                                                 _ \staccato
                                                 _ \tenuto
@@ -189,27 +550,19 @@
                                                 _ \staccato
                                                 _ \tenuto
                                                 g'4
-                                                \stopTextSpanOne
-                                                - \tweak font-name "Bodoni72 Book" 
-                                                - \tweak font-size 1
-                                                - \tweak padding #10
-                                                - \abjad-solid-line-with-arrow
-                                                - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
-                                                - \tweak bound-details.right.text \markup \upright { "3/4 Batt." }
-                                                - \tweak bound-details.right.padding -10
-                                                \startTextSpanOne
+                                                (
                                             }
                                             \once \override TupletBracket.padding = 0.5
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 11/12
                                             {
                                                 e''2
+                                                )
                                                 a''2
                                                 - \staccato
                                                 - \tenuto
                                                 cs'2
                                                 _ \staccato
-                                                \stopTextSpanOne
                                             }
                                         }
                                         \context Voice = "violin 1 polyrhythm voice"
@@ -217,9 +570,7 @@
                                             \voiceTwo
                                             e'4
                                             - \tweak circled-tip ##t
-                                            \<
-                                            - \tweak padding 9.5
-                                            \startBowSpan #'((0 . 5) (0.09803921568627451 . 3) (0.1764705882352941 . 4) (0.2745098039215686 . 2) (0.3529411764705882 . 3) (0.47058823529411764 . 1) (0.5686274509803921 . 2) (0.7058823529411764 . 0.5) (0.8235294117647058 . 0.75) (1.0 . 0))
+                                            ^ \<
                                             g4
                                             bf4
                                             d'4
@@ -231,20 +582,17 @@
                                             ^ \staccato
                                             ^ \tenuto
                                             a'4
-                                            \ppp
+                                            ^ \ppp
                                             ^ \staccato
                                             ^ \tenuto
                                             cs'4
                                             ^ \staccato
                                             ^ \tenuto
-                                            \stopBowSpan
                                             \times 2/3
                                             {
                                                 cs'2
                                                 - \staccato
                                                 - \tenuto
-                                                - \tweak padding 8
-                                                \startBowSpan #'((0 . 2) (0.01694915254237288 . 3) (0.05084745762711865 . 1) (0.06779661016949153 . 2) (0.0847457627118644 . 0.5) (0.22033898305084745 . 4) (0.3728813559322034 . 2) (0.5084745762711864 . 3) (0.6271186440677966 . 1) (0.728813559322034 . 2) (0.8474576271186441 . 0.5) (0.9322033898305085 . 0.75) (1.0 . 0))
                                                 bf2
                                                 ^ \staccato
                                                 ^ \tenuto
@@ -259,7 +607,7 @@
                                                 a'4
                                                 ^ \staccato
                                                 ^ \tenuto
-                                                \<
+                                                ^ \<
                                                 e''4
                                                 - \staccato
                                                 - \tenuto
@@ -268,9 +616,8 @@
                                                 as'4
                                                 ^ \staccato
                                                 f'4
-                                                \p
+                                                ^ \p
                                                 ^ \staccato
-                                                \stopBowSpan
                                             }
                                         }
                                     >>
@@ -285,8 +632,8 @@
                                             \staff-line-count 4
                                             \override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)
                                             \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
-                                            \override Rest.staff-position = #0
                                             \override Staff.Accidental.stencil = ##f
+                                            \override Staff.NoteHead.no-ledgers = ##t
                                             \textSpannerDown
                                             \voiceTwo
                                             r4.
@@ -807,17 +1154,15 @@
                                     \oneVoice
                                     \staff-line-count 5
                                     \revert Staff.StaffSymbol.line-positions
-                                    \revert Rest.staff-position
                                     \revert Staff.Accidental.stencil
+                                    \revert Staff.NoteHead.no-ledgers
                                     \revert Staff.Clef.stencil
                                     r16
                                     [
                                     \override Staff.BarLine.bar-extent = #'(-2 . 2)
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!8.
                                     \pp
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
@@ -828,65 +1173,45 @@
                                     \startTextSpanOne
                                     r4
                                     r8
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!4.
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     r8
                                     [
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!8
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     r16
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!8.
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     ]
                                     r8.
                                     [
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!16
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
                                     r16
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!8.
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     ]
                                     r4.
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!8
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     r4.
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!8
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     r16
                                     [
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!8.
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     r8.
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!16
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     ]
                                     r16
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                                     c'!4..
-                                    ^ \markup \center-align { \concat { +16 } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     \stopTextSpanOne
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
@@ -1546,13 +1871,6 @@
                                         {
                                             \times 2/3
                                             {
-                                                \override Staff.Clef.stencil = #ly:text-interface::print
-                                                \override Staff.Clef.text = \bow-clef
-                                                \staff-line-count 2
-                                                \override Staff.StaffSymbol.line-positions = #'(9 0 -9)
-                                                \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
-                                                \override Staff.Accidental.stencil = ##f
-                                                \override Staff.NoteHead.no-ledgers = ##t
                                                 \voiceOne
                                                 \tweak style #'cross
                                                 b2
@@ -1680,17 +1998,11 @@
                                 %%% \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
                                 %%% \once \override Rest.transparent = ##t
-                                    \staff-line-count 5
-                                    \revert Staff.StaffSymbol.line-positions
-                                    \revert Staff.Accidental.stencil
-                                    \revert Staff.NoteHead.no-ledgers
-                                    \revert Staff.Clef.stencil
                                       %! +SCORE
                                 %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     r4
                                       %! +SCORE
                                 %%% \stopStaff \startStaff
-                                    \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                 }
                             }
                         }
@@ -1746,207 +2058,95 @@
                                       %! +SCORE
                                 %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-3.5 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
                                     [
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                    >16
-                                    ^ \markup \center-align { \center-column { \line { \concat { +30 }  }\line { \concat { +0 }  } } }
+                                    <a,! bqf,!>16
                                     ]
                                     - \tweak circled-tip ##t
                                     \<
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #15
+                                    - \tweak padding #13.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { \column { \line { "diagonal bow," } \line { "touching bridge" } \line { "for added air sound" } } } \hspace #0.5 }
                                     \startTextSpanOne
                                     ~
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,
-                                    >8
+                                    <a, bqf,>8
                                     r8
                                     \pp
                                     r16
                                     [
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                    >16
+                                    <a,! bqf,!>16
                                     \ppp
-                                    ^ \markup \center-align { \center-column { \line { \concat { +30 }  }\line { \concat { +0 }  } } }
                                     ]
                                     r4
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                    >8
-                                    ^ \markup \center-align { \center-column { \line { \concat { +30 }  }\line { \concat { +0 }  } } }
+                                    <a,! bqf,!>8
                                     ~
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,
-                                    >16
+                                    <a, bqf,>16
                                     [
                                     r16
                                     ]
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                    >2
-                                    ^ \markup \center-align { \center-column { \line { \concat { +30 }  }\line { \concat { +0 }  } } }
+                                    <a,! bqf,!>2
                                     r8
                                     r8
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                    >4
+                                    <a,! bqf,!>4
                                     \pp
-                                    ^ \markup \center-align { \center-column { \line { \concat { +30 }  }\line { \concat { +0 }  } } }
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #15
+                                    - \tweak padding #13.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { \column { \line { "MSP, 1/2 hair on strings" } \line { "1/2 hair on bridge" } } } \hspace #0.5 }
                                     \startTextSpanOne
                                     \>
                                     ~
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,
-                                    >8
+                                    <a, bqf,>8
                                     [
                                     r16
                                     \ppp
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                    >16
-                                    ^ \markup \center-align { \center-column { \line { \concat { +30 }  }\line { \concat { +0 }  } } }
+                                    <a,! bqf,!>16
                                     ]
                                     r4
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                    >16
-                                    ^ \markup \center-align { \center-column { \line { \concat { +30 }  }\line { \concat { +0 }  } } }
+                                    <a,! bqf,!>16
                                     [
                                     r8.
                                     ]
                                     r4
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \abjad-natural  }
-                                        a,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                    >16
-                                    ^ \markup \center-align { \center-column { \line { \concat { +30 }  }\line { \concat { +0 }  } } }
+                                    <a,! bqf,!>16
                                     [
                                     r8.
                                     ]
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                    >4.
-                                    ^ \markup \center-align { \center-column { \line { \concat { +16 }  }\line { \concat { +30 }  } } }
+                                    <bqf,! c!>4.
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #15
+                                    - \tweak padding #13.5
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { { \column { \line { "all hair on bridge," } \line { "but allowing strings to ring" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1
                                     \startTextSpanOne
                                     \<
                                     r2
                                     \pp
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                    >8
-                                    ^ \markup \center-align { \center-column { \line { \concat { +16 }  }\line { \concat { +30 }  } } }
+                                    <bqf,! c!>8
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     \stopTextSpanOne
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #15
+                                    - \tweak padding #13.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { {} \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup { \column { \line { "diagonal bow," } \line { "touching bridge" } \line { "for added air sound" } } }
                                     \startTextSpanOne
                                     r16
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                    >16
-                                    ^ \markup \center-align { \center-column { \line { \concat { +16 }  }\line { \concat { +30 }  } } }
+                                    <bqf,! c!>16
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     ]
                                     r4
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                    >16
-                                    ^ \markup \center-align { \center-column { \line { \concat { +16 }  }\line { \concat { +30 }  } } }
+                                    <bqf,! c!>16
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     [
-                                    - \tweak padding #10.75
+                                    - \tweak padding #18
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 83 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
@@ -1956,51 +2156,23 @@
                                     r4
                                     r8
                                     [
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                    >16
-                                    ^ \markup \center-align { \center-column { \line { \concat { +16 }  }\line { \concat { +30 }  } } }
+                                    <bqf,! c!>16
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     r16
                                     ]
                                     r8
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                    >4
-                                    ^ \markup \center-align { \center-column { \line { \concat { +16 }  }\line { \concat { +30 }  } } }
+                                    <bqf,! c!>4
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     \<
                                     ~
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c
-                                    >8
+                                    <bqf, c>8
                                     [
                                     r8
                                     \p
                                     ]
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \abjad-sharp  }
-                                        as,!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                    >4
+                                    <bqf,! c!>4
                                     \pp
-                                    ^ \markup \center-align { \center-column { \line { \concat { +16 }  }\line { \concat { +30 }  } } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     \stopTextSpanOne
                                     \override Dots.staff-position = #2
                                     \big-half-harmonic

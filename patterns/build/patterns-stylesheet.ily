@@ -260,6 +260,11 @@ afterGraceFraction = #(cons 15 16)
 
         \override TimeSignature.stencil = ##f
 
+        \override Tie.stencil = ##f
+
+        \override TupletBracket.stencil = ##f
+        \override TupletNumber.stencil = ##f
+
         \RemoveAllEmptyStaves
     }
 

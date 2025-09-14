@@ -78,7 +78,80 @@ _scale_degree_to_ratio = {
     11: "233/127",
 }
 
+_scale_degree_to_cents = {
+    0: "+0",
+    1: "+0",
+    2: "+16",
+    3: "-34",
+    4: "+37",
+    5: "-41",
+    6: "+32",
+    7: "+39",
+    8: "+8",
+    9: "+33",
+    10: "+8",
+    11: "-49",
+}
+
 # notation tools
+
+
+def bow_speed_glissandi(selection_groupings, length_fractions):
+    def make_glissandi(argument):
+        selections = abjad.select.logical_ties(argument)
+
+        for selection_grouping, length_fraction in zip(
+            selection_groupings, itertools.cycle(length_fractions)
+        ):
+            begin_group = selection_grouping[0]
+            end_group = selection_grouping[-1] + 1
+            relevant_group = selections[begin_group:end_group]
+            if len(relevant_group) > 1:
+                for leaf in abjad.select.exclude(
+                    abjad.select.leaves(relevant_group, pitched=True, grace=False),
+                    [-1],
+                ):
+                    abjad.attach(abjad.Tie(), leaf)
+
+            aftergrace_command = trinton.aftergrace_command(
+                selector=trinton.select_logical_ties_by_index(
+                    [-1], pitched=True, grace=False
+                ),
+                invisible=True,
+                fraction=length_fraction,
+            )
+
+            aftergrace_command(relevant_group)
+            with_grace = abjad.select.with_next_leaf(relevant_group)
+
+            glissando_command = trinton.continuous_glissando(zero_padding=True)
+            glissando_command(with_grace)
+
+    return make_glissandi
+
+
+def attach_gamelan_scale_cent_markups(scale_degrees, selector):
+    def attach_markups(argument):
+        selections = selector(argument)
+        tie_selector = trinton.logical_ties(first=True, pitched=True)
+        selections = tie_selector(selections)
+
+        for scale_degree, leaf in zip(itertools.cycle(scale_degrees), selections):
+            markup_string = r"\markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { "
+            if isinstance(scale_degree, list):
+                for degree in scale_degree:
+                    markup_string += rf"\line {{ {_scale_degree_to_cents[degree]} }}"
+                markup_string += r"} } }"
+            else:
+                markup_string += (
+                    rf"\line {{ {_scale_degree_to_cents[scale_degree]} }} }} }} }}"
+                )
+
+            markup = abjad.Markup(markup_string)
+
+            abjad.attach(markup, leaf, direction=abjad.UP)
+
+    return attach_markups
 
 
 def d_stage_3_noteheads(selector=abjad.select.chords):
@@ -278,3 +351,24 @@ def column_trill(pressures, selector, bound_details=None, direction=abjad.DOWN):
         abjad.attach(stop_trill, selections[-1], direction=direction)
 
     return make_column_trill
+
+
+# selectors
+
+
+def bow_speed_selector(preselector=trinton.logical_ties(first=True, pitched=True)):
+    def selector(argument):
+        out = []
+        selections = preselector(argument)
+
+        for selection in selections:
+            if abjad.get.has_indicator(selection, abjad.Glissando):
+                out.append(selection)
+            if isinstance(
+                abjad.get.parentage(selection).parent, abjad.AfterGraceContainer
+            ):
+                out.append(selection)
+
+        return out
+
+    return selector

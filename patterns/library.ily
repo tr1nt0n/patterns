@@ -104,7 +104,8 @@ bow-clef = \markup {
     \override #'(font-name . "ekmelos")
     \override #'(whiteout-style . "outline")
     \override #'(whiteout . 1)
-    \raise #-7.75
+    \raise #8.75
+    \scale #'(1 . -1)
     {
         \char ##xe7de
     }
