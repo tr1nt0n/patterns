@@ -315,6 +315,7 @@ def column_trill(pressures, selector, bound_details=None, direction=abjad.DOWN):
             "half": "##xe0e3",
             "full": "##xe0a4",
             "unstick": "##xe0be",
+            "cross": "##xe0a9",
         }
 
         markup_string = r"""\markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { """

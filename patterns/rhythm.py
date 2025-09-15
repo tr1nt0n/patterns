@@ -20,7 +20,7 @@ def rhythm_a(stage, extra_count=0):
             if numerator == 1:
                 durations.append(time_signature)
 
-            if trinton.is_power_of(a=numerator, b=2) is True:
+            if trinton.is_power_of(a=numerator, b=2) is True and numerator != 1:
                 new_duration = abjad.Duration((numerator, denominator)) / 2
                 durations.append(new_duration)
                 durations.append(new_duration)
@@ -57,7 +57,12 @@ def rhythm_a(stage, extra_count=0):
                     else:
                         return True
 
-            if is_prime(numerator) is True and numerator != 3 and numerator != 9:
+            if (
+                is_prime(numerator) is True
+                and numerator != 3
+                and numerator != 9
+                and numerator != 1
+            ):
                 larger_numerator = numerator / 2
                 larger_numerator = round(larger_numerator)
                 larger_numerator = int(larger_numerator)
@@ -67,7 +72,12 @@ def rhythm_a(stage, extra_count=0):
                 durations.append(abjad.Duration((larger_numerator, denominator)))
 
             tuplet_ratio = []
-            range_end = numerator + extra_count
+            if numerator == 1:
+                range_end = 2
+                range_end = range_end + extra_count
+            else:
+                range_end = numerator + extra_count
+
             for _ in range(0, range_end):
                 tuplet_ratio.append(-1)
             tuplet_ratio = tuple(tuplet_ratio)
@@ -77,7 +87,8 @@ def rhythm_a(stage, extra_count=0):
 
         rhythm_selections = rmakers.tuplet(durations, tuplet_ratios)
         container.extend(rhythm_selections)
-        trinton.respell_tuplets(container, rewrite_brackets=False)
+        rmakers.rewrite_dots(abjad.select.tuplets(container))
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
 
         modulo = 0
         for i, tuplet in enumerate(abjad.select.tuplets(container)):
@@ -123,9 +134,9 @@ def rhythm_a(stage, extra_count=0):
                 abjad.attach(abjad.Tie(), abjad.select.leaf(tuplet, -1))
 
         trinton.fuse_tuplet_rests(abjad.select.tuplets(container))
-        trinton.respell_tuplets(container, rewrite_brackets=False)
         treat_tuplets = trinton.treat_tuplets()
         treat_tuplets(container)
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
         rhythm_selections = abjad.mutate.eject_contents(container)
         return rhythm_selections
 
@@ -523,6 +534,9 @@ def rhythm_d(instrument, stage=1, index=0):
         #     print(f"duration of components: {abjad.get.duration(components)}")
         #     print("")
         # breakpoint()
+
+        rmakers.rewrite_dots(abjad.select.tuplets(container))
+        trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
 
         if stage == 4:
             for component in container:
