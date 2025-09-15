@@ -56,6 +56,8 @@
             s1 * 3/2
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (10 15 15 27 28)))
             \time 2/2
             s1 * 1
               %! +SCORE
@@ -65,6 +67,8 @@
             s1 * 1
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (10 15 14 32 28)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 2/2
             s1 * 1
@@ -1501,21 +1505,147 @@
                                                 \once \override NoteHead.transparent = ##f
                                                 \tweak style #'cross
                                                 e''4
-                                                c'4
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                e'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 4))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    f'16
+                                                }
                                             }
                                             \times 4/5
                                             {
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                f'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 4))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    d'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                d'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 3 8))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    f'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                e'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 5 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    a'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                a'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 4))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    e'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                b'4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 2))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    a'16
+                                                }
                                             }
                                             \times 2/3
                                             {
-                                                c'2
-                                                c'2
-                                                c'2
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                a'2
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 3))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    e''16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                b'2
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 4))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    f''16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                a'2
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 4))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    d'''16
+                                                }
                                             }
                                             c'4
                                             c'4
@@ -1648,21 +1778,126 @@
                                             \times 2/3
                                             {
                                                 c'2
-                                                c'2
-                                                c'2
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                f'2
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 8))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    e'16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                \afterGrace
+                                                e'2
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                {
+                                                    #(define afterGraceFraction (cons 1 8))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    b'16
+                                                }
                                             }
                                             c'4
-                                            c'4
-                                            c'4
-                                            c'4
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            e''4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 5 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                b'16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            f''4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 1 2))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                a'16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            d'''4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            ~
                                             \times 4/6
                                             {
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                \afterGrace
+                                                d'''4
+                                                {
+                                                    #(define afterGraceFraction (cons 15 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    \revert Accidental.stencil
+                                                    \revert NoteColumn.glissando-skip
+                                                    \revert NoteHead.no-ledgers
+                                                    \undo \hide NoteHead
+                                                    a''16
+                                                }
+                                                \override Dots.staff-position = #2
+                                                a''4
+                                                - \abjad-zero-padding-glissando
+                                                \glissando
+                                                ~
+                                                \hide NoteHead
+                                                \override Accidental.stencil = ##f
+                                                \override NoteColumn.glissando-skip = ##t
+                                                \override NoteHead.no-ledgers = ##t
+                                                a''4
+                                                ~
+                                                a''4
+                                                ~
+                                                a''4
+                                                ~
+                                                \afterGrace
+                                                a''4
+                                                {
+                                                    #(define afterGraceFraction (cons 15 16))
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override Accidental.stencil = ##f
+                                                    \revert Dots.staff-position
+                                                    \once \override NoteHead.transparent = ##t
+                                                    \revert Accidental.stencil
+                                                    \revert NoteColumn.glissando-skip
+                                                    \revert NoteHead.no-ledgers
+                                                    \undo \hide NoteHead
+                                                    c'''16
+                                                }
                                             }
                                         }
                                     >>
@@ -1871,14 +2106,18 @@
                                             ^ \staccato
                                             ^ \tenuto
                                             g'4
+                                            (
                                             \times 4/6
                                             {
                                                 ef'4
+                                                )
                                                 a'4
+                                                (
                                                 b'4
                                                 a4
                                                 a'4
                                                 a'4
+                                                )
                                             }
                                         }
                                     >>
@@ -2228,126 +2467,110 @@
                                     <<
                                         \context Voice = "viola 2 voice temp"
                                         {
-                                            \times 2/3
+                                            \voiceOne
+                                            b'4
+                                            _ \ppp
+                                            _ \staccato
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #12
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -5
+                                            \startTextSpanOne
+                                            af'4
+                                            _ \staccato
+                                            a'4
+                                            _ \staccato
+                                            a'4
+                                            _ \staccato
+                                            \times 4/5
                                             {
-                                                \voiceOne
-                                                \tweak style #'cross
-                                                b2
+                                                df''4
+                                                - \staccato
+                                                e'4
                                                 _ \staccato
-                                                - \tweak font-name "Bodoni72 Book" 
-                                                - \tweak font-size 1
-                                                - \tweak padding #12
-                                                - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \upright { "Drumstick on Bowhair" } \hspace #0.5 }
-                                                - \tweak bound-details.right.padding -14
-                                                \startTextSpanOne
-                                                \tweak style #'cross
-                                                af'2
+                                                g'4
                                                 _ \staccato
-                                                \tweak style #'cross
-                                                a2
+                                                g4
                                                 _ \staccato
+                                                ef'4
+                                                _ \staccato
+                                            }
+                                            \times 4/5
+                                            {
+                                                ef''4
+                                                - \staccato
+                                                ef''4
+                                                - \staccato
+                                                g''4
+                                                - \staccato
+                                                ef''4
+                                                - \staccato
+                                                a''4
+                                                - \staccato
                                             }
                                             \times 4/6
                                             {
-                                                \tweak style #'cross
-                                                a'4
+                                                fs''4
+                                                - \staccato
+                                                g''4
                                                 _ \staccato
-                                                \tweak style #'cross
-                                                cs4
+                                                af''4
                                                 _ \staccato
-                                                \tweak style #'cross
-                                                e'4
+                                                c''4
                                                 _ \staccato
-                                                \tweak style #'cross
-                                                g4
+                                                bf''4
                                                 _ \staccato
-                                                \tweak style #'cross
-                                                g'4
-                                                _ \staccato
-                                                \tweak style #'cross
-                                                ef4
-                                                _ \staccato
-                                            }
-                                            \tweak style #'cross
-                                            ef'4
-                                            _ \staccato
-                                            \tweak style #'cross
-                                            ef4
-                                            _ \staccato
-                                            \tweak style #'cross
-                                            g'4
-                                            _ \staccato
-                                            \tweak style #'cross
-                                            ef4
-                                            _ \staccato
-                                            \times 2/3
-                                            {
-                                                \tweak style #'cross
-                                                a'2
-                                                _ \staccato
-                                                \tweak style #'cross
-                                                fs2
-                                                _ \staccato
-                                                \tweak style #'cross
-                                                g'2
+                                                af''4
                                                 _ \staccato
                                                 \stopTextSpanOne
                                             }
                                         }
                                         \context Voice = "viola polyrhythm voice"
                                         {
-                                            \times 4/6
-                                            {
-                                                \voiceTwo
-                                                r4
-                                                \pp
-                                                \tweak style #'cross
-                                                af4
-                                                ^ \staccato
-                                                r4
-                                                \tweak style #'cross
-                                                a4
-                                                ^ \staccato
-                                                \once \override Rest.staff-position = #-10
-                                                r4
-                                                \tweak style #'cross
-                                                e4
-                                                ^ \staccato
-                                            }
-                                            r4
-                                            \tweak style #'cross
-                                            g4
-                                            ^ \staccato
-                                            \once \override Rest.staff-position = #-10
-                                            r4
-                                            \tweak style #'cross
-                                            ef4
-                                            ^ \staccato
                                             \times 2/3
                                             {
-                                                r2
-                                                \tweak style #'cross
-                                                g2
+                                                \voiceTwo
+                                                b2
                                                 ^ \staccato
-                                                \tweak style #'cross
-                                                ef'2
+                                                a'2
                                                 ^ \staccato
+                                                c'2
+                                                ^ \staccato
+                                            }
+                                            bf'4
+                                            - \staccato
+                                            c'4
+                                            ^ \staccato
+                                            fs'4
+                                            ^ \staccato
+                                            fs4
+                                            ^ \staccato
+                                            \times 4/5
+                                            {
+                                                b'4
+                                                - \staccato
+                                                af'4
+                                                - \staccato
+                                                a'4
+                                                - \staccato
+                                                a'4
+                                                - \staccato
+                                                cs''4
+                                                - \staccato
                                             }
                                             \times 4/5
                                             {
-                                                r4
-                                                \tweak style #'cross
-                                                fs'4
+                                                e''4
+                                                - \staccato
+                                                g'4
                                                 ^ \staccato
-                                                \tweak style #'cross
-                                                g4
+                                                g''4
                                                 ^ \staccato
-                                                \tweak style #'cross
-                                                af'4
+                                                ef''4
                                                 ^ \staccato
-                                                \tweak style #'cross
-                                                c4
+                                                ef''4
                                                 ^ \staccato
                                             }
                                         }
@@ -2533,436 +2756,152 @@
                                     \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     \stopTextSpanOne
-                                    \override Dots.staff-position = #2
                                     \big-half-harmonic
-                                    \fancy-gliss
-                                       #'(
-                                          (0 0 0.5 1 1 0)
-                                          (1 0 1.5 -1 2 0)
-                                          (2 0 2.5 2 3 0)
-                                          (3 0 3.5 -2 4 0)
-                                          (4 0 4.5 1 5 0)
-                                          (5 0 5.5 -1 6 0)
-                                     )
-                                     #0.5
                                     aqs,16
                                     - \tweak padding #1
                                     ^ \punta-to-talon
                                     \stopTextSpanThree
                                     [
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
                                     ~
                                     \times 4/5
                                     {
+                                        \big-half-harmonic
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
-                                          %! abjad.glissando(1)
-                                        \hide NoteHead
-                                          %! abjad.glissando(1)
-                                        \override Accidental.stencil = ##f
-                                          %! abjad.glissando(1)
-                                        \override NoteColumn.glissando-skip = ##t
-                                          %! abjad.glissando(1)
-                                        \override NoteHead.no-ledgers = ##t
                                         aqs,16
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 1 3 0)
-                                              (3 0 3.5 -1 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                              (6 0 6.5 2 7 0)
-                                              (7 0 7.5 -2 8 0)
-                                              (8 0 8.5 1 9 0)
-                                              (9 0 9.5 -1 10 0)
-                                         )
-                                         #0.5
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
                                         aqs,8.
                                         - \tweak padding #1
                                         ^ \talon-to-punta
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 2 3 0)
-                                              (3 0 3.5 -2 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                         )
-                                         #0.5
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         aqs,16
                                         - \tweak padding #1
                                         ^ \punta-to-talon
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
                                         ~
                                     }
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
+                                    \big-half-harmonic
                                     aqs,8.
                                     ]
                                     ~
+                                    \big-half-harmonic
                                     aqs,16
                                     [
                                     ~
                                     \times 4/5
                                     {
+                                        \big-half-harmonic
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 3
                                         aqs,32
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 1 3 0)
-                                              (3 0 3.5 -1 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                              (6 0 6.5 2 7 0)
-                                              (7 0 7.5 -2 8 0)
-                                              (8 0 8.5 1 9 0)
-                                              (9 0 9.5 -1 10 0)
-                                         )
-                                         #0.5
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        gs,16.
+                                        <gs,! aqs,!>16.
                                         - \tweak padding #1
                                         ^ \talon-to-punta
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
+                                        \arpeggio
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 2 3 0)
-                                              (3 0 3.5 -2 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                         )
-                                         #0.5
                                         \set stemLeftBeamCount = 3
                                         \set stemRightBeamCount = 1
                                         aqs,32
                                         - \tweak padding #1
                                         ^ \punta-to-talon
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
                                         ~
                                     }
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
+                                    \big-half-harmonic
                                     aqs,16
                                     ~
+                                    \big-half-harmonic
                                     aqs,8
                                     ~
                                     \times 2/3
                                     {
+                                        \big-half-harmonic
                                         aqs,16
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 1 3 0)
-                                              (3 0 3.5 -1 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                              (6 0 6.5 2 7 0)
-                                              (7 0 7.5 -2 8 0)
-                                              (8 0 8.5 1 9 0)
-                                              (9 0 9.5 -1 10 0)
-                                         )
-                                         #0.5
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        gs,8
+                                        <gs,! aqs,!>8
                                         - \tweak padding #1
                                         ^ \talon-to-punta
+                                        \arpeggio
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
                                         ~
                                     }
                                     \times 2/3
                                     {
-                                          %! abjad.glissando(1)
-                                        \hide NoteHead
-                                          %! abjad.glissando(1)
-                                        \override Accidental.stencil = ##f
-                                          %! abjad.glissando(1)
-                                        \override NoteColumn.glissando-skip = ##t
-                                          %! abjad.glissando(1)
-                                        \override NoteHead.no-ledgers = ##t
-                                        gs,8
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 2 3 0)
-                                              (3 0 3.5 -2 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                         )
-                                         #0.5
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        gs,4
+                                        <gs, aqs,>8
+                                        \big-half-harmonic
+                                        <gs,! aqs,!>4
                                         - \tweak padding #1
                                         ^ \punta-to-talon
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        \arpeggio
                                         - \tweak font-name "Bodoni72 Book" 
                                         - \tweak font-size 2
                                         - \tweak padding #12
                                         - \abjad-solid-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { "(Ord.)" \hspace #0.5 }
                                         - \tweak bound-details.right.text MSP
+                                        - \tweak bound-details.right.padding -2
                                         \startTextSpanOne
                                         ~
                                     }
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    gs,4
+                                    \big-half-harmonic
+                                    <gs, aqs,>4
                                     ~
-                                    gs,4
+                                    \big-half-harmonic
+                                    <gs, aqs,>4
                                     ~
                                     \times 4/5
                                     {
-                                        gs,32
+                                        \big-half-harmonic
+                                        <gs, aqs,>32
                                         [
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 1 3 0)
-                                              (3 0 3.5 -1 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                              (6 0 6.5 2 7 0)
-                                              (7 0 7.5 -2 8 0)
-                                              (8 0 8.5 1 9 0)
-                                              (9 0 9.5 -1 10 0)
-                                         )
-                                         #0.5
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
                                         aqs,16.
                                         - \tweak padding #1
                                         ^ \talon-to-punta
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 2 3 0)
-                                              (3 0 3.5 -2 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                         )
-                                         #0.5
                                         aqs,32
                                         - \tweak padding #1
                                         ^ \punta-to-talon
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
                                         ~
                                     }
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
+                                    \big-half-harmonic
                                     aqs,8
                                     ]
                                     ~
+                                    \big-half-harmonic
                                     aqs,4
                                     ~
                                     \times 4/5
                                     {
+                                        \big-half-harmonic
                                         aqs,32
                                         [
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 1 3 0)
-                                              (3 0 3.5 -1 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                              (6 0 6.5 2 7 0)
-                                              (7 0 7.5 -2 8 0)
-                                              (8 0 8.5 1 9 0)
-                                              (9 0 9.5 -1 10 0)
-                                         )
-                                         #0.5
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        gs,16.
+                                        <gs,! aqs,!>16.
                                         - \tweak padding #1
                                         ^ \talon-to-punta
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
+                                        \arpeggio
                                         \big-half-harmonic
-                                        \fancy-gliss
-                                           #'(
-                                              (0 0 0.5 1 1 0)
-                                              (1 0 1.5 -1 2 0)
-                                              (2 0 2.5 2 3 0)
-                                              (3 0 3.5 -2 4 0)
-                                              (4 0 4.5 1 5 0)
-                                              (5 0 5.5 -1 6 0)
-                                         )
-                                         #0.5
                                         aqs,32
                                         - \tweak padding #1
                                         ^ \punta-to-talon
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        \stopTextSpanOne
                                         ~
                                     }
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    \afterGrace
+                                    \big-half-harmonic
                                     aqs,8
                                     ]
-                                    {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \revert Dots.staff-position
-                                        \once \override NoteHead.transparent = ##t
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
-                                        c'16
-                                        \stopTextSpanOne
-                                    }
                                     <<
                                         \context Voice = "cello 2 voice temp"
                                         {
-                                            \override Dots.staff-position = #2
                                             \big-half-harmonic
-                                            \fancy-gliss
-                                               #'(
-                                                  (0 0 0.5 1 1 0)
-                                                  (1 0 1.5 -1 2 0)
-                                                  (2 0 2.5 2 3 0)
-                                                  (3 0 3.5 -2 4 0)
-                                                  (4 0 4.5 1 5 0)
-                                                  (5 0 5.5 -1 6 0)
-                                             )
-                                             #0.5
                                             \voiceOne
                                             aqs,16
                                             - \tweak padding #1
                                             ^ \talon-to-punta
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
                                             - \tweak padding #12
@@ -2972,766 +2911,253 @@
                                             ~
                                             \times 4/5
                                             {
+                                                \big-half-harmonic
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 2
-                                                  %! abjad.glissando(1)
-                                                \hide NoteHead
-                                                  %! abjad.glissando(1)
-                                                \override Accidental.stencil = ##f
-                                                  %! abjad.glissando(1)
-                                                \override NoteColumn.glissando-skip = ##t
-                                                  %! abjad.glissando(1)
-                                                \override NoteHead.no-ledgers = ##t
                                                 aqs,16
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
-                                                gs,8.
+                                                <gs,! aqs,!>8.
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
+                                                \arpeggio
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 1
                                                 aqs,16
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
+                                            \big-half-harmonic
                                             aqs,8.
                                             ]
                                             ~
                                             \times 2/3
                                             {
+                                                \big-half-harmonic
                                                 aqs,16
                                                 [
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 aqs,8
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
+                                            \big-half-harmonic
                                             aqs,8
                                             ~
+                                            \big-half-harmonic
                                             aqs,8
                                             ~
                                             \times 4/5
                                             {
+                                                \big-half-harmonic
                                                 aqs,32
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 aqs,16.
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
                                                 aqs,32
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
                                                 ]
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
                                             \times 4/5
                                             {
-                                                  %! abjad.glissando(1)
-                                                \hide NoteHead
-                                                  %! abjad.glissando(1)
-                                                \override Accidental.stencil = ##f
-                                                  %! abjad.glissando(1)
-                                                \override NoteColumn.glissando-skip = ##t
-                                                  %! abjad.glissando(1)
-                                                \override NoteHead.no-ledgers = ##t
+                                                \big-half-harmonic
                                                 aqs,16
                                                 [
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 aqs,8.
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
-                                                gs,16
+                                                <gs,! aqs,!>16
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
+                                                \arpeggio
                                                 ]
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
-                                            gs,8.
+                                            \big-half-harmonic
+                                            <gs, aqs,>8.
                                             ~
                                             \times 2/3
                                             {
-                                                gs,16
+                                                \big-half-harmonic
+                                                <gs, aqs,>16
                                                 [
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 aqs,8
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
                                                 ]
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
+                                            \big-half-harmonic
                                             aqs,8.
                                             ~
+                                            \big-half-harmonic
                                             aqs,16
                                             [
                                             ~
                                             \times 4/5
                                             {
+                                                \big-half-harmonic
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 3
                                                 aqs,32
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
-                                                gs,16.
+                                                <gs,! aqs,!>16.
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
+                                                \arpeggio
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
                                                 \set stemLeftBeamCount = 3
                                                 \set stemRightBeamCount = 1
-                                                gs,32
+                                                <gs,! aqs,!>32
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
+                                                \arpeggio
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
-                                            gs,16
+                                            \big-half-harmonic
+                                            <gs, aqs,>16
                                             ]
                                             \big-half-harmonic
-                                            \fancy-gliss
-                                               #'(
-                                                  (0 0 0.5 1 1 0)
-                                                  (1 0 1.5 -1 2 0)
-                                                  (2 0 2.5 1 3 0)
-                                                  (3 0 3.5 -1 4 0)
-                                                  (4 0 4.5 1 5 0)
-                                                  (5 0 5.5 -1 6 0)
-                                                  (6 0 6.5 2 7 0)
-                                                  (7 0 7.5 -2 8 0)
-                                                  (8 0 8.5 1 9 0)
-                                                  (9 0 9.5 -1 10 0)
-                                             )
-                                             #0.5
-                                              %! abjad.glissando(6)
-                                            \revert Accidental.stencil
-                                              %! abjad.glissando(6)
-                                            \revert NoteColumn.glissando-skip
-                                              %! abjad.glissando(6)
-                                            \revert NoteHead.no-ledgers
-                                              %! abjad.glissando(6)
-                                            \undo \hide NoteHead
                                             aqs,16
                                             - \tweak padding #1
                                             ^ \punta-to-talon
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
                                             ~
                                             \times 4/5
                                             {
+                                                \big-half-harmonic
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 2
-                                                  %! abjad.glissando(1)
-                                                \hide NoteHead
-                                                  %! abjad.glissando(1)
-                                                \override Accidental.stencil = ##f
-                                                  %! abjad.glissando(1)
-                                                \override NoteColumn.glissando-skip = ##t
-                                                  %! abjad.glissando(1)
-                                                \override NoteHead.no-ledgers = ##t
                                                 aqs,16
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 aqs,8.
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 1
-                                                gs,16
+                                                <gs,! aqs,!>16
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
+                                                \arpeggio
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
-                                            gs,8.
+                                            \big-half-harmonic
+                                            <gs, aqs,>8.
                                             ]
                                             ~
-                                            gs,16
+                                            \big-half-harmonic
+                                            <gs, aqs,>16
                                             [
                                             ~
                                             \times 4/5
                                             {
+                                                \big-half-harmonic
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 3
-                                                gs,32
+                                                <gs, aqs,>32
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 aqs,16.
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
                                                 \set stemLeftBeamCount = 3
                                                 \set stemRightBeamCount = 1
                                                 aqs,32
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
+                                            \big-half-harmonic
                                             aqs,16
                                             ~
+                                            \big-half-harmonic
                                             aqs,8
                                             ~
                                             \times 2/3
                                             {
+                                                \big-half-harmonic
                                                 aqs,16
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
-                                                gs,8
+                                                <gs,! aqs,!>8
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
+                                                \arpeggio
                                                 ]
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
                                             \times 2/3
                                             {
-                                                  %! abjad.glissando(1)
-                                                \hide NoteHead
-                                                  %! abjad.glissando(1)
-                                                \override Accidental.stencil = ##f
-                                                  %! abjad.glissando(1)
-                                                \override NoteColumn.glissando-skip = ##t
-                                                  %! abjad.glissando(1)
-                                                \override NoteHead.no-ledgers = ##t
-                                                gs,8
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
+                                                <gs, aqs,>8
+                                                \big-half-harmonic
                                                 aqs,4
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
+                                            \big-half-harmonic
                                             aqs,4
                                             ~
                                             \times 4/5
                                             {
+                                                \big-half-harmonic
                                                 aqs,32
                                                 [
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 aqs,16.
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
                                                 aqs,32
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
+                                            \big-half-harmonic
                                             aqs,8
                                             ~
+                                            \big-half-harmonic
                                             aqs,16
                                             ~
                                             \times 4/5
                                             {
+                                                \big-half-harmonic
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 3
                                                 aqs,32
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 2 3 0)
-                                                      (3 0 3.5 -2 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                 )
-                                                 #0.5
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 aqs,16.
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
                                                 \big-half-harmonic
-                                                \fancy-gliss
-                                                   #'(
-                                                      (0 0 0.5 1 1 0)
-                                                      (1 0 1.5 -1 2 0)
-                                                      (2 0 2.5 1 3 0)
-                                                      (3 0 3.5 -1 4 0)
-                                                      (4 0 4.5 1 5 0)
-                                                      (5 0 5.5 -1 6 0)
-                                                      (6 0 6.5 2 7 0)
-                                                      (7 0 7.5 -2 8 0)
-                                                      (8 0 8.5 1 9 0)
-                                                      (9 0 9.5 -1 10 0)
-                                                 )
-                                                 #0.5
                                                 \set stemLeftBeamCount = 3
                                                 \set stemRightBeamCount = 1
-                                                gs,32
+                                                <gs,! aqs,!>32
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                  %! abjad.glissando(7)
-                                                - \abjad-zero-padding-glissando
-                                                  %! abjad.glissando(7)
-                                                \glissando
+                                                \arpeggio
                                                 ~
                                             }
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
+                                            \big-half-harmonic
                                             \afterGrace
-                                            gs,16
+                                            <gs, aqs,>16
                                             ]
                                             {
                                                 \once \override Stem.stencil = ##f
                                                 \once \override Flag.stencil = ##f
                                                 \once \override NoteHead.no-ledgers = ##t
                                                 \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
                                                 \once \override NoteHead.transparent = ##t
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
                                                 c'16
                                                 \stopTextSpan
                                             }
