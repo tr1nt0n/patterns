@@ -677,6 +677,24 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
     ),
+    trinton.hooked_spanner_command(
+        string=r"""\markup { \hspace #-8 "IV" }""",
+        selector=trinton.select_leaves_by_index(
+            [0, -1],
+        ),
+        padding=9.1,
+        direction=None,
+        right_padding=2,
+        full_string=True,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 2""",
+        ],
+    ),
     voice=score["violin 1 bow voice"],
 )
 
@@ -711,7 +729,7 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
     trinton.hooked_spanner_command(
-        string="""Bowing IV (tasto) + Waist""",
+        string="""Bowing IV (molto tasto) + Waist""",
         selector=trinton.select_logical_ties_by_index(
             [0, -1], first=True, pitched=True
         ),
@@ -731,6 +749,215 @@ trinton.make_music(
 )
 
 # second violin music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 12)),
+    evans.RhythmHandler(rhythm.rhythm_e(index=2)),
+    trinton.treat_tuplets(),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.IntermittentVoiceHandler(
+        evans.RhythmHandler(rhythm.rhythm_e(index=2, lower_voice=True)),
+        direction=abjad.DOWN,
+        voice_name="violin 2 voice 2",
+        preprocessor=trinton.fuse_quarters_preprocessor((4, 6, 4, 4, 4, 4)),
+    ),
+    voice=score["violin 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 12)),
+    library.bow_speed_glissandi(
+        selection_groupings=[
+            (3, 3),
+            (4, 4),
+            (5, 5),
+            (6, 6),
+            (7, 7),
+            (8, 8),
+        ],
+        length_fractions=[
+            (3, 16),
+            (4, 16),
+            (5, 16),
+            (4, 16),
+            (3, 16),
+            (1, 16),
+        ],
+    ),
+    trinton.pitch_with_selector_command(
+        pitch_list=[
+            "c'",
+            "e'",
+            "e'",
+            "a",
+            "a",
+            "g'",
+            "g'",
+            "b",
+            "b",
+            "e'",
+            "e'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+            "c'",
+        ],
+        selector=library.bow_speed_selector(),
+    ),
+    trinton.pitch_with_selector_command(
+        pitch_list=[
+            "a''",
+            "g''",
+            "b",
+            "a'",
+            "f'",
+            "d'",
+            "a",
+            "b",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [0, 1, 2, 9, 10, 11, 12, 13], grace=False
+        ),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override NoteHead.transparent = ##f", site="before"
+            ),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [0, 1, 2, 9, 10, 11, 12, 13], grace=False
+        ),
+    ),
+    trinton.change_notehead_command(
+        notehead="cross",
+        selector=trinton.select_leaves_by_index(
+            [0, 1, 2, 9, 10, 11, 12, 13], grace=False
+        ),
+    ),
+    voice=score["violin 2 voice 2"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 12)),
+    # library.bow_speed_glissandi(
+    #     selection_groupings=[
+    #         (0, 1),
+    #         (3, 3),
+    #         (4, 4),
+    #         (5, 5),
+    #         (6, 6),
+    #         (7, 7),
+    #         (8, 8),
+    #         (10, 10),
+    #         (11, 11),
+    #         (13, 13),
+    #         (14, 14),
+    #     ],
+    #     length_fractions=[
+    #         (15, 16),
+    #         (5, 16),
+    #         (3, 4),
+    #         (1, 4),
+    #         (1, 2),
+    #         (1, 2),
+    #         (1, 2),
+    #         (1, 16),
+    #         (5, 16),
+    #         (1, 2),
+    #         (1, 4),
+    #     ],
+    # ),
+    # trinton.pitch_with_selector_command(
+    #     pitch_list=[
+    #         "c'''",
+    #         "a",
+    #         "c'''",
+    #         "c'",
+    #         "g''",
+    #         "d'",
+    #         "d'",
+    #         "g''",
+    #         "f'",
+    #         "g''",
+    #         "f'",
+    #         "g''",
+    #         "g'",
+    #         "e''",
+    #         "d''",
+    #         "b'",
+    #         "a'",
+    #         "g''",
+    #         "f'",
+    #         "d''",
+    #         "c''",
+    #         "a'",
+    #     ],
+    #     selector=library.bow_speed_selector(),
+    # ),
+    trinton.pitch_with_selector_command(
+        pitch_list=[
+            "e''",
+            "c''",
+            "d'",
+            "b'",
+            "c''",
+            "d''",
+            "e''",
+        ],
+        selector=trinton.select_leaves_by_index([1, 2, 3, 8, 9, 10, 11], grace=False),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override NoteHead.transparent = ##f", site="before"
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([1, 2, 3, 8, 9, 10, 11], grace=False),
+    ),
+    trinton.change_notehead_command(
+        notehead="cross",
+        selector=trinton.select_leaves_by_index([1, 2, 3, 8, 9, 10, 11], grace=False),
+    ),
+    voice=score["violin 3 voice temp"],
+)
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (5, 12)),
@@ -1812,20 +2039,20 @@ trinton.make_music(
     voice=score["Global Context"],
 )
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (7,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral(
-#                 r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (-7 30 30 30)))",
-#                 site="absolute_before",
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#         tag=abjad.Tag("+SCORE"),
-#     ),
-#     voice=score["Global Context"],
-# )
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (6 23.5 22.5 25.5 30.5)))",
+                site="absolute_before",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    voice=score["Global Context"],
+)
 
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (2, 3)),
@@ -1855,33 +2082,7 @@ library.write_short_instrument_names(score=score)
 # beautification
 
 trinton.remove_redundant_time_signatures(score=score)
-
-# for measure in [1, 3]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[
-#                 abjad.LilyPondLiteral(
-#                     r"\once \override BarNumber.Y-offset = #-12", site="before"
-#                 )
-#             ],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
-
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (11,)),
-#     trinton.attachment_command(
-#         attachments=[
-#             abjad.LilyPondLiteral(
-#                 r"\once \override BarNumber.Y-offset = #5", site="before"
-#             )
-#         ],
-#         selector=trinton.select_leaves_by_index([0]),
-#     ),
-#     voice=score["Global Context"],
-# )
+library.whiteout_empty_staves(score=score)
 
 # extract parts
 

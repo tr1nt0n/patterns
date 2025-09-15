@@ -232,10 +232,11 @@ afterGraceFraction = #(cons 15 16)
     \context{
         \Staff
         \name bowContactStaff
+        \alias Staff
 
         \override Accidental.stencil = ##f
 
-        \override BarLine.stencil = ##f
+        \override BarLine.transparent = ##t
         \override BarLine.bar-extent = #'(-4.5 . 4.5)
 
         \override Beam.stencil = ##f
@@ -250,6 +251,9 @@ afterGraceFraction = #(cons 15 16)
         \override Glissando.bound-details.left.padding = #0.5
         \override Glissando.bound-details.right.padding = #0.5
 
+        \override MultiMeasureRest.transparent = ##t
+
+        \override NoteHead.duration-log = 2
         \override NoteHead.no-ledgers = ##t
         \override NoteHead.transparent = ##t
         \override NoteHead.X-extent = #'(0 . 0)
@@ -257,6 +261,8 @@ afterGraceFraction = #(cons 15 16)
         \override StaffSymbol.line-count = #3
         \override StaffSymbol.line-positions = #'(9 0 -9)
         \override Stem.stencil = ##f
+
+        \override Rest.transparent = ##t
 
         \override TimeSignature.stencil = ##f
 

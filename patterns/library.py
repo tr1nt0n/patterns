@@ -373,3 +373,43 @@ def bow_speed_selector(preselector=trinton.logical_ties(first=True, pitched=True
         return out
 
     return selector
+
+
+# beautification
+
+
+def whiteout_empty_staves(score, voice_names=["violin 1 voice", "violin 3 voice"]):
+    voices = [score[_] for _ in voice_names]
+
+    reset = abjad.LilyPondLiteral(
+        [
+            r"\stopStaff",
+            r"\once \revert Staff.StaffSymbol.line-positions",
+            r"\once \override Staff.StaffSymbol.line-count = #0",
+            r"\once \override Staff.BarLine.transparent = ##f",
+        ],
+        site="before",
+    )
+
+    reset_2 = abjad.LilyPondLiteral(
+        [
+            r"\once \override Staff.BarLine.transparent = ##f",
+            r"\startStaff",
+        ],
+        site="absolute_after",
+    )
+
+    for voice in voices:
+        shards = abjad.select.group_by_measure(voice)
+        relevant_shards = []
+        for shard in shards:
+            if (
+                all(isinstance(leaf, abjad.Rest) for leaf in shard)
+                or all(isinstance(leaf, abjad.MultimeasureRest) for leaf in shard)
+                or all(isinstance(leaf, abjad.Skip) for leaf in shard)
+            ):
+                relevant_shards.append(shard)
+
+        for shard in relevant_shards:
+            abjad.attach(reset, shard[0])
+            abjad.attach(reset_2, shard[0])

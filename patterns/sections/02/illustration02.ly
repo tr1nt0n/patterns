@@ -46,6 +46,8 @@
             s1 * 1/4
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (6 23.5 22.5 25.5 30.5)))
             \time 2/2
             s1 * 1
               %! +SCORE
@@ -499,18 +501,72 @@
                                         }
                                     >>
                                     \oneVoice
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    r4.
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    r4
                                     r4.
                                     r4
-                                    r4.
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r4
-                                    r4
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r1
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r1.
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r1
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r1
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r1
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r1
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r4
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
                                 }
                             }
                         }
@@ -841,6 +897,13 @@
                                             - \markup \fontsize #2 { \hspace #-4.5 \raise #2 { "Bow:" } }
                                             - \tweak Beam.positions #'(8 . 7)
                                             [
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #9.1
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { { \hspace #-8 "IV" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -2
+                                            \startTextSpanOne
                                             - \tweak padding #10
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 83 )" } } } \hspace #0.5 }
@@ -1261,6 +1324,7 @@
                                             _ \staccato
                                             \once \override Rest.staff-position = #7
                                             r8
+                                            \stopTextSpanOne
                                             ]
                                         }
                                     >>
@@ -1281,7 +1345,7 @@
                                     - \tweak font-size 1
                                     - \tweak padding #7
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "Bowing IV (tasto) + Waist" } \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Bowing IV (molto tasto) + Waist" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -4
                                     \startTextSpanOne
                                     r4
@@ -1353,29 +1417,263 @@
                                     \set GrandStaff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin 2 }
                                       %! +SCORE
                                     \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V2 }
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r1
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    r4.
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    r4
                                     r4.
                                     r4
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    r1
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    r4.
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    r4
+                                    r4
+                                    r4
+                                    r4
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    r4.
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    r4
                                     r4.
                                     r4
-                                    r1
-                                    r4.
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r4
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
+                                    <<
+                                        \context Voice = "violin 3 voice temp"
+                                        {
+                                            \voiceOne
+                                            c'4
+                                            \once \override NoteHead.transparent = ##f
+                                            \tweak style #'cross
+                                            e''4
+                                            \once \override NoteHead.transparent = ##f
+                                            \tweak style #'cross
+                                            c''4
+                                            \once \override NoteHead.transparent = ##f
+                                            \tweak style #'cross
+                                            d'4
+                                            c'2
+                                            c'2
+                                            c'2
+                                            \times 4/6
+                                            {
+                                                c'4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                b'4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                c''4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                d''4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                e''4
+                                                c'4
+                                            }
+                                            \times 4/5
+                                            {
+                                                c'4
+                                                c'4
+                                                c'4
+                                                c'4
+                                                c'4
+                                            }
+                                            \times 2/3
+                                            {
+                                                c'2
+                                                c'2
+                                                c'2
+                                            }
+                                            c'4
+                                            c'4
+                                            c'4
+                                            c'4
+                                        }
+                                        \context Voice = "violin 2 voice 2"
+                                        {
+                                            \times 2/3
+                                            {
+                                                \once \override NoteHead.transparent = ##f
+                                                \voiceTwo
+                                                \tweak style #'cross
+                                                a''2
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                g''2
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                b2
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            c'4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 3 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                e'16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            e'4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 4 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                a16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            a4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 5 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                g'16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            g'4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 4 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                b16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            b4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 3 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                e'16
+                                            }
+                                            \override Dots.staff-position = #2
+                                            \afterGrace
+                                            e'4
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            {
+                                                #(define afterGraceFraction (cons 1 16))
+                                                \once \override Stem.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override Accidental.stencil = ##f
+                                                \revert Dots.staff-position
+                                                \once \override NoteHead.transparent = ##t
+                                                c'16
+                                            }
+                                            \times 4/5
+                                            {
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                a'4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                f'4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                d'4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                a4
+                                                \once \override NoteHead.transparent = ##f
+                                                \tweak style #'cross
+                                                b4
+                                            }
+                                            \times 2/3
+                                            {
+                                                c'2
+                                                c'2
+                                                c'2
+                                            }
+                                            c'4
+                                            c'4
+                                            c'4
+                                            c'4
+                                            \times 4/6
+                                            {
+                                                c'4
+                                                c'4
+                                                c'4
+                                                c'4
+                                                c'4
+                                                c'4
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
+                                    \stopStaff
+                                    \once \revert Staff.StaffSymbol.line-positions
+                                    \once \override Staff.StaffSymbol.line-count = #0
+                                    \once \override Staff.BarLine.transparent = ##f
                                     r4
-                                    r4
-                                    r4
-                                    r4.
-                                    r4
-                                    r4.
-                                    r4
-                                    r4
-                                    r1
-                                    r1.
-                                    r1
-                                    r1
-                                    r1
-                                    r1
-                                    r4
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
                                 }
                             }
                         }
