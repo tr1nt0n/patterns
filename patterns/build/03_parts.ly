@@ -48,6 +48,12 @@
                                     r2.
                                     r2
                                     r1.
+                                    \stopTextSpanThree
+                                    - \tweak padding #10
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
+                                    \startTextSpanThree
                                     r4.
                                     r4.
                                     r4.
@@ -61,691 +67,21 @@
                             {
                                 \context Voice = "violin 2 voice"
                                 {
-                                    <<
-                                        \context Voice = "violin 2 voice temp 1"
-                                        {
-                                            \override Dots.staff-position = #2
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \override Staff.Clef.stencil = #ly:text-interface::print
-                                            \override Staff.Clef.text = \string-clef
-                                            \staff-line-count 4
-                                            \override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)
-                                            \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
-                                            \override Rest.staff-position = #0
-                                            \override Staff.Accidental.stencil = ##f
-                                            \textSpannerDown
-                                            \voiceTwo
-                                            \tweak style #'harmonic
-                                            b'2..
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            - \tweak font-name "Bodoni72 Book" 
-                                            - \tweak font-size 2
-                                            - \tweak padding #6
-                                            - \abjad-dashed-line-with-up-hook
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "Slide" } \hspace #0.5 }
-                                            - \tweak bound-details.right.padding -2
-                                            \startTextSpanOne
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            b'8
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            d''8
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            a8
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            d''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            g'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            d''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            g'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            d''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            g'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            d''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            g'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            d''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            g'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            d''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            g'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            a16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            e'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            b16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            f'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            c'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            g'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            d'16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            a'4.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            d''4
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \revert Dots.staff-position
-                                            d''16
-                                            \stopTextSpanOne
-                                            \textSpannerUp
-                                        }
-                                        \context Voice = "violin 1 vibrator voice"
-                                        {
-                                            \override Dots.staff-position = #2
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \voiceOne
-                                            d''4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-                                            - \tweak font-name "Bodoni72 Book" 
-                                            - \tweak font-size 2
-                                            - \tweak padding #9
-                                            - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "Vib. on III + IV" } \hspace #0.5 }
-                                            \startTextSpanOne
-                                            ~
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
-                                            d''1
-                                            \override Dots.staff-position = #2
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \revert Dots.staff-position
-                                              %! abjad.glissando(6)
-                                            \revert Accidental.stencil
-                                              %! abjad.glissando(6)
-                                            \revert NoteColumn.glissando-skip
-                                              %! abjad.glissando(6)
-                                            \revert NoteHead.no-ledgers
-                                              %! abjad.glissando(6)
-                                            \undo \hide NoteHead
-                                            f''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            - \tweak padding #10
-                                            - \abjad-solid-line-with-arrow
-                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
-                                            - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
-                                            \startTextSpanThree
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            f''16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            f''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            g''16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            f''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            a''16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            g''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            a''16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            a''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            a''16
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            a''8.
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \override Dots.staff-position = #2
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \revert Dots.staff-position
-                                            \tweak style #'harmonic
-                                            a''16
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            g''2
-                                            \stopTextSpanThree
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \tweak style #'harmonic
-                                            d''2
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-                                            ~
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override RepeatTie.transparent = ##t
-                                            \once \override Beam.stencil = ##f
-                                            \once \override Flag.stencil = ##f
-                                            \once \override Dots.stencil = ##f
-                                            \once \override Tie.stencil = ##f
-                                            \once \override NoteHead.duration-log = 2
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override Stem.stencil = ##f
-                                            \once \override NoteHead.transparent = ##t
-                                              %! abjad.glissando(1)
-                                            \hide NoteHead
-                                              %! abjad.glissando(1)
-                                            \override Accidental.stencil = ##f
-                                              %! abjad.glissando(1)
-                                            \override NoteColumn.glissando-skip = ##t
-                                              %! abjad.glissando(1)
-                                            \override NoteHead.no-ledgers = ##t
-                                            \afterGrace
-                                            d''8
-                                            {
-                                                \once \override RepeatTie.transparent = ##t
-                                                \once \override Beam.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override Dots.stencil = ##f
-                                                \once \override Tie.stencil = ##f
-                                                \once \override NoteHead.duration-log = 2
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                  %! abjad.glissando(6)
-                                                \revert Accidental.stencil
-                                                  %! abjad.glissando(6)
-                                                \revert NoteColumn.glissando-skip
-                                                  %! abjad.glissando(6)
-                                                \revert NoteHead.no-ledgers
-                                                  %! abjad.glissando(6)
-                                                \undo \hide NoteHead
-                                                a''16
-                                                \stopTextSpanOne
-                                            }
-                                        }
-                                    >>
-                                    \oneVoice
+                                    r2.
+                                    r2
+                                    r1.
+                                    r4.
+                                    r4.
+                                    r4.
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
                                 %%% \once \override Rest.transparent = ##t
-                                    \staff-line-count 5
-                                    \revert Staff.StaffSymbol.line-positions
-                                    \revert Rest.staff-position
-                                    \revert Staff.Accidental.stencil
-                                    \revert Staff.Clef.stencil
                                       %! +SCORE
                                 %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     r4
                                       %! +SCORE
                                 %%% \stopStaff \startStaff
-                                    \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                 }
                             }
                         }
@@ -780,26 +116,148 @@
                             {
                                 \context Voice = "violin 4 voice"
                                 {
-                                    \staff-line-count 1
-                                    \clef "percussion"
-                                    c'2.
-                                    \ff
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #3
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "Vib. on Jawharp" } \hspace #0.5 }
-                                    \startTextSpanOne
-                                    - \tweak stencil #constante-hairpin
-                                    \<
-                                    ~
-                                    c'4
-                                    r4
-                                    \!
-                                    \stopTextSpanOne
+                                    <<
+                                        \context Voice = "violin 4 voice temp 1"
+                                        {
+                                            \times 4/5
+                                            {
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \string-clef
+                                                \staff-line-count 4
+                                                \override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)
+                                                \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
+                                                \override Staff.Accidental.stencil = ##f
+                                                \override Staff.NoteHead.no-ledgers = ##t
+                                                \voiceTwo
+                                                <
+                                                    \tweak style #'cross
+                                                    b'
+                                                    \tweak style #'harmonic
+                                                    d''
+                                                >8
+                                                - \accent
+                                                \mf
+                                                - \markup \fontsize #2 { \hspace #-8.5 { "F. Perc.:" } }
+                                                \once \override Rest.staff-position = #-7
+                                                r4.
+                                                <
+                                                    \tweak style #'cross
+                                                    c'
+                                                    \tweak style #'harmonic
+                                                    d'
+                                                >8
+                                                \>
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                                \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                                c'8
+                                                [
+                                                <
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'harmonic
+                                                    g'
+                                                >8
+                                                - \accent
+                                                \mp
+                                                ]
+                                                \once \override Rest.staff-position = #-7
+                                                r4
+                                                \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                                \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                                d'8
+                                            }
+                                        }
+                                        \context Voice = "violin 2 bow voice 1"
+                                        {
+                                            \once \override Rest.staff-position = #7
+                                            \voiceOne
+                                            r8
+                                            - \markup \fontsize #2 { \hspace #-4.5 \raise #2 { "Bow:" } }
+                                            [
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #10.5
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "III" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -6
+                                            \startTextSpanOne
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >16
+                                            - \accent
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #7
+                                            r16
+                                            ]
+                                            \once \override Rest.staff-position = #7
+                                            r16
+                                            [
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                g''
+                                            >16
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #7
+                                            r8
+                                            ]
+                                            \once \override Rest.staff-position = #7
+                                            r4
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                g''
+                                            >16
+                                            _ \staccato
+                                            [
+                                            \once \override Rest.staff-position = #7
+                                            r16
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >16
+                                            - \accent
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #7
+                                            r16
+                                            ]
+                                            \once \override Rest.staff-position = #7
+                                            r4
+                                            \stopTextSpanOne
+                                        }
+                                    >>
+                                    \oneVoice
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
+                                        \staff-line-count 5
+                                        \revert Staff.StaffSymbol.line-positions
+                                        \revert Staff.Accidental.stencil
+                                        \revert Staff.NoteHead.no-ledgers
+                                        \revert Staff.Clef.stencil
                                         r8
                                         [
                                         - \tweak padding #16.5
@@ -807,13 +265,13 @@
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
                                         \startTextSpanThree
+                                        \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                         r8
                                         r8
                                         \times 2/3
                                         {
                                             r16
                                             \override Dots.staff-position = #2
-                                            \staff-line-count 5
                                             \once \override DynamicLineSpanner.staff-padding = #5.5
                                             \clef "treble"
                                             cs'16
@@ -823,8 +281,8 @@
                                                     #:whiteout
                                                     #:line (
                                                         #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.4
-                                                        #:dynamic "f"
+                                                        #:hspace -0.1
+                                                        #:dynamic "mf"
                                                         #:hspace -0.2
                                                         #:general-align Y -2 #:normal-text #:larger "”"
                                                         )
@@ -874,7 +332,7 @@
                                                 #:line (
                                                     #:general-align Y -2 #:normal-text #:larger "“"
                                                     #:hspace -0.1
-                                                    #:dynamic "mp"
+                                                    #:dynamic "p"
                                                     #:hspace -0.25
                                                     #:general-align Y -2 #:normal-text #:larger "”"
                                                     )
@@ -918,7 +376,7 @@
                                             #:line (
                                                 #:general-align Y -2 #:normal-text #:larger "“"
                                                 #:hspace -0.1
-                                                #:dynamic "p"
+                                                #:dynamic "pp"
                                                 #:hspace -0.25
                                                 #:general-align Y -2 #:normal-text #:larger "”"
                                                 )
@@ -926,43 +384,228 @@
                                         )
                                     \stopTextSpanOne
                                     \stopTextSpanTwo
-                                    r4.
-                                    \stopTextSpanThree
-                                    r8
-                                    \staff-line-count 1
-                                    \clef "percussion"
-                                    c'4
-                                    \ppp
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #3
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "Vib. on Jawharp" } \hspace #0.5 }
-                                    \startTextSpanOne
-                                    - \tweak stencil #constante-hairpin
-                                    \<
-                                    ~
-                                    \afterGrace
-                                    c'4.
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/7
                                     {
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
+                                        \override Staff.Clef.stencil = #ly:text-interface::print
+                                        \override Staff.Clef.text = \string-clef
+                                        \staff-line-count 4
+                                        \override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)
+                                        \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
+                                        \override Staff.Accidental.stencil = ##f
+                                        \override Staff.NoteHead.no-ledgers = ##t
+                                        <
+                                            \tweak style #'cross
+                                            c''
+                                            f''
+                                        >16
+                                        \ppp
+                                        - \markup \fontsize #2 { \hspace #-11 { "Fng. Perc.:" } }
+                                        \stopTextSpanThree
+                                        - \tweak bound-details.left.Y #0.5
+                                        - \tweak bound-details.right.Y #2.75
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #0
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \upright { "IV" } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -36
+                                        \startTextSpanOne
+                                        \once \override Rest.staff-position = #-7
+                                        r4
+                                        \once \override Rest.staff-position = #-7
+                                        r16
+                                        - \tweak Beam.positions #'(-8 . -8)
+                                        [
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
                                         \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.transparent = ##t
-                                        c'16
-                                        \!
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                        c''16
                                         \stopTextSpanOne
+                                        ]
                                     }
+                                    <<
+                                        \context Voice = "violin 4 voice temp 2"
+                                        {
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/7
+                                            {
+                                                \voiceTwo
+                                                <
+                                                    \tweak style #'cross
+                                                    c''
+                                                    \tweak style #'harmonic
+                                                    d''
+                                                >16
+                                                - \tweak Beam.positions #'(-8 . -8)
+                                                [
+                                                \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                                \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                                c''16
+                                                - \accent
+                                                <
+                                                    \tweak style #'cross
+                                                    e''
+                                                    \tweak style #'harmonic
+                                                    g''
+                                                >16
+                                                \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                                \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                                e''16
+                                                - \accent
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                <
+                                                    \tweak style #'cross
+                                                    e''
+                                                    f''
+                                                >16
+                                                - \accent
+                                                ]
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/7
+                                            {
+                                                \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                                \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                                e''16
+                                                - \tweak Beam.positions #'(-8 . -8)
+                                                [
+                                                <
+                                                    \tweak style #'cross
+                                                    a'
+                                                    \tweak style #'harmonic
+                                                    e''
+                                                >16
+                                                \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                                \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                                a'16
+                                                - \accent
+                                                <
+                                                    \tweak style #'cross
+                                                    c''
+                                                    \tweak style #'harmonic
+                                                    f''
+                                                >16
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                                \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                                c''16
+                                                ]
+                                            }
+                                        }
+                                        \context Voice = "violin 2 bow voice 2"
+                                        {
+                                            \once \override Rest.staff-position = #7
+                                            \voiceOne
+                                            r8
+                                            - \markup \fontsize #2 { \hspace #-4.5 { "Bow:" } }
+                                            - \tweak Beam.positions #'(6.5 . 11)
+                                            [
+                                            \once \override Rest.staff-position = #7
+                                            r16.
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \set stemLeftBeamCount = 3
+                                            \set stemRightBeamCount = 1
+                                            <
+                                                \tweak style #'la
+                                                g'
+                                            >32
+                                            _ \staccato
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 3
+                                            <
+                                                \tweak style #'la
+                                                b'
+                                            >32
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #7
+                                            r32
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                f'
+                                            >32
+                                            _ \staccato
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                c'
+                                            >32
+                                            - \accent
+                                            _ \staccato
+                                            ]
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                a'
+                                            >16
+                                            _ \staccato
+                                            - \tweak Beam.positions #'(7 . 7)
+                                            [
+                                            \once \override Rest.staff-position = #7
+                                            r16
+                                            \once \override Rest.staff-position = #7
+                                            r8
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Staff.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                e''
+                                            >16
+                                            - \accent
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #7
+                                            r16
+                                            ]
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
                                 %%% \once \override Rest.transparent = ##t
+                                    \staff-line-count 5
+                                    \revert Staff.StaffSymbol.line-positions
+                                    \revert Staff.Accidental.stencil
+                                    \revert Staff.NoteHead.no-ledgers
+                                    \revert Staff.Clef.stencil
                                       %! +SCORE
                                 %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     r4
                                       %! +SCORE
                                 %%% \stopStaff \startStaff
+                                    \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                 }
                             }
                         }
@@ -1009,7 +652,7 @@
                                             #:line (
                                                 #:general-align Y -2 #:normal-text #:larger "“"
                                                 #:hspace -0.4
-                                                #:dynamic "ffff"
+                                                #:dynamic "f"
                                                 #:hspace -0.2
                                                 #:general-align Y -2 #:normal-text #:larger "”"
                                                 )
@@ -1044,58 +687,6 @@
                                     \override Staff.Stem.stemlet-length = 0.75
                                     b8
                                     [
-                                    \fancy-gliss
-                                       #'(
-                                          (0 0 0.5 1 1 0)
-                                          (1 0 1.5 -1 2 0)
-                                          (2 0 2.5 2 3 0)
-                                          (3 0 3.5 -2 4 0)
-                                          (4 0 4.5 1 5 0)
-                                          (5 0 5.5 -1 6 0)
-                                          (6 0 6.5 3 7 0)
-                                          (7 0 7.5 -3 8 0)
-                                          (8 0 8.5 2 9 0)
-                                          (9 0 9.5 -2 10 0)
-                                          (10 0 10.5 3 11 0)
-                                          (11 0 11.5 -3 12 0)
-                                          (12 0 12.5 1 13 0)
-                                          (13 0 13.5 -1 14 0)
-                                          (14 0 14.5 5 15 0)
-                                          (15 0 15.5 -5 16 0)
-                                          (16 0 16.5 1 17 0)
-                                          (17 0 17.5 -1 18 0)
-                                          (18 0 18.5 2 19 0)
-                                          (19 0 19.5 -2 20 0)
-                                          (20 0 20.5 1 21 0)
-                                          (21 0 21.5 -1 22 0)
-                                          (22 0 22.5 4 23 0)
-                                          (23 0 23.5 -4 24 0)
-                                          (24 0 24.5 1 25 0)
-                                          (25 0 25.5 -1 26 0)
-                                          (26 0 26.5 2 27 0)
-                                          (27 0 27.5 -2 28 0)
-                                          (28 0 28.5 1 29 0)
-                                          (29 0 29.5 -1 30 0)
-                                          (30 0 30.5 5 31 0)
-                                          (31 0 31.5 -5 32 0)
-                                          (32 0 32.5 1 33 0)
-                                          (33 0 33.5 -1 34 0)
-                                          (34 0 34.5 2 35 0)
-                                          (35 0 35.5 -2 36 0)
-                                          (36 0 36.5 1 37 0)
-                                          (37 0 37.5 -1 38 0)
-                                          (38 0 38.5 3 39 0)
-                                          (39 0 39.5 -3 40 0)
-                                          (40 0 40.5 2 41 0)
-                                          (41 0 41.5 -2 42 0)
-                                          (42 0 42.5 3 43 0)
-                                          (43 0 43.5 -3 44 0)
-                                          (44 0 44.5 2 45 0)
-                                          (45 0 45.5 -2 46 0)
-                                          (46 0 46.5 3 47 0)
-                                          (47 0 47.5 -3 48 0)
-                                     )
-                                     #0.5
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -1107,35 +698,12 @@
                                     \revert Staff.Stem.stemlet-length
                                     c'8
                                     ]
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
                                     ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
+                                    \revert Dots.staff-position
                                     c'2
-                                    ^ \markup {
-                                                        \hspace #-2 {
-                                                            ( \note {2} #2 )
-                                                        }
-                                                    }
                                     )
+                                    \override Dots.staff-position = #2
                                     \big-half-harmonic
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
                                     a'2.
                                     - \accent
                                     \stopTextSpanOne
@@ -1159,67 +727,11 @@
                                     \startTextSpanThree
                                     \>
                                     \big-half-harmonic
-                                    \fancy-gliss
-                                       #'(
-                                          (0 0 0.5 1 1 0)
-                                          (1 0 1.5 -1 2 0)
-                                          (2 0 2.5 2 3 0)
-                                          (3 0 3.5 -2 4 0)
-                                          (4 0 4.5 5 5 0)
-                                          (5 0 5.5 -5 6 0)
-                                          (6 0 6.5 3 7 0)
-                                          (7 0 7.5 -3 8 0)
-                                          (8 0 8.5 2 9 0)
-                                          (9 0 9.5 -2 10 0)
-                                          (10 0 10.5 3 11 0)
-                                          (11 0 11.5 -3 12 0)
-                                          (12 0 12.5 1 13 0)
-                                          (13 0 13.5 -1 14 0)
-                                          (14 0 14.5 2 15 0)
-                                          (15 0 15.5 -2 16 0)
-                                          (16 0 16.5 1 17 0)
-                                          (17 0 17.5 -1 18 0)
-                                          (18 0 18.5 2 19 0)
-                                          (19 0 19.5 -2 20 0)
-                                          (20 0 20.5 1 21 0)
-                                          (21 0 21.5 -1 22 0)
-                                          (22 0 22.5 7 23 0)
-                                          (23 0 23.5 -7 24 0)
-                                          (24 0 24.5 1 25 0)
-                                          (25 0 25.5 -1 26 0)
-                                          (26 0 26.5 2 27 0)
-                                          (27 0 27.5 -2 28 0)
-                                          (28 0 28.5 5 29 0)
-                                          (29 0 29.5 -5 30 0)
-                                          (30 0 30.5 1 31 0)
-                                          (31 0 31.5 -1 32 0)
-                                          (32 0 32.5 3 33 0)
-                                          (33 0 33.5 -3 34 0)
-                                          (34 0 34.5 2 35 0)
-                                          (35 0 35.5 -2 36 0)
-                                          (36 0 36.5 1 37 0)
-                                          (37 0 37.5 -1 38 0)
-                                          (38 0 38.5 3 39 0)
-                                          (39 0 39.5 -3 40 0)
-                                          (40 0 40.5 1 41 0)
-                                          (41 0 41.5 -1 42 0)
-                                          (42 0 42.5 1 43 0)
-                                          (43 0 43.5 -1 44 0)
-                                          (44 0 44.5 1 45 0)
-                                          (45 0 45.5 -1 46 0)
-                                          (46 0 46.5 1 47 0)
-                                          (47 0 47.5 -1 48 0)
-                                          (48 0 48.5 1 49 0)
-                                          (49 0 49.5 -1 50 0)
-                                          (50 0 50.5 1 51 0)
-                                          (51 0 51.5 -1 52 0)
-                                     )
-                                     #0.5
+                                    \revert Dots.staff-position
                                     b'2.
                                     - \accent
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \tweak style #'harmonic
+                                    \override Dots.staff-position = #2
+                                    \tweak style #'harmonic-mixed
                                     bf'4.
                                     - \tenuto
                                     _ #(make-dynamic-script
@@ -1228,7 +740,7 @@
                                             #:line (
                                                 #:general-align Y -2 #:normal-text #:larger "“"
                                                 #:hspace -0.1
-                                                #:dynamic "pp"
+                                                #:dynamic "pppp"
                                                 #:hspace -0.25
                                                 #:general-align Y -2 #:normal-text #:larger "”"
                                                 )
@@ -1268,24 +780,6 @@
                                     [
                                     ~
                                     bf'16
-                                    \fancy-gliss
-                                       #'(
-                                          (0 0 0.5 2 1 0)
-                                          (1 0 1.5 -2 2 0)
-                                          (2 0 2.5 2 3 0)
-                                          (3 0 3.5 -2 4 0)
-                                          (4 0 4.5 2 5 0)
-                                          (5 0 5.5 -2 6 0)
-                                          (6 0 6.5 2 7 0)
-                                          (7 0 7.5 -2 8 0)
-                                          (8 0 8.5 2 9 0)
-                                          (9 0 9.5 -2 10 0)
-                                          (10 0 10.5 2 11 0)
-                                          (11 0 11.5 -2 12 0)
-                                          (12 0 12.5 2 13 0)
-                                          (13 0 13.5 -2 14 0)
-                                     )
-                                     #0.5
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -1297,42 +791,24 @@
                                     \tweak style #'harmonic
                                     g''16
                                     - \tenuto
-                                      %! abjad.glissando(7)
-                                    - \abjad-zero-padding-glissando
-                                      %! abjad.glissando(7)
-                                    \glissando
                                     - \tweak circled-tip ##t
                                     \>
                                     ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
                                     \revert Staff.Stem.stemlet-length
+                                    \tweak style #'harmonic
                                     g''8
                                     ]
                                     ~
+                                    \revert Dots.staff-position
                                     \afterGrace
+                                    \tweak style #'harmonic-mixed
                                     g''4.
                                     {
                                         \once \override Stem.stencil = ##f
                                         \once \override Flag.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override Accidental.stencil = ##f
-                                        \revert Dots.staff-position
                                         \once \override NoteHead.transparent = ##t
-                                          %! abjad.glissando(6)
-                                        \revert Accidental.stencil
-                                          %! abjad.glissando(6)
-                                        \revert NoteColumn.glissando-skip
-                                          %! abjad.glissando(6)
-                                        \revert NoteHead.no-ledgers
-                                          %! abjad.glissando(6)
-                                        \undo \hide NoteHead
                                         c'16
                                         \!
                                         \stopTextSpanOne
@@ -1384,19 +860,12 @@
                                     r2
                                     \big-half-harmonic
                                     \clef "bass"
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
-                                        fs!
-                                    >16
+                                    <c! fs!>16
                                     - \tweak padding #1
                                     ^ \talon-to-punta
-                                    \ff
+                                    \mf
                                     ^ \accent
-                                    ^ \markup \center-align { \center-column { \line { \concat { -16 }  }\line { \concat { +16 }  } } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { -34 }} } }
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
@@ -1411,18 +880,11 @@
                                     ]
                                     \override Dots.staff-position = #2
                                     \afterGrace
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
-                                        fs!
-                                    >4..
+                                    <c! fs!>4..
                                     - \tweak padding #1
                                     ^ \talon-to-punta
                                     ^ \accent
-                                    ^ \markup \center-align { \center-column { \line { \concat { -16 }  }\line { \concat { +16 }  } } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { -34 }} } }
                                     (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
@@ -1432,31 +894,17 @@
                                         \grace-half-harmonic
                                         \revert Dots.staff-position
                                         \once \override Flag.stroke-style = #"grace"
-                                        <
-                                            \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                            c!
-                                            \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
-                                            fs!
-                                        >16
+                                        <c! fs!>16
                                         )
                                     }
                                     r16
                                     \override Dots.staff-position = #2
                                     \afterGrace
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
-                                        fs!
-                                    >4.
+                                    <c! fs!>4.
                                     - \tweak padding #1
                                     ^ \talon-to-punta
                                     ^ \accent
-                                    ^ \markup \center-align { \center-column { \line { \concat { -16 }  }\line { \concat { +16 }  } } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { -34 }} } }
                                     (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
@@ -1471,45 +919,24 @@
                                         \grace-half-harmonic
                                         \revert Dots.staff-position
                                         \once \override Flag.stroke-style = #"grace"
-                                        <
-                                            \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                            c!
-                                            \tweak Accidental.stencil #ly:text-interface::print
-                                            \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
-                                            fs!
-                                        >16
+                                        <c! fs!>16
                                         )
                                     }
                                     r8
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
-                                        fs!
-                                    >16
+                                    <c! fs!>16
                                     - \tweak padding #1
                                     ^ \talon-to-punta
                                     ^ \accent
-                                    ^ \markup \center-align { \center-column { \line { \concat { -16 }  }\line { \concat { +16 }  } } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { -34 }} } }
                                     [
                                     r16
                                     \big-half-harmonic
-                                    <
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
-                                        c!
-                                        \tweak Accidental.stencil #ly:text-interface::print
-                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
-                                        fs!
-                                    >8
+                                    <c! fs!>8
                                     - \tweak padding #1
                                     ^ \talon-to-punta
                                     \!
                                     ^ \accent
-                                    ^ \markup \center-align { \center-column { \line { \concat { -16 }  }\line { \concat { +16 }  } } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { -34 }} } }
                                     \stopTextSpanOne
                                     ]
                                     r2.

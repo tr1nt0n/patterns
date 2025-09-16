@@ -4,6 +4,7 @@ import baca
 import evans
 import trinton
 import itertools
+import math
 from patterns import library
 
 
@@ -33,7 +34,9 @@ def rhythm_a(stage, extra_count=0):
 
             if meter.is_compound is True:
                 base_duration = abjad.Duration((3, denominator))
-                for _ in range(0, numerator / 3):
+                limit = numerator / 3
+                limit = int(limit)
+                for _ in range(0, limit):
                     durations.append(base_duration)
 
             if numerator % 5 == 0 and numerator != 5:
@@ -64,7 +67,7 @@ def rhythm_a(stage, extra_count=0):
                 and numerator != 1
             ):
                 larger_numerator = numerator / 2
-                larger_numerator = round(larger_numerator)
+                larger_numerator = math.ceil(larger_numerator)
                 larger_numerator = int(larger_numerator)
                 smaller_numerator = larger_numerator - 1
 

@@ -340,25 +340,9 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (5, 8)),
     evans.RhythmHandler(rhythm.rhythm_a(stage=3, extra_count=3)),
-    # evans.PitchHandler(["f''", "c''", "c'", "b'", "g'", "d''", "e'", "a", "e''"]),
     library.tablature_staff(
         selector=trinton.select_leaves_by_index([0]),
     ),
-    # trinton.annotate_leaves_locally(
-    #     selector=abjad.select.leaves,
-    # ),
-    # trinton.change_notehead_command(
-    #     notehead="harmonic",
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [1, 3, 6, 8], first=True, pitched=True
-    #     ),
-    # ),
-    # trinton.attachment_command(
-    #     attachments=[
-    #         abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
-    #     ],
-    #     selector=trinton.select_logical_ties_by_index([2, 5], first=True, pitched=True),
-    # ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
         selector=trinton.select_leaves_by_index(
