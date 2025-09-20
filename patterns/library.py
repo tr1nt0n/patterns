@@ -319,13 +319,13 @@ def column_trill(pressures, selector, bound_details=None, direction=abjad.DOWN):
         }
 
         markup_string = r"""\markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { """
-        counter = 1
+        counter = 0
         for pressure in pressures:
             if pressure == "half":
                 fontsize = 8
             else:
                 fontsize = 6
-            if counter == len(pressures):
+            if counter == 0:
                 markup_string += rf"""\fontsize #{fontsize} \line {{ \char {_pressure_to_notehead_string[pressure]} }}"""
             else:
                 markup_string += rf"""\line {{ \concat {{ \fontsize #6 {{ ( }} \fontsize #{fontsize} {{ \char {_pressure_to_notehead_string[pressure]} }} \fontsize #6 {{ ) }} }} }}"""
