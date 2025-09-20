@@ -1204,435 +1204,184 @@
                                     r4
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    <<
-                                        \context Voice = "violin 3 voice temp"
+                                    \times 2/3
+                                    {
+                                        \override Dots.staff-position = #2
+                                        e''1
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #6
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { "1/2 CLT" } \hspace #0.5 }
+                                        \startTextSpanOne
+                                        c'''8
+                                        \stopTextSpanOne
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #6
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { "CLT" } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -15
+                                        \startTextSpanOne
+                                        a4.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    f''4
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    a4
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    c'''1
+                                    \stopTextSpanOne
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #19 "1/2 CLT" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    ~
+                                    \times 2/3
+                                    {
+                                          %! abjad.glissando(1)
+                                        \hide NoteHead
+                                          %! abjad.glissando(1)
+                                        \override Accidental.stencil = ##f
+                                          %! abjad.glissando(1)
+                                        \override NoteColumn.glissando-skip = ##t
+                                          %! abjad.glissando(1)
+                                        \override NoteHead.no-ledgers = ##t
+                                        c'''2...
+                                        \stopTextSpanOne
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #6
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { "CLT" } \hspace #0.5 }
+                                        \startTextSpanOne
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        a'16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''2
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 4/5
+                                    {
+                                        a4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''8.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a8
+                                        \stopTextSpanOne
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #6
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { "1/2 CLT" } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -3
+                                        \startTextSpanOne
+                                        c'8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a4
+                                        \stopTextSpanOne
+                                          %! abjad.glissando(7)
+                                        - \abjad-zero-padding-glissando
+                                          %! abjad.glissando(7)
+                                        \glissando
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #6
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { \hspace #4 "CLT" } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -1
+                                        \startTextSpanOne
+                                        ~
+                                    }
+                                    \times 2/3
+                                    {
+                                          %! abjad.glissando(1)
+                                        \hide NoteHead
+                                          %! abjad.glissando(1)
+                                        \override Accidental.stencil = ##f
+                                          %! abjad.glissando(1)
+                                        \override NoteColumn.glissando-skip = ##t
+                                          %! abjad.glissando(1)
+                                        \override NoteHead.no-ledgers = ##t
+                                        a2
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        e'1
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 2/3
+                                    {
+                                        a4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \afterGrace
+                                        c'''4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                         {
-                                            \voiceOne
-                                            c'4
-                                            \once \override NoteHead.transparent = ##f
-                                            \tweak style #'cross
-                                            e''4
-                                            \once \override NoteHead.transparent = ##f
-                                            \tweak style #'cross
-                                            c''4
-                                            \once \override NoteHead.transparent = ##f
-                                            \tweak style #'cross
-                                            d'4
-                                            c'2
-                                            c'2
-                                            c'2
-                                            \times 4/6
-                                            {
-                                                c'4
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                b'4
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                c''4
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                d''4
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                e''4
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                e'4
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 4))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    f'16
-                                                }
-                                            }
-                                            \times 4/5
-                                            {
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                f'4
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 4))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    d'16
-                                                }
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                d'4
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 3 8))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    f'16
-                                                }
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                e'4
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 5 16))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    a'16
-                                                }
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                a'4
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 4))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    e'16
-                                                }
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                b'4
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 2))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    a'16
-                                                }
-                                            }
-                                            \times 2/3
-                                            {
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                a'2
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 3))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    e''16
-                                                }
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                b'2
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 4))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    f''16
-                                                }
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                a'2
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 4))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    d'''16
-                                                }
-                                            }
-                                            c'4
-                                            c'4
-                                            c'4
-                                            c'4
+                                            \revert Dots.staff-position
+                                            a16
+                                            \stopTextSpanOne
                                         }
-                                        \context Voice = "violin 2 voice 2"
-                                        {
-                                            \times 2/3
-                                            {
-                                                \once \override NoteHead.transparent = ##f
-                                                \voiceTwo
-                                                \tweak style #'cross
-                                                a''2
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                g''2
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                b2
-                                            }
-                                            \override Dots.staff-position = #2
-                                            \afterGrace
-                                            c'4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            {
-                                                #(define afterGraceFraction (cons 3 16))
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                e'16
-                                            }
-                                            \override Dots.staff-position = #2
-                                            \afterGrace
-                                            e'4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            {
-                                                #(define afterGraceFraction (cons 4 16))
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                a16
-                                            }
-                                            \override Dots.staff-position = #2
-                                            \afterGrace
-                                            a4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            {
-                                                #(define afterGraceFraction (cons 5 16))
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                g'16
-                                            }
-                                            \override Dots.staff-position = #2
-                                            \afterGrace
-                                            g'4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            {
-                                                #(define afterGraceFraction (cons 4 16))
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                b16
-                                            }
-                                            \override Dots.staff-position = #2
-                                            \afterGrace
-                                            b4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            {
-                                                #(define afterGraceFraction (cons 3 16))
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                e'16
-                                            }
-                                            \override Dots.staff-position = #2
-                                            \afterGrace
-                                            e'4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            {
-                                                #(define afterGraceFraction (cons 1 16))
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                c'16
-                                            }
-                                            \times 4/5
-                                            {
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                a'4
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                f'4
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                d'4
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                a4
-                                                \once \override NoteHead.transparent = ##f
-                                                \tweak style #'cross
-                                                b4
-                                            }
-                                            \times 2/3
-                                            {
-                                                c'2
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                f'2
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 8))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    e'16
-                                                }
-                                                \override Dots.staff-position = #2
-                                                \afterGrace
-                                                e'2
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                {
-                                                    #(define afterGraceFraction (cons 1 8))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    b'16
-                                                }
-                                            }
-                                            c'4
-                                            \override Dots.staff-position = #2
-                                            \afterGrace
-                                            e''4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            {
-                                                #(define afterGraceFraction (cons 5 16))
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                b'16
-                                            }
-                                            \override Dots.staff-position = #2
-                                            \afterGrace
-                                            f''4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            {
-                                                #(define afterGraceFraction (cons 1 2))
-                                                \once \override Stem.stencil = ##f
-                                                \once \override Flag.stencil = ##f
-                                                \once \override NoteHead.no-ledgers = ##t
-                                                \once \override Accidental.stencil = ##f
-                                                \revert Dots.staff-position
-                                                \once \override NoteHead.transparent = ##t
-                                                a'16
-                                            }
-                                            \override Dots.staff-position = #2
-                                            d'''4
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            ~
-                                            \times 4/6
-                                            {
-                                                \hide NoteHead
-                                                \override Accidental.stencil = ##f
-                                                \override NoteColumn.glissando-skip = ##t
-                                                \override NoteHead.no-ledgers = ##t
-                                                \afterGrace
-                                                d'''4
-                                                {
-                                                    #(define afterGraceFraction (cons 15 16))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    \revert Accidental.stencil
-                                                    \revert NoteColumn.glissando-skip
-                                                    \revert NoteHead.no-ledgers
-                                                    \undo \hide NoteHead
-                                                    a''16
-                                                }
-                                                \override Dots.staff-position = #2
-                                                a''4
-                                                - \abjad-zero-padding-glissando
-                                                \glissando
-                                                ~
-                                                \hide NoteHead
-                                                \override Accidental.stencil = ##f
-                                                \override NoteColumn.glissando-skip = ##t
-                                                \override NoteHead.no-ledgers = ##t
-                                                a''4
-                                                ~
-                                                a''4
-                                                ~
-                                                a''4
-                                                ~
-                                                \afterGrace
-                                                a''4
-                                                {
-                                                    #(define afterGraceFraction (cons 15 16))
-                                                    \once \override Stem.stencil = ##f
-                                                    \once \override Flag.stencil = ##f
-                                                    \once \override NoteHead.no-ledgers = ##t
-                                                    \once \override Accidental.stencil = ##f
-                                                    \revert Dots.staff-position
-                                                    \once \override NoteHead.transparent = ##t
-                                                    \revert Accidental.stencil
-                                                    \revert NoteColumn.glissando-skip
-                                                    \revert NoteHead.no-ledgers
-                                                    \undo \hide NoteHead
-                                                    c'''16
-                                                }
-                                            }
-                                        }
-                                    >>
-                                    \oneVoice
+                                    }
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -1682,68 +1431,37 @@
                                             \once \override Rest.staff-position = #0
                                             r4
                                             e''4
-                                            _ \staccato
                                             \stopTextSpanThree
                                             a''4
-                                            _ \staccato
                                             fs'''4
-                                            _ \staccato
                                             af''4
-                                            _ \staccato
                                             ef'''2
-                                            - \staccato
                                             - \tenuto
                                             a'2
-                                            _ \staccato
-                                            _ \tenuto
                                             cs''2
-                                            - \staccato
                                             - \tenuto
                                             \times 4/6
                                             {
                                                 a'4
-                                                _ \staccato
                                                 af'4
-                                                _ \staccato
                                                 g'4
-                                                _ \staccato
                                                 c'4
-                                                _ \staccato
                                                 fs'4
-                                                _ \staccato
                                                 b'4
-                                                _ \staccato
-                                                _ \tenuto
                                             }
                                             \times 4/5
                                             {
                                                 af4
-                                                _ \staccato
-                                                _ \tenuto
                                                 fs'4
-                                                _ \staccato
-                                                _ \tenuto
                                                 af'4
-                                                _ \staccato
-                                                _ \tenuto
                                                 ef''4
-                                                _ \staccato
-                                                _ \tenuto
                                                 fs'4
-                                                _ \staccato
-                                                _ \tenuto
                                             }
                                             \times 2/3
                                             {
                                                 b2
-                                                _ \staccato
-                                                _ \tenuto
                                                 a2
-                                                _ \staccato
-                                                _ \tenuto
                                                 fs'2
-                                                _ \staccato
-                                                _ \tenuto
                                             }
                                             g4
                                             c''4
@@ -1772,70 +1490,38 @@
                                             {
                                                 a''2
                                                 ^ \p
-                                                ^ \staccato
                                                 ^ \>
                                                 a''2
-                                                ^ \staccato
                                                 af''2
                                                 ^ \ppp
-                                                ^ \staccato
                                             }
                                             f''4
-                                            - \staccato
-                                            - \tenuto
                                             ^ \<
                                             fs''4
-                                            ^ \staccato
-                                            ^ \tenuto
                                             e''''4
-                                            ^ \staccato
-                                            ^ \tenuto
                                             a'''4
                                             ^ \p
-                                            ^ \staccato
-                                            ^ \tenuto
                                             a'4
-                                            - \staccato
-                                            - \tenuto
                                             gs'4
-                                            ^ \staccato
-                                            ^ \tenuto
                                             ^ \>
                                             \times 4/5
                                             {
                                                 c'''4
-                                                ^ \staccato
                                                 gf'4
-                                                ^ \staccato
                                                 fs'4
                                                 ^ \pp
-                                                ^ \staccato
                                                 a'4
-                                                ^ \staccato
                                                 fs'4
-                                                ^ \staccato
                                             }
                                             \times 2/3
                                             {
                                                 af'2
-                                                ^ \staccato
-                                                ^ \tenuto
                                                 c''2
-                                                ^ \staccato
-                                                ^ \tenuto
                                                 a'2
-                                                ^ \staccato
-                                                ^ \tenuto
                                             }
                                             e'4
-                                            ^ \staccato
-                                            ^ \tenuto
                                             a'4
-                                            ^ \staccato
-                                            ^ \tenuto
                                             fs'4
-                                            ^ \staccato
-                                            ^ \tenuto
                                             g'4
                                             \times 4/6
                                             {
@@ -2126,69 +1812,21 @@
                                         \stopTextSpan
                                     }
                                     \staff-line-count 5
+                                    \big-half-harmonic
                                     \revert Staff.Clef.stencil
                                     \clef "alto"
-                                    af4.
-                                    - \tweak padding #1
-                                    ^ \talon-to-punta
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    dqs''4
                                     (
-                                      %! abjad.glissando(7)
                                     - \tweak bound-details.right.arrow ##t
-                                      %! abjad.glissando(7)
                                     - \tweak thickness #1.5
-                                      %! abjad.glissando(7)
                                     \glissando
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #12
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "Spz." } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \upright { "1/2 Spz." }
-                                    - \tweak bound-details.right.padding 3
-                                    \startTextSpanTwo
                                     - \tweak padding #15
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 83 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
                                     \startTextSpanThree
-                                    - \tweak padding #9.5
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
-                                    - \tweak bound-details.right.text \bow-tip-up
-                                    \startTextSpanOne
-                                    \>
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    af4
-                                    \big-half-harmonic
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    b4.
+                                    \tweak style #'harmonic
+                                    a'8
                                       %! abjad.glissando(7)
                                     - \tweak bound-details.right.arrow ##t
                                       %! abjad.glissando(7)
@@ -2204,8 +1842,35 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    b4
-                                    \override Staff.Stem.stemlet-length = 0.75
+                                    a'8
+                                    [
+                                    \big-half-harmonic
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    gqf''8
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \tweak bound-details.right.arrow ##t
+                                      %! abjad.glissando(7)
+                                    - \tweak thickness #1.5
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    gqf''8
                                       %! abjad.glissando(6)
                                     \revert Accidental.stencil
                                       %! abjad.glissando(6)
@@ -2215,120 +1880,97 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     \tweak style #'harmonic
-                                    bf8
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "pp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    )
-                                    \stopTextSpanOne
-                                    \stopTextSpanTwo
-                                    [
-                                    \revert Staff.Stem.stemlet-length
-                                    c8
-                                    - \tenuto
-                                    - \tweak padding #1
-                                    ^ \punta-to-talon
-                                    ]
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #12
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "Spz." } \hspace #0.5 }
-                                    \startTextSpanTwo
-                                    - \tweak padding #9.5
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
-                                    - \tweak bound-details.right.text \bow-tip-half-down
-                                    \startTextSpanOne
+                                    d''4
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \big-half-harmonic
+                                    fs'4
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
                                     \tweak style #'harmonic
-                                    gs2
-                                    - \tweak padding #1
-                                    ^ \talon-to-punta
+                                    f'4
+                                    )
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \big-half-harmonic
+                                    \clef "treble"
+                                    gqs''4
                                     \stopTextSpanThree
                                     (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
-                                    \<
-                                    \big-half-harmonic
-                                    a2
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mf"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    \stopTextSpanTwo
-                                    - \tweak bound-details.right.arrow ##t
-                                    - \tweak thickness #1.5
-                                    \glissando
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #12
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \upright { "1/2 Spz." }
-                                    \startTextSpanTwo
-                                    \>
                                     \tweak style #'harmonic
-                                    c'2
-                                      %! abjad.glissando(7)
+                                    a''16
+                                    [
                                     - \tweak bound-details.right.arrow ##t
-                                      %! abjad.glissando(7)
                                     - \tweak thickness #1.5
-                                      %! abjad.glissando(7)
                                     \glissando
-                                    ~
-                                      %! abjad.glissando(1)
-                                    \hide NoteHead
-                                      %! abjad.glissando(1)
-                                    \override Accidental.stencil = ##f
-                                      %! abjad.glissando(1)
-                                    \override NoteColumn.glissando-skip = ##t
-                                      %! abjad.glissando(1)
-                                    \override NoteHead.no-ledgers = ##t
-                                    c'4
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
-                                    d'4
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "ppp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    \stopTextSpanOne
-                                    \stopTextSpanTwo
-                                    ~
-                                    d'2
+                                    \big-half-harmonic
+                                    dqs'''8.
+                                    ]
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \tweak style #'harmonic
+                                    fs'''8.
+                                    [
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \big-half-harmonic
+                                    cqs'''16
+                                    ]
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \tweak style #'harmonic
+                                    gs''4
                                     )
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \big-half-harmonic
+                                    cqf'''4
+                                    (
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \tweak style #'harmonic
+                                    fs''4
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \big-half-harmonic
+                                    e'''4
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \tweak style #'harmonic
+                                    a'''4
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \big-half-harmonic
+                                    bqs'4
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    \afterGrace
+                                    \tweak style #'harmonic
+                                    af'4
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    \glissando
+                                    {
+                                        \grace-half-harmonic
+                                        \once \override Flag.stroke-style = #"grace"
+                                        gqs'16
+                                        )
+                                    }
                                     <<
                                         \context Voice = "viola 2 voice temp"
                                         {
@@ -2396,6 +2038,7 @@
                                         {
                                             \times 2/3
                                             {
+                                                \clef "alto"
                                                 \voiceTwo
                                                 b2
                                                 ^ \staccato
@@ -2590,8 +2233,8 @@
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     ]
                                     r4
-                                    <bqf,! c!>16
-                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
+                                    <g,! c!>16
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +8 }} } }
                                     [
                                     - \tweak padding #18
                                     - \abjad-solid-line-with-arrow
@@ -2603,23 +2246,23 @@
                                     r4
                                     r8
                                     [
-                                    <bqf,! c!>16
-                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
+                                    <g,! c!>16
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +8 }} } }
                                     r16
                                     ]
                                     r8
-                                    <bqf,! c!>4
-                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
+                                    <g,! c!>4
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +8 }} } }
                                     \<
                                     ~
-                                    <bqf, c>8
+                                    <g, c>8
                                     [
                                     r8
                                     \p
                                     ]
-                                    <bqf,! c!>4
+                                    <g,! c!>4
                                     \pp
-                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +8 }} } }
                                     \stopTextSpanOne
                                     \big-half-harmonic
                                     aqs,16
@@ -3033,6 +2676,7 @@
                                             \override Voice.Accidental.stencil = ##f
                                             \textSpannerDown
                                             \voiceTwo
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             [
@@ -3043,16 +2687,20 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "CLDP" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -21
                                             \startTextSpan
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             \once \override Rest.staff-position = #-10
                                             r8
                                             \once \override Rest.staff-position = #-10
                                             r16
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             ]
@@ -3062,17 +2710,21 @@
                                             b,,8
                                             ~
                                             b,,8
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             \once \override Rest.staff-position = #-10
                                             r16
                                             ]
                                             b,,4
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             [
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             b,,16
@@ -3080,10 +2732,13 @@
                                             ~
                                             b,,16
                                             [
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             ]
@@ -3091,19 +2746,24 @@
                                             ~
                                             b,,16
                                             [
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             \once \override Rest.staff-position = #-10
                                             r8
                                             \once \override Rest.staff-position = #-10
                                             r16
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             ]
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             [
@@ -3113,14 +2773,18 @@
                                             r16
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 1
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 2
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
+                                            \tweak style #'cross
                                             b,,16
                                             ^ \staccato
                                             \once \override Rest.staff-position = #-10
