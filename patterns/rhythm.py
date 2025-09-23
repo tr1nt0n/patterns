@@ -5,6 +5,7 @@ import evans
 import trinton
 import itertools
 import math
+import fractions
 from patterns import library
 
 
@@ -213,13 +214,22 @@ def rhythm_b(stage, instrument, index=0):
                 )
 
                 for i, leaf in enumerate(abjad.select.leaves(container)):
-                    if i % 3 == 0 or i % 5 == 0:
-                        if i != 0:
-                            nested_tuplet_index = index + 3
-                            nested_tuplet = tuplets[nested_tuplet_index % len(tuplets)]
-                            duration = abjad.get.duration(leaf, preprolated=True)
-                            nested_tuplet = rmakers.tuplet([duration], [nested_tuplet])
-                            abjad.mutate.replace(leaf, nested_tuplet)
+                    if abjad.get.duration(leaf, preprolated=True) <= abjad.Duration(
+                        (3, 64)
+                    ):
+                        pass
+                    else:
+                        if i % 3 == 0 or i % 5 == 0:
+                            if i != 0:
+                                nested_tuplet_index = index + 3
+                                nested_tuplet = tuplets[
+                                    nested_tuplet_index % len(tuplets)
+                                ]
+                                duration = abjad.get.duration(leaf, preprolated=True)
+                                nested_tuplet = rmakers.tuplet(
+                                    [duration], [nested_tuplet]
+                                )
+                                abjad.mutate.replace(leaf, nested_tuplet)
 
                 treat_tuplets = trinton.treat_tuplets()
                 treat_tuplets(abjad.select.tuplets(container))
@@ -268,17 +278,14 @@ def rhythm_c(stage, instrument="violin 1", index=0):
                     and ts_numerator != 3
                     and meter.is_compound is False
                 ):
-                    durations.append(abjad.Duration((3, denominator)))
+                    durations.append(abjad.Duration((3, ts_denominator)))
 
-                    regions = []
-                    for _ in range(0, numerator):
-                        if sum(regions) == ts_numerator / ts_denominator:
-                            pass
-                        else:
-                            regions.append(abjad.Duration((2, ts_denominator)))
+                    remainder_range = ts_numerator - 3
+                    remainder_range = remainder_range / 2
+                    remainder_range = int(remainder_range)
 
-                    for duration in regions:
-                        durations.append(duration)
+                    for _ in range(0, remainder_range):
+                        durations.append(abjad.Duration((2, ts_denominator)))
 
             rhythm_selections = rmakers.note(durations)
             for note in rhythm_selections:

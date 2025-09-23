@@ -41,6 +41,8 @@
             _ \long-fermata
             \bar "||"
             \once \override Score.BarLine.transparent = ##f
+              %! +SCORE
+            \pageBreak
         }
         \tag #'group1
         {
