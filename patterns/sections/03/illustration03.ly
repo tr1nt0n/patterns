@@ -515,9 +515,9 @@
                                     \once \override NoteHead.duration-log = 2
                                     \once \override Stem.stencil = ##f
                                     <
-                                        \tweak style #'harmonic
-                                        a
                                         \tweak style #'cross
+                                        a
+                                        \tweak style #'harmonic
                                         b
                                     >16
                                     - \tweak font-name "Bodoni72 Book" 
@@ -535,9 +535,9 @@
                                     \once \override NoteHead.duration-log = 2
                                     \once \override Stem.stencil = ##f
                                     <
-                                        \tweak style #'harmonic
-                                        a
                                         \tweak style #'cross
+                                        a
+                                        \tweak style #'harmonic
                                         b
                                     >16
                                     \once \override RepeatTie.transparent = ##t
@@ -548,9 +548,9 @@
                                     \once \override NoteHead.duration-log = 2
                                     \once \override Stem.stencil = ##f
                                     <
-                                        \tweak style #'harmonic
-                                        a
                                         \tweak style #'cross
+                                        a
+                                        \tweak style #'harmonic
                                         b
                                     >16
                                     \once \override RepeatTie.transparent = ##t
@@ -561,9 +561,9 @@
                                     \once \override NoteHead.duration-log = 2
                                     \once \override Stem.stencil = ##f
                                     <
-                                        \tweak style #'harmonic
-                                        a
                                         \tweak style #'cross
+                                        a
+                                        \tweak style #'harmonic
                                         b
                                     >16
                                     \stopTextSpanOne

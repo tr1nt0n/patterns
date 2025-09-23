@@ -371,7 +371,7 @@ trinton.make_music(
                 2,
                 3,
             ],
-            head_indices_lists=[[1], [1], [1], [1]],
+            head_indices_lists=[[0], [0], [0], [0]],
         ),
     ),
     trinton.change_notehead_command(
@@ -383,7 +383,7 @@ trinton.make_music(
                 2,
                 3,
             ],
-            head_indices_lists=[[0], [0], [0], [0]],
+            head_indices_lists=[[1], [1], [1], [1]],
         ),
     ),
     trinton.hooked_spanner_command(
