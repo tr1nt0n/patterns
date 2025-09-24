@@ -536,77 +536,218 @@
                             {
                                 \context Voice = "violin 3 voice"
                                 {
+                                    \override Dots.staff-position = #2
                                     \set GrandStaff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violin 2 }
                                       %! +SCORE
                                     \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V2 }
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r4.
+                                    g'4.
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    r4.
-                                    r4.
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r1.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r2.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    r2
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r1
-                                    - \tweak padding #2
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
-                                    \startTextSpanThree
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r4
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r2.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    r2
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r2.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r2
-                                    \stopTextSpanThree
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #4 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    a4
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    a16
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    c'16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    a4.
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    a2
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    f'2
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    d'2
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/6
+                                    {
+                                          %! abjad.glissando(1)
+                                        \hide NoteHead
+                                          %! abjad.glissando(1)
+                                        \override Accidental.stencil = ##f
+                                          %! abjad.glissando(1)
+                                        \override NoteColumn.glissando-skip = ##t
+                                          %! abjad.glissando(1)
+                                        \override NoteHead.no-ledgers = ##t
+                                        d'4.
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        e'4.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a4.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        b4.
+                                          %! abjad.glissando(7)
+                                        - \abjad-zero-padding-glissando
+                                          %! abjad.glissando(7)
+                                        \glissando
+                                        ~
+                                    }
+                                    \times 2/3
+                                    {
+                                          %! abjad.glissando(1)
+                                        \hide NoteHead
+                                          %! abjad.glissando(1)
+                                        \override Accidental.stencil = ##f
+                                          %! abjad.glissando(1)
+                                        \override NoteColumn.glissando-skip = ##t
+                                          %! abjad.glissando(1)
+                                        \override NoteHead.no-ledgers = ##t
+                                        b4
+                                        - \tweak padding #8.5
+                                        - \abjad-solid-line-with-arrow
+                                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
+                                        - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
+                                        \startTextSpanThree
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        g''8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        b'8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        e''2
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c''4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        b4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 4/5
+                                    {
+                                        f'8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        d'8.
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    c'''4
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    c''4
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    d''2
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    b'4
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    e''8
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    a'8
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    f''8
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    g'8
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    g''8
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    f'8
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \times 2/3
+                                    {
+                                        a''8
+                                        \stopTextSpanThree
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        e'16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        b''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        d'8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \afterGrace
+                                        b8
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        {
+                                            \revert Dots.staff-position
+                                            c'''16
+                                        }
+                                    }
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -678,106 +819,134 @@
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 9/10
                                             {
+                                                \staff-line-count 5
+                                                \revert Staff.StaffSymbol.line-positions
+                                                \revert Staff.Accidental.stencil
+                                                \revert Staff.NoteHead.no-ledgers
+                                                \revert Staff.Clef.stencil
                                                 \voiceOne
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
+                                                b'4
+                                                ^ \p
+                                                \override Staff.BarLine.bar-extent = #'(-2 . 2)
+                                                fs'4
+                                                g4
+                                                d'4
+                                                fs''4
                                             }
-                                            c'2
-                                            c'4
+                                            b4.
                                             ~
-                                            c'4
-                                            c'2
+                                            b8
+                                            a4
+                                            ~
+                                            a4
+                                            fs'8
+                                            ~
+                                            fs'4.
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/4
                                             {
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
+                                                af'4
+                                                ef'4
+                                                fs'4
+                                                e'4
                                             }
                                             \times 4/6
                                             {
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
+                                                a'4
+                                                ^ \>
+                                                fs'4
+                                                g4
+                                                ef'4
+                                                a'4
+                                                b4
                                             }
+                                            fs'16
+                                            ^ \pp
+                                            [
+                                            bf'16
+                                            af'16
                                             c'16
-                                            c'16
-                                            c'16
-                                            c'16
-                                            c'4
-                                            c'4
-                                            c'4
-                                            c'4
-                                            c'4
-                                            c'4
-                                            c'4
-                                            c'4
+                                            ]
+                                            fs'4
+                                            - \tweak font-size #10
+                                            - \tweak padding #3
+                                            ^ \middle-fermata
+                                            e'4
+                                            a'4
+                                            ^ \>
+                                            af'4
+                                            af'4
+                                            f'4
+                                            a'4
+                                            b'4
                                             \times 4/6
                                             {
-                                                c'8
-                                                c'8
-                                                c'8
-                                                c'8
-                                                c'8
-                                                c'8
+                                                fs''8
+                                                ^ \ppp
+                                                [
+                                                fs'8
+                                                a''8
+                                                ds''8
+                                                fs'''8
+                                                b'''8
+                                                ]
                                             }
                                         }
                                         \context Voice = "violin 2 polyrhythm voice"
                                         {
                                             \voiceTwo
-                                            c'4.
-                                            c'4.
-                                            c'4.
-                                            c'4.
-                                            c'4.
-                                            c'4.
-                                            c'4.
+                                            e'4.
+                                            a'4.
+                                            fs'4.
+                                            af'4.
+                                            ef'4.
+                                            a'4.
+                                            cs'4.
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/6
                                             {
+                                                a!4
+                                                af4
+                                                g4
                                                 c'4
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
-                                                c'4
+                                                fs''4
+                                                b4
                                             }
-                                            c'4
-                                            c'4
-                                            c'4
-                                            c'4
+                                            af'4
+                                            fs'4
+                                            af4
+                                            ef'4
                                             \times 4/5
                                             {
-                                                c'16
-                                                c'16
-                                                c'16
-                                                c'16
-                                                c'16
+                                                fs'16
+                                                [
+                                                b'16
+                                                a'16
+                                                fs'16
+                                                g16
+                                                ]
                                             }
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/6
                                             {
                                                 c'2
-                                                c'2
-                                                c'2
+                                                a2
+                                                b2
                                             }
-                                            c'8
-                                            c'8
-                                            c'8
-                                            c'8
-                                            c'8
-                                            c'8
-                                            c'8
-                                            c'8
-                                            c'8
-                                            c'8
+                                            b8
+                                            [
+                                            fs'8
+                                            g'8
+                                            d''8
+                                            fs''8
+                                            b''8
+                                            ]
+                                            a'8
+                                            [
+                                            fs''8
+                                            gs''8
+                                            ds'''8
+                                            ]
                                         }
                                     >>
                                     \oneVoice
@@ -939,35 +1108,23 @@
                             {
                                 \context Voice = "cello 2 voice"
                                 {
-                                    c'8
+                                    c'8.
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
-                                    ~
+                                    c'8.
+                                    c'8.
+                                    r16
+                                    c'16
+                                    r16
+                                    r8.
                                     c'16
                                     c'16
-                                    ~
-                                    c'8
-                                    c'8
-                                    ~
+                                    r16
                                     c'16
                                     c'16
-                                    c'16
-                                    c'16
-                                    c'8
-                                    ~
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    ~
-                                    c'8
-                                    c'8
-                                    ~
-                                    c'16
+                                    r16
+                                    c'8.
+                                    c'8.
                                     c'16
                                     c'16
                                     c'16
@@ -976,16 +1133,16 @@
                                     {
                                         \times 2/3
                                         {
+                                            r16
                                             c'16
-                                            c'16
-                                            c'16
+                                            r16
                                         }
-                                        c'8
+                                        r8
                                         \times 2/3
                                         {
                                             c'16
                                             c'16
-                                            c'16
+                                            r16
                                         }
                                         c'8
                                         c'8
@@ -995,7 +1152,7 @@
                                     {
                                         \times 2/3
                                         {
-                                            c'8
+                                            r8
                                             c'8
                                             c'8
                                         }
@@ -1005,23 +1162,23 @@
                                     \times 2/3
                                     {
                                         c'16
-                                        c'16
+                                        r16
                                         c'16
                                     }
-                                    c'8
+                                    r8
                                     \times 2/3
                                     {
-                                        c'16
+                                        r16
                                         c'16
                                         c'16
                                     }
                                     \times 2/3
                                     {
-                                        c'16
+                                        r16
                                         c'16
                                         c'16
                                     }
-                                    c'8
+                                    r8
                                     \times 2/3
                                     {
                                         c'4
@@ -1039,24 +1196,24 @@
                                         \times 2/3
                                         {
                                             c'8
-                                            c'8
+                                            r8
                                             c'8
                                         }
                                     }
                                     \times 2/3
                                     {
-                                        c'4
+                                        r4
                                         \times 2/3
                                         {
-                                            c'8
+                                            r8
                                             c'8
                                             c'8
                                         }
-                                        c'4
+                                        r4
                                     }
                                     c'32
                                     c'32
-                                    c'32
+                                    r32
                                     c'32
                                     \times 4/5
                                     {
@@ -1064,7 +1221,7 @@
                                         c'32
                                         c'32
                                         c'32
-                                        c'32
+                                        r32
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
