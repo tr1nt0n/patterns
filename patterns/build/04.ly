@@ -4,20 +4,36 @@
         {
             \time 9/8
             s1 * 9/8
+              %! +SCORE
+            \noBreak
             \time 12/8
             s1 * 3/2
+              %! +SCORE
+            \break
             \time 5/4
             s1 * 5/4
+              %! +SCORE
+            \noBreak
             \time 4/4
             s1 * 1
+              %! +SCORE
+            \break
             \time 1/4
             s1 * 1/4
+              %! +SCORE
+            \noBreak
             \time 5/4
             s1 * 5/4
+              %! +SCORE
+            \break
             \time 3/4
             s1 * 3/4
+              %! +SCORE
+            \noBreak
             \time 2/4
             s1 * 1/2
+              %! +SCORE
+            \break
             \time 3/2
             s1 * 3/2
             \time 4/2
@@ -272,6 +288,8 @@
                                     r4
                                     \staff-line-count 5
                                     \revert Staff.Clef.stencil
+                                    \once \override Staff.Clef.X-extent = ##f
+                                    \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                                     \clef "treble"
                                     <g! fs'!>16
                                     - \accent
@@ -531,11 +549,24 @@
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #4 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { "CLT" } \hspace #0.5 }
+                                    \startTextSpanOne
                                     a4
+                                    \stopTextSpanOne
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { "1/2 CLT" } \hspace #0.5 }
+                                    \startTextSpanOne
                                     ~
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -555,13 +586,29 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     c'16
+                                    \stopTextSpanOne
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #-0.5 "CLT" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpanOne
                                     a4.
+                                    \stopTextSpanOne
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #2.5 "1/2 CLT" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -6
+                                    \startTextSpanOne
                                     ~
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -581,13 +628,29 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     f'2
+                                    \stopTextSpanOne
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #7.5 "CLT" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 6
+                                    \startTextSpanOne
                                     d'2
+                                    \stopTextSpanOne
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #-7.5 "1/2 CLT" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanOne
                                     ~
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
@@ -647,17 +710,32 @@
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
                                         g''8
+                                        \stopTextSpanOne
                                         - \abjad-zero-padding-glissando
                                         \glissando
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #6
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { \hspace #-0.5 "CLT" } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -5
+                                        \startTextSpanOne
                                         b'8
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         e''2
+                                        \stopTextSpanOne
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         c''4
                                         - \abjad-zero-padding-glissando
                                         \glissando
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #6
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { \hspace #-10 "1/2 CLT" } \hspace #0.5 }
+                                        \startTextSpanOne
                                         b4
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -668,8 +746,15 @@
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         d'8.
+                                        \stopTextSpanOne
                                         - \abjad-zero-padding-glissando
                                         \glissando
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 2
+                                        - \tweak padding #6
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { { "CLT" } \hspace #0.5 }
+                                        \startTextSpanOne
                                     }
                                     c'''4
                                     - \abjad-zero-padding-glissando
@@ -678,11 +763,25 @@
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     d''2
+                                    \stopTextSpanOne
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { "1/2 CLT" } \hspace #0.5 }
+                                    \startTextSpanOne
                                     b'4
+                                    \stopTextSpanOne
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { "CLT" } \hspace #0.5 }
+                                    \startTextSpanOne
                                     e''8
                                     - \abjad-zero-padding-glissando
                                     \glissando
@@ -732,6 +831,7 @@
                                         {
                                             \revert Dots.staff-position
                                             c'''16
+                                            \stopTextSpanOne
                                         }
                                     }
                                     \stopStaff
@@ -1094,44 +1194,123 @@
                             {
                                 \context Voice = "cello 2 voice"
                                 {
-                                    c'8.
+                                    \override Dots.staff-position = #2
+                                    \clef "bass"
+                                    gs8.
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
-                                    c'8.
-                                    c'8.
+                                    [
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    fs8.
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Dots.staff-position
+                                    eqf,8.
+                                    )
+                                    [
+                                    \set stemLeftBeamCount = 2
+                                    \set stemRightBeamCount = 1
                                     r16
-                                    c'16
+                                    \override Dots.staff-position = #2
+                                    \revert Dots.staff-position
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 2
+                                    bf,16
                                     r16
+                                    ]
                                     r8.
-                                    c'16
-                                    c'16
+                                    [
+                                    \override Dots.staff-position = #2
+                                    \set stemLeftBeamCount = 2
+                                    \set stemRightBeamCount = 1
+                                    gf16
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Dots.staff-position
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 2
+                                    fqs16
+                                    )
                                     r16
-                                    c'16
-                                    c'16
+                                    ]
+                                    \override Dots.staff-position = #2
+                                    f16
+                                    [
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Dots.staff-position
+                                    \set stemLeftBeamCount = 2
+                                    \set stemRightBeamCount = 1
+                                    e16
+                                    )
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 2
                                     r16
-                                    c'8.
-                                    c'8.
-                                    c'16
-                                    c'16
-                                    c'16
+                                    \override Dots.staff-position = #2
+                                    cs8.
+                                    ]
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    dqf8.
+                                    )
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \set stemLeftBeamCount = 2
+                                    \set stemRightBeamCount = 1
+                                    a,16
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \set stemLeftBeamCount = 1
+                                    \set stemRightBeamCount = 2
+                                    bqf,16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Dots.staff-position
+                                    aqs,16
+                                    )
+                                    ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
                                         \times 2/3
                                         {
                                             r16
-                                            c'16
+                                            [
+                                            \override Dots.staff-position = #2
+                                            \revert Dots.staff-position
+                                            eqs16
                                             r16
                                         }
                                         r8
                                         \times 2/3
                                         {
-                                            c'16
-                                            c'16
+                                            \override Dots.staff-position = #2
+                                            e16
+                                            (
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            \revert Dots.staff-position
+                                            eqf16
+                                            )
                                             r16
                                         }
-                                        c'8
-                                        c'8
+                                        \override Dots.staff-position = #2
+                                        d8
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \revert Dots.staff-position
+                                        cs8
+                                        )
+                                        ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
@@ -1139,51 +1318,103 @@
                                         \times 2/3
                                         {
                                             r8
-                                            c'8
-                                            c'8
+                                            [
+                                            \override Dots.staff-position = #2
+                                            fqs8
+                                            (
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            e8
+                                            ]
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
                                         }
-                                        c'4
-                                        c'4
+                                        cqs4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        b,4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                     }
                                     \times 2/3
                                     {
-                                        c'16
+                                        \revert Dots.staff-position
+                                        fs16
+                                        )
+                                        [
                                         r16
-                                        c'16
+                                        \override Dots.staff-position = #2
+                                        \revert Dots.staff-position
+                                        g16
+                                        ]
                                     }
                                     r8
+                                    [
                                     \times 2/3
                                     {
                                         r16
-                                        c'16
-                                        c'16
+                                        \override Dots.staff-position = #2
+                                        ef16
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \revert Dots.staff-position
+                                        gf16
+                                        )
+                                        ]
                                     }
                                     \times 2/3
                                     {
                                         r16
-                                        c'16
-                                        c'16
+                                        [
+                                        \override Dots.staff-position = #2
+                                        gf16
+                                        - \accent
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \revert Dots.staff-position
+                                        bqf16
+                                        )
                                     }
                                     r8
+                                    ]
                                     \times 2/3
                                     {
-                                        c'4
-                                        - \tweak padding #2
+                                        \override Dots.staff-position = #2
+                                        aqf,4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        - \tweak padding #14
                                         - \abjad-solid-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
                                         \startTextSpanThree
                                         \times 2/3
                                         {
-                                            c'8
-                                            c'8
-                                            c'8
+                                            b,8
+                                            [
+                                            (
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            as,8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            bqf,8
+                                            )
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
                                         }
                                         \times 2/3
                                         {
-                                            c'8
+                                            \revert Dots.staff-position
+                                            c8
                                             r8
-                                            c'8
+                                            \override Dots.staff-position = #2
+                                            \revert Dots.staff-position
+                                            df8
+                                            - \accent
+                                            ]
                                         }
                                     }
                                     \times 2/3
@@ -1192,75 +1423,205 @@
                                         \times 2/3
                                         {
                                             r8
+                                            [
+                                            \override Dots.staff-position = #2
+                                            af8
+                                            - \accent
+                                            (
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            \revert Dots.staff-position
                                             c'8
-                                            c'8
+                                            )
+                                            ]
                                         }
                                         r4
                                     }
-                                    c'32
-                                    c'32
+                                    \override Dots.staff-position = #2
+                                    \clef "tenor"
+                                    b32
+                                    [
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Dots.staff-position
+                                    e'32
+                                    )
                                     r32
-                                    c'32
+                                    \override Dots.staff-position = #2
+                                    \set stemLeftBeamCount = 3
+                                    \set stemRightBeamCount = 1
+                                    d'32
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
                                     \times 4/5
                                     {
-                                        c'32
-                                        c'32
-                                        c'32
-                                        c'32
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 3
+                                        cs'32
+                                        )
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        b32
+                                        - \accent
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        g32
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \revert Dots.staff-position
+                                        d32
+                                        )
                                         r32
+                                        ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
                                     {
-                                        c'4
+                                        \override Dots.staff-position = #2
+                                        f4
+                                        - \tweak font-size #10
+                                        - \tweak padding #3
+                                        ^ \middle-fermata
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                         \times 2/3
                                         {
-                                            c'8
-                                            c'8
-                                            c'8
+                                            a8
+                                            [
+                                            (
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            bf8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            a8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
                                         }
                                         \times 2/3
                                         {
-                                            c'8
-                                            c'8
-                                            c'8
+                                            aqs8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            a8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            bqf8
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
                                         }
                                     }
-                                    c'8
+                                    a8
+                                    )
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
                                     \times 2/3
                                     {
+                                        b16
+                                        - \accent
+                                        [
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                         c'16
-                                        c'16
-                                        c'16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        b16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                     }
-                                    c'8
-                                    c'8
+                                    bqf8
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    b8
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
                                     \times 2/3
                                     {
                                         c'16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        b16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                         c'16
-                                        c'16
+                                        )
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                     }
-                                    c'8
-                                    c'8
+                                    dqs'8
+                                    - \accent
+                                    [
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    fs'8
+                                    - \accent
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
                                     \times 2/3
                                     {
-                                        c'16
-                                        c'16
-                                        c'16
+                                        \clef "treble"
+                                        gs'16
+                                        - \accent
+                                        [
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a'16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        g'16
+                                        )
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                     }
-                                    c'8
+                                    d''8
+                                    - \accent
+                                    ]
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
                                     \times 2/3
                                     {
-                                        c'16
-                                        c'16
-                                        c'16
+                                        eqf''16
+                                        - \accent
+                                        [
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        d''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \set stemLeftBeamCount = 2
+                                        \set stemRightBeamCount = 1
+                                        e''16
+                                        )
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                     }
                                     \times 2/3
                                     {
-                                        c'16
-                                        c'16
-                                        c'16
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        b''16
+                                        - \accent
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        bf''16
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \revert Dots.staff-position
+                                        bqf''16
+                                        )
+                                        ]
                                     }
                                     r2
                                     \stopTextSpanThree
