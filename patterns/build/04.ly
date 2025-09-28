@@ -467,11 +467,11 @@
                                     \startTextSpanTwo
                                     gf''!16
                                     - \accent
-                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 } } } }
                                     r16
                                     gf''!16
                                     - \accent
-                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 } } } }
                                     ]
                                     r2
                                     \stopTextSpanTwo
@@ -1267,7 +1267,7 @@
                                             )
                                         )
                                     (
-                                    - \tweak padding #11.5
+                                    - \tweak padding #12
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
@@ -1357,7 +1357,7 @@
                                     \>
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #10
+                                    - \tweak padding #11
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \upright { "On bridge, allowing strings to ring" } \hspace #0.5 }
                                     \startTextSpanOne
@@ -1405,27 +1405,170 @@
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
                                     )
                                     ]
-                                    r1.
+                                    <a cs'>2
+                                    - \accent
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +16 }} } }
+                                    (
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <a cs'>8.
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <a cs'>16
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +16 }} } }
                                     \stopTextSpanOne
+                                    ]
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #10
+                                    - \tweak padding #11
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "molto tasto" } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -4
+                                    - \tweak bound-details.right.padding -8
                                     \startTextSpanOne
-                                    r\breve
-                                    \stopTextSpanOne
-                                    r1
-                                    r1.
-                                    r1
-                                    r2
-                                    - \tweak padding #2
+                                    \>
+                                    ~
+                                    <a cs'>4
+                                    ~
+                                    <a cs'>4
+                                    <a cs'>4
+                                    \ppp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +16 }} } }
+                                    )
+                                    <d cs'>4
+                                    - \accent
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +39 }} } }
+                                    (
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    <d cs'>4
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +39 }} } }
+                                    \>
+                                    ~
+                                    <d cs'>4..
+                                    <d cs'>16
+                                    \ppp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +39 }} } }
+                                    ~
+                                    <d cs'>1
+                                    )
+                                    <f d'>2
+                                    - \accent
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 }\line { +8 }} } }
+                                    (
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <f d'>8.
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 }\line { +8 }} } }
+                                    [
+                                    \>
+                                    \revert Staff.Stem.stemlet-length
+                                    <f d'>16
+                                    \ppp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 }\line { +8 }} } }
+                                    ]
+                                    ~
+                                    <f d'>4
+                                    )
+                                    <d' a'>4
+                                    - \accent
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +39 }} } }
+                                    (
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    <d' a'>2.
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +39 }} } }
+                                    \>
+                                    <d' a'>2
+                                    \ppp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +39 }} } }
+                                    )
+                                    <a' e''>4
+                                    - \accent
+                                    \mf
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { +16 }} } }
+                                    (
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <a' e''>16
+                                    [
+                                    <a' e''>16
+                                    \p
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { +16 }} } }
+                                    \>
+                                    ~
+                                    <a' e''>16
+                                    \revert Staff.Stem.stemlet-length
+                                    <a' e''>16
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { +16 }} } }
+                                    ]
+                                    ~
+                                    <a' e''>2
+                                    )
+                                    \clef "treble"
+                                    bf'4
+                                    - \accent
+                                    \mf
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
+                                    (
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #6.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \hspace #-3 { "+ bowing body" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -8
+                                    \startTextSpanTwo
+                                    - \tweak padding #12
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
                                     \startTextSpanThree
-                                    r1.
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    bf'8.
+                                    \p
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
+                                    [
+                                    \>
+                                    \revert Staff.Stem.stemlet-length
+                                    bf'16
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
+                                    )
+                                    ]
+                                    ef''2
+                                    - \accent
+                                    \f
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 } } } }
+                                    (
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    ~
+                                    ef''16
+                                    ef''4..
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 } } } }
+                                    \>
+                                    ef''2
+                                    \p
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 } } } }
+                                    )
+                                    \stopTextSpanOne
+                                    \stopTextSpanTwo
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -2228,94 +2371,75 @@
                                         {
                                             \voiceOne
                                             bf''8
-                                            ^ \markup 0
+                                            [
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #10
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -4
+                                            \startTextSpanOne
+                                            - \tweak stencil #abjad-flared-hairpin
+                                            \>
                                             f''8
-                                            ^ \markup 1
                                             cs'''8
-                                            ^ \markup 2
                                             b''8
-                                            ^ \markup 3
+                                            ]
                                             a''2
-                                            ^ \markup 4
+                                            \ppp
                                             cs'''2
-                                            ^ \markup 5
                                             b''2
-                                            ^ \markup 6
                                             \times 4/5
                                             {
                                                 g''2
-                                                ^ \markup 7
                                                 f''2
-                                                ^ \markup 8
                                                 cs''2
-                                                ^ \markup 9
                                                 b''!2
-                                                ^ \markup 10
                                                 g''2
-                                                ^ \markup 11
                                             }
                                             \times 4/6
                                             {
                                                 e''4
-                                                ^ \markup 12
                                                 b'4
-                                                ^ \markup 13
                                                 bf'4
-                                                ^ \markup 14
                                                 bf'4
-                                                ^ \markup 15
                                                 cs'4
-                                                ^ \markup 16
                                                 e4
-                                                ^ \markup 17
                                             }
                                             \clef "tenor"
                                             g2
-                                            ^ \markup 18
                                             d'2
-                                            ^ \markup 19
                                             b,2
-                                            ^ \markup 20
                                             \times 4/5
                                             {
                                                 bf4
-                                                ^ \markup 21
+                                                \<
                                                 f4
-                                                ^ \markup 22
                                                 cs4
-                                                ^ \markup 23
                                                 e4
-                                                ^ \markup 24
                                                 af4
-                                                ^ \markup 25
                                             }
                                             \clef "bass"
                                             d8
-                                            ^ \markup 26
-                                            - \tweak padding #16
+                                            [
+                                            - \tweak padding #11
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
                                             - \tweak bound-details.right.padding -15
                                             \startTextSpanThree
                                             b,8
-                                            ^ \markup 27
                                             c8
-                                            ^ \markup 28
                                             as,8
-                                            ^ \markup 29
+                                            ]
                                             d4
-                                            ^ \markup 30
+                                            \mf
                                             b,4
-                                            ^ \markup 31
                                             g,4
-                                            ^ \markup 32
                                             df,4
-                                            ^ \markup 33
                                             b!4
-                                            ^ \markup 34
                                             bf,4
-                                            ^ \markup 35
+                                            \stopTextSpanOne
                                             \stopTextSpanThree
                                         }
                                         \context Voice = "cello polyrhythm voice"
@@ -2324,93 +2448,60 @@
                                             {
                                                 \voiceTwo
                                                 d'''4
-                                                _ \markup 0
                                                 g''4
-                                                _ \markup 1
                                                 e'''4
-                                                _ \markup 2
                                             }
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 6/5
                                             {
                                                 cs'''4
-                                                _ \markup 3
                                                 f''4
-                                                _ \markup 4
                                                 bf''4
-                                                _ \markup 5
                                                 b''4
-                                                _ \markup 6
                                                 d'''4
-                                                _ \markup 7
                                             }
                                             \times 4/6
                                             {
                                                 g'2
-                                                _ \markup 8
                                                 fs'2
-                                                _ \markup 9
                                                 cs'''2
-                                                _ \markup 10
                                                 f'''2
-                                                _ \markup 11
                                                 bf'2
-                                                _ \markup 12
                                                 b'2
-                                                _ \markup 13
                                             }
                                             \times 2/3
                                             {
                                                 d''2
-                                                _ \markup 14
                                                 af'2
-                                                _ \markup 15
                                                 b2
-                                                _ \markup 16
                                             }
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 6/5
                                             {
                                                 cs'4
-                                                _ \markup 17
                                                 f4
-                                                _ \markup 18
                                                 bf4
-                                                _ \markup 19
                                                 e4
-                                                _ \markup 20
                                                 d4
-                                                _ \markup 21
                                             }
                                             g4
-                                            _ \markup 22
                                             e4
-                                            _ \markup 23
                                             d4
-                                            _ \markup 24
                                             bf4
-                                            _ \markup 25
                                             \times 4/6
                                             {
                                                 bf,8
-                                                _ \markup 26
+                                                [
                                                 b,8
-                                                _ \markup 27
                                                 d,8
-                                                _ \markup 28
                                                 gs,8
-                                                _ \markup 29
                                                 e,8
-                                                _ \markup 30
                                                 cs,8
-                                                _ \markup 31
+                                                ]
                                             }
                                             f,2
-                                            _ \markup 32
                                             bf,2
-                                            _ \markup 33
                                             b,!2
-                                            _ \markup 34
                                         }
                                     >>
                                     \oneVoice
