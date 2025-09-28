@@ -1851,6 +1851,7 @@
                                         - \abjad-solid-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
+                                        - \tweak bound-details.right.padding -8
                                         \startTextSpanThree
                                         \>
                                         \times 2/3
@@ -2229,26 +2230,204 @@
                                         \revert Dots.staff-position
                                         \tweak style #'harmonic
                                         bqf''16
+                                        \f
                                         )
                                         \stopTextSpanOne
+                                        \stopTextSpanThree
                                         \stopTextSpanTwo
                                         ]
                                     }
-                                    r2
-                                    \f
-                                    \stopTextSpanThree
-                                    r1.
-                                    r\breve
-                                    r1
-                                    r1.
-                                    r1
-                                    r2
-                                    - \tweak padding #2
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
-                                    \startTextSpanThree
-                                    r1.
+                                    <<
+                                        \context Voice = "cello 2 voice temp"
+                                        {
+                                            \voiceOne
+                                            bf''8
+                                            ^ \markup 0
+                                            f''8
+                                            ^ \markup 1
+                                            cs'''8
+                                            ^ \markup 2
+                                            b''8
+                                            ^ \markup 3
+                                            a''2
+                                            ^ \markup 4
+                                            cs'''2
+                                            ^ \markup 5
+                                            b''2
+                                            ^ \markup 6
+                                            \times 4/5
+                                            {
+                                                g''2
+                                                ^ \markup 7
+                                                f''2
+                                                ^ \markup 8
+                                                cs''2
+                                                ^ \markup 9
+                                                b''!2
+                                                ^ \markup 10
+                                                g''2
+                                                ^ \markup 11
+                                            }
+                                            \times 4/6
+                                            {
+                                                e''4
+                                                ^ \markup 12
+                                                b'4
+                                                ^ \markup 13
+                                                bf'4
+                                                ^ \markup 14
+                                                bf'4
+                                                ^ \markup 15
+                                                cs'4
+                                                ^ \markup 16
+                                                e4
+                                                ^ \markup 17
+                                            }
+                                            \clef "tenor"
+                                            g2
+                                            ^ \markup 18
+                                            d'2
+                                            ^ \markup 19
+                                            b,2
+                                            ^ \markup 20
+                                            \times 4/5
+                                            {
+                                                bf4
+                                                ^ \markup 21
+                                                f4
+                                                ^ \markup 22
+                                                cs4
+                                                ^ \markup 23
+                                                e4
+                                                ^ \markup 24
+                                                af4
+                                                ^ \markup 25
+                                            }
+                                            \clef "bass"
+                                            d8
+                                            ^ \markup 26
+                                            - \tweak padding #16
+                                            - \abjad-solid-line-with-arrow
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
+                                            - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
+                                            - \tweak bound-details.right.padding -15
+                                            \startTextSpanThree
+                                            b,8
+                                            ^ \markup 27
+                                            c8
+                                            ^ \markup 28
+                                            as,8
+                                            ^ \markup 29
+                                            d4
+                                            ^ \markup 30
+                                            b,4
+                                            ^ \markup 31
+                                            g,4
+                                            ^ \markup 32
+                                            df,4
+                                            ^ \markup 33
+                                            b!4
+                                            ^ \markup 34
+                                            bf,4
+                                            ^ \markup 35
+                                            \stopTextSpanThree
+                                        }
+                                        \context Voice = "cello polyrhythm voice"
+                                        {
+                                            \times 2/3
+                                            {
+                                                \voiceTwo
+                                                d'''4
+                                                _ \markup 0
+                                                g''4
+                                                _ \markup 1
+                                                e'''4
+                                                _ \markup 2
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                cs'''4
+                                                _ \markup 3
+                                                f''4
+                                                _ \markup 4
+                                                bf''4
+                                                _ \markup 5
+                                                b''4
+                                                _ \markup 6
+                                                d'''4
+                                                _ \markup 7
+                                            }
+                                            \times 4/6
+                                            {
+                                                g'2
+                                                _ \markup 8
+                                                fs'2
+                                                _ \markup 9
+                                                cs'''2
+                                                _ \markup 10
+                                                f'''2
+                                                _ \markup 11
+                                                bf'2
+                                                _ \markup 12
+                                                b'2
+                                                _ \markup 13
+                                            }
+                                            \times 2/3
+                                            {
+                                                d''2
+                                                _ \markup 14
+                                                af'2
+                                                _ \markup 15
+                                                b2
+                                                _ \markup 16
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                cs'4
+                                                _ \markup 17
+                                                f4
+                                                _ \markup 18
+                                                bf4
+                                                _ \markup 19
+                                                e4
+                                                _ \markup 20
+                                                d4
+                                                _ \markup 21
+                                            }
+                                            g4
+                                            _ \markup 22
+                                            e4
+                                            _ \markup 23
+                                            d4
+                                            _ \markup 24
+                                            bf4
+                                            _ \markup 25
+                                            \times 4/6
+                                            {
+                                                bf,8
+                                                _ \markup 26
+                                                b,8
+                                                _ \markup 27
+                                                d,8
+                                                _ \markup 28
+                                                gs,8
+                                                _ \markup 29
+                                                e,8
+                                                _ \markup 30
+                                                cs,8
+                                                _ \markup 31
+                                            }
+                                            f,2
+                                            _ \markup 32
+                                            bf,2
+                                            _ \markup 33
+                                            b,!2
+                                            _ \markup 34
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -2256,7 +2435,6 @@
                                       %! +SCORE
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     r4
-                                    \stopTextSpanThree
                                       %! +SCORE
                                     \stopStaff \startStaff
                                 }

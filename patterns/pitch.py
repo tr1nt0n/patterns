@@ -314,7 +314,7 @@ def pitch_d(
     return do_pitching
 
 
-def pitch_e(instrument, selector=trinton.pleaves(), index=0):
+def pitch_e(instrument, selector=trinton.pleaves(), index=0, retrograde=False):
     def do_pitching(argument):
         selections = selector(argument)
         _instrument_to_pitch_information = {
@@ -363,6 +363,10 @@ def pitch_e(instrument, selector=trinton.pleaves(), index=0):
                 pitch_list.append(new_pitch)
 
         pitch_list = trinton.rotated_sequence(pitch_list, index % len(pitch_list))
+
+        if retrograde is True:
+            pitch_list = abjad.PitchClassSegment(pitch_list).retrograde()
+            pitch_list = [_.number for _ in pitch_list]
 
         handler = evans.PitchHandler(pitch_list=pitch_list)
 

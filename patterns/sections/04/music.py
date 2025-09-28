@@ -1652,8 +1652,9 @@ trinton.make_music(
             abjad.StartHairpin(">"),
             abjad.Dynamic("pp"),
             abjad.StartHairpin("<"),
+            abjad.Dynamic("f"),
         ],
-        selector=trinton.select_leaves_by_index([0, 28, 36, 59], pitched=True),
+        selector=trinton.select_leaves_by_index([0, 28, 36, 59, -1], pitched=True),
     ),
     voice=score["cello 2 voice"],
 )
@@ -1669,15 +1670,122 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (8, 15)),
+    evans.RhythmHandler(rhythm.rhythm_e(index=13)),
+    pitch.pitch_e(instrument="cello", index=0, retrograde=True),
+    trinton.rewrite_meter_command(boundary_depth=-2),
+    trinton.annotate_leaves_locally(
+        selector=trinton.logical_ties(first=True, pitched=True), direction=abjad.UP
+    ),
+    trinton.octavation(
+        octave=2,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                2,
+                5,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.select_logical_ties_by_index(
+            [
+                0,
+                1,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+            ],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_logical_ties_by_index(
+            [17, 18, 21, 22, 23, 24, 25, 26, 28, 30, 34],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.octavation(
+        octave=-2,
+        selector=trinton.select_logical_ties_by_index(
+            [20, 27, 29, 31, 32, 33, 35],
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.respell_with_sharps(selector=trinton.select_leaves_by_index([29])),
+    trinton.respell_with_flats(selector=trinton.select_leaves_by_index([33])),
+    trinton.force_accidentals_command(
+        selector=trinton.select_logical_ties_by_index(
+            [10, 34], first=True, pitched=True
+        )
+    ),
     trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic("f"),
-            abjad.StartHairpin("|>"),
-            abjad.Dynamic("ppp"),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
+        attachments=[abjad.Clef("tenor"), abjad.Clef("bass")],
+        selector=trinton.select_leaves_by_index([18, 26]),
+    ),
+    # trinton.linear_attachment_command(
+    #     attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [18, 21, 30, 35], first=True, pitched=True
+    #     ),
+    # ),
+    trinton.IntermittentVoiceHandler(
+        evans.RhythmHandler(rhythm.rhythm_e(index=13, lower_voice=True)),
+        direction=abjad.DOWN,
+        voice_name="cello polyrhythm voice",
+        preprocessor=trinton.fuse_quarters_preprocessor((2, 6, 8, 4, 6, 4, 2, 6)),
     ),
     voice=score["cello 2 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 15)),
+    pitch.pitch_e(instrument="cello", index=0, retrograde=False),
+    trinton.annotate_leaves_locally(
+        selector=trinton.logical_ties(first=True, pitched=True), direction=abjad.DOWN
+    ),
+    trinton.octavation(
+        octave=2, selector=trinton.select_leaves_by_index([0, 2, 3, 7, 10, 11])
+    ),
+    trinton.octavation(
+        octave=1, selector=trinton.select_leaves_by_index([1, 4, 5, 6, 14])
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_leaves_by_index(
+            [
+                16,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+            ]
+        ),
+    ),
+    trinton.octavation(
+        octave=-2,
+        selector=trinton.select_leaves_by_index([26, 27, 28, 29, 30, 31, 32, 33, 34]),
+    ),
+    trinton.respell_with_sharps(selector=trinton.select_leaves_by_index([29])),
+    trinton.force_accidentals_command(
+        selector=trinton.select_logical_ties_by_index([34], first=True, pitched=True)
+    ),
+    voice=score["cello polyrhythm voice"],
 )
 
 # globals
@@ -1749,7 +1857,7 @@ for voice_name, padding, end_anchor in zip(
         "violin 2 voice",
         "violin 3 voice",
         "viola 2 voice",
-        "cello 2 voice",
+        # "cello 2 voice",
     ],
     [14, 8.5, 11.5, 16],
     [-1, -9, -4, -1],
@@ -1799,12 +1907,57 @@ for voice_name, padding, end_anchor in zip(
         voice=score[voice_name],
     )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 7)),
+    trinton.spanner_command(
+        strings=[
+            trinton.tempo_markup(
+                note_value=4,
+                tempo=125,
+                padding=0,
+                note_head_fontsize=-0.5,
+                stem_length=1.5,
+                text_fontsize=3,
+                dotted=False,
+                fraction=None,
+                tempo_change="accel.",
+                site="after",
+                hspace=0,
+                string_only=True,
+            ),
+            trinton.tempo_markup(
+                note_value=4,
+                tempo=125,
+                padding=0,
+                note_head_fontsize=0.5,
+                stem_length=1.5,
+                text_fontsize=4,
+                dotted=False,
+                fraction=None,
+                tempo_change=None,
+                site="after",
+                hspace=0,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=16,
+        tweaks=None,
+        right_padding=8,
+        direction=None,
+        full_string=True,
+        command="Three",
+    ),
+    voice=score["cello 2 voice"],
+)
+
 for voice_name, padding, end_anchor in zip(
     [
         "violin 2 voice",
         "violin 4 voice",
         "viola 2 voice",
-        "cello 2 voice",
+        # "cello 2 voice",
     ],
     [14, 2, 2, 2],
     [-1, -1, -1, -1],
@@ -1853,6 +2006,51 @@ for voice_name, padding, end_anchor in zip(
         ),
         voice=score[voice_name],
     )
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (14, 15)),
+    trinton.spanner_command(
+        strings=[
+            trinton.tempo_markup(
+                note_value=4,
+                tempo=50,
+                padding=0,
+                note_head_fontsize=-0.5,
+                stem_length=1.5,
+                text_fontsize=3,
+                dotted=False,
+                fraction=None,
+                tempo_change="rit.",
+                site="after",
+                hspace=0,
+                string_only=True,
+            ),
+            trinton.tempo_markup(
+                note_value=4,
+                tempo=50,
+                padding=0,
+                note_head_fontsize=0.5,
+                stem_length=1.5,
+                text_fontsize=4,
+                dotted=False,
+                fraction=None,
+                tempo_change=None,
+                site="after",
+                hspace=0,
+                string_only=True,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=16,
+        tweaks=None,
+        right_padding=15,
+        direction=None,
+        full_string=True,
+        command="Three",
+    ),
+    voice=score["cello 2 voice temp"],
+)
 
 # breaking
 
