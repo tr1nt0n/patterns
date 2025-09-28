@@ -16,6 +16,8 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 23 15.5 20 28)))
             \time 9/8
             s1 * 9/8
               %! +SCORE
@@ -24,6 +26,8 @@
             s1 * 3/2
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (13 24 19 26.5 33)))
             \time 5/4
             s1 * 5/4
               %! +SCORE
@@ -32,6 +36,8 @@
             s1 * 1
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (5.5 23 16 30 32)))
             \time 1/4
             s1 * 1/4
               %! +SCORE
@@ -40,6 +46,8 @@
             s1 * 5/4
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (13 19 20 27 32)))
             \time 3/4
             s1 * 3/4
               %! +SCORE
@@ -1123,77 +1131,305 @@
                                     \override Staff.Clef.stencil = ##f
                                     \clef "percussion"
                                     c'4.
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    (
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #3.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Tailpiece" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
+                                    \<
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'16
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     c'16
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.4
+                                                #:dynamic "f"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     ]
+                                    - \tweak circled-tip ##t
+                                    \>
                                     ~
                                     c'4
                                     ~
                                     c'4.
+                                    )
                                     c'4.
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    (
+                                    \<
                                     ~
                                     c'8
                                     c'4
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    \>
                                     ~
                                     c'4
                                     c'8
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    \<
                                     ~
                                     c'4.
+                                    )
                                     c'2
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    (
+                                    \>
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'8
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     c'8
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
                                     ]
                                     ~
                                     c'2
+                                    )
                                     c'4..
-                                    - \tweak padding #2
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.4
+                                                #:dynamic "f"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    (
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
                                     \startTextSpanThree
+                                    \>
                                     c'16
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mf"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
                                     ~
                                     c'4
                                     c'4
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "p"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    )
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'8
                                     [
+                                    (
+                                    \>
                                     \revert Staff.Stem.stemlet-length
                                     c'8
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "pp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    )
                                     ]
+                                    \<
                                     c'4
-                                    c'2
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.1
+                                                #:dynamic "mp"
+                                                #:hspace -0.25
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    - \tweak font-size #10
+                                    - \tweak padding #4
+                                    ^ \middle-fermata
+                                    \stopTextSpan
+                                    \staff-line-count 5
+                                      %! +SCORE
+                                    \revert Staff.BarLine.bar-extent
+                                    \revert Staff.Clef.stencil
+                                    \clef "alto"
+                                    <g a>2
+                                    - \accent
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
+                                    - \tweak circled-tip ##t
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #10
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "On bridge, allowing strings to ring" } \hspace #0.5 }
+                                    \startTextSpanOne
                                     ~
-                                    c'2
-                                    c'4
-                                    c'4
-                                    c'4
+                                    <g a>2
+                                    <g a>4
+                                    - \accent
+                                    \ppp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
+                                    (
+                                    \<
+                                    <g a>4
+                                    \p
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
+                                    \>
+                                    <g a>4
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
+                                    )
+                                    - \tweak circled-tip ##t
+                                    \>
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    c'8.
-                                    [
-                                    \revert Staff.Stem.stemlet-length
-                                    c'16
-                                    ]
-                                    ~
-                                    \override Staff.Stem.stemlet-length = 0.75
-                                    c'8
-                                    [
-                                    \revert Staff.Stem.stemlet-length
-                                    c'8
+                                    <g a>8.
+                                    - \accent
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
                                     \stopTextSpanThree
+                                    [
+                                    (
+                                    - \tweak stencil #abjad-flared-hairpin
+                                    \>
+                                    \revert Staff.Stem.stemlet-length
+                                    <g a>16
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
+                                    ]
+                                    \>
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <g a>8
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <g a>8
+                                    \ppp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
+                                    )
                                     ]
                                     r1.
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #10
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "molto tasto" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -4
+                                    \startTextSpanOne
                                     r\breve
+                                    \stopTextSpanOne
                                     r1
                                     r1.
                                     r1
