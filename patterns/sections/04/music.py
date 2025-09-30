@@ -328,7 +328,7 @@ trinton.make_music(
     trinton.hooked_spanner_command(
         string=r"+ bowing body",
         selector=trinton.select_leaves_by_index([2, -1], pitched=True),
-        padding=10,
+        padding=11.5,
         direction=None,
         right_padding=4,
         full_string=False,
@@ -430,21 +430,6 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.bundle(
-                abjad.Markup(r"\middle-fermata"),
-                abjad.Tweak(r"- \tweak padding #7.5"),
-                abjad.Tweak(r"- \tweak font-size #10"),
-            ),
-            abjad.bundle(
-                abjad.Articulation("talon-to-punta"),
-                abjad.Tweak(r"- \tweak padding #1"),
-            ),
-        ],
-        direction=abjad.UP,
-        selector=trinton.select_leaves_by_index([0], pitched=True),
-    ),
     trinton.spanner_command(
         strings=[
             r"On bridge, allowing strings to ring",
@@ -454,7 +439,7 @@ trinton.make_music(
             [0, 7, 7, -1], first=True, pitched=True
         ),
         style="solid-line-with-arrow",
-        padding=12.5,
+        padding=10,
         right_padding=0,
         direction=None,
         full_string=False,
@@ -824,17 +809,6 @@ trinton.make_music(
             pitched=True,
         ),
         direction=abjad.UP,
-    ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.bundle(
-                abjad.Markup(r"\middle-fermata"),
-                abjad.Tweak(r"- \tweak padding #3"),
-                abjad.Tweak(r"- \tweak font-size #10"),
-            ),
-        ],
-        direction=abjad.UP,
-        selector=trinton.select_logical_ties_by_index([22], first=True, pitched=True),
     ),
     voice=score["violin 4 voice"],
 )
@@ -1432,17 +1406,6 @@ trinton.make_music(
         attachments=[abjad.Clef("treble")],
         selector=trinton.select_logical_ties_by_index([23], first=True, pitched=True),
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.bundle(
-                abjad.Markup(r"\middle-fermata"),
-                abjad.Tweak(r"- \tweak padding #4"),
-                abjad.Tweak(r"- \tweak font-size #10"),
-            ),
-        ],
-        direction=abjad.UP,
-        selector=trinton.select_logical_ties_by_index([0], first=True, pitched=True),
-    ),
     trinton.linear_attachment_command(
         attachments=[
             abjad.Articulation(">"),
@@ -1888,17 +1851,6 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index(
             [26, 33, 34, 40, 51, 59, 60, 61, 64, 65, 68], pitched=True
         ),
-    ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.bundle(
-                abjad.Markup(r"\middle-fermata"),
-                abjad.Tweak(r"- \tweak padding #3"),
-                abjad.Tweak(r"- \tweak font-size #10"),
-            ),
-        ],
-        direction=abjad.UP,
-        selector=trinton.select_logical_ties_by_index([43], first=True, pitched=True),
     ),
     trinton.change_notehead_command(
         notehead="harmonic",
@@ -2402,7 +2354,7 @@ for voice_name, padding, end_anchor in zip(
         "viola 2 voice",
         # "cello 2 voice",
     ],
-    [14, 8.5, 12, 16],
+    [11.5, 8.5, 12, 16],
     [-1, -9, -4, -1],
 ):
     trinton.make_music(
@@ -2501,7 +2453,7 @@ for voice_name, padding, end_anchor in zip(
         "viola 2 voice",
     ],
     [
-        14,
+        13.5,
         12,
     ],
     [-1, -1, -1, -1],

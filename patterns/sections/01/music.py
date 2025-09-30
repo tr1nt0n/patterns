@@ -256,7 +256,12 @@ trinton.make_music(
         ),
     ),
     trinton.attachment_command(
-        attachments=[abjad.Articulation("staccato")],
+        attachments=[
+            abjad.bundle(
+                abjad.Articulation("staccato"),
+                r"""- \tweak color #(css-color 'darkred)""",
+            ),
+        ],
         selector=trinton.select_logical_ties_by_index(
             [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20],
             pitched=True,
@@ -337,6 +342,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -357,6 +363,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -377,6 +384,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -403,6 +411,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -423,6 +432,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -435,6 +445,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
     ),
+    library.color_voice(),
     voice=score["violin 1 legno voice"],
 )
 
@@ -514,10 +525,6 @@ trinton.make_music(
         hspace=None,
         command="One",
         tag=None,
-        tweaks=[
-            r"""- \tweak font-name "Bodoni72 Book" """,
-            r"""- \tweak font-size 1""",
-        ],
     ),
     trinton.spanner_command(
         strings=[r"\markup {}", r"\bow-tip-up"],
@@ -528,10 +535,6 @@ trinton.make_music(
         direction=None,
         full_string=True,
         command="One",
-        tweaks=[
-            r"""- \tweak font-name "Bodoni72 Book" """,
-            r"""- \tweak font-size 1""",
-        ],
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -803,7 +806,12 @@ trinton.make_music(
         ),
     ),
     trinton.attachment_command(
-        attachments=[abjad.Articulation("staccato")],
+        attachments=[
+            abjad.bundle(
+                abjad.Articulation("staccato"),
+                r"""- \tweak color #(css-color 'darkred)""",
+            ),
+        ],
         selector=trinton.select_logical_ties_by_index(
             [
                 0,
@@ -902,6 +910,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -922,6 +931,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -942,6 +952,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -962,6 +973,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -982,6 +994,7 @@ trinton.make_music(
         tweaks=[
             r"""- \tweak font-name "Bodoni72 Book" """,
             r"""- \tweak font-size 2""",
+            r"""- \tweak color #(css-color 'darkred)""",
             # r"- \tweak Y-extent ##f",
             # r"- \tweak Y-offset -12",
             # r"""- \tweak bound-details.left.Y #-10.5""",
@@ -997,6 +1010,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
     ),
+    library.color_voice(),
     voice=score["viola legno voice"],
 )
 
@@ -1026,7 +1040,9 @@ trinton.make_music(
         ]
     ),
     trinton.attachment_command(
-        attachments=[abjad.Articulation("staccato")],
+        attachments=[
+            abjad.Articulation("staccato"),
+        ],
         selector=trinton.durational_selector(
             durations=[abjad.Duration((1, 16))],
             preselector=trinton.logical_ties(pitched=True),
@@ -1150,18 +1166,27 @@ trinton.make_music(
     trinton.change_notehead_command(notehead="cluster", selector=trinton.pleaves()),
     trinton.duration_line(
         selector=trinton.select_logical_ties_by_index([1], pitched=True, grace=False),
+        color=r"(css-color 'darkred)",
     ),
     trinton.noteheads_only(selector=trinton.pleaves(grace=True)),
     trinton.attachment_command(
         attachments=[
-            abjad.Markup(
-                r"""\markup \fontsize #2 { \hspace #-4.5 \raise #4 { "Bow:" } }"""
+            abjad.bundle(
+                abjad.Markup(
+                    r"""\markup \fontsize #2 { \hspace #-4.5 \raise #4 { "Bow:" } }"""
+                ),
+                r"""- \tweak color #(css-color 'darkred)""",
             )
         ],
         selector=trinton.select_leaves_by_index([0]),
     ),
     trinton.attachment_command(
-        attachments=[abjad.Articulation("staccato")],
+        attachments=[
+            abjad.bundle(
+                abjad.Articulation("staccato"),
+                r"""- \tweak color #(css-color 'darkred)""",
+            ),
+        ],
         selector=trinton.durational_selector(
             durations=[abjad.Duration((1, 32))],
             preselector=trinton.logical_ties(pitched=True, grace=False),
@@ -1198,6 +1223,7 @@ trinton.make_music(
             r"""- \tweak font-size 2""",
         ],
     ),
+    library.color_voice(),
     voice=score["cello bow voice"],
 )
 

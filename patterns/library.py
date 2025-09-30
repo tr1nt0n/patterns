@@ -96,6 +96,44 @@ _scale_degree_to_cents = {
 # notation tools
 
 
+def color_voice(selector=trinton.select_leaves_by_index([0, -1])):
+    def color(argument):
+        selections = selector(argument)
+
+        start_literal = abjad.LilyPondLiteral(
+            [
+                r"\override Voice.NoteHead.color = #(css-color 'darkred)",
+                r"\override Voice.Dots.color = #(css-color 'darkred)",
+                r"\override Voice.Stem.color = #(css-color 'darkred)",
+                r"\override Voice.Beam.color = #(css-color 'darkred)",
+                r"\override Voice.Rest.color = #(css-color 'darkred)",
+                r"\override Voice.Tie.color = #(css-color 'darkred)",
+                r"\override Voice.TupletBracket.color = #(css-color 'darkred)",
+                r"\override Voice.TupletNumber.color = #(css-color 'darkred)",
+            ],
+            site="before",
+        )
+
+        stop_literal = abjad.LilyPondLiteral(
+            [
+                r"\revert Voice.NoteHead.color",
+                r"\revert Voice.Dots.color",
+                r"\revert Voice.Stem.color",
+                r"\revert Voice.Beam.color",
+                r"\revert Voice.Rest.color",
+                r"\revert Voice.Tie.color",
+                r"\revert Voice.TupletBracket.color",
+                r"\revert Voice.TupletNumber.color",
+            ],
+            site="absolute_after",
+        )
+
+        abjad.attach(start_literal, selections[0])
+        abjad.attach(stop_literal, selections[-1])
+
+    return color
+
+
 def bow_speed_glissandi(selection_groupings, length_fractions):
     def make_glissandi(argument):
         selections = abjad.select.logical_ties(argument)

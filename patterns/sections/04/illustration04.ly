@@ -293,7 +293,7 @@
                                     \>
                                     r4
                                     \!
-                                    - \tweak padding #14
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
@@ -315,11 +315,6 @@
                                     \clef "treble"
                                     <g! fs'!>16
                                     - \accent
-                                    - \tweak padding #1
-                                    ^ \talon-to-punta
-                                    - \tweak font-size #10
-                                    - \tweak padding #7.5
-                                    ^ \middle-fermata
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -49 }\line { +0 }} } }
                                     [
                                     - \tweak circled-tip ##t
@@ -327,7 +322,7 @@
                                     \>
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #12.5
+                                    - \tweak padding #10
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \upright { "On bridge, allowing strings to ring" } \hspace #0.5 }
                                     \startTextSpanOne
@@ -381,7 +376,7 @@
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #12.5
+                                    - \tweak padding #10
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "molto tasto" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -4
@@ -496,7 +491,7 @@
                                     - \tweak circled-tip ##t
                                     - \tweak stencil #abjad-flared-hairpin
                                     \>
-                                    - \tweak padding #14
+                                    - \tweak padding #13.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
@@ -516,7 +511,7 @@
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #10
+                                    - \tweak padding #11.5
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "+ bowing body" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -4
@@ -976,9 +971,6 @@
                                             c'16
                                             ]
                                             fs'4
-                                            - \tweak font-size #10
-                                            - \tweak padding #3
-                                            ^ \middle-fermata
                                             e'4
                                             a'4
                                             ^ \>
@@ -1070,27 +1062,27 @@
                                         \override Staff.NoteHead.no-ledgers = ##t
                                         \tweak style #'cross
                                         f''16
-                                        ^ \markup 0
+                                        _ \markup 0
                                         [
                                         \tweak style #'cross
                                         g''16
-                                        ^ \markup 1
+                                        _ \markup 1
                                         \tweak style #'cross
                                         f''16
-                                        ^ \markup 2
+                                        _ \markup 2
                                         \tweak style #'cross
                                         e''16
-                                        ^ \markup 3
+                                        _ \markup 3
                                         \tweak style #'cross
                                         g''16
-                                        ^ \markup 4
+                                        _ \markup 4
                                         ]
                                         \once \override Rest.staff-position = #-7
                                         r4
-                                        ^ \markup 5
+                                        _ \markup 5
                                         \tweak style #'cross
                                         g''16
-                                        ^ \markup 6
+                                        _ \markup 6
                                     }
                                     <
                                         \tweak style #'cross
@@ -1098,21 +1090,21 @@
                                         \tweak style #'harmonic
                                         f''
                                     >16
-                                    ^ \markup 7
+                                    _ \markup 7
                                     <
                                         \tweak style #'cross
                                         c''
                                         \tweak style #'harmonic
                                         f''
                                     >16
-                                    ^ \markup 8
+                                    _ \markup 8
                                     [
                                     \tweak style #'cross
                                     g''16
-                                    ^ \markup 9
+                                    _ \markup 9
                                     \once \override Rest.staff-position = #-7
                                     r8
-                                    ^ \markup 10
+                                    _ \markup 10
                                     ]
                                     \times 4/5
                                     {
@@ -1122,7 +1114,7 @@
                                             \tweak style #'harmonic
                                             f''
                                         >16
-                                        ^ \markup 11
+                                        _ \markup 11
                                         [
                                         <
                                             \tweak style #'cross
@@ -1130,70 +1122,70 @@
                                             \tweak style #'harmonic
                                             f''
                                         >16
-                                        ^ \markup 12
+                                        _ \markup 12
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 13
+                                        _ \markup 13
                                         \tweak style #'cross
                                         g''16
-                                        ^ \markup 14
+                                        _ \markup 14
                                         ]
                                     }
                                     \times 4/5
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 15
+                                        _ \markup 15
                                         [
                                         \tweak style #'cross
                                         g''16
-                                        ^ \markup 16
+                                        _ \markup 16
                                         \tweak style #'cross
                                         f''16
-                                        ^ \markup 17
+                                        _ \markup 17
                                         \tweak style #'cross
                                         c''16
-                                        ^ \markup 18
+                                        _ \markup 18
                                         ]
                                     }
                                     \once \override Rest.staff-position = #-7
                                     r4
-                                    ^ \markup 19
+                                    _ \markup 19
                                     \times 4/6
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 20
+                                        _ \markup 20
                                         [
                                         \tweak style #'cross
                                         d'8
-                                        ^ \markup 21
+                                        _ \markup 21
                                         \tweak style #'cross
                                         d''8
-                                        ^ \markup 22
+                                        _ \markup 22
                                         \tweak style #'cross
                                         e'8
-                                        ^ \markup 23
+                                        _ \markup 23
                                         ]
                                         \once \override Rest.staff-position = #-7
                                         r4
-                                        ^ \markup 24
+                                        _ \markup 24
                                     }
                                     \times 4/6
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 25
+                                        _ \markup 25
                                         [
                                         \tweak style #'cross
                                         e''16
-                                        ^ \markup 26
+                                        _ \markup 26
                                         \tweak style #'cross
                                         e'16
-                                        ^ \markup 27
+                                        _ \markup 27
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 28
+                                        _ \markup 28
                                         ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -1205,46 +1197,46 @@
                                             \tweak style #'harmonic
                                             e''
                                         >16
-                                        ^ \markup 29
+                                        _ \markup 29
                                         [
                                         \tweak style #'cross
                                         d'16
-                                        ^ \markup 30
+                                        _ \markup 30
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 31
+                                        _ \markup 31
                                         \tweak style #'cross
                                         e'16
-                                        ^ \markup 32
+                                        _ \markup 32
                                         \tweak style #'cross
                                         d''16
-                                        ^ \markup 33
+                                        _ \markup 33
                                         ]
                                     }
                                     \times 2/3
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r16
-                                        ^ \markup 34
+                                        _ \markup 34
                                         [
                                         \tweak style #'cross
                                         f''16
-                                        ^ \markup 35
+                                        _ \markup 35
                                         \tweak style #'cross
                                         g'16
-                                        ^ \markup 36
+                                        _ \markup 36
                                         ]
                                     }
                                     \once \override Rest.staff-position = #-7
                                     r16
-                                    ^ \markup 37
+                                    _ \markup 37
                                     \once \override Rest.staff-position = #-7
                                     r8
-                                    ^ \markup 38
+                                    _ \markup 38
                                     [
                                     \tweak style #'cross
                                     f''16.
-                                    ^ \markup 39
+                                    _ \markup 39
                                     \set stemLeftBeamCount = 3
                                     \set stemRightBeamCount = 1
                                     <
@@ -1253,7 +1245,7 @@
                                         \tweak style #'harmonic
                                         b'
                                     >32
-                                    ^ \markup 40
+                                    _ \markup 40
                                     ~
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
@@ -1263,45 +1255,45 @@
                                         \tweak style #'harmonic
                                         b'
                                     >16
-                                    ^ \markup 41
+                                    _ \markup 41
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     \tweak style #'cross
                                     g''16
-                                    ^ \markup 42
+                                    _ \markup 42
                                     ~
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 3
                                     \tweak style #'cross
                                     g''32
-                                    ^ \markup 43
+                                    _ \markup 43
                                     <
                                         \tweak style #'cross
                                         a'
                                         \tweak style #'harmonic
                                         d''
                                     >16.
-                                    ^ \markup 44
+                                    _ \markup 44
                                     ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 11/12
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r4
-                                        ^ \markup 45
+                                        _ \markup 45
                                         \tweak style #'cross
                                         f''8
-                                        ^ \markup 46
+                                        _ \markup 46
                                         [
                                         \tweak style #'cross
                                         e''8
-                                        ^ \markup 47
+                                        _ \markup 47
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 48
+                                        _ \markup 48
                                         \tweak style #'cross
                                         d''8
-                                        ^ \markup 49
+                                        _ \markup 49
                                         ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -1309,42 +1301,42 @@
                                     {
                                         \tweak style #'cross
                                         c''8
-                                        ^ \markup 50
+                                        _ \markup 50
                                         [
                                         \tweak style #'cross
                                         b'8
-                                        ^ \markup 51
+                                        _ \markup 51
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 52
+                                        _ \markup 52
                                         ]
                                     }
                                     \times 4/5
                                     {
                                         \tweak style #'cross
                                         b'16
-                                        ^ \markup 53
+                                        _ \markup 53
                                         [
                                         \tweak style #'cross
                                         d''16
-                                        ^ \markup 54
+                                        _ \markup 54
                                         <
                                             \tweak style #'cross
                                             b'
                                             \tweak style #'harmonic
                                             d''
                                         >16
-                                        ^ \markup 55
+                                        _ \markup 55
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 56
+                                        _ \markup 56
                                         ]
                                     }
                                     \times 4/5
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r16
-                                        ^ \markup 57
+                                        _ \markup 57
                                         [
                                         <
                                             \tweak style #'cross
@@ -1352,15 +1344,15 @@
                                             \tweak style #'harmonic
                                             d''
                                         >16
-                                        ^ \markup 58
+                                        _ \markup 58
                                         \tweak style #'cross
                                         a'16
-                                        ^ \markup 59
+                                        _ \markup 59
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         \tweak style #'cross
                                         c''16
-                                        ^ \markup 60
+                                        _ \markup 60
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         <
@@ -1369,50 +1361,50 @@
                                             \tweak style #'harmonic
                                             c''
                                         >16
-                                        ^ \markup 61
+                                        _ \markup 61
                                         \once \override Rest.staff-position = #-7
                                         r8.
-                                        ^ \markup 62
+                                        _ \markup 62
                                         \tweak style #'cross
                                         g'16
-                                        ^ \markup 63
+                                        _ \markup 63
                                         \tweak style #'cross
                                         b'16
-                                        ^ \markup 64
+                                        _ \markup 64
                                         ]
                                     }
                                     \times 4/5
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 65
+                                        _ \markup 65
                                         [
                                         \tweak style #'cross
                                         g'16
-                                        ^ \markup 66
+                                        _ \markup 66
                                         \tweak style #'cross
                                         f'16
-                                        ^ \markup 67
+                                        _ \markup 67
                                         \tweak style #'cross
                                         e'16
-                                        ^ \markup 68
+                                        _ \markup 68
                                         ]
                                         \once \override Rest.staff-position = #-7
                                         r4
-                                        ^ \markup 69
+                                        _ \markup 69
                                         <
                                             \tweak style #'cross
                                             e'
                                             \tweak style #'harmonic
                                             g'
                                         >16
-                                        ^ \markup 70
+                                        _ \markup 70
                                     }
                                     \times 4/5
                                     {
                                         \tweak style #'cross
                                         e'16
-                                        ^ \markup 71
+                                        _ \markup 71
                                         [
                                         <
                                             \tweak style #'cross
@@ -1420,16 +1412,16 @@
                                             \tweak style #'harmonic
                                             g'
                                         >16
-                                        ^ \markup 72
+                                        _ \markup 72
                                         \once \override Rest.staff-position = #-7
                                         r16
-                                        ^ \markup 73
+                                        _ \markup 73
                                         \tweak style #'cross
                                         f'16
-                                        ^ \markup 74
+                                        _ \markup 74
                                         \once \override Rest.staff-position = #-7
                                         r16
-                                        ^ \markup 75
+                                        _ \markup 75
                                         ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -1437,22 +1429,22 @@
                                     {
                                         \tweak style #'cross
                                         e'16
-                                        ^ \markup 76
+                                        _ \markup 76
                                         [
                                         \tweak style #'cross
                                         d'16
-                                        ^ \markup 77
+                                        _ \markup 77
                                         \tweak style #'cross
                                         c'16
-                                        ^ \markup 78
+                                        _ \markup 78
                                         \once \override Rest.staff-position = #-7
                                         r16
-                                        ^ \markup 79
+                                        _ \markup 79
                                         ]
                                     }
                                     \once \override Rest.staff-position = #-7
                                     r16
-                                    ^ \markup 80
+                                    _ \markup 80
                                     [
                                     <
                                         \tweak style #'cross
@@ -1460,14 +1452,14 @@
                                         \tweak style #'harmonic
                                         d'
                                     >16
-                                    ^ \markup 81
+                                    _ \markup 81
                                     ]
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 9/8
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 82
+                                        _ \markup 82
                                         [
                                         <
                                             \tweak style #'cross
@@ -1475,48 +1467,48 @@
                                             \tweak style #'harmonic
                                             f'
                                         >16
-                                        ^ \markup 83
+                                        _ \markup 83
                                         \tweak style #'cross
                                         c'16
-                                        ^ \markup 84
+                                        _ \markup 84
                                         \tweak style #'cross
                                         b16
-                                        ^ \markup 85
+                                        _ \markup 85
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 86
+                                        _ \markup 86
                                         \tweak style #'cross
                                         a16
-                                        ^ \markup 87
+                                        _ \markup 87
                                         ]
                                     }
                                     \times 2/3
                                     {
                                         \tweak style #'cross
                                         a16
-                                        ^ \markup 88
+                                        _ \markup 88
                                         [
                                         \tweak style #'cross
                                         b16
-                                        ^ \markup 89
+                                        _ \markup 89
                                         <
                                             \tweak style #'cross
                                             a
                                             \tweak style #'harmonic
                                             d'
                                         >16
-                                        ^ \markup 90
+                                        _ \markup 90
                                         \tweak style #'cross
                                         a16
-                                        ^ \markup 91
+                                        _ \markup 91
                                         \once \override Rest.staff-position = #-7
                                         r8.
-                                        ^ \markup 92
+                                        _ \markup 92
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         \tweak style #'cross
                                         c'16
-                                        ^ \markup 93
+                                        _ \markup 93
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         <
@@ -1525,38 +1517,38 @@
                                             \tweak style #'harmonic
                                             c'
                                         >16
-                                        ^ \markup 94
+                                        _ \markup 94
                                         \tweak style #'cross
                                         b16
-                                        ^ \markup 95
+                                        _ \markup 95
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 96
+                                        _ \markup 96
                                         ]
                                     }
                                     \once \override Rest.staff-position = #-7
                                     r8.
-                                    ^ \markup 97
+                                    _ \markup 97
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 98
+                                        _ \markup 98
                                         [
                                         \tweak style #'cross
                                         a8
-                                        ^ \markup 99
+                                        _ \markup 99
                                         \tweak style #'cross
                                         b8
-                                        ^ \markup 100
+                                        _ \markup 100
                                         ]
                                     }
                                     \times 2/3
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 101
+                                        _ \markup 101
                                         [
                                         <
                                             \tweak style #'cross
@@ -1564,40 +1556,40 @@
                                             \tweak style #'harmonic
                                             d'
                                         >8
-                                        ^ \markup 102
+                                        _ \markup 102
                                         \tweak style #'cross
                                         a8
-                                        ^ \markup 103
+                                        _ \markup 103
                                         ]
                                     }
                                     \times 2/3
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r4
-                                        ^ \markup 104
+                                        _ \markup 104
                                         \tweak style #'cross
                                         c'4
-                                        ^ \markup 105
+                                        _ \markup 105
                                         <
                                             \tweak style #'cross
                                             b
                                             \tweak style #'harmonic
                                             c'
                                         >4
-                                        ^ \markup 106
+                                        _ \markup 106
                                     }
                                     \times 2/3
                                     {
                                         \once \override Rest.staff-position = #-7
                                         r8
-                                        ^ \markup 107
+                                        _ \markup 107
                                         [
                                         \tweak style #'cross
                                         b8
-                                        ^ \markup 108
+                                        _ \markup 108
                                         \tweak style #'cross
                                         a8
-                                        ^ \markup 109
+                                        _ \markup 109
                                         ]
                                     }
                                       %! +SCORE
@@ -1888,9 +1880,6 @@
                                                 )
                                             )
                                         )
-                                    - \tweak font-size #10
-                                    - \tweak padding #4
-                                    ^ \middle-fermata
                                     \stopTextSpan
                                     \staff-line-count 5
                                       %! +SCORE
@@ -2660,9 +2649,6 @@
                                     {
                                         \override Dots.staff-position = #2
                                         f4
-                                        - \tweak font-size #10
-                                        - \tweak padding #3
-                                        ^ \middle-fermata
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando

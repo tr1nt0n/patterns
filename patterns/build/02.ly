@@ -756,12 +756,20 @@
                                             \once \override Staff.Accidental.stencil = ##f
                                             \once \override Voice.Glissando.thickness = #8.25
                                             \once \override NoteHead.duration-log = 2
+                                            \override Voice.NoteHead.color = #(css-color 'darkred)
+                                            \override Voice.Dots.color = #(css-color 'darkred)
+                                            \override Voice.Stem.color = #(css-color 'darkred)
+                                            \override Voice.Beam.color = #(css-color 'darkred)
+                                            \override Voice.Rest.color = #(css-color 'darkred)
+                                            \override Voice.Tie.color = #(css-color 'darkred)
                                             \voiceOne
                                             <
                                                 \tweak style #'la
                                                 a''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
+                                            - \tweak color #(css-color 'darkred)
                                             - \markup \fontsize #2 { \hspace #-4.5 \raise #2 { "Bow:" } }
                                             [
                                             - \tweak font-name "Bodoni72 Book" 
@@ -792,6 +800,7 @@
                                                 \tweak style #'la
                                                 a''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override Rest.staff-position = #7
                                             r16
@@ -807,6 +816,7 @@
                                                 \tweak style #'la
                                                 f''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override Rest.staff-position = #7
                                             r16
@@ -821,6 +831,7 @@
                                                 \tweak style #'la
                                                 d''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             [
                                             \once \override Rest.staff-position = #7
@@ -834,6 +845,7 @@
                                                 \tweak style #'la
                                                 d''
                                             >8
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \stopTextSpanThree
                                             - \tweak Beam.positions #'(7 . 7)
@@ -846,6 +858,7 @@
                                                 \tweak style #'la
                                                 c''
                                             >8
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override Rest.staff-position = #7
                                             r16
@@ -857,6 +870,7 @@
                                                 \tweak style #'la
                                                 b'
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             ~
                                             \once \override NoteHead.X-offset = 0
@@ -880,6 +894,8 @@
                                                 \tweak style #'la
                                                 g'
                                             >4
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -927,6 +943,8 @@
                                                 f''
                                             >8
                                             ]
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -982,6 +1000,7 @@
                                                 \tweak style #'la
                                                 e'
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -991,6 +1010,7 @@
                                                 \tweak style #'la
                                                 e'
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -1000,6 +1020,7 @@
                                                 \tweak style #'la
                                                 c'
                                             >8
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -1009,6 +1030,7 @@
                                                 \tweak style #'la
                                                 e'
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override Dots.staff-position = #2
                                             \once \override NoteHead.X-offset = 0
@@ -1020,6 +1042,8 @@
                                                 g'
                                             >16
                                             ]
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -1084,6 +1108,7 @@
                                                 \tweak style #'la
                                                 a'
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -1093,6 +1118,7 @@
                                                 \tweak style #'la
                                                 b'
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -1102,6 +1128,7 @@
                                                 \tweak style #'la
                                                 c''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             ]
                                             \once \override Dots.staff-position = #2
@@ -1115,6 +1142,8 @@
                                                 d''
                                             >8.
                                             [
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -1159,6 +1188,7 @@
                                                 \tweak style #'la
                                                 e''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -1170,6 +1200,7 @@
                                                 \tweak style #'la
                                                 f''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -1179,11 +1210,18 @@
                                                 \tweak style #'la
                                                 g''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override Rest.staff-position = #7
                                             r8
                                             \stopTextSpanOne
                                             ]
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
                                         }
                                     >>
                                     \oneVoice
@@ -2901,14 +2939,22 @@
                                         }
                                         \context Voice = "cello legno voice"
                                         {
+                                            \override Voice.NoteHead.color = #(css-color 'darkred)
+                                            \override Voice.Dots.color = #(css-color 'darkred)
+                                            \override Voice.Stem.color = #(css-color 'darkred)
+                                            \override Voice.Beam.color = #(css-color 'darkred)
+                                            \override Voice.Rest.color = #(css-color 'darkred)
+                                            \override Voice.Tie.color = #(css-color 'darkred)
                                             \override Voice.NoteHead.no-ledgers = ##t
                                             \override Voice.Accidental.stencil = ##f
                                             \textSpannerDown
                                             \voiceTwo
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             [
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -2918,6 +2964,7 @@
                                             \startTextSpan
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \once \override Rest.staff-position = #-10
                                             r8
@@ -2925,12 +2972,15 @@
                                             r16
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \stopTextSpan
                                             ]
@@ -2940,6 +2990,7 @@
                                             [
                                             \textSpannerDown
                                             b,,8
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -2952,8 +3003,10 @@
                                             \textSpannerDown
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \stopTextSpan
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -2968,6 +3021,7 @@
                                             \textSpannerDown
                                             b,,4
                                             \stopTextSpan
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -2979,9 +3033,11 @@
                                             \textSpannerDown
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \stopTextSpan
                                             [
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -2992,15 +3048,18 @@
                                             \textSpannerUp
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \stopTextSpan
                                             \textSpannerUp
                                             \textSpannerDown
                                             b,,16
                                             ]
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -3016,7 +3075,9 @@
                                             \textSpannerDown
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -3026,15 +3087,18 @@
                                             \startTextSpan
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \stopTextSpan
                                             ]
                                             \textSpannerUp
                                             \textSpannerDown
                                             b,,4
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -3050,7 +3114,9 @@
                                             \textSpannerDown
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -3064,16 +3130,20 @@
                                             r16
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             ]
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             [
                                             \once \override Rest.staff-position = #-10
@@ -3084,17 +3154,21 @@
                                             \set stemRightBeamCount = 1
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 2
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \tweak style #'cross
                                             b,,16
+                                            - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \stopTextSpan
                                             \textSpannerUp
@@ -3109,6 +3183,7 @@
                                             \textSpannerDown
                                             b,,8.
                                             ]
+                                            - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 0
                                             - \tweak padding #12
@@ -3120,6 +3195,12 @@
                                             b,,2
                                             \stopTextSpan
                                             \textSpannerUp
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
                                             \revert Voice.NoteHead.no-ledgers
                                             \revert Voice.Accidental.stencil
                                         }

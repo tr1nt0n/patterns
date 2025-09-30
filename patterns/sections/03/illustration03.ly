@@ -262,10 +262,19 @@
                                         \context Voice = "violin 1 bow voice"
                                         {
                                             \once \override Rest.staff-position = #10
+                                            \override Voice.NoteHead.color = #(css-color 'darkred)
+                                            \override Voice.Dots.color = #(css-color 'darkred)
+                                            \override Voice.Stem.color = #(css-color 'darkred)
+                                            \override Voice.Beam.color = #(css-color 'darkred)
+                                            \override Voice.Rest.color = #(css-color 'darkred)
+                                            \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \voiceOne
                                             r2.
                                             \once \override Rest.staff-position = #10
                                             r16
+                                            - \tweak color #(css-color 'darkred)
                                             - \markup \fontsize #2 { \hspace #-4.5 \raise #2 { "Bow:" } }
                                             - \tweak Beam.positions #'(8 . 8)
                                             [
@@ -280,6 +289,8 @@
                                             >8.
                                             _ \mp
                                             ]
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -359,6 +370,8 @@
                                                 f'
                                             >8.
                                             ]
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -445,6 +458,8 @@
                                             >16
                                             ]
                                               %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
@@ -506,69 +521,32 @@
                                             \once \override Rest.staff-position = #10
                                             r2.
                                             \stopTextSpanOne
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
                                         }
                                     >>
                                     \oneVoice
-                                    \once \override RepeatTie.transparent = ##t
-                                    \once \override Beam.stencil = ##f
-                                    \once \override Flag.stencil = ##f
-                                    \once \override Dots.stencil = ##f
-                                    \once \override Tie.stencil = ##f
-                                    \once \override NoteHead.duration-log = 2
-                                    \once \override Stem.stencil = ##f
-                                    <
-                                        \tweak style #'cross
-                                        a
-                                        \tweak style #'harmonic
-                                        b
-                                    >16
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 2
-                                    - \tweak padding #6
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "II" } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -1
-                                    \startTextSpanOne
-                                    \once \override RepeatTie.transparent = ##t
-                                    \once \override Beam.stencil = ##f
-                                    \once \override Flag.stencil = ##f
-                                    \once \override Dots.stencil = ##f
-                                    \once \override Tie.stencil = ##f
-                                    \once \override NoteHead.duration-log = 2
-                                    \once \override Stem.stencil = ##f
-                                    <
-                                        \tweak style #'cross
-                                        a
-                                        \tweak style #'harmonic
-                                        b
-                                    >16
-                                    \once \override RepeatTie.transparent = ##t
-                                    \once \override Beam.stencil = ##f
-                                    \once \override Flag.stencil = ##f
-                                    \once \override Dots.stencil = ##f
-                                    \once \override Tie.stencil = ##f
-                                    \once \override NoteHead.duration-log = 2
-                                    \once \override Stem.stencil = ##f
-                                    <
-                                        \tweak style #'cross
-                                        a
-                                        \tweak style #'harmonic
-                                        b
-                                    >16
-                                    \once \override RepeatTie.transparent = ##t
-                                    \once \override Beam.stencil = ##f
-                                    \once \override Flag.stencil = ##f
-                                    \once \override Dots.stencil = ##f
-                                    \once \override Tie.stencil = ##f
-                                    \once \override NoteHead.duration-log = 2
-                                    \once \override Stem.stencil = ##f
-                                    <
-                                        \tweak style #'cross
-                                        a
-                                        \tweak style #'harmonic
-                                        b
-                                    >16
-                                    \stopTextSpanOne
+                                      %! +SCORE
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                      %! +SCORE
+                                    \once \override Rest.transparent = ##t
+                                    \staff-line-count 5
+                                    \revert Staff.StaffSymbol.line-positions
+                                    \revert Staff.Accidental.stencil
+                                    \revert Staff.NoteHead.no-ledgers
+                                    \revert Staff.Clef.stencil
+                                      %! +SCORE
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    r4
+                                      %! +SCORE
+                                    \stopStaff \startStaff
+                                    \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                 }
                             }
                         }
@@ -647,10 +625,19 @@
                                         \context Voice = "violin 2 bow voice 1"
                                         {
                                             \once \override Rest.staff-position = #7
+                                            \override Voice.NoteHead.color = #(css-color 'darkred)
+                                            \override Voice.Dots.color = #(css-color 'darkred)
+                                            \override Voice.Stem.color = #(css-color 'darkred)
+                                            \override Voice.Beam.color = #(css-color 'darkred)
+                                            \override Voice.Rest.color = #(css-color 'darkred)
+                                            \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \voiceOne
                                             r4
                                             \once \override Rest.staff-position = #7
                                             r8.
+                                            - \tweak color #(css-color 'darkred)
                                             - \markup \fontsize #2 { \hspace #-4.5 \raise #2 { "Bow:" } }
                                             [
                                             \once \override NoteHead.X-offset = 0
@@ -661,9 +648,11 @@
                                                 \tweak style #'la
                                                 a''
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             - \accent
-                                            _ \mp
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
+                                            _ \mp
                                             ]
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
@@ -684,7 +673,9 @@
                                                 \tweak style #'la
                                                 b'
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             - \accent
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override Rest.staff-position = #7
                                             r16
@@ -703,12 +694,22 @@
                                                 \tweak style #'la
                                                 a
                                             >16
+                                            - \tweak color #(css-color 'darkred)
                                             - \accent
+                                            - \tweak color #(css-color 'darkred)
                                             _ \staccato
                                             \once \override Rest.staff-position = #7
                                             r16
                                             \stopTextSpanOne
                                             ]
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
                                         }
                                     >>
                                     \oneVoice
@@ -902,8 +903,17 @@
                                             \times 9/10
                                             {
                                                 \once \override Rest.staff-position = #7
+                                                \override Voice.NoteHead.color = #(css-color 'darkred)
+                                                \override Voice.Dots.color = #(css-color 'darkred)
+                                                \override Voice.Stem.color = #(css-color 'darkred)
+                                                \override Voice.Beam.color = #(css-color 'darkred)
+                                                \override Voice.Rest.color = #(css-color 'darkred)
+                                                \override Voice.Tie.color = #(css-color 'darkred)
+                                                \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                                \override Voice.TupletNumber.color = #(css-color 'darkred)
                                                 \voiceOne
                                                 r4
+                                                - \tweak color #(css-color 'darkred)
                                                 - \markup \fontsize #2 { \hspace #-5.5 \raise #2 { "Bow:" } }
                                                 \once \override Rest.staff-position = #7
                                                 r8.
@@ -916,9 +926,11 @@
                                                     \tweak style #'la
                                                     a''
                                                 >16
+                                                - \tweak color #(css-color 'darkred)
                                                 - \accent
-                                                _ \ppp
+                                                - \tweak color #(css-color 'darkred)
                                                 _ \staccato
+                                                _ \ppp
                                                 ]
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
@@ -939,7 +951,9 @@
                                                     \tweak style #'la
                                                     b'
                                                 >16
+                                                - \tweak color #(css-color 'darkred)
                                                 - \accent
+                                                - \tweak color #(css-color 'darkred)
                                                 _ \staccato
                                                 \once \override Rest.staff-position = #7
                                                 r16
@@ -958,109 +972,41 @@
                                                     \tweak style #'la
                                                     a
                                                 >16
+                                                - \tweak color #(css-color 'darkred)
                                                 - \accent
+                                                - \tweak color #(css-color 'darkred)
                                                 _ \staccato
                                                 \once \override Rest.staff-position = #7
                                                 r16
                                                 \stopTextSpanOne
                                                 ]
+                                                \revert Voice.NoteHead.color
+                                                \revert Voice.Dots.color
+                                                \revert Voice.Stem.color
+                                                \revert Voice.Beam.color
+                                                \revert Voice.Rest.color
+                                                \revert Voice.Tie.color
+                                                \revert Voice.TupletBracket.color
+                                                \revert Voice.TupletNumber.color
                                             }
                                         }
                                     >>
                                     \oneVoice
-                                    \once \override TupletBracket.stencil = ##f
-                                    \once \override TupletNumber.stencil = ##f
-                                    \times 4/5
-                                    {
-                                        \once \override NoteHead.X-offset = 0
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override Voice.Glissando.thickness = #8.25
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override RepeatTie.transparent = ##t
-                                        \once \override Beam.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override Dots.stencil = ##f
-                                        \once \override Tie.stencil = ##f
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override Stem.stencil = ##f
-                                        <
-                                            \tweak style #'la
-                                            a
-                                        >16
-                                        _ \staccato
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 2
-                                        - \tweak padding #6
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "IV" } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1
-                                        \startTextSpanOne
-                                        \once \override NoteHead.X-offset = 0
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override Voice.Glissando.thickness = #8.25
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override RepeatTie.transparent = ##t
-                                        \once \override Beam.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override Dots.stencil = ##f
-                                        \once \override Tie.stencil = ##f
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override Stem.stencil = ##f
-                                        <
-                                            \tweak style #'la
-                                            a
-                                        >16
-                                        _ \staccato
-                                        \once \override NoteHead.X-offset = 0
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override Voice.Glissando.thickness = #8.25
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override RepeatTie.transparent = ##t
-                                        \once \override Beam.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override Dots.stencil = ##f
-                                        \once \override Tie.stencil = ##f
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override Stem.stencil = ##f
-                                        <
-                                            \tweak style #'la
-                                            a
-                                        >16
-                                        _ \staccato
-                                        \once \override NoteHead.X-offset = 0
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override Voice.Glissando.thickness = #8.25
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override RepeatTie.transparent = ##t
-                                        \once \override Beam.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override Dots.stencil = ##f
-                                        \once \override Tie.stencil = ##f
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override Stem.stencil = ##f
-                                        <
-                                            \tweak style #'la
-                                            a
-                                        >16
-                                        _ \staccato
-                                        \once \override NoteHead.X-offset = 0
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override Voice.Glissando.thickness = #8.25
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override RepeatTie.transparent = ##t
-                                        \once \override Beam.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override Dots.stencil = ##f
-                                        \once \override Tie.stencil = ##f
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override Stem.stencil = ##f
-                                        <
-                                            \tweak style #'la
-                                            a
-                                        >16
-                                        _ \staccato
-                                        \stopTextSpanOne
-                                    }
+                                      %! +SCORE
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                      %! +SCORE
+                                    \once \override Rest.transparent = ##t
+                                    \staff-line-count 5
+                                    \revert Staff.StaffSymbol.line-positions
+                                    \revert Staff.Accidental.stencil
+                                    \revert Staff.NoteHead.no-ledgers
+                                    \revert Staff.Clef.stencil
+                                      %! +SCORE
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    r4
+                                      %! +SCORE
+                                    \stopStaff \startStaff
+                                    \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                 }
                             }
                         }
@@ -1297,10 +1243,12 @@
                                     - \tweak padding #9.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \upright { "1/4 Spz." } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "1/2 Spz." }
                                     \startTextSpanTwo
                                     - \tweak padding #7
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "" } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \bow-tip-half-up
                                     \startTextSpanOne
                                     \>
                                     ~
@@ -1316,73 +1264,44 @@
                                     e8
                                     ]
                                     ~
-                                    e4.
-                                    \big-half-harmonic
-                                    \once \override RepeatTie.transparent = ##t
-                                    \once \override Beam.stencil = ##f
-                                    \once \override Flag.stencil = ##f
-                                    \once \override Dots.stencil = ##f
-                                    \once \override Tie.stencil = ##f
-                                    \once \override NoteHead.duration-log = 2
-                                    \once \override Stem.stencil = ##f
-                                      %! abjad.glissando(6)
-                                    \revert Accidental.stencil
-                                      %! abjad.glissando(6)
-                                    \revert NoteColumn.glissando-skip
-                                      %! abjad.glissando(6)
-                                    \revert NoteHead.no-ledgers
-                                      %! abjad.glissando(6)
-                                    \undo \hide NoteHead
                                     \afterGrace
-                                    dqf4
-                                    ^ \punta-to-talon
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "pp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                    e4.
+                                    {
+                                        \revert Dots.staff-position
+                                        \once \override Flag.stroke-style = #"grace"
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        dqf16
+                                        _ #(make-dynamic-script
+                                            (markup
+                                                #:whiteout
+                                                #:line (
+                                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                                    #:hspace -0.1
+                                                    #:dynamic "pp"
+                                                    #:hspace -0.25
+                                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                                    )
                                                 )
                                             )
-                                        )
-                                    \stopTextSpanOne
-                                    \stopTextSpanTwo
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #9.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Spz." } \hspace #0.5 }
-                                    \startTextSpanTwo
-                                    - \tweak padding #7
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
-                                    \startTextSpanOne
-                                    - \tweak stencil #constante-hairpin
-                                    \<
-                                    {
-                                        \once \override RepeatTie.transparent = ##t
-                                        \once \override Beam.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override Dots.stencil = ##f
-                                        \once \override Tie.stencil = ##f
-                                        \once \override NoteHead.duration-log = 2
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Stem.stencil = ##f
-                                        \once \override Flag.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override Accidental.stencil = ##f
-                                        \revert Dots.staff-position
-                                        \once \override NoteHead.transparent = ##t
-                                        dqf16
-                                        \!
                                         \stopTextSpanOne
                                         \stopTextSpanTwo
                                     }
+                                      %! +SCORE
+                                    \once \override MultiMeasureRest.transparent = ##t
+                                      %! +SCORE
+                                    \once \override Rest.transparent = ##t
+                                      %! +SCORE
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                                    r4
+                                      %! +SCORE
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
