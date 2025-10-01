@@ -13,7 +13,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (13 24 19 26.5 33)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (8.5 24 19 26.5 33)))
             \time 5/4
             s1 * 5/4
               %! +SCORE
@@ -42,20 +42,44 @@
             s1 * 1/2
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 30 30 30)))
             \time 3/2
             s1 * 3/2
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 30 30 30)))
             \time 4/2
             s1 * 2
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 30 30 30)))
             \time 2/2
             s1 * 1
+              %! +SCORE
+            \noBreak
             \time 3/2
             s1 * 3/2
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 28 33 29)))
             \time 2/2
             s1 * 1
+              %! +SCORE
+            \noBreak
             \time 1/2
             s1 * 1/2
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 30 34 25)))
             \time 3/2
             s1 * 3/2
+              %! +SCORE
+            \noBreak
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
             \once \override Score.TimeSignature.stencil = ##f
@@ -65,6 +89,8 @@
             _ \middle-fermata
             \bar "||"
             \once \override Score.BarLine.transparent = ##f
+              %! +SCORE
+            \pageBreak
         }
         \tag #'group1
         {
@@ -357,6 +383,7 @@
                                     [
                                     <cs'! ds'!>16
                                     - \accent
+                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +32 }} } }
                                     \stopTextSpanOne
                                     ]
@@ -1036,548 +1063,868 @@
                                         }
                                     >>
                                     \oneVoice
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 11/10
-                                    {
-                                        \override Staff.Clef.stencil = #ly:text-interface::print
-                                        \override Staff.Clef.text = \string-clef
-                                        \staff-line-count 4
-                                        \override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)
-                                        \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
-                                        \override Staff.Accidental.stencil = ##f
-                                        \override Staff.NoteHead.no-ledgers = ##t
-                                        \tweak style #'cross
-                                        f''16
-                                        _ \markup 0
-                                        [
-                                        \tweak style #'cross
-                                        g''16
-                                        _ \markup 1
-                                        \tweak style #'cross
-                                        f''16
-                                        _ \markup 2
-                                        \tweak style #'cross
-                                        e''16
-                                        _ \markup 3
-                                        \tweak style #'cross
-                                        g''16
-                                        _ \markup 4
-                                        ]
-                                        \once \override Rest.staff-position = #-7
-                                        r4
-                                        _ \markup 5
-                                        \tweak style #'cross
-                                        g''16
-                                        _ \markup 6
-                                    }
-                                    <
-                                        \tweak style #'cross
-                                        d''
-                                        \tweak style #'harmonic
-                                        f''
-                                    >16
-                                    _ \markup 7
-                                    <
-                                        \tweak style #'cross
-                                        c''
-                                        \tweak style #'harmonic
-                                        f''
-                                    >16
-                                    _ \markup 8
-                                    [
-                                    \tweak style #'cross
-                                    g''16
-                                    _ \markup 9
-                                    \once \override Rest.staff-position = #-7
-                                    r8
-                                    _ \markup 10
-                                    ]
-                                    \times 4/5
-                                    {
-                                        <
+                                    <<
+                                        \context Voice = "violin 4 voice temp 2"
+                                        {
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 11/10
+                                            {
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \string-clef
+                                                \staff-line-count 4
+                                                \override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)
+                                                \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
+                                                \override Staff.Accidental.stencil = ##f
+                                                \override Staff.NoteHead.no-ledgers = ##t
+                                                \voiceTwo
+                                                \tweak style #'cross
+                                                f''16
+                                                - \markup \fontsize #2 { \hspace #-11 { "Fng. Perc.:" } }
+                                                [
+                                                \tweak style #'cross
+                                                g''16
+                                                \tweak style #'cross
+                                                f''16
+                                                \tweak style #'cross
+                                                e''16
+                                                \tweak style #'cross
+                                                g''16
+                                                ]
+                                                \once \override Rest.staff-position = #-7
+                                                r4
+                                                \tweak style #'cross
+                                                g''16
+                                            }
+                                            <
+                                                \tweak style #'cross
+                                                d''
+                                                \tweak style #'harmonic
+                                                f''
+                                            >16
+                                            <
+                                                \tweak style #'cross
+                                                c''
+                                                \tweak style #'harmonic
+                                                f''
+                                            >16
+                                            - \tweak Beam.positions #'(-5.5 . -7)
+                                            [
                                             \tweak style #'cross
-                                            c''
-                                            \tweak style #'harmonic
-                                            f''
-                                        >16
-                                        _ \markup 11
-                                        [
-                                        <
+                                            g''16
+                                            \once \override Rest.staff-position = #-7
+                                            r8
+                                            ]
+                                            \times 4/5
+                                            {
+                                                <
+                                                    \tweak style #'cross
+                                                    c''
+                                                    \tweak style #'harmonic
+                                                    f''
+                                                >16
+                                                - \tweak Beam.positions #'(-7 . -7)
+                                                [
+                                                <
+                                                    \tweak style #'cross
+                                                    c''
+                                                    \tweak style #'harmonic
+                                                    f''
+                                                >16
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                \tweak style #'cross
+                                                g''16
+                                                ]
+                                            }
+                                            \times 4/5
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                - \tweak Beam.positions #'(-7 . -7)
+                                                [
+                                                \tweak style #'cross
+                                                g''16
+                                                \tweak style #'cross
+                                                f''16
+                                                \tweak style #'cross
+                                                c''16
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-7
+                                            r4
+                                            \times 4/6
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                [
+                                                \tweak style #'cross
+                                                d'8
+                                                \tweak style #'cross
+                                                d''8
+                                                \tweak style #'cross
+                                                e'8
+                                                ]
+                                                \once \override Rest.staff-position = #-7
+                                                r4
+                                            }
+                                            \times 4/6
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                - \tweak Beam.positions #'(-7 . -7)
+                                                [
+                                                \tweak style #'cross
+                                                e''16
+                                                \tweak style #'cross
+                                                e'16
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                ]
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/6
+                                            {
+                                                <
+                                                    \tweak style #'cross
+                                                    b'
+                                                    \tweak style #'harmonic
+                                                    e''
+                                                >16
+                                                [
+                                                \tweak style #'cross
+                                                d'16
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                \tweak style #'cross
+                                                e'16
+                                                \tweak style #'cross
+                                                d''16
+                                                ]
+                                            }
+                                            \times 2/3
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r16
+                                                - \tweak Beam.positions #'(-8 . -8)
+                                                [
+                                                \tweak style #'cross
+                                                f''16
+                                                \tweak style #'cross
+                                                g'16
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-7
+                                            r16
+                                            \once \override Rest.staff-position = #-7
+                                            r8
+                                            - \tweak Beam.positions #'(-7 . -7)
+                                            [
                                             \tweak style #'cross
-                                            c''
-                                            \tweak style #'harmonic
-                                            f''
-                                        >16
-                                        _ \markup 12
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 13
-                                        \tweak style #'cross
-                                        g''16
-                                        _ \markup 14
-                                        ]
-                                    }
-                                    \times 4/5
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 15
-                                        [
-                                        \tweak style #'cross
-                                        g''16
-                                        _ \markup 16
-                                        \tweak style #'cross
-                                        f''16
-                                        _ \markup 17
-                                        \tweak style #'cross
-                                        c''16
-                                        _ \markup 18
-                                        ]
-                                    }
-                                    \once \override Rest.staff-position = #-7
-                                    r4
-                                    _ \markup 19
-                                    \times 4/6
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 20
-                                        [
-                                        \tweak style #'cross
-                                        d'8
-                                        _ \markup 21
-                                        \tweak style #'cross
-                                        d''8
-                                        _ \markup 22
-                                        \tweak style #'cross
-                                        e'8
-                                        _ \markup 23
-                                        ]
-                                        \once \override Rest.staff-position = #-7
-                                        r4
-                                        _ \markup 24
-                                    }
-                                    \times 4/6
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 25
-                                        [
-                                        \tweak style #'cross
-                                        e''16
-                                        _ \markup 26
-                                        \tweak style #'cross
-                                        e'16
-                                        _ \markup 27
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 28
-                                        ]
-                                    }
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 5/6
-                                    {
-                                        <
+                                            f''16.
+                                            \set stemLeftBeamCount = 3
+                                            \set stemRightBeamCount = 1
+                                            <
+                                                \tweak style #'cross
+                                                g'
+                                                \tweak style #'harmonic
+                                                b'
+                                            >32
+                                            ~
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 2
+                                            <
+                                                \tweak style #'cross
+                                                g'
+                                                \tweak style #'harmonic
+                                                b'
+                                            >16
+                                            \set stemLeftBeamCount = 2
+                                            \set stemRightBeamCount = 1
                                             \tweak style #'cross
-                                            b'
-                                            \tweak style #'harmonic
-                                            e''
-                                        >16
-                                        _ \markup 29
-                                        [
-                                        \tweak style #'cross
-                                        d'16
-                                        _ \markup 30
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 31
-                                        \tweak style #'cross
-                                        e'16
-                                        _ \markup 32
-                                        \tweak style #'cross
-                                        d''16
-                                        _ \markup 33
-                                        ]
-                                    }
-                                    \times 2/3
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r16
-                                        _ \markup 34
-                                        [
-                                        \tweak style #'cross
-                                        f''16
-                                        _ \markup 35
-                                        \tweak style #'cross
-                                        g'16
-                                        _ \markup 36
-                                        ]
-                                    }
-                                    \once \override Rest.staff-position = #-7
-                                    r16
-                                    _ \markup 37
-                                    \once \override Rest.staff-position = #-7
-                                    r8
-                                    _ \markup 38
-                                    [
-                                    \tweak style #'cross
-                                    f''16.
-                                    _ \markup 39
-                                    \set stemLeftBeamCount = 3
-                                    \set stemRightBeamCount = 1
-                                    <
-                                        \tweak style #'cross
-                                        g'
-                                        \tweak style #'harmonic
-                                        b'
-                                    >32
-                                    _ \markup 40
-                                    ~
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 2
-                                    <
-                                        \tweak style #'cross
-                                        g'
-                                        \tweak style #'harmonic
-                                        b'
-                                    >16
-                                    _ \markup 41
-                                    \set stemLeftBeamCount = 2
-                                    \set stemRightBeamCount = 1
-                                    \tweak style #'cross
-                                    g''16
-                                    _ \markup 42
-                                    ~
-                                    \set stemLeftBeamCount = 1
-                                    \set stemRightBeamCount = 3
-                                    \tweak style #'cross
-                                    g''32
-                                    _ \markup 43
-                                    <
-                                        \tweak style #'cross
-                                        a'
-                                        \tweak style #'harmonic
-                                        d''
-                                    >16.
-                                    _ \markup 44
-                                    ]
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 11/12
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r4
-                                        _ \markup 45
-                                        \tweak style #'cross
-                                        f''8
-                                        _ \markup 46
-                                        [
-                                        \tweak style #'cross
-                                        e''8
-                                        _ \markup 47
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 48
-                                        \tweak style #'cross
-                                        d''8
-                                        _ \markup 49
-                                        ]
-                                    }
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 5/6
-                                    {
-                                        \tweak style #'cross
-                                        c''8
-                                        _ \markup 50
-                                        [
-                                        \tweak style #'cross
-                                        b'8
-                                        _ \markup 51
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 52
-                                        ]
-                                    }
-                                    \times 4/5
-                                    {
-                                        \tweak style #'cross
-                                        b'16
-                                        _ \markup 53
-                                        [
-                                        \tweak style #'cross
-                                        d''16
-                                        _ \markup 54
-                                        <
+                                            g''16
+                                            ~
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 3
                                             \tweak style #'cross
-                                            b'
-                                            \tweak style #'harmonic
-                                            d''
-                                        >16
-                                        _ \markup 55
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 56
-                                        ]
-                                    }
-                                    \times 4/5
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r16
-                                        _ \markup 57
-                                        [
-                                        <
-                                            \tweak style #'cross
-                                            b'
-                                            \tweak style #'harmonic
-                                            d''
-                                        >16
-                                        _ \markup 58
-                                        \tweak style #'cross
-                                        a'16
-                                        _ \markup 59
-                                        \set stemLeftBeamCount = 2
-                                        \set stemRightBeamCount = 1
-                                        \tweak style #'cross
-                                        c''16
-                                        _ \markup 60
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 2
-                                        <
-                                            \tweak style #'cross
-                                            g'
-                                            \tweak style #'harmonic
-                                            c''
-                                        >16
-                                        _ \markup 61
-                                        \once \override Rest.staff-position = #-7
-                                        r8.
-                                        _ \markup 62
-                                        \tweak style #'cross
-                                        g'16
-                                        _ \markup 63
-                                        \tweak style #'cross
-                                        b'16
-                                        _ \markup 64
-                                        ]
-                                    }
-                                    \times 4/5
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 65
-                                        [
-                                        \tweak style #'cross
-                                        g'16
-                                        _ \markup 66
-                                        \tweak style #'cross
-                                        f'16
-                                        _ \markup 67
-                                        \tweak style #'cross
-                                        e'16
-                                        _ \markup 68
-                                        ]
-                                        \once \override Rest.staff-position = #-7
-                                        r4
-                                        _ \markup 69
-                                        <
-                                            \tweak style #'cross
-                                            e'
-                                            \tweak style #'harmonic
-                                            g'
-                                        >16
-                                        _ \markup 70
-                                    }
-                                    \times 4/5
-                                    {
-                                        \tweak style #'cross
-                                        e'16
-                                        _ \markup 71
-                                        [
-                                        <
-                                            \tweak style #'cross
-                                            e'
-                                            \tweak style #'harmonic
-                                            g'
-                                        >16
-                                        _ \markup 72
-                                        \once \override Rest.staff-position = #-7
-                                        r16
-                                        _ \markup 73
-                                        \tweak style #'cross
-                                        f'16
-                                        _ \markup 74
-                                        \once \override Rest.staff-position = #-7
-                                        r16
-                                        _ \markup 75
-                                        ]
-                                    }
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 5/4
-                                    {
-                                        \tweak style #'cross
-                                        e'16
-                                        _ \markup 76
-                                        [
-                                        \tweak style #'cross
-                                        d'16
-                                        _ \markup 77
-                                        \tweak style #'cross
-                                        c'16
-                                        _ \markup 78
-                                        \once \override Rest.staff-position = #-7
-                                        r16
-                                        _ \markup 79
-                                        ]
-                                    }
-                                    \once \override Rest.staff-position = #-7
-                                    r16
-                                    _ \markup 80
-                                    [
-                                    <
-                                        \tweak style #'cross
-                                        c'
-                                        \tweak style #'harmonic
-                                        d'
-                                    >16
-                                    _ \markup 81
-                                    ]
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 9/8
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 82
-                                        [
-                                        <
-                                            \tweak style #'cross
-                                            d'
-                                            \tweak style #'harmonic
-                                            f'
-                                        >16
-                                        _ \markup 83
-                                        \tweak style #'cross
-                                        c'16
-                                        _ \markup 84
-                                        \tweak style #'cross
-                                        b16
-                                        _ \markup 85
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 86
-                                        \tweak style #'cross
-                                        a16
-                                        _ \markup 87
-                                        ]
-                                    }
-                                    \times 2/3
-                                    {
-                                        \tweak style #'cross
-                                        a16
-                                        _ \markup 88
-                                        [
-                                        \tweak style #'cross
-                                        b16
-                                        _ \markup 89
-                                        <
-                                            \tweak style #'cross
-                                            a
-                                            \tweak style #'harmonic
-                                            d'
-                                        >16
-                                        _ \markup 90
-                                        \tweak style #'cross
-                                        a16
-                                        _ \markup 91
-                                        \once \override Rest.staff-position = #-7
-                                        r8.
-                                        _ \markup 92
-                                        \set stemLeftBeamCount = 2
-                                        \set stemRightBeamCount = 1
-                                        \tweak style #'cross
-                                        c'16
-                                        _ \markup 93
-                                        \set stemLeftBeamCount = 1
-                                        \set stemRightBeamCount = 2
-                                        <
-                                            \tweak style #'cross
-                                            b
-                                            \tweak style #'harmonic
-                                            c'
-                                        >16
-                                        _ \markup 94
-                                        \tweak style #'cross
-                                        b16
-                                        _ \markup 95
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 96
-                                        ]
-                                    }
-                                    \once \override Rest.staff-position = #-7
-                                    r8.
-                                    _ \markup 97
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 5/6
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 98
-                                        [
-                                        \tweak style #'cross
-                                        a8
-                                        _ \markup 99
-                                        \tweak style #'cross
-                                        b8
-                                        _ \markup 100
-                                        ]
-                                    }
-                                    \times 2/3
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 101
-                                        [
-                                        <
-                                            \tweak style #'cross
-                                            a
-                                            \tweak style #'harmonic
-                                            d'
-                                        >8
-                                        _ \markup 102
-                                        \tweak style #'cross
-                                        a8
-                                        _ \markup 103
-                                        ]
-                                    }
-                                    \times 2/3
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r4
-                                        _ \markup 104
-                                        \tweak style #'cross
-                                        c'4
-                                        _ \markup 105
-                                        <
-                                            \tweak style #'cross
-                                            b
-                                            \tweak style #'harmonic
-                                            c'
-                                        >4
-                                        _ \markup 106
-                                    }
-                                    \times 2/3
-                                    {
-                                        \once \override Rest.staff-position = #-7
-                                        r8
-                                        _ \markup 107
-                                        [
-                                        \tweak style #'cross
-                                        b8
-                                        _ \markup 108
-                                        \tweak style #'cross
-                                        a8
-                                        _ \markup 109
-                                        ]
-                                    }
+                                            g''32
+                                            <
+                                                \tweak style #'cross
+                                                a'
+                                                \tweak style #'harmonic
+                                                d''
+                                            >16.
+                                            ]
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 11/12
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r4
+                                                \tweak style #'cross
+                                                f''8
+                                                - \tweak Beam.positions #'(-7 . -7)
+                                                [
+                                                \tweak style #'cross
+                                                e''8
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                \tweak style #'cross
+                                                d''8
+                                                ]
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/6
+                                            {
+                                                \tweak style #'cross
+                                                c''8
+                                                - \tweak Beam.positions #'(-5.5 . -7)
+                                                [
+                                                \tweak style #'cross
+                                                b'8
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                ]
+                                            }
+                                            \times 4/5
+                                            {
+                                                \tweak style #'cross
+                                                b'16
+                                                - \tweak Beam.positions #'(-7 . -7)
+                                                [
+                                                \tweak style #'cross
+                                                d''16
+                                                <
+                                                    \tweak style #'cross
+                                                    b'
+                                                    \tweak style #'harmonic
+                                                    d''
+                                                >16
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                ]
+                                            }
+                                            \times 4/5
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r16
+                                                - \tweak Beam.positions #'(-8 . -7)
+                                                [
+                                                <
+                                                    \tweak style #'cross
+                                                    b'
+                                                    \tweak style #'harmonic
+                                                    d''
+                                                >16
+                                                \tweak style #'cross
+                                                a'16
+                                                \set stemLeftBeamCount = 2
+                                                \set stemRightBeamCount = 1
+                                                \tweak style #'cross
+                                                c''16
+                                                \set stemLeftBeamCount = 1
+                                                \set stemRightBeamCount = 2
+                                                <
+                                                    \tweak style #'cross
+                                                    g'
+                                                    \tweak style #'harmonic
+                                                    c''
+                                                >16
+                                                \once \override Rest.staff-position = #-7
+                                                r8.
+                                                \tweak style #'cross
+                                                g'16
+                                                \tweak style #'cross
+                                                b'16
+                                                ]
+                                            }
+                                            \times 4/5
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                - \tweak Beam.positions #'(-7 . -7)
+                                                [
+                                                \tweak style #'cross
+                                                g'16
+                                                \tweak style #'cross
+                                                f'16
+                                                \tweak style #'cross
+                                                e'16
+                                                ]
+                                                \once \override Rest.staff-position = #-7
+                                                r4
+                                                <
+                                                    \tweak style #'cross
+                                                    e'
+                                                    \tweak style #'harmonic
+                                                    g'
+                                                >16
+                                            }
+                                            \times 4/5
+                                            {
+                                                \tweak style #'cross
+                                                e'16
+                                                - \tweak Beam.positions #'(-8 . -8)
+                                                [
+                                                <
+                                                    \tweak style #'cross
+                                                    e'
+                                                    \tweak style #'harmonic
+                                                    g'
+                                                >16
+                                                \once \override Rest.staff-position = #-7
+                                                r16
+                                                \tweak style #'cross
+                                                f'16
+                                                \once \override Rest.staff-position = #-7
+                                                r16
+                                                ]
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/4
+                                            {
+                                                \tweak style #'cross
+                                                e'16
+                                                [
+                                                \tweak style #'cross
+                                                d'16
+                                                \tweak style #'cross
+                                                c'16
+                                                \once \override Rest.staff-position = #-7
+                                                r16
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-7
+                                            r16
+                                            [
+                                            <
+                                                \tweak style #'cross
+                                                c'
+                                                \tweak style #'harmonic
+                                                d'
+                                            >16
+                                            ]
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 9/8
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                [
+                                                <
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'harmonic
+                                                    f'
+                                                >16
+                                                \tweak style #'cross
+                                                c'16
+                                                \tweak style #'cross
+                                                b16
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                \tweak style #'cross
+                                                a16
+                                                ]
+                                            }
+                                            \times 2/3
+                                            {
+                                                \tweak style #'cross
+                                                a16
+                                                [
+                                                - \tweak padding #12.5
+                                                - \abjad-solid-line-with-arrow
+                                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
+                                                - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
+                                                - \tweak bound-details.right.padding -6
+                                                \startTextSpanThree
+                                                \tweak style #'cross
+                                                b16
+                                                <
+                                                    \tweak style #'cross
+                                                    a
+                                                    \tweak style #'harmonic
+                                                    d'
+                                                >16
+                                                \tweak style #'cross
+                                                a16
+                                                \once \override Rest.staff-position = #-7
+                                                r8.
+                                                \set stemLeftBeamCount = 2
+                                                \set stemRightBeamCount = 1
+                                                \tweak style #'cross
+                                                c'16
+                                                \set stemLeftBeamCount = 1
+                                                \set stemRightBeamCount = 2
+                                                <
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'harmonic
+                                                    c'
+                                                >16
+                                                \tweak style #'cross
+                                                b16
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-7
+                                            r8.
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/6
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                [
+                                                \tweak style #'cross
+                                                a8
+                                                \tweak style #'cross
+                                                b8
+                                                ]
+                                            }
+                                            \times 2/3
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                [
+                                                <
+                                                    \tweak style #'cross
+                                                    a
+                                                    \tweak style #'harmonic
+                                                    d'
+                                                >8
+                                                \tweak style #'cross
+                                                a8
+                                                ]
+                                            }
+                                            \times 2/3
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r4
+                                                \tweak style #'cross
+                                                c'4
+                                                <
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'harmonic
+                                                    c'
+                                                >4
+                                            }
+                                            \times 2/3
+                                            {
+                                                \once \override Rest.staff-position = #-7
+                                                r8
+                                                [
+                                                \tweak style #'cross
+                                                b8
+                                                \tweak style #'cross
+                                                a8
+                                                \stopTextSpanThree
+                                                ]
+                                            }
+                                        }
+                                        \context Voice = "violin 2 bow voice"
+                                        {
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \override Voice.NoteHead.color = #(css-color 'darkred)
+                                            \override Voice.Dots.color = #(css-color 'darkred)
+                                            \override Voice.Stem.color = #(css-color 'darkred)
+                                            \override Voice.Beam.color = #(css-color 'darkred)
+                                            \override Voice.Rest.color = #(css-color 'darkred)
+                                            \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
+                                            \voiceOne
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            _ \ppp
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #11
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "II" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -18
+                                            \startTextSpanOne
+                                            \once \override Rest.staff-position = #10
+                                            r4..
+                                            - \tweak color #(css-color 'darkred)
+                                            - \markup \fontsize #2 { \hspace #-7.5 { "Bow:" } }
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                g''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                f''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                g''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            ]
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                g''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            \once \override Rest.staff-position = #10
+                                            r16
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                f''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #10
+                                            r16
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                e''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r2
+                                            \stopTextSpanOne
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                e''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #10
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "III" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -18
+                                            \startTextSpanOne
+                                            \once \override Rest.staff-position = #10
+                                            r4..
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                g''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                e''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                e''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                d''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                c''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            ]
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                b'
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            _ \<
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            \once \override Rest.staff-position = #10
+                                            r16
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                a'
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #10
+                                            r16
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                g'
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r2
+                                            \stopTextSpanOne
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                f'
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            _ \p
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #10
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "IV" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -6
+                                            \startTextSpanOne
+                                            \once \override Rest.staff-position = #10
+                                            r16
+                                            \once \override Rest.staff-position = #10
+                                            r16
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                d'
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                e'
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            _ \<
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                e'
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                d''
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            ]
+                                            \once \override Rest.staff-position = #10
+                                            r4
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                e'
+                                            >16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            - \tweak Beam.positions #'(8 . 8)
+                                            [
+                                            \once \override Rest.staff-position = #10
+                                            r8.
+                                            _ \mf
+                                            \stopTextSpanOne
+                                            ]
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -2949,7 +3296,7 @@
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
-                                            - \tweak bound-details.right.padding -15
+                                            - \tweak bound-details.right.padding -16
                                             \startTextSpanThree
                                             b,8
                                             c8
