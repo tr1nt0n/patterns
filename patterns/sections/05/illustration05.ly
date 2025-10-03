@@ -789,31 +789,46 @@
                                     \override Voice.TupletBracket.color = #(css-color 'darkred)
                                     \override Voice.TupletNumber.color = #(css-color 'darkred)
                                     \clef "percussion"
+                                    \tweak style #'cross
                                     c'16
                                     - \tweak color #(css-color 'darkred)
                                     - \accent
+                                    - \tweak color #(css-color 'darkred)
+                                    - \staccato
                                     [
                                     - \tweak color #(css-color 'darkred)
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 2
-                                    - \tweak padding #3
+                                    - \tweak padding #3.5
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -3
                                     \startTextSpan
+                                    \tweak style #'cross
                                     c'16
+                                    - \tweak color #(css-color 'darkred)
+                                    - \staccato
                                     r8
                                     ]
                                     r8
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 5/6
                                     {
+                                        \tweak style #'cross
                                         c'8
+                                        - \tweak color #(css-color 'darkred)
+                                        - \staccato
                                         [
+                                        \tweak style #'cross
                                         c'8
                                         - \tweak color #(css-color 'darkred)
                                         - \accent
+                                        - \tweak color #(css-color 'darkred)
+                                        - \staccato
+                                        \tweak style #'cross
                                         c'8
+                                        - \tweak color #(css-color 'darkred)
+                                        - \staccato
                                         ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -821,40 +836,67 @@
                                     {
                                         r16
                                         [
+                                        \tweak style #'cross
                                         c'16
                                         - \tweak color #(css-color 'darkred)
                                         - \accent
+                                        - \tweak color #(css-color 'darkred)
+                                        - \staccato
+                                        \tweak style #'cross
                                         c'16
                                         - \tweak color #(css-color 'darkred)
                                         - \accent
+                                        - \tweak color #(css-color 'darkred)
+                                        - \staccato
+                                        \tweak style #'cross
                                         c'16
+                                        - \tweak color #(css-color 'darkred)
+                                        - \staccato
                                         ]
                                     }
                                     r8
                                     [
+                                    \tweak style #'cross
                                     c'8
+                                    - \tweak color #(css-color 'darkred)
+                                    - \staccato
                                     ]
+                                    \tweak style #'cross
                                     c'8
                                     - \tweak color #(css-color 'darkred)
                                     - \accent
+                                    - \tweak color #(css-color 'darkred)
+                                    - \staccato
                                     [
+                                    \tweak style #'cross
                                     c'8
+                                    - \tweak color #(css-color 'darkred)
+                                    - \staccato
                                     ]
                                     \times 4/6
                                     {
                                         r4
+                                        \tweak style #'cross
                                         c'8
+                                        - \tweak color #(css-color 'darkred)
+                                        - \staccato
                                         [
                                         r8
+                                        \tweak style #'cross
                                         c'8
                                         - \tweak color #(css-color 'darkred)
                                         - \accent
+                                        - \tweak color #(css-color 'darkred)
+                                        - \staccato
                                         r8
                                         ]
                                     }
                                     r8
                                     [
+                                    \tweak style #'cross
                                     c'8
+                                    - \tweak color #(css-color 'darkred)
+                                    - \staccato
                                     \stopTextSpan
                                     ]
                                     r2

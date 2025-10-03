@@ -451,6 +451,7 @@ trinton.make_music(
             ]
         ),
     ),
+    trinton.change_notehead_command(notehead="cross", selector=trinton.pleaves()),
     trinton.attachment_command(
         attachments=[
             abjad.bundle(
@@ -462,6 +463,15 @@ trinton.make_music(
             [0, 3, 5, 6, 9, 12], 15, first=True, pitched=True
         ),
     ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Articulation("staccato"),
+                r"""- \tweak color #(css-color 'darkred)""",
+            ),
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
     trinton.hooked_spanner_command(
         string="CLB OB",
         selector=trinton.select_leaves_by_index(
@@ -469,7 +479,7 @@ trinton.make_music(
             pitched=True,
             grace=False,
         ),
-        padding=3,
+        padding=3.5,
         right_padding=3,
         full_string=False,
         style="dashed-line-with-hook",
