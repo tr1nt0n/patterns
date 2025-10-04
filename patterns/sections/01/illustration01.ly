@@ -486,6 +486,8 @@
                                             \override Voice.Beam.color = #(css-color 'darkred)
                                             \override Voice.Rest.color = #(css-color 'darkred)
                                             \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \voiceTwo
                                             r32
                                             \pp
@@ -688,6 +690,8 @@
                                             \revert Voice.Beam.color
                                             \revert Voice.Rest.color
                                             \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
                                             \revert Voice.NoteHead.no-ledgers
                                             \revert Voice.Accidental.stencil
                                         }
@@ -1146,6 +1150,8 @@
                                             \override Voice.Beam.color = #(css-color 'darkred)
                                             \override Voice.Rest.color = #(css-color 'darkred)
                                             \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \override Voice.NoteHead.no-ledgers = ##t
                                             \override Voice.Accidental.stencil = ##f
                                             \textSpannerDown
@@ -1374,6 +1380,8 @@
                                             \revert Voice.Beam.color
                                             \revert Voice.Rest.color
                                             \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
                                             \revert Voice.NoteHead.no-ledgers
                                             \revert Voice.Accidental.stencil
                                         }
@@ -1425,6 +1433,7 @@
                                     <<
                                         \context Voice = "cello 2 voice temp"
                                         {
+                                            \big-half-harmonic
                                             \override Staff.Clef.stencil = #ly:text-interface::print
                                             \override Staff.Clef.text = \string-clef
                                             \staff-line-count 4
@@ -1451,8 +1460,8 @@
                                             \glissando
                                             ~
                                             - \tweak Y-extent ##f
-                                            - \tweak bound-details.left.Y #-6.5
-                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \fontsize #8 \line { \char ##xe0e3 }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0d9 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.left.Y #-6
+                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #8 { \char ##xe0d9 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
                                             - \tweak bound-details.right.Y #-4.5
                                             \startTrillSpan
                                               %! abjad.glissando(1)
@@ -1467,6 +1476,7 @@
                                             c'8.
                                             [
                                             {
+                                                \grace-half-harmonic
                                                 \revert Dots.staff-position
                                                 \once \override Flag.stroke-style = #"grace"
                                                   %! abjad.glissando(6)
@@ -1497,6 +1507,8 @@
                                             \override Voice.Beam.color = #(css-color 'darkred)
                                             \override Voice.Rest.color = #(css-color 'darkred)
                                             \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \voiceOne
                                             r32
                                             _ \pp
@@ -1636,6 +1648,8 @@
                                             \revert Voice.Beam.color
                                             \revert Voice.Rest.color
                                             \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
                                         }
                                     >>
                                     \oneVoice

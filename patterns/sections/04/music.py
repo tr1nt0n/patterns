@@ -1689,7 +1689,10 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([1]),
     ),
     trinton.change_lines(
-        lines=5, clef="alto", selector=trinton.select_leaves_by_index([1])
+        lines=5,
+        clef="alto",
+        selector=trinton.select_leaves_by_index([1]),
+        invisible_barlines=False,
     ),
     trinton.attachment_command(
         attachments=[abjad.Clef("treble")],

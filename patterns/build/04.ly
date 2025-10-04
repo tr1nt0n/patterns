@@ -2215,8 +2215,6 @@
                                         )
                                     \stopTextSpan
                                     \staff-line-count 5
-                                      %! +SCORE
-                                    \revert Staff.BarLine.bar-extent
                                     \revert Staff.Clef.stencil
                                     \clef "alto"
                                     <g a>2

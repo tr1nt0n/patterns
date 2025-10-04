@@ -2,10 +2,18 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (15 16.5 16.5 36)))
             \time 4/2
             s1 * 2
+              %! +SCORE
+        %%% \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (15 16.5 16.5 36)))
             \time 3/2
             s1 * 3/2
+              %! +SCORE
+        %%% \break
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/2
             s1 * 3/2
@@ -103,53 +111,399 @@
                                     <<
                                         \context Voice = "violin 2 voice temp"
                                         {
+                                            \once \override Rest.staff-position = #-7
+                                            \override Staff.Clef.stencil = #ly:text-interface::print
+                                            \override Staff.Clef.text = \string-clef
+                                            \staff-line-count 4
+                                            \override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)
+                                            \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
+                                            \override Staff.Accidental.stencil = ##f
+                                            \override Staff.NoteHead.no-ledgers = ##t
                                             \voiceTwo
                                             r2
                                               %! +SCORE
-                                        %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
+                                        %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
+                                            \once \override Rest.staff-position = #-7
                                             r8
-                                            c'8
+                                            [
+                                            \big-half-harmonic
+                                            \once \override DynamicLineSpanner.staff-padding = #7.5
+                                            b8
+                                            \pppp
                                             ~
-                                            c'8
+                                            - \tweak Y-extent ##f
+                                            - \tweak bound-details.left.Y #-4
+                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.right.Y #-4
+                                            \startTrillSpan
+                                            \big-half-harmonic
+                                            b8
+                                            \stopTrillSpan
+                                            \once \override Rest.staff-position = #-7
                                             r8
-                                            c'8
-                                            c'8
+                                            ]
+                                            <
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'harmonic
+                                                d'
+                                            >8
+                                            [
+                                            <
+                                                \tweak style #'cross
+                                                e'
+                                                \tweak style #'harmonic
+                                                a'
+                                            >8
+                                            ]
+                                            \once \override Rest.staff-position = #-7
                                             r4
+                                            \once \override Rest.staff-position = #-7
                                             r4.
-                                            c'8
+                                            <
+                                                \tweak style #'cross
+                                                a
+                                                \tweak style #'harmonic
+                                                b
+                                            >8
+                                            \once \override Rest.staff-position = #-7
                                             r4.
-                                            c'8
+                                            \override Dots.staff-position = #2
+                                            \tweak style #'harmonic
+                                            a8
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
                                             ~
-                                            c'4.
+                                            - \tweak Y-extent ##f
+                                            - \tweak bound-details.left.Y #-6
+                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #8 { \char ##xe0e3 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.right.Y #-2
+                                            \startTrillSpan
+                                              %! abjad.glissando(1)
+                                            \hide NoteHead
+                                              %! abjad.glissando(1)
+                                            \override Accidental.stencil = ##f
+                                              %! abjad.glissando(1)
+                                            \override NoteColumn.glissando-skip = ##t
+                                              %! abjad.glissando(1)
+                                            \override NoteHead.no-ledgers = ##t
+                                            \afterGrace
+                                            a4.
+                                            {
+                                                \revert Dots.staff-position
+                                                \once \override Flag.stroke-style = #"grace"
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                \tweak style #'harmonic
+                                                e'16
+                                                \stopTrillSpan
+                                            }
+                                            \once \override Rest.staff-position = #-7
                                             r8
+                                            \once \override Rest.staff-position = #-7
                                             r2
+                                            \once \override Rest.staff-position = #-7
                                             r1
+                                            \once \override Rest.staff-position = #-7
                                             r4
-                                            c'8
+                                            \tweak style #'cross
+                                            b8
+                                            \once \override Rest.staff-position = #-7
                                             r8
                                         }
                                         \context Voice = "violin 1 bow voice"
                                         {
+                                            \once \override Rest.staff-position = #7
+                                            \override Voice.NoteHead.color = #(css-color 'darkred)
+                                            \override Voice.Dots.color = #(css-color 'darkred)
+                                            \override Voice.Stem.color = #(css-color 'darkred)
+                                            \override Voice.Beam.color = #(css-color 'darkred)
+                                            \override Voice.Rest.color = #(css-color 'darkred)
+                                            \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \voiceOne
-                                            r2.
-                                            c'8
-                                            r8
-                                            c'2
-                                            ~
-                                            c'8
-                                            c'8
                                             r2
-                                            r8
-                                            c'8
-                                            r4.
-                                            c'8
-                                            r2
-                                            r16
-                                            c'8.
+                                            \once \override Rest.staff-position = #7
                                             r4
-                                            c'4.
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                f'
+                                            >8
+                                            - \tweak color #(css-color 'darkred)
+                                            - \staccato
+                                            - \tweak Beam.positions #'(6 . 6)
+                                            [
+                                            \once \override Rest.staff-position = #7
                                             r8
-                                            c'2
+                                            ]
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                d''
+                                            >2
+                                            ^ \markup {
+                                                                \hspace #-2 {
+                                                                    ( \note {2} #2 )
+                                                                }
+                                                            }
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            ~
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                              %! abjad.glissando(1)
+                                            \hide NoteHead
+                                              %! abjad.glissando(1)
+                                            \override Accidental.stencil = ##f
+                                              %! abjad.glissando(1)
+                                            \override NoteColumn.glissando-skip = ##t
+                                              %! abjad.glissando(1)
+                                            \override NoteHead.no-ledgers = ##t
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                d''
+                                            >8
+                                            [
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <d''>16
+                                            }
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                b'
+                                            >8
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            ]
+                                            \once \override Rest.staff-position = #7
+                                            r4
+                                            \once \override Rest.staff-position = #7
+                                            r4.
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >8
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #7
+                                            r4.
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            <
+                                                \tweak style #'la
+                                                c''
+                                            >8
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \staccato
+                                            \once \override Rest.staff-position = #7
+                                            r2
+                                            \once \override Rest.staff-position = #7
+                                            r16
+                                            [
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >8.
+                                            ]
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <a''>16
+                                            }
+                                            \once \override Rest.staff-position = #7
+                                            r4
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                c''
+                                            >4.
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <c''>16
+                                            }
+                                            \once \override Rest.staff-position = #7
+                                            r8
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a'
+                                            >2
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <a'>16
+                                                \revert Voice.NoteHead.color
+                                                \revert Voice.Dots.color
+                                                \revert Voice.Stem.color
+                                                \revert Voice.Beam.color
+                                                \revert Voice.Rest.color
+                                                \revert Voice.Tie.color
+                                                \revert Voice.TupletBracket.color
+                                                \revert Voice.TupletNumber.color
+                                            }
                                         }
                                     >>
                                     \oneVoice
@@ -243,7 +597,7 @@
                                 {
                                     r\breve
                                       %! +SCORE
-                                %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
+                                %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
                                     r1.
                                     r1.
                                     r1.
@@ -1364,34 +1718,178 @@
                                     >>
                                     \oneVoice
                                     r16
-                                    c'8.
+                                    [
+                                    \staff-line-count 1
+                                    \clef "bass"
+                                    d8.
                                     - \tenuto
-                                    c'16
-                                    c'8.
-                                    c'4.
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "bridge" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 5
+                                    \clef "bass"
+                                    <cqs, bf,>16
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +0 }} } }
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 1
+                                    \clef "bass"
+                                    d8.
+                                    ]
+                                    d4.
                                     - \tenuto
-                                    c'8
-                                    c'2
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "bridge" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanOne
+                                    d8
+                                    d2
                                     - \tenuto
-                                    c'16
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 5
+                                    \clef "bass"
+                                    <cqs, bf,>16
                                     - \tenuto
-                                    c'16
+                                    - \tweak padding #6
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +0 }} } }
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 1
+                                    \once \override StemTremolo.stencil = #ly:text-interface::print
+                                    \once \override StemTremolo.text = \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") \lower #1 { \char ##xe222 } }
+                                    \clef "bass"
+                                    d8.
+                                    :64
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #1 { "bridge" } } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #9.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1
+                                    \startTextSpanTwo
+                                    d8
+                                    \stopTextSpanOne
+                                    \stopTextSpanTwo
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "" } \hspace #0.5 }
+                                    \startTextSpanOne
                                     ~
-                                    c'8
-                                    c'8
-                                    ~
-                                    c'16
-                                    c'16
+                                    d16
+                                    [
+                                    \staff-line-count 5
+                                    \clef "bass"
+                                    <cqs, bf,>16
                                     - \tenuto
-                                    c'8
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +0 }} } }
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup { \hspace #1.5 { "bridge" } }
+                                    \startTextSpanOne
+                                    \staff-line-count 1
+                                    \clef "bass"
+                                    d8
+                                    \stopTextSpanOne
                                     r16
-                                    c'16
-                                    c'8
+                                    \staff-line-count 5
+                                    \clef "bass"
+                                    <cqs, bf,>16
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +0 }} } }
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 1
+                                    \clef "bass"
+                                    d8.
                                     - \tenuto
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #1.5 { "bridge" } } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 5
+                                    \clef "bass"
+                                    <cqs, bf,>16
+                                    - \tweak padding #6
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +0 }} } }
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup { \hspace #2 { "bridge" } }
+                                    \startTextSpanOne
+                                    \staff-line-count 1
+                                    \once \override StemTremolo.stencil = #ly:text-interface::print
+                                    \once \override StemTremolo.text = \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") \lower #1 { \char ##xe222 } }
+                                    \clef "bass"
+                                    d8
+                                    :64
+                                    \stopTextSpanOne
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #9.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanTwo
                                     ~
-                                    c'16
-                                    c'16
-                                    c'2
+                                    \once \override StemTremolo.stencil = #ly:text-interface::print
+                                    \once \override StemTremolo.text = \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") \raise #1 { \char ##xe222 } }
+                                    d4.
+                                    :32
+                                    \stopTextSpanTwo
                                     r1
                                     r1..
                                       %! +SCORE

@@ -432,6 +432,7 @@
                                             - \tweak Beam.positions #'(-8 . -8)
                                             [
                                             \override Dots.staff-position = #2
+                                            \big-half-harmonic
                                             \once \override DynamicLineSpanner.padding = #6.5
                                             b'16
                                             \pp
@@ -442,8 +443,8 @@
                                             \glissando
                                             ~
                                             - \tweak Y-extent ##f
-                                            - \tweak bound-details.left.Y #-6.5
-                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \fontsize #8 \line { \char ##xe0e3 }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0d9 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.left.Y #-5.5
+                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #8 { \char ##xe0d9 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
                                             - \tweak bound-details.right.Y #-4.5
                                             \startTrillSpan
                                               %! abjad.glissando(1)
@@ -458,6 +459,7 @@
                                             b'4
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
+                                                \grace-half-harmonic
                                                 \revert Dots.staff-position
                                                 \once \override Flag.stroke-style = #"grace"
                                                   %! abjad.glissando(6)
@@ -478,6 +480,7 @@
                                             \once \override Rest.staff-position = #-7
                                             r16
                                             \override Dots.staff-position = #2
+                                            \tweak style #'harmonic
                                             d''16
                                             ]
                                               %! abjad.glissando(7)
@@ -486,8 +489,8 @@
                                             \glissando
                                             ~
                                             - \tweak Y-extent ##f
-                                            - \tweak bound-details.left.Y #-5
-                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \fontsize #6 \line { \char ##xe0d9 }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.left.Y #-4
+                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
                                             - \tweak bound-details.right.Y #-5.5
                                             \startTrillSpan
                                               %! abjad.glissando(1)
@@ -514,12 +517,14 @@
                                                 \revert NoteHead.no-ledgers
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
+                                                \tweak style #'harmonic
                                                 b'16
                                             }
                                             \once \override Rest.staff-position = #-7
                                             r16
                                             \override Dots.staff-position = #2
                                             \once \override DynamicLineSpanner.padding = #2.5
+                                            \tweak style #'harmonic
                                             a'16
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -556,6 +561,7 @@
                                                 \revert NoteHead.no-ledgers
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
+                                                \tweak style #'harmonic
                                                 c'16
                                                 \p
                                                 \stopTrillSpan
@@ -570,20 +576,22 @@
                                             \override Dots.staff-position = #2
                                             \once \override DynamicLineSpanner.padding = #6.25
                                             \afterGrace
+                                            \tweak style #'harmonic
                                             g'8.
                                             \pp
                                             ]
                                             - \abjad-zero-padding-glissando
                                             \glissando
                                             - \tweak Y-extent ##f
-                                            - \tweak bound-details.left.Y #-6
-                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \fontsize #6 \line { \char ##xe0d9 }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a4 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
-                                            - \tweak bound-details.right.Y #-6
+                                            - \tweak bound-details.left.Y #-5.5
+                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a4 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.right.Y #-5.5
                                             \startTrillSpan
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
                                                 \revert Dots.staff-position
                                                 \once \override Flag.stroke-style = #"grace"
+                                                \tweak style #'harmonic
                                                 b'16
                                                 \stopTrillSpan
                                             }
@@ -594,6 +602,7 @@
                                             - \tweak Beam.positions #'(-8 . -10)
                                             [
                                             \override Dots.staff-position = #2
+                                            \big-half-harmonic
                                             f''32
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -602,7 +611,7 @@
                                             ~
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-5.5
-                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \fontsize #8 \line { \char ##xe0e3 }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
                                             - \tweak bound-details.right.Y #-5.5
                                             \startTrillSpan
                                               %! abjad.glissando(1)
@@ -617,6 +626,7 @@
                                             f''8
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
+                                                \grace-half-harmonic
                                                 \revert Dots.staff-position
                                                 \once \override Flag.stroke-style = #"grace"
                                                   %! abjad.glissando(6)
@@ -634,6 +644,7 @@
                                             \once \override Rest.staff-position = #-7
                                             r32
                                             \override Dots.staff-position = #2
+                                            \big-half-harmonic
                                             a'16.
                                             ]
                                               %! abjad.glissando(7)
@@ -654,6 +665,7 @@
                                             [
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
+                                                \grace-half-harmonic
                                                 \revert Dots.staff-position
                                                 \once \override Flag.stroke-style = #"grace"
                                                   %! abjad.glissando(6)
@@ -667,6 +679,7 @@
                                                 d''16
                                             }
                                             \override Dots.staff-position = #2
+                                            \big-half-harmonic
                                             b'8
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -685,6 +698,7 @@
                                             b'8
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
+                                                \grace-half-harmonic
                                                 \revert Dots.staff-position
                                                 \once \override Flag.stroke-style = #"grace"
                                                   %! abjad.glissando(6)
@@ -717,9 +731,9 @@
                                             \glissando
                                             ~
                                             - \tweak Y-extent ##f
-                                            - \tweak bound-details.left.Y #-7.5
-                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \fontsize #6 \line { \char ##xe0a4 }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
-                                            - \tweak bound-details.right.Y #-7.5
+                                            - \tweak bound-details.left.Y #-6.5
+                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.right.Y #-6.5
                                             \startTrillSpan
                                               %! abjad.glissando(1)
                                             \hide NoteHead
@@ -762,6 +776,8 @@
                                             \override Voice.Beam.color = #(css-color 'darkred)
                                             \override Voice.Rest.color = #(css-color 'darkred)
                                             \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \voiceOne
                                             <
                                                 \tweak style #'la
@@ -1222,6 +1238,8 @@
                                             \revert Voice.Beam.color
                                             \revert Voice.Rest.color
                                             \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
                                         }
                                     >>
                                     \oneVoice
@@ -2945,6 +2963,8 @@
                                             \override Voice.Beam.color = #(css-color 'darkred)
                                             \override Voice.Rest.color = #(css-color 'darkred)
                                             \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \override Voice.NoteHead.no-ledgers = ##t
                                             \override Voice.Accidental.stencil = ##f
                                             \textSpannerDown
@@ -3201,6 +3221,8 @@
                                             \revert Voice.Beam.color
                                             \revert Voice.Rest.color
                                             \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
                                             \revert Voice.NoteHead.no-ledgers
                                             \revert Voice.Accidental.stencil
                                         }

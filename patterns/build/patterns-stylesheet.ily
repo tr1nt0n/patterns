@@ -140,6 +140,7 @@ afterGraceFraction = #(cons 15 16)
         % \override StemTremolo.text = \markup {
         %     \fontsize #3.5
         %     \override #'(font-name . "ekmelos")
+        %     \lower #1
         %     {
         %         \char ##xe222
         %     }

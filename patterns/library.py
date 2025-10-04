@@ -168,7 +168,7 @@ def bow_speed_glissandi(selection_groupings, length_fractions):
     return make_glissandi
 
 
-def attach_gamelan_scale_cent_markups(scale_degrees, selector):
+def attach_gamelan_scale_cent_markups(scale_degrees, selector, padding=None):
     def attach_markups(argument):
         selections = selector(argument)
         tie_selector = trinton.logical_ties(first=True, pitched=True)
@@ -186,6 +186,8 @@ def attach_gamelan_scale_cent_markups(scale_degrees, selector):
                 )
 
             markup = abjad.Markup(markup_string)
+            if padding is not None:
+                markup = abjad.bundle(markup, rf"- \tweak padding #{padding}")
 
             abjad.attach(markup, leaf, direction=abjad.UP)
 
@@ -357,17 +359,17 @@ def column_trill(pressures, selector, bound_details=None, direction=abjad.DOWN):
         }
 
         markup_string = r"""\markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { """
-        counter = 0
+        # counter = 0
         for pressure in pressures:
-            if pressure == "half":
+            if pressure == "half" or pressure == "harmonic":
                 fontsize = 8
             else:
                 fontsize = 6
-            if counter == 0:
-                markup_string += rf"""\fontsize #{fontsize} \line {{ \char {_pressure_to_notehead_string[pressure]} }}"""
-            else:
-                markup_string += rf"""\line {{ \concat {{ \fontsize #6 {{ ( }} \fontsize #{fontsize} {{ \char {_pressure_to_notehead_string[pressure]} }} \fontsize #6 {{ ) }} }} }}"""
-            counter += 1
+            # if counter == 0:
+            #     markup_string += rf"""\fontsize #{fontsize} \line {{ \char {_pressure_to_notehead_string[pressure]} }}"""
+            # else:
+            markup_string += rf"""\line {{ \concat {{ \fontsize #6 {{ ( }} \fontsize #{fontsize} {{ \char {_pressure_to_notehead_string[pressure]} }} \fontsize #6 {{ ) }} }} }}"""
+            # counter += 1
 
         markup_string += r"} } }"
 

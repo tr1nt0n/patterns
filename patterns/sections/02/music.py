@@ -477,26 +477,40 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([25], grace=False),
     ),
-    library.column_trill(
-        pressures=["half", "harmonic", "cross"],
-        selector=trinton.select_logical_ties_by_index([0, 1], first=True, pitched=True),
-        bound_details=(-6.5, -4.5),
-        direction=abjad.DOWN,
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+        selector=trinton.select_leaves_by_index(
+            [0, 9, 11, 13], pitched=True, grace=False
+        ),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\grace-half-harmonic", site="before")],
+        selector=trinton.select_leaves_by_index([0, 4, 5, 6], pitched=True, grace=True),
+    ),
+    trinton.change_notehead_command(
+        notehead="harmonic",
+        selector=trinton.select_leaves_by_index([3, 5, 6, 10, 11, 12], pitched=True),
     ),
     library.column_trill(
         pressures=["harmonic", "cross"],
+        selector=trinton.select_logical_ties_by_index([0, 1], first=True, pitched=True),
+        bound_details=(-5.5, -4.5),
+        direction=abjad.DOWN,
+    ),
+    library.column_trill(
+        pressures=["cross"],
         selector=trinton.select_logical_ties_by_index([2, 5], first=True, pitched=True),
-        bound_details=(-5, -5.5),
+        bound_details=(-4, -5.5),
         direction=abjad.DOWN,
     ),
     library.column_trill(
-        pressures=["harmonic", "full", "cross"],
+        pressures=["full", "cross"],
         selector=trinton.select_logical_ties_by_index([6, 7], first=True, pitched=True),
-        bound_details=(-6, -6),
+        bound_details=(-5.5, -5.5),
         direction=abjad.DOWN,
     ),
     library.column_trill(
-        pressures=["half", "cross"],
+        pressures=["cross"],
         selector=trinton.select_logical_ties_by_index(
             [8, 13], first=True, pitched=True
         ),
@@ -504,11 +518,11 @@ trinton.make_music(
         direction=abjad.DOWN,
     ),
     library.column_trill(
-        pressures=["full", "cross"],
+        pressures=["cross"],
         selector=trinton.select_logical_ties_by_index(
             [14, 15], first=True, pitched=True
         ),
-        bound_details=(-7.5, -7.5),
+        bound_details=(-6.5, -6.5),
         direction=abjad.DOWN,
     ),
     trinton.attachment_command(
