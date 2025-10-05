@@ -141,11 +141,19 @@
                                         %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
                                             \once \override Rest.staff-position = #-7
                                             r8
+                                            - \markup \fontsize #2 { \hspace #-10.5 { "Fng. Perc.:" } }
                                             [
                                             \big-half-harmonic
                                             \once \override DynamicLineSpanner.staff-padding = #7.5
                                             b8
                                             \pppp
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #9
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "IV" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -10
+                                            \startTextSpanOne
                                             ~
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-4
@@ -232,6 +240,7 @@
                                             r4
                                             \tweak style #'cross
                                             b8
+                                            \stopTextSpanOne
                                             \once \override Rest.staff-position = #-7
                                             r8
                                         }
@@ -260,6 +269,8 @@
                                             >8
                                             - \tweak color #(css-color 'darkred)
                                             - \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            - \markup \fontsize #2 { \hspace #-4.5 { "Bow:" } }
                                             - \tweak Beam.positions #'(6 . 6)
                                             [
                                             \once \override Rest.staff-position = #7
@@ -563,7 +574,7 @@
                                         \context Voice = "violin 1 polyrhythm voice"
                                         {
                                             \voiceTwo
-                                            c'''2
+                                            c'''4.
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
                                             - \tweak padding #13.5
@@ -571,8 +582,14 @@
                                             - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -4
                                             \startTextSpanOne
-                                            fs'''2
-                                            c''''2
+                                            ~
+                                            c'''8
+                                            fs'''4
+                                            ~
+                                            fs'''4
+                                            c''''8
+                                            ~
+                                            c''''4.
                                             d'''4
                                             e'''4
                                             d'''4

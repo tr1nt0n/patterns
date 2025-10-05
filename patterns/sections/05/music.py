@@ -53,12 +53,14 @@ trinton.make_music(
         ],
         selector=abjad.select.rests,
     ),
-    # trinton.attachment_command(
-    #     attachments=[
-    #         abjad.Markup(r"""\markup \fontsize #2 { \hspace #-11 { "Fng. Perc.:" } }""")
-    #     ],
-    #     selector=trinton.select_leaves_by_index([0]),
-    # ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Markup(
+                r"""\markup \fontsize #2 { \hspace #-10.5 { "Fng. Perc.:" } }"""
+            )
+        ],
+        selector=trinton.select_leaves_by_index([1]),
+    ),
     trinton.IntermittentVoiceHandler(
         evans.RhythmHandler(
             evans.talea(
@@ -144,6 +146,24 @@ trinton.make_music(
             abjad.Dynamic("pppp"),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""IV""",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=9,
+        direction=None,
+        right_padding=10,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 2""",
+            # r"""- \tweak bound-details.left.Y #5.5""",
+            # r"""- \tweak bound-details.right.Y #7""",
+        ],
     ),
     voice=score["violin 2 voice temp"],
 )
@@ -260,15 +280,15 @@ trinton.make_music(
         ],
         selector=abjad.select.rests,
     ),
-    # trinton.attachment_command(
-    #     attachments=[
-    #         abjad.bundle(
-    #             abjad.Markup(r"""\markup \fontsize #2 { \hspace #-7.5 { "Bow:" } }"""),
-    #             r"""- \tweak color #(css-color 'darkred)""",
-    #         ),
-    #     ],
-    #     selector=trinton.select_leaves_by_index([1]),
-    # ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Markup(r"""\markup \fontsize #2 { \hspace #-4.5 { "Bow:" } }"""),
+                r"""- \tweak color #(css-color 'darkred)""",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
     library.color_voice(),
     voice=score["violin 1 bow voice"],
 )
@@ -321,6 +341,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (4, 6)),
     pitch.pitch_e(instrument="violin 1", index=0, retrograde=True),
+    trinton.rewrite_meter_command(boundary_depth=-2),
     # trinton.annotate_leaves_locally(
     #     selector=trinton.logical_ties(first=True, pitched=True, grace=False),
     #     direction=abjad.DOWN
