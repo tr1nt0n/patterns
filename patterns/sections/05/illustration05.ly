@@ -28,15 +28,29 @@
             s1 * 3/2
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 25 25 36)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/2
             s1 * 3/2
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 25 25 36)))
             \time 12/8
             s1 * 3/2
+              %! +SCORE
+            \noBreak
             \time 8/8
             s1 * 1
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (15 28 18 15)))
             \time 7/4
             s1 * 7/4
+              %! +SCORE
+            \noBreak
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
             \once \override Score.TimeSignature.stencil = ##f
@@ -46,6 +60,8 @@
             _ \very-long-fermata
             \bar "||"
             \once \override Score.BarLine.transparent = ##f
+              %! +SCORE
+            \pageBreak
         }
         \tag #'group1
         {
@@ -521,9 +537,73 @@
                                         }
                                     >>
                                     \oneVoice
-                                    r1.
-                                    r1
-                                    r1..
+                                    <<
+                                        \context Voice = "violin 2 voice temp"
+                                        {
+                                            \staff-line-count 5
+                                            \revert Staff.StaffSymbol.line-positions
+                                            \revert Staff.Accidental.stencil
+                                            \revert Staff.NoteHead.no-ledgers
+                                            \revert Staff.Clef.stencil
+                                            \voiceOne
+                                            cs''''4
+                                            \override Staff.BarLine.bar-extent = #'(-2 . 2)
+                                            a'''8
+                                            ~
+                                            a'''8
+                                            bf'''4
+                                            e'''4
+                                            a'''8
+                                            ~
+                                            a'''8
+                                            d'''4
+                                            \times 2/3
+                                            {
+                                                d'''2
+                                                f'''2
+                                                c'''2
+                                            }
+                                            e'''4..
+                                            g'''16
+                                            ~
+                                            g'''4
+                                            ~
+                                            g'''8
+                                            bf'''4.
+                                            ~
+                                            bf'''16
+                                            d'''4..
+                                        }
+                                        \context Voice = "violin 1 polyrhythm voice"
+                                        {
+                                            \voiceTwo
+                                            c'''2
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #13.5
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -4
+                                            \startTextSpanOne
+                                            fs'''2
+                                            c''''2
+                                            d'''4
+                                            e'''4
+                                            d'''4
+                                            g'''4
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 7/10
+                                            {
+                                                e''2
+                                                a'''2
+                                                bf'''2
+                                                d''''2
+                                                ef'''2
+                                                \stopTextSpanOne
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -613,10 +693,341 @@
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
                                     r1.
-                                    r1.
-                                    r1.
-                                    r1
-                                    r1..
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 6/5
+                                    {
+                                        \override Dots.staff-position = #2
+                                        \big-half-harmonic
+                                        \revert Dots.staff-position
+                                        <gqs c'>8
+                                        \arpeggio
+                                        \pppp
+                                        [
+                                        - \tweak font-name "Bodoni72 Book" 
+                                        - \tweak font-size 1
+                                        - \tweak padding #13.5
+                                        - \abjad-solid-line-with-arrow
+                                        - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
+                                        \startTextSpanTwo
+                                        - \tweak padding #11
+                                        - \abjad-dashed-line-with-hook
+                                        - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -3
+                                        \startTextSpanOne
+                                        r8
+                                        \override Dots.staff-position = #2
+                                        <
+                                            \tweak style #'harmonic
+                                            gqs
+                                            \tweak style #'harmonic
+                                            c'
+                                        >8
+                                        \arpeggio
+                                        (
+                                        - \tweak bound-details.right.arrow ##t
+                                        - \tweak thickness #1.5
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \times 2/3
+                                        {
+                                            \big-half-harmonic
+                                            <b fs'>16
+                                            \arpeggio
+                                            - \tweak bound-details.right.arrow ##t
+                                            - \tweak thickness #1.5
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            <
+                                                \tweak style #'harmonic
+                                                dqf'
+                                                \tweak style #'harmonic
+                                                fs'
+                                            >16
+                                            \arpeggio
+                                            - \tweak bound-details.right.arrow ##t
+                                            - \tweak thickness #1.5
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                            \big-half-harmonic
+                                            <c' gqf'>16
+                                            \arpeggio
+                                            - \tweak bound-details.right.arrow ##t
+                                            - \tweak thickness #1.5
+                                            - \abjad-zero-padding-glissando
+                                            \glissando
+                                        }
+                                        <
+                                            \tweak style #'harmonic
+                                            b
+                                            \tweak style #'harmonic
+                                            fs'
+                                        >8
+                                        \arpeggio
+                                        ]
+                                        - \tweak bound-details.right.arrow ##t
+                                        - \tweak thickness #1.5
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 2/3
+                                    {
+                                        \big-half-harmonic
+                                        <dqf' fs'>8
+                                        \arpeggio
+                                        [
+                                        - \tweak bound-details.right.arrow ##t
+                                        - \tweak thickness #1.5
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        <
+                                            \tweak style #'harmonic
+                                            c'
+                                            \tweak style #'harmonic
+                                            gqf'
+                                        >8
+                                        \arpeggio
+                                        - \tweak bound-details.right.arrow ##t
+                                        - \tweak thickness #1.5
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \big-half-harmonic
+                                        <d' fs'>8
+                                        \arpeggio
+                                        ]
+                                        - \tweak bound-details.right.arrow ##t
+                                        - \tweak thickness #1.5
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \times 2/3
+                                    {
+                                        \revert Dots.staff-position
+                                        <
+                                            \tweak style #'harmonic
+                                            b
+                                            \tweak style #'harmonic
+                                            fs'
+                                        >8
+                                        \arpeggio
+                                        )
+                                        [
+                                        r8
+                                        r8
+                                        ]
+                                    }
+                                    \override Dots.staff-position = #2
+                                    \big-half-harmonic
+                                    \revert Dots.staff-position
+                                    <d' eqs'>4
+                                    \arpeggio
+                                    r4.
+                                    r8
+                                    [
+                                    \override Dots.staff-position = #2
+                                    <
+                                        \tweak style #'harmonic
+                                        a
+                                        \tweak style #'harmonic
+                                        eqf'
+                                    >8
+                                    \arpeggio
+                                    (
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \big-half-harmonic
+                                    <bf ef'>8
+                                    \arpeggio
+                                    ]
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \times 2/3
+                                    {
+                                        \revert Dots.staff-position
+                                        <
+                                            \tweak style #'harmonic
+                                            dqf'!
+                                            \tweak style #'harmonic
+                                            ef'!
+                                        >8
+                                        \arpeggio
+                                        )
+                                        [
+                                        r8
+                                        r8
+                                    }
+                                    \override Dots.staff-position = #2
+                                    \big-half-harmonic
+                                    <c' eqs'>8
+                                    \arpeggio
+                                    \stopTextSpanTwo
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #13.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Spz." } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanTwo
+                                    ~
+                                    \big-half-harmonic
+                                    \revert Dots.staff-position
+                                    <c' eqs'>8
+                                    \stopTextSpanOne
+                                    \stopTextSpanTwo
+                                    r4
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "treble"
+                                    b'2
+                                    - \tenuto
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "bridge" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 5
+                                    \clef "treble"
+                                    <gf' bf'>8
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "treble"
+                                    b'4.
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "bridge" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 5
+                                    \clef "treble"
+                                    <gf' bf'>8
+                                    - \tenuto
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    <gf' bf'>8
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    ]
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "treble"
+                                    b'8.
+                                    - \tenuto
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "bridge" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 5
+                                    \clef "treble"
+                                    <gf' bf'>16
+                                    - \tenuto
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    \stopTextSpanOne
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "treble"
+                                    b'4
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #1 { "bridge" } } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 5
+                                    \clef "treble"
+                                    <gf' bf'>8
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    <gf' bf'>8
+                                    - \tenuto
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    ]
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "treble"
+                                    b'4
+                                    \stopTextSpanOne
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "bridge" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 5
+                                    \clef "treble"
+                                    <gf' bf'>16
+                                    - \tweak padding #4.5
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "treble"
+                                    b'8.
+                                    - \tenuto
+                                    \stopTextSpanOne
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #1 { "bridge" } } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
+                                    ~
+                                    b'4
+                                    \stopTextSpanOne
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -1739,7 +2150,7 @@
                                     - \tenuto
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \upright { "bridge" } \hspace #0.5 }
                                     \startTextSpanOne
@@ -1751,7 +2162,7 @@
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
                                     \startTextSpanOne
@@ -1764,7 +2175,7 @@
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "bridge" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 0.5
@@ -1775,7 +2186,7 @@
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "" } \hspace #0.5 }
                                     \startTextSpanOne
@@ -1783,44 +2194,33 @@
                                     \clef "bass"
                                     <cqs, bf,>16
                                     - \tenuto
-                                    - \tweak padding #6
+                                    - \tweak padding #4.5
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +0 }} } }
                                     \stopTextSpanOne
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
                                     \startTextSpanOne
                                     \staff-line-count 1
-                                    \once \override StemTremolo.stencil = #ly:text-interface::print
-                                    \once \override StemTremolo.text = \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") \lower #1 { \char ##xe222 } }
                                     \clef "bass"
                                     d8.
-                                    :64
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { { \hspace #1 { "bridge" } } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 0.5
                                     \startTextSpanOne
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #9.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 1
-                                    \startTextSpanTwo
                                     d8
                                     \stopTextSpanOne
-                                    \stopTextSpanTwo
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "" } \hspace #0.5 }
                                     \startTextSpanOne
@@ -1836,7 +2236,7 @@
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup { \hspace #1.5 { "bridge" } }
@@ -1854,7 +2254,7 @@
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
                                     \startTextSpanOne
@@ -1866,44 +2266,30 @@
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { \hspace #1.5 { "bridge" } } \hspace #0.5 }
                                     \startTextSpanOne
                                     \staff-line-count 5
                                     \clef "bass"
                                     <cqs, bf,>16
-                                    - \tweak padding #6
+                                    - \tweak padding #4.5
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +0 }} } }
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13
+                                    - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup { \hspace #2 { "bridge" } }
                                     \startTextSpanOne
                                     \staff-line-count 1
-                                    \once \override StemTremolo.stencil = #ly:text-interface::print
-                                    \once \override StemTremolo.text = \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") \lower #1 { \char ##xe222 } }
                                     \clef "bass"
                                     d8
-                                    :64
                                     \stopTextSpanOne
                                     ]
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #9.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -3
-                                    \startTextSpanTwo
                                     ~
-                                    \once \override StemTremolo.stencil = #ly:text-interface::print
-                                    \once \override StemTremolo.text = \markup { \fontsize #3.5 \override #'(font-name . "ekmelos") \raise #1 { \char ##xe222 } }
                                     d4.
-                                    :32
-                                    \stopTextSpanTwo
                                     r1
                                     r1..
                                       %! +SCORE
