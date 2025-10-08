@@ -1117,15 +1117,15 @@ trinton.make_music(
         zero_padding=True,
         selector=trinton.select_logical_ties_by_index([1, 2], pitched=True),
     ),
-    library.column_trill(
-        pressures=["harmonic", "cross"],
+    library.tablature_trill(
+        trill_pitch="a",
         selector=trinton.select_logical_ties_by_index([1, 2], first=True, pitched=True),
         bound_details=(-6, -4.5),
         direction=abjad.DOWN,
     ),
     trinton.attachment_command(
         attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
-        selector=trinton.select_leaves_by_index([0], pitched=True),
+        selector=trinton.select_leaves_by_index([0, 1], pitched=True),
     ),
     trinton.attachment_command(
         attachments=[abjad.LilyPondLiteral(r"\grace-half-harmonic", site="before")],

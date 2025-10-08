@@ -346,50 +346,57 @@ def write_short_instrument_names(score):
         )
 
 
-def column_trill(pressures, selector, bound_details=None, direction=abjad.DOWN):
+def tablature_trill(trill_pitch, selector, bound_details=None, direction=abjad.DOWN):
     def make_column_trill(argument):
         selections = selector(argument)
 
-        _pressure_to_notehead_string = {
-            "harmonic": "##xe0d9",
-            "half": "##xe0e3",
-            "full": "##xe0a4",
-            "unstick": "##xe0be",
-            "cross": "##xe0a9",
-        }
-
-        markup_string = r"""\markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { """
-        # counter = 0
-        for pressure in pressures:
-            if pressure == "half" or pressure == "harmonic":
-                fontsize = 8
-            else:
-                fontsize = 6
-            # if counter == 0:
-            #     markup_string += rf"""\fontsize #{fontsize} \line {{ \char {_pressure_to_notehead_string[pressure]} }}"""
-            # else:
-            markup_string += rf"""\line {{ \concat {{ \fontsize #6 {{ ( }} \fontsize #{fontsize} {{ \char {_pressure_to_notehead_string[pressure]} }} \fontsize #6 {{ ) }} }} }}"""
-            # counter += 1
-
-        markup_string += r"} } }"
+        trill_pitch_string = "#(lambda (grob) (grob-interpret-markup grob"
+        trill_pitch_string += r""" #{ \markup \musicglyph #"noteheads.s2cross" #}))"""
 
         start_trill = abjad.bundle(
-            abjad.StartTrillSpan(),
-            rf"""- \tweak bound-details.left.text {markup_string}""",
+            abjad.StartTrillSpan(
+                pitch=abjad.NamedPitch(trill_pitch),
+            ),
+            r"- \tweak Y-extent ##f",
+            rf"""- \tweak bound-details.left.Y #{bound_details[0]}""",
+            rf"""- \tweak bound-details.right.Y #{bound_details[-1]}""",
+            rf"- \tweak TrillPitchHead.stencil {trill_pitch_string}",
+            r'- \tweak TrillPitchHead.whiteout-style "outline"',
+            r"- \tweak TrillPitchHead.whiteout 1",
+            r"- \tweak TrillPitchHead.no-ledgers ##t",
+            r"- \tweak TrillPitchAccidental.stencil ##f",
         )
-
-        if bound_details is not None:
-            start_trill = abjad.bundle(
-                start_trill,
-                r"- \tweak Y-extent ##f",
-                rf"""- \tweak bound-details.left.Y #{bound_details[0]}""",
-                rf"""- \tweak bound-details.right.Y #{bound_details[-1]}""",
-            )
 
         stop_trill = abjad.StopTrillSpan()
 
         abjad.attach(start_trill, selections[0], direction=direction)
         abjad.attach(stop_trill, selections[-1], direction=direction)
+
+        leaf_duration = abjad.get.duration(selections[0], preprolated=True)
+        leaf_denominator = leaf_duration.denominator
+
+        tremolo_duration = leaf_denominator * 2
+        stem_tremolo = abjad.StemTremolo(tremolo_duration)
+        tremolo_literal = abjad.LilyPondLiteral(
+            [
+                r"\once \override StemTremolo.stencil = #ly:text-interface::print",
+                r"""\once \override StemTremolo.text = \markup {
+                    \fontsize #5
+                    \override #'(font-name . "ekmelos")
+                    \override #'(whiteout-style . "outline")
+                    \override #'(whiteout . 1)
+                    \raise #0.5
+                    {
+                        \hspace #-0.57
+                        \char ##xe0f4
+                    }
+                }""",
+            ],
+            site="before",
+        )
+
+        abjad.attach(stem_tremolo, selections[0])
+        abjad.attach(tremolo_literal, selections[0])
 
     return make_column_trill
 
