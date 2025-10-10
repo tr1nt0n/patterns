@@ -33,7 +33,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (13 19 20 27 32)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (13 19 20 27 30)))
             \time 3/4
             s1 * 3/4
               %! +SCORE
@@ -2504,47 +2504,21 @@
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #9.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
                                     [
-                                    (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #10
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
-                                    \startTextSpanTwo
-                                    - \tweak padding #7.5
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
-                                    \startTextSpanOne
                                     \tweak style #'harmonic
                                     fs8.
-                                    \stopTextSpanTwo
                                     ]
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #10
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Spz." } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 0.5
-                                    \startTextSpanTwo
                                     \big-half-harmonic
                                     \revert Dots.staff-position
                                     eqf,8.
-                                    )
-                                    \stopTextSpanOne
                                     [
-                                    - \tweak padding #7.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 0.5
-                                    \startTextSpanOne
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     r16
@@ -2563,7 +2537,6 @@
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     gf16
-                                    (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
@@ -2573,14 +2546,12 @@
                                     \set stemRightBeamCount = 2
                                     \tweak style #'harmonic
                                     fqs16
-                                    )
                                     r16
                                     ]
                                     \override Dots.staff-position = #2
                                     \tweak style #'harmonic
                                     f16
                                     [
-                                    (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
@@ -2589,49 +2560,27 @@
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     e16
-                                    )
                                     \set stemLeftBeamCount = 1
                                     \set stemRightBeamCount = 2
                                     r16
                                     \override Dots.staff-position = #2
                                     cs8.
-                                    \stopTextSpanOne
-                                    \stopTextSpanTwo
                                     ]
-                                    (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #10
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
-                                    \startTextSpanTwo
-                                    - \tweak padding #7.5
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { {} \hspace #0.5 }
-                                    \startTextSpanOne
                                     \tweak style #'harmonic
                                     dqf8.
-                                    )
-                                    \stopTextSpanOne
                                     [
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    - \tweak padding #7.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpanOne
                                     \big-half-harmonic
                                     \set stemLeftBeamCount = 2
                                     \set stemRightBeamCount = 1
                                     a,16
-                                    (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
@@ -2646,16 +2595,7 @@
                                     \big-half-harmonic
                                     \revert Dots.staff-position
                                     aqs,16
-                                    )
-                                    \stopTextSpanTwo
                                     ]
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #10
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "3/4 Spz." } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpanTwo
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
@@ -2675,7 +2615,6 @@
                                             \override Dots.staff-position = #2
                                             \big-half-harmonic
                                             e16
-                                            (
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
                                             - \abjad-zero-padding-glissando
@@ -2683,13 +2622,11 @@
                                             \big-half-harmonic
                                             \revert Dots.staff-position
                                             eqf16
-                                            )
                                             r16
                                         }
                                         \override Dots.staff-position = #2
                                         \big-half-harmonic
                                         d8
-                                        (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
@@ -2697,9 +2634,6 @@
                                         \revert Dots.staff-position
                                         \tweak style #'harmonic
                                         cs8
-                                        )
-                                        \stopTextSpanOne
-                                        \stopTextSpanTwo
                                         ]
                                     }
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -2712,21 +2646,10 @@
                                             \override Dots.staff-position = #2
                                             \big-half-harmonic
                                             fqs8
-                                            (
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak font-name "Bodoni72 Book" 
-                                            - \tweak font-size 1
-                                            - \tweak padding #12
-                                            - \abjad-solid-line-with-arrow
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
-                                            \startTextSpanTwo
-                                            - \tweak padding #9.5
-                                            - \abjad-solid-line-with-arrow
-                                            - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
-                                            \startTextSpanOne
                                             \tweak style #'harmonic
                                             e8
                                             ]
@@ -2742,46 +2665,22 @@
                                         \glissando
                                         \big-half-harmonic
                                         b,4
-                                        \stopTextSpanOne
-                                        \stopTextSpanTwo
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 1
-                                        - \tweak padding #12
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "Spz." } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1
-                                        \startTextSpanTwo
-                                        - \tweak padding #9.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
-                                        \startTextSpanOne
                                     }
                                     \times 2/3
                                     {
                                         \revert Dots.staff-position
                                         fs16
-                                        )
-                                        \stopTextSpanTwo
                                         [
                                         r16
                                         \override Dots.staff-position = #2
                                         \revert Dots.staff-position
                                         \tweak style #'harmonic
                                         g16
-                                        \stopTextSpanOne
                                         ]
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 1
-                                        - \tweak padding #12
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "1/4 Spz." } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
-                                        \startTextSpanTwo
                                     }
                                     r8
                                     [
@@ -2791,19 +2690,12 @@
                                         \override Dots.staff-position = #2
                                         \tweak style #'harmonic
                                         ef16
-                                        (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak padding #9.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
-                                        \startTextSpanOne
                                         \revert Dots.staff-position
                                         gf16
-                                        )
                                         ]
                                     }
                                     \times 2/3
@@ -2814,16 +2706,12 @@
                                         \tweak style #'harmonic
                                         gf16
                                         - \accent
-                                        (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         \revert Dots.staff-position
                                         bqf16
-                                        )
-                                        \stopTextSpanOne
-                                        \stopTextSpanTwo
                                     }
                                     r8
                                     ]
@@ -2835,19 +2723,7 @@
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 1
-                                        - \tweak padding #14
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Spz." } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
-                                        \startTextSpanTwo
-                                        - \tweak padding #11.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
-                                        \startTextSpanOne
-                                        - \tweak padding #16
+                                        - \tweak padding #13
                                         - \abjad-solid-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
@@ -2859,7 +2735,6 @@
                                             \tweak style #'harmonic
                                             b,8
                                             [
-                                            (
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
                                             - \abjad-zero-padding-glissando
@@ -2872,7 +2747,6 @@
                                             \glissando
                                             \tweak style #'harmonic
                                             bqf,8
-                                            )
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
                                             - \abjad-zero-padding-glissando
@@ -2889,8 +2763,6 @@
                                             \revert Dots.staff-position
                                             df8
                                             - \accent
-                                            \stopTextSpanOne
-                                            \stopTextSpanTwo
                                             ]
                                         }
                                     }
@@ -2905,7 +2777,6 @@
                                             \big-half-harmonic
                                             af8
                                             - \accent
-                                            (
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
                                             - \abjad-zero-padding-glissando
@@ -2913,7 +2784,6 @@
                                             \revert Dots.staff-position
                                             \tweak style #'harmonic
                                             c'8
-                                            )
                                             ]
                                         }
                                         r4
@@ -2924,7 +2794,6 @@
                                     b32
                                     \pp
                                     [
-                                    (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
@@ -2932,14 +2801,12 @@
                                     \revert Dots.staff-position
                                     \tweak style #'harmonic
                                     e'32
-                                    )
                                     r32
                                     \override Dots.staff-position = #2
                                     \set stemLeftBeamCount = 3
                                     \set stemRightBeamCount = 1
                                     \tweak style #'harmonic
                                     d'32
-                                    (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
@@ -2950,14 +2817,12 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 3
                                         cs'32
-                                        )
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         b32
                                         - \accent
-                                        (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
@@ -2971,7 +2836,6 @@
                                         \big-half-harmonic
                                         \revert Dots.staff-position
                                         d32
-                                        )
                                         r32
                                         ]
                                     }
@@ -2989,21 +2853,10 @@
                                             \tweak style #'harmonic
                                             a8
                                             [
-                                            (
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak font-name "Bodoni72 Book" 
-                                            - \tweak font-size 1
-                                            - \tweak padding #11
-                                            - \abjad-solid-line-with-arrow
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "(Norm.)" } \hspace #0.5 }
-                                            \startTextSpanTwo
-                                            - \tweak padding #8.5
-                                            - \abjad-solid-line-with-arrow
-                                            - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
-                                            \startTextSpanOne
                                             bf8
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
@@ -3025,15 +2878,10 @@
                                             \glissando
                                             \tweak style #'harmonic
                                             a8
-                                            \stopTextSpanOne
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak padding #8.5
-                                            - \abjad-solid-line-with-arrow
-                                            - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
-                                            \startTextSpanOne
                                             bqf8
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak thickness #1.5
@@ -3043,7 +2891,6 @@
                                     }
                                     \tweak style #'harmonic
                                     a8
-                                    )
                                     ]
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
@@ -3053,19 +2900,11 @@
                                     {
                                         b16
                                         - \accent
-                                        \stopTextSpanTwo
                                         [
-                                        (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 1
-                                        - \tweak padding #11
-                                        - \abjad-solid-line-with-arrow
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Spz." } \hspace #0.5 }
-                                        \startTextSpanTwo
                                         \tweak style #'harmonic
                                         c'16
                                         - \tweak bound-details.right.arrow ##t
@@ -3086,32 +2925,19 @@
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     b8
-                                    \stopTextSpanOne
                                     [
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    - \tweak padding #8.5
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpanOne
                                     \times 2/3
                                     {
                                         \tweak style #'harmonic
                                         c'16
-                                        \stopTextSpanTwo
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 1
-                                        - \tweak padding #11
-                                        - \abjad-solid-line-with-arrow
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "1/4 Spz." } \hspace #0.5 }
-                                        \startTextSpanTwo
                                         b16
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
@@ -3119,7 +2945,6 @@
                                         \glissando
                                         \tweak style #'harmonic
                                         c'16
-                                        )
                                         ]
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
@@ -3148,7 +2973,6 @@
                                         gs'16
                                         - \accent
                                         [
-                                        (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
@@ -3160,7 +2984,6 @@
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         g'16
-                                        )
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
@@ -3178,20 +3001,11 @@
                                     {
                                         eqf''16
                                         - \accent
-                                        \stopTextSpanTwo
                                         [
-                                        (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 1
-                                        - \tweak padding #11
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "Spz." } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -2
-                                        \startTextSpanTwo
                                         \tweak style #'harmonic
                                         d''16
                                         - \tweak bound-details.right.arrow ##t
@@ -3201,7 +3015,6 @@
                                         \set stemLeftBeamCount = 2
                                         \set stemRightBeamCount = 1
                                         e''16
-                                        )
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
@@ -3214,7 +3027,6 @@
                                         \tweak style #'harmonic
                                         b''16
                                         - \accent
-                                        (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
@@ -3228,10 +3040,7 @@
                                         \tweak style #'harmonic
                                         bqf''16
                                         \f
-                                        )
-                                        \stopTextSpanOne
                                         \stopTextSpanThree
-                                        \stopTextSpanTwo
                                         ]
                                     }
                                     <<

@@ -345,16 +345,16 @@ trinton.make_music(
         selector=trinton.logical_ties(exclude=[3, 4], pitched=True, grace=False),
         fraction=(15, 16),
     ),
-    trinton.annotate_leaves_locally(
-        selector=abjad.select.leaves,
-        # selector=trinton.logical_ties(first=True, pitched=True),
-        direction=abjad.DOWN,
-    ),
+    # trinton.annotate_leaves_locally(
+    #     selector=abjad.select.leaves,
+    #     # selector=trinton.logical_ties(first=True, pitched=True),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
         selector=trinton.select_leaves_by_index(
             [0, 1, 4, 6, 7, 10, 11, 15, 16, 19, 21, 27, 28, 33, 36, 40],
-            grace=False,
+            # grace=False,
         ),
     ),
     evans.PitchHandler(
@@ -421,25 +421,29 @@ trinton.make_music(
             [
                 0,
                 1,
-                3,
-                5,
-                13,
-                14,
+                # 3,
+                # 5,
+                4,
+                6,
+                # 13,
+                # 14,
+                16,
+                19,
             ],
-            grace=False,
+            # grace=False,
         ),
     ),
     trinton.manual_beam_positions(
         positions=(-7, -8.5),
-        selector=trinton.select_leaves_by_index([6, 9], grace=False),
+        selector=trinton.select_leaves_by_index([7, 10]),
     ),
     trinton.manual_beam_positions(
         positions=(-8, -10),
-        selector=trinton.select_leaves_by_index([10, 12, 16, 21], grace=False),
+        selector=trinton.select_leaves_by_index([11, 15, 21, 27]),
     ),
     trinton.manual_beam_positions(
         positions=(-10.5, -10.5),
-        selector=trinton.select_leaves_by_index([28, 31], grace=False),
+        selector=trinton.select_leaves_by_index([36, 40]),
     ),
     trinton.attachment_command(
         attachments=[
@@ -451,7 +455,7 @@ trinton.make_music(
     ),
     trinton.detach_command(
         detachments=[abjad.LilyPondLiteral],
-        selector=trinton.select_leaves_by_index([25], grace=False),
+        selector=trinton.select_leaves_by_index([33]),
     ),
     trinton.attachment_command(
         attachments=[
@@ -459,17 +463,17 @@ trinton.make_music(
                 r"\once \override Rest.staff-position = #-9", site="before"
             )
         ],
-        selector=trinton.select_leaves_by_index([25], grace=False),
+        selector=trinton.select_leaves_by_index([33]),
     ),
     trinton.attachment_command(
         attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
-        selector=trinton.select_leaves_by_index(
-            [0, 9, 11, 13], pitched=True, grace=False
+        selector=trinton.select_logical_ties_by_index(
+            [0, 5, 6, 7], first=True, pitched=True, grace=False
         ),
     ),
     trinton.attachment_command(
         attachments=[abjad.LilyPondLiteral(r"\grace-half-harmonic", site="before")],
-        selector=trinton.select_leaves_by_index([0, 4, 5, 6], pitched=True, grace=True),
+        selector=trinton.select_leaves_by_index([0, 3, 4, 5], pitched=True, grace=True),
     ),
     trinton.change_notehead_command(
         notehead="harmonic",
@@ -477,24 +481,12 @@ trinton.make_music(
             [3, 5, 6, 10, 11, 12, 13], pitched=True
         ),
     ),
-    # library.column_trill(
-    #     pressures=["harmonic", "cross"],
-    #     selector=trinton.select_logical_ties_by_index([0, 1], first=True, pitched=True),
-    #     bound_details=(-5.5, -4.5),
-    #     direction=abjad.DOWN,
-    # ),
     library.tablature_trill(
         trill_pitch="g'",
         selector=trinton.select_logical_ties_by_index([0, 1], first=True, pitched=True),
         bound_details=(-4, -3),
         direction=abjad.DOWN,
     ),
-    # library.column_trill(
-    #     pressures=["cross"],
-    #     selector=trinton.select_logical_ties_by_index([2, 5], first=True, pitched=True),
-    #     bound_details=(-4, -5.5),
-    #     direction=abjad.DOWN,
-    # ),
     library.tablature_trill(
         trill_pitch="a'",
         selector=trinton.select_logical_ties_by_index([2, 3], first=True, pitched=True),
@@ -507,34 +499,42 @@ trinton.make_music(
         bound_details=(-4, -5.5),
         direction=abjad.DOWN,
     ),
-    # library.column_trill(
-    #     pressures=["full", "cross"],
-    #     selector=trinton.select_logical_ties_by_index([6, 7], first=True, pitched=True),
-    #     bound_details=(-5.5, -5.5),
-    #     direction=abjad.DOWN,
-    # ),
     library.tablature_trill(
         trill_pitch="e'",
         selector=trinton.select_logical_ties_by_index([6, 7], first=True, pitched=True),
         bound_details=(-4, -4),
         direction=abjad.DOWN,
     ),
-    # library.column_trill(
-    #     pressures=["cross"],
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [8, 13], first=True, pitched=True
-    #     ),
-    #     bound_details=(-5.5, -5.5),
-    #     direction=abjad.DOWN,
-    # ),
-    # library.column_trill(
-    #     pressures=["cross"],
-    #     selector=trinton.select_logical_ties_by_index(
-    #         [14, 15], first=True, pitched=True
-    #     ),
-    #     bound_details=(-6.5, -6.5),
-    #     direction=abjad.DOWN,
-    # ),
+    library.tablature_trill(
+        trill_pitch="c''",
+        selector=trinton.select_logical_ties_by_index([8, 9], first=True, pitched=True),
+        bound_details=(-4.5, -5),
+        direction=abjad.DOWN,
+    ),
+    library.tablature_trill(
+        trill_pitch="d'",
+        selector=trinton.select_logical_ties_by_index(
+            [10, 11], first=True, pitched=True
+        ),
+        bound_details=(-6, -6),
+        direction=abjad.DOWN,
+    ),
+    library.tablature_trill(
+        trill_pitch="g'",
+        selector=trinton.select_logical_ties_by_index(
+            [12, 13], first=True, pitched=True
+        ),
+        bound_details=(-4, -4),
+        direction=abjad.DOWN,
+    ),
+    library.tablature_trill(
+        trill_pitch="g",
+        selector=trinton.select_logical_ties_by_index(
+            [14, 15], first=True, pitched=True
+        ),
+        bound_details=(-6.5, -6.5),
+        direction=abjad.DOWN,
+    ),
     trinton.attachment_command(
         attachments=[
             abjad.Markup(
@@ -566,7 +566,7 @@ trinton.make_music(
             abjad.LilyPondLiteral(
                 rf"\once \override DynamicLineSpanner.padding = #{_}", site="before"
             )
-            for _ in [6.5, 2.5, 6.25]
+            for _ in [2.5, 2, 2.5]
         ],
         selector=trinton.select_logical_ties_by_index(
             [
@@ -1338,11 +1338,10 @@ trinton.make_music(
     ),
     trinton.spanner_command(
         strings=[
-            r"\bow-tip-half-down",
+            r"\bow-tip-half-up",
             r"\normale-bow-rotation",
-            r"\bow-tip-half-down",
         ],
-        selector=trinton.select_logical_ties_by_index([0, 2, 2, 6, 6, -1], first=True),
+        selector=trinton.select_logical_ties_by_index([0, 5], first=True),
         style="solid-line-with-arrow",
         padding=9,
         tweaks=None,
@@ -1350,30 +1349,12 @@ trinton.make_music(
         direction=None,
         full_string=True,
         command="One",
-        end_hook=True,
+        end_hook=False,
         end_hook_right_padding=0,
     ),
-    trinton.hooked_spanner_command(
-        string="""1/2 Spz.""",
-        selector=trinton.select_logical_ties_by_index([0, 3], first=True, pitched=True),
-        padding=11.5,
-        direction=None,
-        right_padding=-0.5,
-        full_string=False,
-        style="dashed-line-with-hook",
-        hspace=None,
-        command="Two",
-        tag=None,
-        tweaks=[
-            r"""- \tweak font-name "Bodoni72 Book" """,
-            r"""- \tweak font-size 1""",
-        ],
-    ),
     trinton.spanner_command(
-        strings=[r"", r"3/4 Spz.", "Spz."],
-        selector=trinton.select_logical_ties_by_index(
-            [3, 14, 14, -1], first=True, pitched=True
-        ),
+        strings=[r"1/2 Spz.", r"Norm."],
+        selector=trinton.select_logical_ties_by_index([0, 5], first=True, pitched=True),
         style="solid-line-with-arrow",
         padding=11.5,
         right_padding=0,

@@ -337,7 +337,7 @@ for voice_name, padding, end_anchor in zip(
             strings=[
                 trinton.tempo_markup(
                     note_value=4,
-                    tempo=80,
+                    tempo=83,
                     padding=0,
                     note_head_fontsize=-0.5,
                     stem_length=1.5,
@@ -351,7 +351,7 @@ for voice_name, padding, end_anchor in zip(
                 ),
                 trinton.tempo_markup(
                     note_value=4,
-                    tempo=80,
+                    tempo=83,
                     padding=0,
                     note_head_fontsize=0.5,
                     stem_length=1.5,
@@ -376,65 +376,65 @@ for voice_name, padding, end_anchor in zip(
         voice=score[voice_name],
     )
 
-for voice_name, padding, end_anchor in zip(
-    [
-        "violin 2 voice temp",
-        "violin 4 voice",
-        "viola 2 voice",
-        "cello 2 voice",
-    ],
-    [
-        10,
-        5,
-        5,
-        1,
-    ],
-    [-2, -1, -1, -2],
-):
-    trinton.make_music(
-        lambda _: trinton.select_target(_, (8, 9)),
-        trinton.spanner_command(
-            strings=[
-                trinton.tempo_markup(
-                    note_value=8,
-                    tempo=60,
-                    padding=0,
-                    note_head_fontsize=-0.5,
-                    stem_length=1.5,
-                    text_fontsize=3,
-                    dotted=False,
-                    fraction=None,
-                    tempo_change="rit.",
-                    site="after",
-                    hspace=0,
-                    string_only=True,
-                ),
-                trinton.tempo_markup(
-                    note_value=8,
-                    tempo=60,
-                    padding=0,
-                    note_head_fontsize=0.5,
-                    stem_length=1.5,
-                    text_fontsize=4,
-                    dotted=False,
-                    fraction=None,
-                    tempo_change=None,
-                    site="after",
-                    hspace=0,
-                    string_only=True,
-                ),
-            ],
-            selector=trinton.select_leaves_by_index([0, end_anchor]),
-            style="solid-line-with-arrow",
-            padding=padding,
-            tweaks=None,
-            right_padding=0,
-            direction=None,
-            full_string=True,
-            command="Three",
-        ),
-        voice=score[voice_name],
-    )
+# for voice_name, padding, end_anchor in zip(
+#     [
+#         "violin 2 voice temp",
+#         "violin 4 voice",
+#         "viola 2 voice",
+#         "cello 2 voice",
+#     ],
+#     [
+#         10,
+#         5,
+#         5,
+#         1,
+#     ],
+#     [-2, -1, -1, -2],
+# ):
+#     trinton.make_music(
+#         lambda _: trinton.select_target(_, (8, 9)),
+#         trinton.spanner_command(
+#             strings=[
+#                 trinton.tempo_markup(
+#                     note_value=8,
+#                     tempo=60,
+#                     padding=0,
+#                     note_head_fontsize=-0.5,
+#                     stem_length=1.5,
+#                     text_fontsize=3,
+#                     dotted=False,
+#                     fraction=None,
+#                     tempo_change="rit.",
+#                     site="after",
+#                     hspace=0,
+#                     string_only=True,
+#                 ),
+#                 trinton.tempo_markup(
+#                     note_value=8,
+#                     tempo=60,
+#                     padding=0,
+#                     note_head_fontsize=0.5,
+#                     stem_length=1.5,
+#                     text_fontsize=4,
+#                     dotted=False,
+#                     fraction=None,
+#                     tempo_change=None,
+#                     site="after",
+#                     hspace=0,
+#                     string_only=True,
+#                 ),
+#             ],
+#             selector=trinton.select_leaves_by_index([0, end_anchor]),
+#             style="solid-line-with-arrow",
+#             padding=padding,
+#             tweaks=None,
+#             right_padding=0,
+#             direction=None,
+#             full_string=True,
+#             command="Three",
+#         ),
+#         voice=score[voice_name],
+#     )
 
 # breaking
 

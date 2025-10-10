@@ -159,7 +159,21 @@
                                             [
                                             \big-half-harmonic
                                             \once \override DynamicLineSpanner.staff-padding = #7.5
+                                            \once \override StemTremolo.stencil = #ly:text-interface::print
+                                            \once \override StemTremolo.text = \markup {
+                                                                \fontsize #5
+                                                                \override #'(font-name . "ekmelos")
+                                                                \override #'(whiteout-style . "outline")
+                                                                \override #'(whiteout . 1)
+                                                                \raise #0.5
+                                                                {
+                                                                    \hspace #-0.57
+                                                                    \char ##xe0f4
+                                                                }
+                                                            }
+                                            \pitchedTrill
                                             b8
+                                            :16
                                             \pppp
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
@@ -169,11 +183,15 @@
                                             - \tweak bound-details.right.padding -10
                                             \startTextSpanOne
                                             ~
+                                            - \tweak TrillPitchAccidental.stencil ##f
+                                            - \tweak TrillPitchHead.no-ledgers ##t
+                                            - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
+                                            - \tweak TrillPitchHead.whiteout 1
+                                            - \tweak TrillPitchHead.whiteout-style "outline"
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-4
-                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
                                             - \tweak bound-details.right.Y #-4
-                                            \startTrillSpan
+                                            \startTrillSpan g
                                             \big-half-harmonic
                                             b8
                                             \stopTrillSpan
@@ -207,18 +225,36 @@
                                             \once \override Rest.staff-position = #-7
                                             r4.
                                             \override Dots.staff-position = #2
+                                            \once \override StemTremolo.stencil = #ly:text-interface::print
+                                            \once \override StemTremolo.text = \markup {
+                                                                \fontsize #5
+                                                                \override #'(font-name . "ekmelos")
+                                                                \override #'(whiteout-style . "outline")
+                                                                \override #'(whiteout . 1)
+                                                                \raise #0.5
+                                                                {
+                                                                    \hspace #-0.57
+                                                                    \char ##xe0f4
+                                                                }
+                                                            }
+                                            \pitchedTrill
                                             \tweak style #'harmonic
                                             a8
+                                            :16
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
+                                            - \tweak TrillPitchAccidental.stencil ##f
+                                            - \tweak TrillPitchHead.no-ledgers ##t
+                                            - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
+                                            - \tweak TrillPitchHead.whiteout 1
+                                            - \tweak TrillPitchHead.whiteout-style "outline"
                                             - \tweak Y-extent ##f
-                                            - \tweak bound-details.left.Y #-6
-                                            - \tweak bound-details.left.text \markup \override #'(font-name . "ekmelos") \concat { \general-align #Y #-0.5 \general-align #X #0.25 \override #'(baseline-skip . 0) { \center-column { \line { \concat { \fontsize #6 { ( } \fontsize #8 { \char ##xe0e3 } \fontsize #6 { ) } } }\line { \concat { \fontsize #6 { ( } \fontsize #6 { \char ##xe0a9 } \fontsize #6 { ) } } }} } }
+                                            - \tweak bound-details.left.Y #-5
                                             - \tweak bound-details.right.Y #-2
-                                            \startTrillSpan
+                                            \startTrillSpan g
                                               %! abjad.glissando(1)
                                             \hide NoteHead
                                               %! abjad.glissando(1)
@@ -501,6 +537,11 @@
                                                 \tweak style #'la
                                                 a'
                                             >2
+                                            ^ \markup {
+                                                                \hspace #-2 {
+                                                                    ( \note {2} #2 )
+                                                                }
+                                                            }
                                               %! abjad.glissando(7)
                                             - \tweak color #(css-color 'darkred)
                                               %! abjad.glissando(7)
@@ -710,197 +751,382 @@
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
                                     r1.
-                                    \tweak text #tuplet-number::calc-fraction-text
-                                    \times 6/5
+                                    r4
+                                    \override Dots.staff-position = #2
+                                    \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 1 1 0)
+                                          (1 0 1.5 -1 2 0)
+                                          (2 0 2.5 1 3 0)
+                                          (3 0 3.5 -1 4 0)
+                                          (4 0 4.5 1 5 0)
+                                          (5 0 5.5 -1 6 0)
+                                          (6 0 6.5 1 7 0)
+                                          (7 0 7.5 -1 8 0)
+                                          (8 0 8.5 1 9 0)
+                                          (9 0 9.5 -1 10 0)
+                                     )
+                                     #0.5
+                                    <
+                                        \tweak style #'harmonic
+                                        bf'''
+                                        \tweak style #'harmonic
+                                        dqs''''
+                                    >8
+                                    \arpeggio
+                                    \pppp
+                                    [
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { MSP \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1.5
+                                    \startTextSpanOne
+                                    \times 2/3
                                     {
                                         \override Dots.staff-position = #2
+                                        \revert Dots.staff-position
+                                        <
+                                            \tweak style #'harmonic
+                                            bf'''
+                                            \tweak style #'harmonic
+                                            dqs''''
+                                        >16
+                                        )
+                                        \stopTextSpanOne
+                                        - \tweak bound-details.right.arrow ##t
+                                        - \tweak thickness #1.5
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \<
                                         \big-half-harmonic
                                         \revert Dots.staff-position
-                                        <gqs c'>8
+                                        fqf''8
+                                        \mf
+                                        ^ \spz
+                                        ]
+                                    }
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \times 5/7
+                                    {
+                                        \override Dots.staff-position = #2
+                                        <
+                                            \tweak style #'harmonic
+                                            bf'''
+                                            \tweak style #'harmonic
+                                            dqs''''
+                                        >8
                                         \arpeggio
                                         \pppp
                                         [
+                                        (
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
                                         - \tweak font-name "Bodoni72 Book" 
                                         - \tweak font-size 1
-                                        - \tweak padding #13.5
-                                        - \abjad-solid-line-with-arrow
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
-                                        \startTextSpanTwo
                                         - \tweak padding #11
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -3
+                                        - \tweak bound-details.left.text \markup \concat { MSP \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -1.5
                                         \startTextSpanOne
-                                        r8
+                                        <
+                                            \tweak style #'harmonic
+                                            aqf'''
+                                            \tweak style #'harmonic
+                                            e''''
+                                        >8
+                                        \arpeggio
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        <
+                                            \tweak style #'harmonic
+                                            bf'''
+                                            \tweak style #'harmonic
+                                            dqs''''
+                                        >8
+                                        \arpeggio
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        <
+                                            \tweak style #'harmonic
+                                            aqf'''
+                                            \tweak style #'harmonic
+                                            e''''
+                                        >8
+                                        \arpeggio
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        <
+                                            \tweak style #'harmonic
+                                            bf'''
+                                            \tweak style #'harmonic
+                                            dqs''''
+                                        >8
+                                        \arpeggio
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        <
+                                            \tweak style #'harmonic
+                                            aqf'''
+                                            \tweak style #'harmonic
+                                            e''''
+                                        >8
+                                        \arpeggio
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        <
+                                            \tweak style #'harmonic
+                                            bf'''
+                                            \tweak style #'harmonic
+                                            dqs''''
+                                        >8
+                                        \arpeggio
+                                        ]
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    \override Dots.staff-position = #2
+                                    \revert Dots.staff-position
+                                    <
+                                        \tweak style #'harmonic
+                                        bf'''
+                                        \tweak style #'harmonic
+                                        dqs''''
+                                    >16
+                                    )
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \<
+                                    \big-half-harmonic
+                                    \revert Dots.staff-position
+                                    \set stemLeftBeamCount = 2
+                                    \set stemRightBeamCount = 1
+                                    fqf''16
+                                    \mf
+                                    ^ \spz
+                                    \times 2/3
+                                    {
+                                        \override Dots.staff-position = #2
+                                        \set stemLeftBeamCount = 1
+                                        \set stemRightBeamCount = 2
+                                        <
+                                            \tweak style #'harmonic
+                                            aqf'''
+                                            \tweak style #'harmonic
+                                            e''''
+                                        >16
+                                        \arpeggio
+                                        \pppp
+                                        ^ \msp
+                                        - \tweak bound-details.right.arrow ##t
+                                        - \tweak thickness #1.5
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        \<
+                                        \big-half-harmonic
+                                        \revert Dots.staff-position
+                                        fqf''8
+                                        \mf
+                                        ^ \spz
+                                    }
+                                    \times 4/5
+                                    {
                                         \override Dots.staff-position = #2
                                         <
                                             \tweak style #'harmonic
-                                            gqs
+                                            bf'''
                                             \tweak style #'harmonic
-                                            c'
-                                        >8
+                                            dqs''''
+                                        >16
                                         \arpeggio
-                                        (
+                                        \pppp
+                                        ^ \msp
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \times 2/3
-                                        {
-                                            \big-half-harmonic
-                                            <b fs'>16
-                                            \arpeggio
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            <
-                                                \tweak style #'harmonic
-                                                dqf'
-                                                \tweak style #'harmonic
-                                                fs'
-                                            >16
-                                            \arpeggio
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                            \big-half-harmonic
-                                            <c' gqf'>16
-                                            \arpeggio
-                                            - \tweak bound-details.right.arrow ##t
-                                            - \tweak thickness #1.5
-                                            - \abjad-zero-padding-glissando
-                                            \glissando
-                                        }
-                                        <
-                                            \tweak style #'harmonic
-                                            b
-                                            \tweak style #'harmonic
-                                            fs'
-                                        >8
-                                        \arpeggio
-                                        ]
-                                        - \tweak bound-details.right.arrow ##t
-                                        - \tweak thickness #1.5
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
-                                    }
-                                    \times 2/3
-                                    {
+                                        \<
                                         \big-half-harmonic
-                                        <dqf' fs'>8
-                                        \arpeggio
-                                        [
-                                        - \tweak bound-details.right.arrow ##t
-                                        - \tweak thickness #1.5
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
-                                        <
-                                            \tweak style #'harmonic
-                                            c'
-                                            \tweak style #'harmonic
-                                            gqf'
-                                        >8
-                                        \arpeggio
-                                        - \tweak bound-details.right.arrow ##t
-                                        - \tweak thickness #1.5
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
-                                        \big-half-harmonic
-                                        <d' fs'>8
-                                        \arpeggio
-                                        ]
-                                        - \tweak bound-details.right.arrow ##t
-                                        - \tweak thickness #1.5
-                                        - \abjad-zero-padding-glissando
-                                        \glissando
-                                    }
-                                    \times 2/3
-                                    {
                                         \revert Dots.staff-position
-                                        <
-                                            \tweak style #'harmonic
-                                            b
-                                            \tweak style #'harmonic
-                                            fs'
-                                        >8
-                                        \arpeggio
-                                        )
-                                        [
-                                        r8
-                                        r8
+                                        fqf''16.
+                                        \mf
+                                        ^ \spz
                                         ]
                                     }
                                     \override Dots.staff-position = #2
+                                    <
+                                        \tweak style #'harmonic
+                                        cqs''''
+                                        \tweak style #'harmonic
+                                        e''''
+                                    >8
+                                    \arpeggio
+                                    \pppp
+                                    ^ \msp
+                                    [
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \<
                                     \big-half-harmonic
                                     \revert Dots.staff-position
-                                    <d' eqs'>4
-                                    \arpeggio
-                                    r4.
-                                    r8
+                                    fqf''8
+                                    \mf
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #3.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { Spz. \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1
+                                    \startTextSpanOne
+                                    \big-half-harmonic
+                                    eqs''8
+                                    ]
+                                    \big-half-harmonic
+                                    f''16
+                                    \stopTextSpanOne
                                     [
                                     \override Dots.staff-position = #2
                                     <
                                         \tweak style #'harmonic
-                                        a
+                                        bf'''
                                         \tweak style #'harmonic
-                                        eqf'
-                                    >8
+                                        cqs''''
+                                    >16
                                     \arpeggio
-                                    (
+                                    \pppp
+                                    ^ \msp
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    \<
                                     \big-half-harmonic
-                                    <bf ef'>8
-                                    \arpeggio
-                                    ]
-                                    - \tweak bound-details.right.arrow ##t
-                                    - \tweak thickness #1.5
-                                    - \abjad-zero-padding-glissando
-                                    \glissando
-                                    \times 2/3
-                                    {
-                                        \revert Dots.staff-position
-                                        <
-                                            \tweak style #'harmonic
-                                            dqf'!
-                                            \tweak style #'harmonic
-                                            ef'!
-                                        >8
-                                        \arpeggio
-                                        )
-                                        [
-                                        r8
-                                        r8
-                                    }
+                                    \revert Dots.staff-position
+                                    f''8
+                                    \mf
+                                    ^ \spz
+                                    r16
                                     \override Dots.staff-position = #2
-                                    \big-half-harmonic
-                                    <c' eqs'>8
+                                    <
+                                        \tweak style #'harmonic
+                                        bf'''
+                                        \tweak style #'harmonic
+                                        cqs''''
+                                    >16
                                     \arpeggio
-                                    \stopTextSpanTwo
+                                    \pppp
+                                    ^ \msp
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \tweak bound-details.right.arrow ##t
+                                      %! abjad.glissando(7)
+                                    - \tweak thickness #1.5
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    \<
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    <bf''' cqs''''>8
+                                    [
+                                    \big-half-harmonic
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    fqf''16
+                                    \mf
+                                    ^ \spz
+                                    \override Dots.staff-position = #2
+                                    \fancy-gliss
+                                       #'(
+                                          (0 0 0.5 1 1 0)
+                                          (1 0 1.5 -1 2 0)
+                                          (2 0 2.5 1 3 0)
+                                          (3 0 3.5 -1 4 0)
+                                          (4 0 4.5 1 5 0)
+                                          (5 0 5.5 -1 6 0)
+                                     )
+                                     #0.5
+                                    <
+                                        \tweak style #'harmonic
+                                        a'''
+                                        \tweak style #'harmonic
+                                        cs''''
+                                    >16
+                                    \arpeggio
+                                    \pppp
+                                    (
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { MSP \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1.5
+                                    \startTextSpanOne
+                                    \override Dots.staff-position = #2
+                                    \revert Dots.staff-position
+                                    <
+                                        \tweak style #'harmonic
+                                        a'''
+                                        \tweak style #'harmonic
+                                        cs''''
+                                    >16
+                                    )
+                                    \stopTextSpanOne
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \<
+                                    \big-half-harmonic
+                                    eqs''16
+                                    \mf
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #13.5
+                                    - \tweak padding #3.5
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "Spz." } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -3
-                                    \startTextSpanTwo
+                                    - \tweak bound-details.left.text \markup \concat { Spz. \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1
+                                    \startTextSpanOne
+                                    \>
                                     ~
                                     \big-half-harmonic
                                     \revert Dots.staff-position
-                                    <c' eqs'>8
+                                    eqs''4.
                                     \stopTextSpanOne
-                                    \stopTextSpanTwo
-                                    r4
                                     \staff-line-count 1
                                     \once \override Accidental.stencil = ##f
                                     \clef "treble"
                                     b'2
                                     - \tenuto
+                                    \pppp
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
                                     - \tweak padding #11.5
@@ -1097,11 +1323,12 @@
                                             ef1
                                             - \tweak padding 1
                                             - \punta-to-talon
+                                            ^ \pppp
                                               %! +SCORE
-                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-8 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
-                                            - \tweak padding #10
+                                            - \tweak padding #9.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -3
@@ -1286,7 +1513,8 @@
                                             \textSpannerDown
                                             \voiceTwo
                                             d,4.
-                                            \pppp
+                                            - \tweak color #(css-color 'darkred)
+                                            \mf
                                             - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
@@ -1793,11 +2021,12 @@
                                                 c4
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
+                                                ^ \pppp
                                                   %! +SCORE
                                                 ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #12.5
+                                                - \tweak padding #15
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -1.5
@@ -1960,7 +2189,7 @@
                                         }
                                         \context Voice = "cello legno voice"
                                         {
-                                            \once \override DynamicLineSpanner.staff-padding = #12
+                                            \once \override DynamicLineSpanner.staff-padding = #13
                                             \once \override Rest.staff-position = #-12
                                             \override Voice.NoteHead.color = #(css-color 'darkred)
                                             \override Voice.Dots.color = #(css-color 'darkred)
@@ -1973,7 +2202,8 @@
                                             \textSpannerDown
                                             \voiceTwo
                                             r8
-                                            \pppp
+                                            - \tweak color #(css-color 'darkred)
+                                            \mf
                                             [
                                             - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 

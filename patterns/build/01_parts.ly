@@ -15,7 +15,7 @@
               %! +SCORE
         %%% \break
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 35 25 35)))
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 30 25 35)))
             \time 12/8
             s1 * 3/2
               %! +SCORE
@@ -579,19 +579,13 @@
                                             ~
                                             b8.
                                             [
+                                            \textSpannerDown
                                             \tweak style #'cross
                                             b16
                                             - \tweak color #(css-color 'darkred)
                                             ^ \staccato
                                             \stopTextSpan
                                             ]
-                                            \textSpannerUp
-                                            \textSpannerDown
-                                            \tweak style #'cross
-                                            b16
-                                            - \tweak color #(css-color 'darkred)
-                                            ^ \staccato
-                                            [
                                             - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
@@ -600,6 +594,12 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
                                             \startTextSpan
+                                            \textSpannerUp
+                                            \tweak style #'cross
+                                            b16
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            [
                                             \tweak style #'cross
                                             b16
                                             - \tweak color #(css-color 'darkred)
@@ -743,18 +743,6 @@
                                         \glissando
                                         - \tweak circled-tip ##t
                                         \<
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 1
-                                        - \tweak padding #12
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Spz." } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding 0.5
-                                        \startTextSpan
-                                        - \tweak padding #9.5
-                                        - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
-                                        - \tweak bound-details.right.padding 0.5
-                                        \startTextSpanOne
                                         \big-half-harmonic
                                         dqs'8
                                         - \tweak bound-details.right.arrow ##t
@@ -804,31 +792,17 @@
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak padding #14
+                                        - \tweak padding #9.5
                                         - \abjad-solid-line-with-arrow
                                         - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 160 )" } } } \hspace #0.5 }
                                         - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 160" } } }
                                         \startTextSpanThree
                                         \tweak style #'harmonic
                                         g'8
-                                        \stopTextSpan
-                                        \stopTextSpanOne
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak font-name "Bodoni72 Book" 
-                                        - \tweak font-size 1
-                                        - \tweak padding #12
-                                        - \abjad-solid-line-with-arrow
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
-                                        - \tweak bound-details.right.text \markup \upright { "3/4 Spz." }
-                                        \startTextSpan
-                                        - \tweak padding #9.5
-                                        - \abjad-solid-line-with-arrow
-                                        - \tweak bound-details.left.text \markup \concat { {} \hspace #0.5 }
-                                        - \tweak bound-details.right.text \bow-tip-up
-                                        \startTextSpanOne
                                         \big-half-harmonic
                                         fs'8
                                         )
@@ -861,8 +835,6 @@
                                             dqs''16
                                             \!
                                             )
-                                            \stopTextSpan
-                                            \stopTextSpanOne
                                         }
                                     }
                                     r2.

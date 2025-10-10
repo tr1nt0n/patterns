@@ -429,10 +429,11 @@
                                             \voiceTwo
                                             r16
                                             - \markup \fontsize #2 { \hspace #-10 \lower #2 { "Fng. Perc.:" } }
-                                            _ \markup 0
+                                            - \tweak Beam.positions #'(-8 . -8)
+                                            [
                                             \override Dots.staff-position = #2
                                             \big-half-harmonic
-                                            \once \override DynamicLineSpanner.padding = #6.5
+                                            \once \override DynamicLineSpanner.padding = #2.5
                                             \once \override StemTremolo.stencil = #ly:text-interface::print
                                             \once \override StemTremolo.text = \markup {
                                                                 \fontsize #5
@@ -449,7 +450,7 @@
                                             b'16
                                             :32
                                             \pp
-                                            - \markup 1
+                                            ]
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -474,7 +475,6 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \afterGrace
                                             b'4
-                                            - \markup 2
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
                                                 \grace-half-harmonic
@@ -489,15 +489,14 @@
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
                                                 e'16
-                                                - \markup 3
                                                 \stopTrillSpan
                                             }
                                             \once \override Rest.staff-position = #-7
                                             r8
-                                            _ \markup 4
+                                            - \tweak Beam.positions #'(-8 . -8)
+                                            [
                                             \once \override Rest.staff-position = #-7
                                             r16
-                                            _ \markup 5
                                             \override Dots.staff-position = #2
                                             \once \override StemTremolo.stencil = #ly:text-interface::print
                                             \once \override StemTremolo.text = \markup {
@@ -515,7 +514,7 @@
                                             \tweak style #'harmonic
                                             d''16
                                             :32
-                                            - \markup 6
+                                            ]
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -540,7 +539,8 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \afterGrace
                                             d''8
-                                            - \markup 7
+                                            - \tweak Beam.positions #'(-7 . -8.5)
+                                            [
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
                                                 \revert Dots.staff-position
@@ -555,14 +555,12 @@
                                                 \undo \hide NoteHead
                                                 \tweak style #'harmonic
                                                 b'16
-                                                - \markup 8
                                                 \stopTrillSpan
                                             }
                                             \once \override Rest.staff-position = #-7
                                             r16
-                                            _ \markup 9
                                             \override Dots.staff-position = #2
-                                            \once \override DynamicLineSpanner.padding = #2.5
+                                            \once \override DynamicLineSpanner.padding = #2
                                             \once \override StemTremolo.stencil = #ly:text-interface::print
                                             \once \override StemTremolo.text = \markup {
                                                                 \fontsize #5
@@ -579,7 +577,7 @@
                                             \tweak style #'harmonic
                                             a'16
                                             :32
-                                            - \markup 10
+                                            ]
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -604,14 +602,13 @@
                                               %! abjad.glissando(1)
                                             \override NoteHead.no-ledgers = ##t
                                             a'8
-                                            - \markup 11
+                                            - \tweak Beam.positions #'(-8 . -10)
+                                            [
                                             ~
                                             a'8
-                                            - \markup 12
                                             ~
                                             \afterGrace
                                             a'16
-                                            - \markup 13
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
                                                 \revert Dots.staff-position
@@ -627,17 +624,17 @@
                                                 \tweak style #'harmonic
                                                 c'16
                                                 \p
-                                                - \markup 14
                                                 \stopTrillSpan
                                             }
                                             \once \override Rest.staff-position = #-7
                                             r16
-                                            _ \markup 15
+                                            ]
                                             \once \override Rest.staff-position = #-7
                                             r16
-                                            _ \markup 16
+                                            - \tweak Beam.positions #'(-8 . -8)
+                                            [
                                             \override Dots.staff-position = #2
-                                            \once \override DynamicLineSpanner.padding = #6.25
+                                            \once \override DynamicLineSpanner.padding = #2.5
                                             \once \override StemTremolo.stencil = #ly:text-interface::print
                                             \once \override StemTremolo.text = \markup {
                                                                 \fontsize #5
@@ -655,7 +652,6 @@
                                             g'16
                                             :32
                                             \pp
-                                            - \markup 17
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -670,7 +666,6 @@
                                             - \tweak bound-details.left.Y #-4
                                             - \tweak bound-details.right.Y #-4
                                             \startTrillSpan e'
-                                            \big-half-harmonic
                                               %! abjad.glissando(1)
                                             \hide NoteHead
                                               %! abjad.glissando(1)
@@ -681,7 +676,6 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \tweak style #'harmonic
                                             g'16.
-                                            - \markup 18
                                             \revert Dots.staff-position
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -693,23 +687,45 @@
                                             \undo \hide NoteHead
                                             \tweak style #'harmonic
                                             b'32
-                                            - \markup 19
                                             \stopTrillSpan
+                                            ]
                                             \once \override Rest.staff-position = #-7
                                             r2
-                                            _ \markup 20
                                             \once \override Rest.staff-position = #-7
                                             r16.
-                                            _ \markup 21
+                                            - \tweak Beam.positions #'(-8 . -10)
+                                            [
                                             \override Dots.staff-position = #2
                                             \big-half-harmonic
+                                            \once \override StemTremolo.stencil = #ly:text-interface::print
+                                            \once \override StemTremolo.text = \markup {
+                                                                \fontsize #5
+                                                                \override #'(font-name . "ekmelos")
+                                                                \override #'(whiteout-style . "outline")
+                                                                \override #'(whiteout . 1)
+                                                                \raise #0.5
+                                                                {
+                                                                    \hspace #-0.57
+                                                                    \char ##xe0f4
+                                                                }
+                                                            }
+                                            \pitchedTrill
                                             f''32
-                                            - \markup 22
+                                            :64
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
+                                            - \tweak TrillPitchAccidental.stencil ##f
+                                            - \tweak TrillPitchHead.no-ledgers ##t
+                                            - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
+                                            - \tweak TrillPitchHead.whiteout 1
+                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak Y-extent ##f
+                                            - \tweak bound-details.left.Y #-4.5
+                                            - \tweak bound-details.right.Y #-5
+                                            \startTrillSpan c''
                                               %! abjad.glissando(1)
                                             \hide NoteHead
                                               %! abjad.glissando(1)
@@ -720,9 +736,9 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \afterGrace
                                             f''8
-                                            - \markup 23
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
+                                                \grace-half-harmonic
                                                 \revert Dots.staff-position
                                                 \once \override Flag.stroke-style = #"grace"
                                                   %! abjad.glissando(6)
@@ -734,23 +750,44 @@
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
                                                 c''16
-                                                - \markup 24
+                                                \stopTrillSpan
                                             }
                                             \once \override Rest.staff-position = #-7
                                             r8
-                                            _ \markup 25
                                             \once \override Rest.staff-position = #-7
                                             r32
-                                            _ \markup 26
                                             \override Dots.staff-position = #2
                                             \big-half-harmonic
+                                            \once \override StemTremolo.stencil = #ly:text-interface::print
+                                            \once \override StemTremolo.text = \markup {
+                                                                \fontsize #5
+                                                                \override #'(font-name . "ekmelos")
+                                                                \override #'(whiteout-style . "outline")
+                                                                \override #'(whiteout . 1)
+                                                                \raise #0.5
+                                                                {
+                                                                    \hspace #-0.57
+                                                                    \char ##xe0f4
+                                                                }
+                                                            }
+                                            \pitchedTrill
                                             a'16.
-                                            - \markup 27
+                                            :64
+                                            ]
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
+                                            - \tweak TrillPitchAccidental.stencil ##f
+                                            - \tweak TrillPitchHead.no-ledgers ##t
+                                            - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
+                                            - \tweak TrillPitchHead.whiteout 1
+                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak Y-extent ##f
+                                            - \tweak bound-details.left.Y #-6
+                                            - \tweak bound-details.right.Y #-6
+                                            \startTrillSpan d'
                                               %! abjad.glissando(1)
                                             \hide NoteHead
                                               %! abjad.glissando(1)
@@ -761,7 +798,7 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \afterGrace
                                             a'8
-                                            - \markup 28
+                                            [
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
                                                 \grace-half-harmonic
@@ -776,16 +813,39 @@
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
                                                 d''16
-                                                - \markup 29
+                                                \stopTrillSpan
                                             }
-                                            \once \override Rest.staff-position = #-9
+                                            \override Dots.staff-position = #2
+                                            \big-half-harmonic
+                                            \once \override StemTremolo.stencil = #ly:text-interface::print
+                                            \once \override StemTremolo.text = \markup {
+                                                                \fontsize #5
+                                                                \override #'(font-name . "ekmelos")
+                                                                \override #'(whiteout-style . "outline")
+                                                                \override #'(whiteout . 1)
+                                                                \raise #0.5
+                                                                {
+                                                                    \hspace #-0.57
+                                                                    \char ##xe0f4
+                                                                }
+                                                            }
+                                            \pitchedTrill
                                             b'8
-                                            - \markup 30
+                                            :16
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
+                                            - \tweak TrillPitchAccidental.stencil ##f
+                                            - \tweak TrillPitchHead.no-ledgers ##t
+                                            - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
+                                            - \tweak TrillPitchHead.whiteout 1
+                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak Y-extent ##f
+                                            - \tweak bound-details.left.Y #-4
+                                            - \tweak bound-details.right.Y #-4
+                                            \startTrillSpan g'
                                               %! abjad.glissando(1)
                                             \hide NoteHead
                                               %! abjad.glissando(1)
@@ -796,7 +856,6 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \afterGrace
                                             b'8
-                                            - \markup 31
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
                                                 \grace-half-harmonic
@@ -811,28 +870,49 @@
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
                                                 e'16
-                                                - \markup 32
+                                                \stopTrillSpan
                                             }
-                                            \once \override Rest.staff-position = #-7
+                                            \once \override Rest.staff-position = #-9
                                             r8
-                                            _ \markup 33
+                                            ]
                                             \once \override Rest.staff-position = #-7
                                             r2
-                                            _ \markup 34
                                             \once \override Rest.staff-position = #-7
                                             r4
-                                            _ \markup 35
                                             \once \override Rest.staff-position = #-7
                                             r16
-                                            _ \markup 36
+                                            - \tweak Beam.positions #'(-10.5 . -10.5)
+                                            [
                                             \override Dots.staff-position = #2
+                                            \once \override StemTremolo.stencil = #ly:text-interface::print
+                                            \once \override StemTremolo.text = \markup {
+                                                                \fontsize #5
+                                                                \override #'(font-name . "ekmelos")
+                                                                \override #'(whiteout-style . "outline")
+                                                                \override #'(whiteout . 1)
+                                                                \raise #0.5
+                                                                {
+                                                                    \hspace #-0.57
+                                                                    \char ##xe0f4
+                                                                }
+                                                            }
+                                            \pitchedTrill
                                             c'16
-                                            - \markup 37
+                                            :32
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
                                             ~
+                                            - \tweak TrillPitchAccidental.stencil ##f
+                                            - \tweak TrillPitchHead.no-ledgers ##t
+                                            - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
+                                            - \tweak TrillPitchHead.whiteout 1
+                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak Y-extent ##f
+                                            - \tweak bound-details.left.Y #-6.5
+                                            - \tweak bound-details.right.Y #-6.5
+                                            \startTrillSpan g
                                               %! abjad.glissando(1)
                                             \hide NoteHead
                                               %! abjad.glissando(1)
@@ -843,10 +923,8 @@
                                             \override NoteHead.no-ledgers = ##t
                                             \afterGrace
                                             c'16
-                                            - \markup 38
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
-                                                \grace-half-harmonic
                                                 \revert Dots.staff-position
                                                 \once \override Flag.stroke-style = #"grace"
                                                   %! abjad.glissando(6)
@@ -858,11 +936,11 @@
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
                                                 a16
-                                                - \markup 39
+                                                \stopTrillSpan
                                             }
                                             \once \override Rest.staff-position = #-7
                                             r16
-                                            _ \markup 40
+                                            ]
                                         }
                                         \context Voice = "violin 1 bow voice"
                                         {
@@ -2163,9 +2241,9 @@
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
                                     - \tweak padding #11.5
-                                    - \abjad-dashed-line-with-hook
+                                    - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \upright { "1/2 Spz." } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding 0.5
+                                    - \tweak bound-details.right.text \markup \upright { "Norm." }
                                     \startTextSpanTwo
                                     - \tweak padding #13.5
                                     - \abjad-solid-line-with-arrow
@@ -2174,7 +2252,8 @@
                                     \startTextSpanThree
                                     - \tweak padding #9
                                     - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
+                                    - \tweak bound-details.right.text \normale-bow-rotation
                                     \startTextSpanOne
                                     \tweak style #'harmonic
                                     a'8
@@ -2205,7 +2284,6 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     gqf''8
-                                    \stopTextSpanOne
                                     ]
                                       %! abjad.glissando(7)
                                     - \tweak bound-details.right.arrow ##t
@@ -2213,10 +2291,6 @@
                                     - \tweak thickness #1.5
                                       %! abjad.glissando(7)
                                     \glissando
-                                    - \tweak padding #9
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
-                                    \startTextSpanOne
                                     ~
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -2237,16 +2311,9 @@
                                     \undo \hide NoteHead
                                     \tweak style #'harmonic-mixed
                                     d''4
-                                    \stopTextSpanTwo
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #11.5
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
-                                    \startTextSpanTwo
                                     fs'4
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
@@ -2255,22 +2322,19 @@
                                     f'4
                                     \p
                                     )
+                                    \stopTextSpanOne
+                                    \stopTextSpanTwo
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
                                     \big-half-harmonic
                                     \clef "treble"
                                     gqs''4
-                                    \stopTextSpanOne
                                     \stopTextSpanThree
                                     (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
-                                    - \tweak padding #9
-                                    - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
-                                    \startTextSpanOne
                                     \>
                                     \tweak style #'harmonic
                                     a''16
@@ -2317,17 +2381,9 @@
                                     \glissando
                                     \big-half-harmonic
                                     e'''4
-                                    \stopTextSpanTwo
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
-                                    - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 1
-                                    - \tweak padding #11.5
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "3/4 Spz." } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \upright { "Spz." }
-                                    \startTextSpanTwo
                                     \tweak style #'harmonic-mixed
                                     a'''4
                                     \p
@@ -2353,8 +2409,6 @@
                                         gqs'16
                                         \!
                                         )
-                                        \stopTextSpanOne
-                                        \stopTextSpanTwo
                                     }
                                     <<
                                         \context Voice = "viola 2 voice temp"
