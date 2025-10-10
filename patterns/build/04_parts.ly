@@ -13,7 +13,7 @@
               %! +SCORE
         %%% \break
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (8.5 24 19 26.5 33)))
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (8.5 24 19 26.5 28)))
             \time 5/4
             s1 * 5/4
               %! +SCORE

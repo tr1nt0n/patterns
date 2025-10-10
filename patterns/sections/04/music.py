@@ -2944,7 +2944,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (8.5 24 19 26.5 33)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (8.5 24 19 26.5 28)))",
                 site="absolute_before",
             ),
         ],

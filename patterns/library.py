@@ -200,7 +200,7 @@ def d_stage_3_noteheads(selector=abjad.select.chords):
 
         for chord in abjad.select.chords(selections):
             for leaf in abjad.select.leaves(chord):
-                leaf_duration = abjad.get.duration(leaf)
+                leaf_duration = abjad.get.duration(leaf, preprolated=True)
                 if leaf_duration < abjad.Duration(
                     (7, 16)
                 ) and leaf_duration > abjad.Duration((7, 32)):
