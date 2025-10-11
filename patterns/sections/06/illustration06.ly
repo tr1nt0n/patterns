@@ -2388,14 +2388,248 @@
                                         }
                                     >>
                                     \oneVoice
-                                    r2.
-                                    r2
-                                    r2.
-                                    r2
-                                    r2.
-                                    r2
-                                    r2.
-                                    r2
+                                    \big-half-harmonic
+                                    <fqf cqf' gqf' dqf''>2
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "alto"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'8.
+                                    - \tenuto
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.4
+                                                #:dynamic "f"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #3
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "tailpiece" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
+                                    \once \override Accidental.stencil = ##f
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+                                    \once \override Accidental.stencil = ##f
+                                    c'4
+                                    - \tenuto
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'8
+                                    [
+                                    \once \override Accidental.stencil = ##f
+                                    \revert Staff.Stem.stemlet-length
+                                    c'8
+                                    \stopTextSpanOne
+                                    ]
+                                    \staff-line-count 5
+                                    \big-half-harmonic
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "alto"
+                                    <fqf cqf' gqf' dqf''>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "alto"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    \ppp
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #7.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "bridge" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \<
+                                    \once \override Accidental.stencil = ##f
+                                    \revert Staff.Stem.stemlet-length
+                                    c'8.
+                                    - \tenuto
+                                    ]
+                                    ~
+                                    \once \override Stem.direction = #DOWN
+                                    c'4
+                                    \staff-line-count 5
+                                    \once \override Stem.direction = #DOWN
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "alto"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <gf af>16
+                                    - \tenuto
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #7.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "alto"
+                                    \revert Staff.Stem.stemlet-length
+                                    c'8.
+                                    - \tenuto
+                                    \stopTextSpanOne
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #7.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { \hspace #0.5 { "bridge" } } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
+                                    ~
+                                    c'4
+                                    \stopTextSpanOne
+                                    \staff-line-count 5
+                                    \big-half-harmonic
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "alto"
+                                    <fqf cqf' gqf' dqf''>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "alto"
+                                    c'4
+                                    - \tenuto
+                                    _ #(make-dynamic-script
+                                        (markup
+                                            #:whiteout
+                                            #:line (
+                                                #:general-align Y -2 #:normal-text #:larger "“"
+                                                #:hspace -0.4
+                                                #:dynamic "f"
+                                                #:hspace -0.2
+                                                #:general-align Y -2 #:normal-text #:larger "”"
+                                                )
+                                            )
+                                        )
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #3
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "tailpiece" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'8.
+                                    [
+                                    \once \override Accidental.stencil = ##f
+                                    \revert Staff.Stem.stemlet-length
+                                    c'16
+                                    ]
+                                    \once \override Accidental.stencil = ##f
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'16
+                                    [
+                                    \once \override Accidental.stencil = ##f
+                                    \revert Staff.Stem.stemlet-length
+                                    c'8.
+                                    - \tenuto
+                                    ]
+                                    \once \override Accidental.stencil = ##f
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    c'8
+                                    - \tenuto
+                                    [
+                                    \once \override Accidental.stencil = ##f
+                                    \revert Staff.Stem.stemlet-length
+                                    c'8
+                                    \stopTextSpanOne
+                                    ]
+                                    \staff-line-count 5
+                                    \big-half-harmonic
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "alto"
+                                    <fqf cqf' gqf' dqf''>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
+                                    ~
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    \big-half-harmonic
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <fqf cqf' gqf' dqf''>8
+                                    [
+                                    \staff-line-count 1
+                                    \once \override Accidental.stencil = ##f
+                                    \clef "alto"
+                                    \revert Staff.Stem.stemlet-length
+                                    c'8
+                                    - \tenuto
+                                    \ppp
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { "bridge" } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    \<
+                                    ~
+                                    c'4
+                                    \once \override Accidental.stencil = ##f
+                                    c'4
+                                    - \tenuto
+                                    \staff-line-count 5
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "alto"
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <gf af>16
+                                    - \tenuto
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    \stopTextSpanOne
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #11
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { { "MSP" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    \revert Staff.Stem.stemlet-length
+                                    <gf af>8.
+                                    - \tenuto
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
+                                    \stopTextSpanOne
+                                    ]
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -2462,25 +2696,63 @@
                                     r1
                                     r2
                                     r2.
-                                    - \tweak padding #1
+                                    - \tweak padding #9
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 83 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
                                     \startTextSpanThree
-                                    r2.
+                                    r4
+                                    \staff-line-count 5
+                                    \big-half-harmonic
+                                      %! +SCORE
+                                    \revert Staff.BarLine.bar-extent
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##t
+                                    \clef "bass"
+                                    <fqf, cqf gqf dqf'>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
+                                    - \tweak font-name "Bodoni72 Book Italic" 
+                                    _ \markup { \hspace #-14 { \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } } } }
+                                      %! +SCORE
+                                    \set Staff.forceClef = ##f
+                                    r4
                                     r2.
                                     \stopTextSpanThree
                                     r2
+                                    r4
+                                    \big-half-harmonic
+                                    <fqf, cqf gqf dqf'>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
                                     r2.
-                                    r2
+                                    \big-half-harmonic
+                                    <fqf, cqf gqf dqf'>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
+                                    r1
+                                    r4
+                                    \big-half-harmonic
+                                    <fqf, cqf gqf dqf'>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
                                     r2.
-                                    r2
-                                    r2.
-                                    r2
-                                    r2.
-                                    r2
-                                    r2.
-                                    r2
+                                    \big-half-harmonic
+                                    <fqf, cqf gqf dqf'>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
+                                    r1
+                                    \big-half-harmonic
+                                    <fqf, cqf gqf dqf'>4
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
+                                    ^ \half-clb
+                                    ^ \marcato
+                                    r1
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE

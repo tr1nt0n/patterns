@@ -1194,7 +1194,222 @@ trinton.make_music(
     voice=score["viola legno voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 12)),
+    evans.RhythmHandler(rhythm.rhythm_c(instrument="viola", stage=3)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.pitch_with_selector_command(
+        pitch_list=[["fqf", "cqf'", "gqf'", "dqf''"]],
+        selector=trinton.select_logical_ties_by_index([0, 5, 10, 17]),
+    ),
+    trinton.pitch_with_selector_command(
+        pitch_list=[["af", "gf"]],
+        selector=trinton.select_logical_ties_by_index([8, 20, 21]),
+    ),
+    library.attach_gamelan_scale_cent_markups(
+        scale_degrees=[[8, 5]],
+        selector=trinton.select_logical_ties_by_index([8, 20, 21], first=True),
+        padding=None,
+    ),
+    trinton.change_lines(
+        lines=5,
+        clef="alto",
+        invisible_barlines=False,
+        selector=trinton.select_logical_ties_by_index(
+            [5, 8, 10, 17, 20], first=True, pitched=True
+        ),
+        force_clef=True,
+    ),
+    trinton.change_lines(
+        lines=1,
+        clef="alto",
+        invisible_barlines=False,
+        selector=trinton.select_logical_ties_by_index(
+            [1, 6, 9, 11, 18], first=True, pitched=True
+        ),
+    ),
+    trinton.invisible_accidentals_command(
+        selector=trinton.logical_ties(exclude=[0, 5, 8, 10, 17, 20, 21], first=True)
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Articulation("marcato"),
+            abjad.Articulation("half-clb"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 5, 10, 17], first=True, pitched=True
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.make_custom_dynamic("ffffff"),
+            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 5, 10, 17], first=True, pitched=True
+        ),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+        ],
+        selector=trinton.select_leaves_by_index([-6]),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.select_logical_ties_by_index(
+            [1, 3, 7, 8, 9, 11, 14, 15, 18, 19, 20, 21],
+            first=True,
+            pitched=True,
+            grace=False,
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic('"f"'),
+            abjad.Dynamic("ppp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mp"),
+            abjad.Dynamic('"f"'),
+            abjad.Dynamic("ppp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("mp"),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [1, 6, 6, 8, 11, 18, 18, 20], first=True, pitched=True
+        ),
+    ),
+    # trinton.aftergrace_command(
+    #     invisible=True,
+    #     selector=trinton.select_logical_ties_by_index([-1], grace=False),
+    # ),
+    # trinton.annotate_leaves_locally(
+    #     # selector=trinton.pleaves()
+    #     selector=trinton.logical_ties(first=True, pitched=True)
+    # ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Stem.direction = #DOWN", site="before"
+            )
+        ],
+        selector=trinton.select_leaves_by_index([9, 10]),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""tailpiece""",
+        selector=trinton.select_leaves_by_index([1, 5, 14, 20]),
+        padding=3,
+        direction=None,
+        right_padding=3,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 2""",
+            # r"""- \tweak color #(css-color 'darkred)""",
+            # r"""- \tweak bound-details.left.Y #5.5""",
+            # r"""- \tweak bound-details.right.Y #7""",
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup { "bridge" }""",
+            r"""\markup { "MSP" }""",
+            r"""\markup { \hspace #0.5 { "bridge" } }""",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [7, 10, 10, 11, 11, 12],
+            pitched=True,
+        ),
+        style="solid-line-with-arrow",
+        padding=7.5,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=3,
+        command="One",
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
+    trinton.spanner_command(
+        strings=[
+            r"""\markup { "bridge" }""",
+            r"""\markup { "MSP" }""",
+        ],
+        selector=trinton.select_leaves_by_index(
+            [23, 26, 26, 27],
+            pitched=True,
+        ),
+        style="solid-line-with-arrow",
+        padding=11,
+        right_padding=0,
+        direction=None,
+        full_string=True,
+        end_hook=True,
+        end_hook_right_padding=3,
+        command="One",
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
+    voice=score["viola 2 voice"],
+    beam_meter=True,
+)
+
 # cello music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (6, 12)),
+    evans.RhythmHandler(
+        evans.talea([-2, 2, -2, -6, -4, -2, 2, -6, 2, -8, -2, 2, -6, 2, -8, 2, -8], 8)
+    ),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler([["fqf,", "cqf", "gqf", "dqf'"]]),
+    trinton.change_lines(
+        lines=5,
+        clef="bass",
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+        force_clef=True,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Markup(
+                    r"""\markup { \hspace #-14 { \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } } } }"""
+                ),
+                r"""- \tweak font-name "Bodoni72 Book Italic" """,
+            ),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0], first=True, pitched=True, grace=False
+        ),
+        direction=abjad.DOWN,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Articulation("marcato"),
+            abjad.Articulation("half-clb"),
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            trinton.make_custom_dynamic("ffffff"),
+            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    voice=score["cello 2 voice"],
+)
 
 # globals
 
@@ -1271,7 +1486,7 @@ for voice_name, padding, end_anchor in zip(
         10,
         # 5,
         19,
-        1,
+        9,
     ],
     [
         -2,
