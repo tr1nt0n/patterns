@@ -358,14 +358,20 @@ def tablature_trill(trill_pitch, selector, bound_details=None, direction=abjad.D
                 pitch=abjad.NamedPitch(trill_pitch),
             ),
             r"- \tweak Y-extent ##f",
-            rf"""- \tweak bound-details.left.Y #{bound_details[0]}""",
-            rf"""- \tweak bound-details.right.Y #{bound_details[-1]}""",
             rf"- \tweak TrillPitchHead.stencil {trill_pitch_string}",
             r'- \tweak TrillPitchHead.whiteout-style "outline"',
             r"- \tweak TrillPitchHead.whiteout 1",
+            r"- \tweak TrillPitchHead.layer 5",
             r"- \tweak TrillPitchHead.no-ledgers ##t",
             r"- \tweak TrillPitchAccidental.stencil ##f",
         )
+
+        if bound_details is not None:
+            start_trill = abjad.bundle(
+                start_trill,
+                rf"""- \tweak bound-details.left.Y #{bound_details[0]}""",
+                rf"""- \tweak bound-details.right.Y #{bound_details[-1]}""",
+            )
 
         stop_trill = abjad.StopTrillSpan()
 
@@ -375,7 +381,11 @@ def tablature_trill(trill_pitch, selector, bound_details=None, direction=abjad.D
         leaf_duration = abjad.get.duration(selections[0], preprolated=True)
         leaf_denominator = leaf_duration.denominator
 
-        tremolo_duration = leaf_denominator * 2
+        if leaf_duration < abjad.Duration((1, 2)):
+            tremolo_duration = leaf_denominator * 2
+        else:
+            tremolo_duration = leaf_denominator * 8
+
         stem_tremolo = abjad.StemTremolo(tremolo_duration)
         tremolo_literal = abjad.LilyPondLiteral(
             [
