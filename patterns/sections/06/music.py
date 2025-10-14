@@ -29,17 +29,6 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (1, 12)),
     evans.RhythmHandler(evans.talea([-1000], 8)),
     trinton.rewrite_meter_command(boundary_depth=-1),
-    # trinton.linear_attachment_command(
-    #     attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
-    #     selector=trinton.select_leaves_by_index(
-    #         [
-    #             1,
-    #             4,
-    #             5,
-    #             6,
-    #         ]
-    #     ),
-    # ),
     library.tablature_staff(
         selector=trinton.select_leaves_by_index([0]),
     ),
@@ -627,7 +616,7 @@ trinton.make_music(
         direction=abjad.DOWN,
     ),
     trinton.continuous_glissando(
-        selector=trinton.logical_ties(exclude=[0, 3]), zero_padding=True
+        selector=trinton.logical_ties(exclude=[0, 4]), zero_padding=True
     ),
     trinton.attachment_command(
         attachments=[
@@ -645,7 +634,7 @@ trinton.make_music(
                 r"\once \override Dots.staff-position = #-2", site="before"
             ),
         ],
-        selector=trinton.select_logical_ties_by_index([3], first=True, grace=False),
+        selector=trinton.select_logical_ties_by_index([3, 4], first=True, grace=False),
     ),
     trinton.hooked_spanner_command(
         string=r"""III""",
@@ -2757,7 +2746,7 @@ trinton.make_music(
 trinton.fermata_measures(
     score=score,
     measures=[13],
-    fermata="very-long-fermata",
+    fermata="extremely-long-fermata",
     voice_names=["violin 2 voice", "violin 4 voice", "viola 2 voice", "cello 2 voice"],
     font_size=10,
     clef_whitespace=True,

@@ -75,7 +75,7 @@
             \time 1/4
             R1 * 1/4
             - \tweak font-size #'10
-            _ \very-long-fermata
+            _ \extremely-long-fermata
             \bar "||"
             \once \override Score.BarLine.transparent = ##f
               %! +SCORE
@@ -702,24 +702,45 @@
                                             \set stemLeftBeamCount = 3
                                             \set stemRightBeamCount = 1
                                             d'32
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
                                             ~
                                             \big-half-harmonic
-                                            \revert Dots.staff-position
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 4
+                                              %! abjad.glissando(1)
+                                            \hide NoteHead
+                                              %! abjad.glissando(1)
+                                            \override Accidental.stencil = ##f
+                                              %! abjad.glissando(1)
+                                            \override NoteColumn.glissando-skip = ##t
+                                              %! abjad.glissando(1)
+                                            \override NoteHead.no-ledgers = ##t
                                             d'64
                                             \big-half-harmonic
                                             \once \override Dots.staff-position = #-2
+                                            \revert Dots.staff-position
+                                              %! abjad.glissando(6)
+                                            \revert Accidental.stencil
+                                              %! abjad.glissando(6)
+                                            \revert NoteColumn.glissando-skip
+                                              %! abjad.glissando(6)
+                                            \revert NoteHead.no-ledgers
+                                              %! abjad.glissando(6)
+                                            \undo \hide NoteHead
                                             a16..
                                             ]
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            \override Dots.staff-position = #2
                                             \big-half-harmonic
+                                            \once \override Dots.staff-position = #-2
                                             a'16
                                             [
                                             - \abjad-zero-padding-glissando
                                             \glissando
+                                            \override Dots.staff-position = #2
                                             \big-half-harmonic
                                             c'16
                                               %! abjad.glissando(7)
