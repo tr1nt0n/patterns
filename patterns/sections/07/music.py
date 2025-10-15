@@ -632,6 +632,219 @@ trinton.make_music(
 
 # viola music
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 6)),
+    evans.RhythmHandler(rhythm.rhythm_e(lower_voice=True, index=5)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    library.tablature_staff(
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([3, 6]),
+    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Markup(
+    #             r"""\markup \fontsize #2 { \hspace #-10.5 { "Fng. Perc.:" } }"""
+    #         )
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0]),
+    # ),
+    trinton.IntermittentVoiceHandler(
+        evans.RhythmHandler(rhythm.rhythm_e(lower_voice=False, index=5)),
+        direction=abjad.UP,
+        voice_name="viola bow voice",
+        preprocessor=trinton.fuse_quarters_preprocessor((4, 2, 4, 5, 5, 5)),
+    ),
+    voice=score["viola 2 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 6)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    evans.PitchHandler(
+        [
+            ["a''"],
+        ]
+    ),
+    trinton.duration_line(
+        selector=trinton.logical_ties(pitched=True, grace=False),
+        color=r"(css-color 'darkred)",
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Dynamic("fp"),
+                r"""- \tweak color #(css-color 'darkred)""",
+            ),
+            abjad.bundle(
+                abjad.StartHairpin(">o"),
+                r"""- \tweak color #(css-color 'darkred)""",
+            ),
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.StopHairpin()], selector=trinton.select_leaves_by_index([-1])
+    ),
+    # trinton.annotate_leaves_locally(
+    #     selector=abjad.select.leaves,
+    #     direction=abjad.UP
+    # ),
+    # trinton.manual_beam_positions(
+    #     positions=(7, 7),
+    #     selector=trinton.select_leaves_by_index(
+    #         [15, 18, 19, 21, 22, 24, 26, 28, 30, 32, 35, 37]
+    #     ),
+    # ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Markup(
+    #             r"""\markup {
+    #                 \hspace #-2 {
+    #                     ( \note {2} #2 )
+    #                 }
+    #             }"""
+    #         )
+    #     ],
+    #     selector=trinton.select_leaves_by_index([1], pitched=True),
+    #     direction=abjad.UP,
+    # ),
+    trinton.change_notehead_command(
+        notehead="cluster",
+        selector=abjad.select.chords,
+    ),
+    # trinton.continuous_glissando(
+    #     zero_padding=True,
+    #     selector=trinton.pleaves(exclude=[-6, -5, -4, -3, -2, -1]),
+    #     tweaks=[abjad.Tweak(r"- \tweak color #(css-color 'darkred)")],
+    # ),
+    trinton.noteheads_only(selector=trinton.pleaves(grace=True)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.bundle(
+                abjad.Articulation(">"),
+                r"""- \tweak color #(css-color 'darkred)""",
+            ),
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.bundle(
+    #             abjad.Markup(r"""\markup \fontsize #2 { \hspace #-5.5 { "Bow:" } }"""),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0], pitched=True),
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""III + IV""",
+    #     selector=trinton.select_leaves_by_index([0, -1]),
+    #     padding=12.5,
+    #     direction=None,
+    #     right_padding=3,
+    #     full_string=False,
+    #     style="dashed-line-with-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=[
+    #         r"""- \tweak font-name "Bodoni72 Book" """,
+    #         r"""- \tweak font-size 2""",
+    #         r"""- \tweak color #(css-color 'darkred)""",
+    #         # r"""- \tweak bound-details.left.Y #5.5""",
+    #         # r"""- \tweak bound-details.right.Y #7""",
+    #     ],
+    # ),
+    library.color_voice(),
+    voice=score["viola bow voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 6)),
+    evans.PitchHandler(["a"]),
+    # trinton.attachment_command(
+    #     attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+    #     selector=trinton.select_leaves_by_index([0, 1]),
+    # ),
+    # trinton.change_notehead_command(
+    #     notehead="harmonic", selector=trinton.select_leaves_by_index([2, 3])
+    # ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Glissando(zero_padding=True),
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override Dots.staff-position = #-1", site="before"
+    #         ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0]),
+    # ),
+    # trinton.continuous_glissando(
+    #     zero_padding=True, selector=trinton.select_leaves_by_index([2, 3])
+    # ),
+    # library.tablature_trill(
+    #     trill_pitch="c''",
+    #     selector=trinton.select_leaves_by_index([0, 1]),
+    #     bound_details=(-1, -1),
+    #     direction=abjad.DOWN,
+    # ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.padding = #5", site="before"
+    #         ),
+    #         abjad.Dynamic("ppp"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0]),
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""IV""",
+    #     selector=trinton.select_leaves_by_index([0, 1]),
+    #     padding=9,
+    #     direction="down",
+    #     right_padding=1.5,
+    #     full_string=False,
+    #     style="dashed-line-with-up-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=[
+    #         r"""- \tweak font-name "Bodoni72 Book" """,
+    #         r"""- \tweak font-size 2""",
+    #         # r"""- \tweak bound-details.left.Y #5.5""",
+    #         # r"""- \tweak bound-details.right.Y #7""",
+    #     ],
+    # ),
+    # trinton.hooked_spanner_command(
+    #     string=r"""III""",
+    #     selector=trinton.select_leaves_by_index([2, 3]),
+    #     padding=9.5,
+    #     direction="down",
+    #     right_padding=1.5,
+    #     full_string=False,
+    #     style="dashed-line-with-up-hook",
+    #     hspace=None,
+    #     command="One",
+    #     tag=None,
+    #     tweaks=[
+    #         r"""- \tweak font-name "Bodoni72 Book" """,
+    #         r"""- \tweak font-size 2""",
+    #         # r"""- \tweak bound-details.left.Y #5.5""",
+    #         # r"""- \tweak bound-details.right.Y #7""",
+    #     ],
+    # ),
+    voice=score["viola 2 voice temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7,)),
+    library.tablature_staff(reset=True, selector=trinton.select_leaves_by_index([0])),
+    voice=score["viola 2 voice"],
+)
+
 # cello music
 
 trinton.make_music(
@@ -951,7 +1164,7 @@ for voice_name, padding, end_anchor in zip(
     [
         "violin 2 voice",
         # "violin 4 voice temp",
-        "viola 2 voice",
+        "viola 2 voice temp",
         # "cello 2 voice",
     ],
     [
@@ -1075,7 +1288,7 @@ for voice_name, padding, end_anchor in zip(
     [
         "violin 2 voice temp 2",
         "violin 4 voice temp 1",
-        "viola 2 voice",
+        "viola 2 voice temp",
         "cello 2 voice temp",
     ],
     [

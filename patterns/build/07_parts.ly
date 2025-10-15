@@ -968,36 +968,1743 @@
                             {
                                 \context Voice = "viola 2 voice"
                                 {
-                                    r1
-                                    r2
-                                    r1
-                                    - \tweak padding #5
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
-                                    \startTextSpanThree
-                                    r2.
-                                    r2
-                                    \stopTextSpanThree
-                                    r2.
-                                    - \tweak padding #5
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 80 )" } } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 80" } } }
-                                    \startTextSpanThree
-                                    r2
-                                    r2.
-                                    r2
-                                    \stopTextSpanThree
+                                    <<
+                                        \context Voice = "viola 2 voice temp"
+                                        {
+                                            \times 2/3
+                                            {
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \string-clef
+                                                \staff-line-count 4
+                                                \override Staff.StaffSymbol.line-positions = #'(9 7 0 -9)
+                                                \override Staff.BarLine.bar-extent = #'(-4.5 . 4.5)
+                                                \override Staff.Accidental.stencil = ##f
+                                                \override Staff.NoteHead.no-ledgers = ##t
+                                                \voiceTwo
+                                                a2
+                                                a2
+                                                a2
+                                            }
+                                            a8
+                                            [
+                                            a8
+                                            a8
+                                            a8
+                                            ]
+                                            \times 4/6
+                                            {
+                                                a4
+                                                - \tweak padding #5
+                                                - \abjad-solid-line-with-arrow
+                                                - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
+                                                - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
+                                                \startTextSpanThree
+                                                a4
+                                                a4
+                                                a4
+                                                a4
+                                                a4
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/4
+                                            {
+                                                a4
+                                                a4
+                                                a4
+                                                a4
+                                                \stopTextSpanThree
+                                            }
+                                            a4
+                                            - \tweak padding #5
+                                            - \abjad-solid-line-with-arrow
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 80 )" } } } \hspace #0.5 }
+                                            - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 80" } } }
+                                            \startTextSpanThree
+                                            a4
+                                            a4
+                                            a4
+                                            a4
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/6
+                                            {
+                                                a2
+                                                a2
+                                                a2
+                                                \stopTextSpanThree
+                                            }
+                                        }
+                                        \context Voice = "viola bow voice"
+                                        {
+                                            \times 4/5
+                                            {
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \override Voice.NoteHead.color = #(css-color 'darkred)
+                                                \override Voice.Dots.color = #(css-color 'darkred)
+                                                \override Voice.Stem.color = #(css-color 'darkred)
+                                                \override Voice.Beam.color = #(css-color 'darkred)
+                                                \override Voice.Rest.color = #(css-color 'darkred)
+                                                \override Voice.Tie.color = #(css-color 'darkred)
+                                                \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                                \override Voice.TupletNumber.color = #(css-color 'darkred)
+                                                \voiceOne
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                            }
+                                            \times 2/3
+                                            {
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/6
+                                            {
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/4
+                                            {
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \afterGrace
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \accent
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \fp
+                                                  %! abjad.glissando(7)
+                                                - \tweak color #(css-color 'darkred)
+                                                  %! abjad.glissando(7)
+                                                - \abjad-zero-padding-glissando
+                                                  %! abjad.glissando(7)
+                                                \glissando
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak circled-tip ##t
+                                                ^ \>
+                                                {
+                                                    \once \override Accidental.stencil = ##f
+                                                    \once \override Dots.staff-position = #2
+                                                    \once \override NoteHead.X-offset = 0
+                                                    \once \override Staff.Accidental.stencil = ##f
+                                                    \once \override Voice.Glissando.thickness = #8.25
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override NoteHead.no-ledgers = ##t
+                                                    \once \override RepeatTie.transparent = ##t
+                                                    \once \override Beam.stencil = ##f
+                                                    \once \override Flag.stencil = ##f
+                                                    \once \override Dots.stencil = ##f
+                                                    \once \override Tie.stencil = ##f
+                                                    \once \override NoteHead.duration-log = 2
+                                                    \once \override Stem.stencil = ##f
+                                                    \once \override NoteHead.transparent = ##t
+                                                      %! abjad.glissando(1)
+                                                    \hide NoteHead
+                                                      %! abjad.glissando(1)
+                                                    \override Accidental.stencil = ##f
+                                                      %! abjad.glissando(1)
+                                                    \override NoteColumn.glissando-skip = ##t
+                                                      %! abjad.glissando(1)
+                                                    \override NoteHead.no-ledgers = ##t
+                                                      %! abjad.glissando(6)
+                                                    \revert Accidental.stencil
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteColumn.glissando-skip
+                                                      %! abjad.glissando(6)
+                                                    \revert NoteHead.no-ledgers
+                                                      %! abjad.glissando(6)
+                                                    \undo \hide NoteHead
+                                                    <
+                                                        \tweak style #'la
+                                                        a''
+                                                    >16
+                                                }
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                            }
+                                            \once \override Dots.staff-position = #2
+                                            \once \override NoteHead.X-offset = 0
+                                            \once \override Staff.Accidental.stencil = ##f
+                                            \once \override Voice.Glissando.thickness = #8.25
+                                            \once \override NoteHead.duration-log = 2
+                                            \afterGrace
+                                            <
+                                                \tweak style #'la
+                                                a''
+                                            >4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \fp
+                                              %! abjad.glissando(7)
+                                            - \tweak color #(css-color 'darkred)
+                                              %! abjad.glissando(7)
+                                            - \abjad-zero-padding-glissando
+                                              %! abjad.glissando(7)
+                                            \glissando
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak circled-tip ##t
+                                            ^ \>
+                                            {
+                                                \once \override Accidental.stencil = ##f
+                                                \once \override Dots.staff-position = #2
+                                                \once \override NoteHead.X-offset = 0
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Voice.Glissando.thickness = #8.25
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override NoteHead.no-ledgers = ##t
+                                                \once \override RepeatTie.transparent = ##t
+                                                \once \override Beam.stencil = ##f
+                                                \once \override Flag.stencil = ##f
+                                                \once \override Dots.stencil = ##f
+                                                \once \override Tie.stencil = ##f
+                                                \once \override NoteHead.duration-log = 2
+                                                \once \override Stem.stencil = ##f
+                                                \once \override NoteHead.transparent = ##t
+                                                  %! abjad.glissando(1)
+                                                \hide NoteHead
+                                                  %! abjad.glissando(1)
+                                                \override Accidental.stencil = ##f
+                                                  %! abjad.glissando(1)
+                                                \override NoteColumn.glissando-skip = ##t
+                                                  %! abjad.glissando(1)
+                                                \override NoteHead.no-ledgers = ##t
+                                                  %! abjad.glissando(6)
+                                                \revert Accidental.stencil
+                                                  %! abjad.glissando(6)
+                                                \revert NoteColumn.glissando-skip
+                                                  %! abjad.glissando(6)
+                                                \revert NoteHead.no-ledgers
+                                                  %! abjad.glissando(6)
+                                                \undo \hide NoteHead
+                                                <
+                                                    \tweak style #'la
+                                                    a''
+                                                >16
+                                                \!
+                                                \revert Voice.NoteHead.color
+                                                \revert Voice.Dots.color
+                                                \revert Voice.Stem.color
+                                                \revert Voice.Beam.color
+                                                \revert Voice.Rest.color
+                                                \revert Voice.Tie.color
+                                                \revert Voice.TupletBracket.color
+                                                \revert Voice.TupletNumber.color
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
                                 %%% \once \override Rest.transparent = ##t
+                                    \staff-line-count 5
+                                    \revert Staff.StaffSymbol.line-positions
+                                    \revert Staff.Accidental.stencil
+                                    \revert Staff.NoteHead.no-ledgers
+                                    \revert Staff.Clef.stencil
                                       %! +SCORE
                                 %%% \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                                     r4
                                       %! +SCORE
                                 %%% \stopStaff \startStaff
+                                    \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                 }
                             }
                         }
