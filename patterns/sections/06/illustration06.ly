@@ -271,7 +271,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-1
                                             - \tweak bound-details.right.Y #-1
@@ -317,7 +317,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-1.5
                                             - \tweak bound-details.right.Y #-1.5
@@ -382,7 +382,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-1.5
                                             - \tweak bound-details.right.Y #-4
@@ -461,7 +461,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-4
                                             - \tweak bound-details.right.Y #-4
@@ -513,7 +513,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-6.5
                                             - \tweak bound-details.right.Y #-6.5
@@ -624,7 +624,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-4
                                             - \tweak bound-details.right.Y #-4
@@ -702,7 +702,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-6
                                             - \tweak bound-details.right.Y #-6
@@ -826,7 +826,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-3.5
                                             - \tweak bound-details.right.Y #-5
@@ -929,7 +929,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-5.5
                                             - \tweak bound-details.right.Y #-4.5
@@ -980,7 +980,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-5.5
                                             - \tweak bound-details.right.Y #-5.5
@@ -1019,7 +1019,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-2.5
                                             - \tweak bound-details.right.Y #-3.5
@@ -1091,7 +1091,7 @@
                                                 - \tweak TrillPitchHead.no-ledgers ##t
                                                 - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                                 - \tweak TrillPitchHead.whiteout 1
-                                                - \tweak TrillPitchHead.whiteout-style "outline"
+                                                - \tweak TrillPitchHead.whiteout-style #'outline
                                                 - \tweak Y-extent ##f
                                                 - \tweak bound-details.left.Y #-6.5
                                                 - \tweak bound-details.right.Y #-6.5
@@ -1162,7 +1162,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-4
                                             - \tweak bound-details.right.Y #-4
@@ -1241,7 +1241,7 @@
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-4
                                             - \tweak bound-details.right.Y #-4

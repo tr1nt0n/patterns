@@ -1447,10 +1447,11 @@
                                             \glissando
                                             ~
                                             - \tweak TrillPitchAccidental.stencil ##f
+                                            - \tweak TrillPitchHead.layer 5
                                             - \tweak TrillPitchHead.no-ledgers ##t
                                             - \tweak TrillPitchHead.stencil #(lambda (grob) (grob-interpret-markup grob #{ \markup \musicglyph #"noteheads.s2cross" #}))
                                             - \tweak TrillPitchHead.whiteout 1
-                                            - \tweak TrillPitchHead.whiteout-style "outline"
+                                            - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
                                             - \tweak bound-details.left.Y #-6
                                             - \tweak bound-details.right.Y #-4.5

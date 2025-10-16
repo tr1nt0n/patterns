@@ -346,12 +346,21 @@ def write_short_instrument_names(score):
         )
 
 
-def tablature_trill(trill_pitch, selector, bound_details=None, direction=abjad.DOWN):
+def tablature_trill(
+    trill_pitch, selector, notehead="cross", bound_details=None, direction=abjad.DOWN
+):
     def make_column_trill(argument):
         selections = selector(argument)
 
         trill_pitch_string = "#(lambda (grob) (grob-interpret-markup grob"
-        trill_pitch_string += r""" #{ \markup \musicglyph #"noteheads.s2cross" #}))"""
+        if notehead == "cross":
+            trill_pitch_string += (
+                r""" #{ \markup \musicglyph #"noteheads.s2cross" #}))"""
+            )
+        if notehead == "harmonic":
+            trill_pitch_string += (
+                r""" #{ \markup \musicglyph #"noteheads.s0harmonic" #}))"""
+            )
 
         start_trill = abjad.bundle(
             abjad.StartTrillSpan(
@@ -359,7 +368,7 @@ def tablature_trill(trill_pitch, selector, bound_details=None, direction=abjad.D
             ),
             r"- \tweak Y-extent ##f",
             rf"- \tweak TrillPitchHead.stencil {trill_pitch_string}",
-            r'- \tweak TrillPitchHead.whiteout-style "outline"',
+            r"- \tweak TrillPitchHead.whiteout-style #'outline",
             r"- \tweak TrillPitchHead.whiteout 1",
             r"- \tweak TrillPitchHead.layer 5",
             r"- \tweak TrillPitchHead.no-ledgers ##t",
