@@ -1002,6 +1002,7 @@
                                                 \override Staff.Accidental.stencil = ##f
                                                 \override Staff.NoteHead.no-ledgers = ##t
                                                 \override TrillSpanner.bound-details.right.padding = #1.5
+                                                \clef "treble"
                                                 \voiceTwo
                                                 a2
                                                 - \tweak font-name "Bodoni72 Book Italic" 
