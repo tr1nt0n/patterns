@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=11in,paperheight=8.5in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+%\vspace{2\baselineskip}
+
+\begingroup
+\begin{center}
+\huge A F T E R W O R D
+\end{center}
+\endgroup
+
+\vspace{8\baselineskip}
+
+\begingroup
+``. . . WENN IN REICHER STILLE . . . \\
+``SCHATTEN STUMMES REICH, . . ."
+\phantom{text} \hfill - \textbf{Friedrich Hölderlin}
+\endgroup
+
+\vspace{2\baselineskip}
+
+\begingroup
+``. . . One evening . . . a fellow prisoner rushed in and asked us to run out to the assembly grounds and see the wonderful sunset. Standing outside we saw sinister clouds glowing in the west and the whole sky alive with clouds of ever-changing shapes and colors, from steel blue to blood red. The desolate great mud huts provided a sharp contrast, while the puddles on the muddy ground reflected the glowing sky. Then, after minutes of moving silence, one prisoner said to another, `How beautiful the world \textit{could} be!'"
+\phantom{text} \hfill - \textbf{Viktor Frankl}
+\endgroup
+
+
+\end{document}
