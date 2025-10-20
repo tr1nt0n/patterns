@@ -1099,8 +1099,17 @@
                                     g4
                                     - \tweak padding 1
                                     ^ \punta-to-talon
+                                    \mp
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #7.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "MST" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanOne
+                                    \>
                                     ~
                                     \big-half-harmonic
                                     g8
@@ -1154,7 +1163,18 @@
                                     ~
                                     \big-half-harmonic
                                     aqs,8
+                                    \stopTextSpanOne
                                     [
+                                    - \tweak bound-details.left.Y #-0.5
+                                    - \tweak bound-details.right.Y #4
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #7.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "MSP" }
+                                    - \tweak bound-details.right.padding 2
+                                    \startTextSpanOne
                                     \times 4/5
                                     {
                                         \big-half-harmonic
@@ -1187,35 +1207,33 @@
                                         cqs'8
                                         \big-half-harmonic
                                         eqf'8
-                                        )
                                         ]
                                     }
                                     \times 2/3
                                     {
                                         \big-half-harmonic
                                         dqf'8
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
                                         [
-                                        (
                                         \big-half-harmonic
                                         dqs'8
+                                        )
                                         \big-half-harmonic
                                         gqf8
-                                        )
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
                                         ]
+                                        (
                                     }
                                     \big-half-harmonic
                                     fs2
-                                    - \tweak padding 1
-                                    ^ \punta-to-talon
+                                    )
                                     \once \override TupletBracket.padding = #4
                                     \times 4/5
                                     {
                                         \big-half-harmonic
                                         b,16
                                         - \tweak padding 1
-                                        ^ \talon-to-punta
+                                        ^ \punta-to-talon
                                         [
                                         (
                                         \big-half-harmonic
@@ -1226,130 +1244,253 @@
                                         bqs,16
                                         \big-half-harmonic
                                         cs16
+                                        \pp
                                         )
+                                        \stopTextSpanOne
                                         ]
                                     }
-                                    \big-half-harmonic
-                                    cs'4
-                                    - \tweak padding 1
-                                    ^ \punta-to-talon
-                                    ~
-                                    \big-half-harmonic
-                                    cs'8
-                                    [
-                                    \times 4/5
-                                    {
-                                        \big-half-harmonic
-                                        cqs'16
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
-                                        \big-half-harmonic
-                                        cs'16
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        \big-half-harmonic
-                                        dqs'16
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
-                                        \big-half-harmonic
-                                        d'16
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        \big-half-harmonic
-                                        cqs'16
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
-                                    }
-                                    \big-half-harmonic
-                                    bqf8
-                                    - \tweak padding 1
-                                    ^ \punta-to-talon
-                                    ]
-                                    \big-half-harmonic
-                                    dqs'8
-                                    - \tweak padding 1
-                                    ^ \talon-to-punta
-                                    [
-                                    \times 4/5
-                                    {
-                                        \big-half-harmonic
-                                        ef'8
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        \big-half-harmonic
-                                        bqs8
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
-                                        \big-half-harmonic
-                                        b8
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        \big-half-harmonic
-                                        dqf'8
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
-                                        \big-half-harmonic
-                                        b8
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                    }
-                                    \big-half-harmonic
-                                    dqf'8
-                                    - \tweak padding 1
-                                    ^ \talon-to-punta
-                                    ]
-                                    ~
-                                    \big-half-harmonic
-                                    dqf'4
-                                    \times 2/3
-                                    {
-                                        \big-half-harmonic
-                                        ef'8
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        [
-                                        \big-half-harmonic
-                                        dqs'8
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
-                                        \big-half-harmonic
-                                        cs'8
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        ]
-                                    }
-                                    \big-half-harmonic
-                                    dqf'4.
-                                    - \tweak padding 1
-                                    ^ \talon-to-punta
-                                    ~
-                                    \big-half-harmonic
-                                    dqf'8
-                                    [
-                                    \times 4/5
-                                    {
-                                        \big-half-harmonic
-                                        bqf16
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        \big-half-harmonic
-                                        cs'16
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
-                                        \big-half-harmonic
-                                        cqs'16
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        \big-half-harmonic
-                                        cs'16
-                                        - \tweak padding 1
-                                        ^ \talon-to-punta
-                                        \big-half-harmonic
-                                        dqs'16
-                                        - \tweak padding 1
-                                        ^ \punta-to-talon
-                                        ]
-                                    }
+                                    <<
+                                        \context Voice = "cello 2 voice temp"
+                                        {
+                                            \big-half-harmonic
+                                            \once \override DynamicLineSpanner.padding = #13
+                                            \voiceOne
+                                            cs'4
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #13
+                                            - \abjad-dashed-line-with-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "(MSP)" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -1
+                                            \startTextSpanOne
+                                            \<
+                                            ~
+                                            \big-half-harmonic
+                                            cs'8
+                                            [
+                                            \times 4/5
+                                            {
+                                                \big-half-harmonic
+                                                cqs'16
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                cs'16
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \big-half-harmonic
+                                                dqs'16
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                d'16
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \big-half-harmonic
+                                                cqs'16
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                            }
+                                            \big-half-harmonic
+                                            bqf8
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ]
+                                            \big-half-harmonic
+                                            dqs'8
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            [
+                                            \times 4/5
+                                            {
+                                                \big-half-harmonic
+                                                ef'8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \big-half-harmonic
+                                                bqs8
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                b8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \big-half-harmonic
+                                                dqf'8
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                b8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                            }
+                                            \big-half-harmonic
+                                            dqf'8
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            dqf'4
+                                            \times 2/3
+                                            {
+                                                \big-half-harmonic
+                                                ef'8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                [
+                                                \big-half-harmonic
+                                                dqs'8
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                cs'8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                ]
+                                            }
+                                            \big-half-harmonic
+                                            dqf'4.
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ~
+                                            \big-half-harmonic
+                                            dqf'8
+                                            [
+                                            \times 4/5
+                                            {
+                                                \big-half-harmonic
+                                                bqf16
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \big-half-harmonic
+                                                cs'16
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                cqs'16
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \big-half-harmonic
+                                                cs'16
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                dqs'16
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \mf
+                                                \stopTextSpanOne
+                                                ]
+                                            }
+                                        }
+                                        \context Voice = "cello legno voice"
+                                        {
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                \override Voice.NoteHead.color = #(css-color 'darkred)
+                                                \override Voice.Dots.color = #(css-color 'darkred)
+                                                \override Voice.Stem.color = #(css-color 'darkred)
+                                                \override Voice.Beam.color = #(css-color 'darkred)
+                                                \override Voice.Rest.color = #(css-color 'darkred)
+                                                \override Voice.Tie.color = #(css-color 'darkred)
+                                                \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                                \override Voice.TupletNumber.color = #(css-color 'darkred)
+                                                \override Voice.NoteHead.no-ledgers = ##t
+                                                \override Voice.Accidental.stencil = ##f
+                                                \textSpannerDown
+                                                \voiceTwo
+                                                \tweak style #'cross
+                                                c,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 2
+                                                - \tweak padding #13.5
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1.5
+                                                \startTextSpan
+                                                \tweak style #'cross
+                                                c,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                c,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                c,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \accent
+                                                \tweak style #'cross
+                                                c,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                ]
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/6
+                                            {
+                                                \tweak style #'cross
+                                                c,2
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \accent
+                                                \tweak style #'cross
+                                                c,2
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \accent
+                                                \tweak style #'cross
+                                                c,2
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                            }
+                                            \tweak style #'cross
+                                            c,8.
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            [
+                                            \tweak style #'cross
+                                            c,8.
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \accent
+                                            \tweak style #'cross
+                                            c,8.
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            \tweak style #'cross
+                                            c,8.
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            \stopTextSpan
+                                            ]
+                                            \textSpannerUp
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
+                                            \revert Voice.NoteHead.no-ledgers
+                                            \revert Voice.Accidental.stencil
+                                        }
+                                    >>
+                                    \oneVoice
                                     r4.
                                     - \tweak padding #3
                                     - \abjad-solid-line-with-arrow
