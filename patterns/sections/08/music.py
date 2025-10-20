@@ -438,6 +438,133 @@ trinton.make_music(
 
 # cello music
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 8)),
+    evans.RhythmHandler(rhythm.rhythm_d(instrument="cello", stage=1, index=0)),
+    voice=score["cello 2 voice"],
+    preprocessor=trinton.fuse_preprocessor((2,)),
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 7)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    voice=score["cello 2 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8,)),
+    trinton.rewrite_meter_command(boundary_depth=-2),
+    voice=score["cello 2 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 8)),
+    pitch.pitch_d(
+        instrument="cello",
+        string_range_pairs=[
+            ("II", (0, 0)),
+            ("III", (1, 3)),
+            ("II", (4, 8)),
+            ("III", (9, 14)),
+            ("I", (15, 20)),
+            ("II", (21, 22)),
+            ("III", (23, 27)),
+            ("I", (28, 50)),
+        ],
+        stage=1,
+        index=0,
+        initial_seed=5,
+        selector=trinton.logical_ties(pitched=True, grace=False),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("bass")], selector=trinton.select_leaves_by_index([0])
+    ),
+    # trinton.annotate_leaves_locally(
+    #     selector=trinton.pleaves()
+    #     # selector=trinton.logical_ties(first=True, pitched=True)
+    # ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                1,
+                2,
+                4,
+                5,
+                6,
+                12,
+                14,
+                20,
+                22,
+                24,
+                25,
+                27,
+                29,
+                33,
+                35,
+                41,
+                42,
+                48,
+                50,
+                52,
+                54,
+                59,
+            ]
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
+        selector=trinton.select_leaves_by_index(
+            [2, 6, 7, 11, 12, 19, 20, 24, 25, 27, 29, 33]
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.bundle(
+                    abjad.Articulation("punta-to-talon"), r"- \tweak padding 1"
+                ),
+                abjad.bundle(
+                    abjad.Articulation("talon-to-punta"), r"- \tweak padding 1"
+                ),
+            ]
+        ),
+        selector=trinton.select_logical_ties_by_index(
+            [0, 1, 4, 9, 15, 19, 22, 23], first=True, pitched=True, grace=False
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.bundle(
+                    abjad.Articulation("punta-to-talon"), r"- \tweak padding 1"
+                ),
+                abjad.bundle(
+                    abjad.Articulation("talon-to-punta"), r"- \tweak padding 1"
+                ),
+            ]
+        ),
+        selector=trinton.logical_ties(
+            exclude=list(range(0, 28)), first=True, pitched=True, grace=False
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.padding = #4", site="before"
+            )
+        ],
+        selector=trinton.select_tuplets_by_index([4]),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+        selector=trinton.pleaves(),
+    ),
+    voice=score["cello 2 voice"],
+)
+
 # globals
 
 # final barline

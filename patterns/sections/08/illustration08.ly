@@ -1094,18 +1094,262 @@
                             {
                                 \context Voice = "cello 2 voice"
                                 {
-                                    r2
+                                    \big-half-harmonic
+                                    \clef "bass"
+                                    g4
+                                    - \tweak padding 1
+                                    ^ \punta-to-talon
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
-                                    r2
-                                    r2
-                                    r2.
-                                    r2
-                                    r1
-                                    r2.
-                                    r2.
-                                    r2
-                                    r2.
+                                    ~
+                                    \big-half-harmonic
+                                    g8
+                                    [
+                                    \big-half-harmonic
+                                    cs8
+                                    - \tweak padding 1
+                                    ^ \talon-to-punta
+                                    ]
+                                    (
+                                    ~
+                                    \big-half-harmonic
+                                    cs4
+                                    ~
+                                    \big-half-harmonic
+                                    cs8
+                                    [
+                                    \big-half-harmonic
+                                    aqf,8
+                                    ]
+                                    \big-half-harmonic
+                                    cs8
+                                    )
+                                    [
+                                    \times 4/5
+                                    {
+                                        \big-half-harmonic
+                                        f16
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        (
+                                        \big-half-harmonic
+                                        g16
+                                        \big-half-harmonic
+                                        af16
+                                        \big-half-harmonic
+                                        fqs16
+                                        \big-half-harmonic
+                                        eqs16
+                                        )
+                                    }
+                                    \big-half-harmonic
+                                    aqs,8
+                                    - \tweak padding 1
+                                    ^ \talon-to-punta
+                                    ]
+                                    (
+                                    ~
+                                    \big-half-harmonic
+                                    aqs,4
+                                    ~
+                                    \big-half-harmonic
+                                    aqs,8
+                                    [
+                                    \times 4/5
+                                    {
+                                        \big-half-harmonic
+                                        a,16
+                                        \big-half-harmonic
+                                        cs16
+                                        \big-half-harmonic
+                                        bqf,16
+                                        \big-half-harmonic
+                                        b,16
+                                        \big-half-harmonic
+                                        bqf,16
+                                        )
+                                    }
+                                    \big-half-harmonic
+                                    cs'8
+                                    - \tweak padding 1
+                                    ^ \punta-to-talon
+                                    ]
+                                    (
+                                    ~
+                                    \big-half-harmonic
+                                    cs'4
+                                    \times 2/3
+                                    {
+                                        \big-half-harmonic
+                                        b8
+                                        [
+                                        \big-half-harmonic
+                                        cqs'8
+                                        \big-half-harmonic
+                                        eqf'8
+                                        )
+                                        ]
+                                    }
+                                    \times 2/3
+                                    {
+                                        \big-half-harmonic
+                                        dqf'8
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        [
+                                        (
+                                        \big-half-harmonic
+                                        dqs'8
+                                        \big-half-harmonic
+                                        gqf8
+                                        )
+                                        ]
+                                    }
+                                    \big-half-harmonic
+                                    fs2
+                                    - \tweak padding 1
+                                    ^ \punta-to-talon
+                                    \once \override TupletBracket.padding = #4
+                                    \times 4/5
+                                    {
+                                        \big-half-harmonic
+                                        b,16
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        [
+                                        (
+                                        \big-half-harmonic
+                                        bqs,16
+                                        \big-half-harmonic
+                                        aqs,16
+                                        \big-half-harmonic
+                                        bqs,16
+                                        \big-half-harmonic
+                                        cs16
+                                        )
+                                        ]
+                                    }
+                                    \big-half-harmonic
+                                    cs'4
+                                    - \tweak padding 1
+                                    ^ \punta-to-talon
+                                    ~
+                                    \big-half-harmonic
+                                    cs'8
+                                    [
+                                    \times 4/5
+                                    {
+                                        \big-half-harmonic
+                                        cqs'16
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \big-half-harmonic
+                                        cs'16
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        \big-half-harmonic
+                                        dqs'16
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \big-half-harmonic
+                                        d'16
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        \big-half-harmonic
+                                        cqs'16
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                    }
+                                    \big-half-harmonic
+                                    bqf8
+                                    - \tweak padding 1
+                                    ^ \punta-to-talon
+                                    ]
+                                    \big-half-harmonic
+                                    dqs'8
+                                    - \tweak padding 1
+                                    ^ \talon-to-punta
+                                    [
+                                    \times 4/5
+                                    {
+                                        \big-half-harmonic
+                                        ef'8
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        \big-half-harmonic
+                                        bqs8
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \big-half-harmonic
+                                        b8
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        \big-half-harmonic
+                                        dqf'8
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \big-half-harmonic
+                                        b8
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                    }
+                                    \big-half-harmonic
+                                    dqf'8
+                                    - \tweak padding 1
+                                    ^ \talon-to-punta
+                                    ]
+                                    ~
+                                    \big-half-harmonic
+                                    dqf'4
+                                    \times 2/3
+                                    {
+                                        \big-half-harmonic
+                                        ef'8
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        [
+                                        \big-half-harmonic
+                                        dqs'8
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \big-half-harmonic
+                                        cs'8
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        ]
+                                    }
+                                    \big-half-harmonic
+                                    dqf'4.
+                                    - \tweak padding 1
+                                    ^ \talon-to-punta
+                                    ~
+                                    \big-half-harmonic
+                                    dqf'8
+                                    [
+                                    \times 4/5
+                                    {
+                                        \big-half-harmonic
+                                        bqf16
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        \big-half-harmonic
+                                        cs'16
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \big-half-harmonic
+                                        cqs'16
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        \big-half-harmonic
+                                        cs'16
+                                        - \tweak padding 1
+                                        ^ \talon-to-punta
+                                        \big-half-harmonic
+                                        dqs'16
+                                        - \tweak padding 1
+                                        ^ \punta-to-talon
+                                        ]
+                                    }
                                     r4.
                                     - \tweak padding #3
                                     - \abjad-solid-line-with-arrow
