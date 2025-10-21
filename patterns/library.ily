@@ -112,8 +112,10 @@ bow-clef = \markup {
 }
 
 stringing-clef = \markup {
-    \fontsize #-8
-    \raise #2.5 {
+    \fontsize #-5
+    \raise #1
+    \override #'(baseline-skip . 1)
+    {
         \center-column {
             \line { I }
             \line { II }

@@ -612,7 +612,7 @@ trinton.make_music(
     library.tablature_trill(
         trill_pitch="a'",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        bound_details=(-6, -6),
+        bound_details=(-6.5, -6),
         direction=abjad.DOWN,
     ),
     trinton.continuous_glissando(
@@ -1167,8 +1167,11 @@ trinton.make_music(
         detachments=[abjad.Tie],
         selector=trinton.select_leaves_by_index([3, 4, 10, 11, 19, 20, 23, 24]),
     ),
+    library.d_stage_3_noteheads(),
     trinton.pitch_with_selector_command(
-        pitch_list=[["cqf'", "gqf'", "dqf''", "aqf''"]],
+        pitch_list=[
+            ["bf", "f'", "b'", "gs''"],
+        ],
         selector=trinton.select_logical_ties_by_index(
             [2, 5, 8, 10, 13], pitched=True, grace=False
         ),
@@ -1215,8 +1218,22 @@ trinton.make_music(
             [1], first=True, pitched=True, grace=False
         ),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+    # trinton.attachment_command(
+    #     attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+    #     selector=trinton.select_leaves_by_index(
+    #         [
+    #             4,
+    #             11,
+    #             15,
+    #             16,
+    #             17,
+    #             20,
+    #             24,
+    #         ]
+    #     ),
+    # ),
+    trinton.change_notehead_command(
+        notehead="harmonic",
         selector=trinton.select_leaves_by_index(
             [
                 4,
@@ -1229,12 +1246,12 @@ trinton.make_music(
             ]
         ),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.Arpeggio()],
-        selector=trinton.logical_ties(
-            exclude=[2, 5, 8, 10, 13], first=True, pitched=True, grace=False
-        ),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[abjad.Arpeggio()],
+    #     selector=trinton.logical_ties(
+    #         exclude=[2, 5, 8, 10, 13], first=True, pitched=True, grace=False
+    #     ),
+    # ),
     trinton.attachment_command(
         attachments=[
             abjad.bundle(abjad.Articulation("punta-to-talon"), r"- \tweak padding 1"),
@@ -1269,7 +1286,6 @@ trinton.make_music(
         ),
         direction=abjad.DOWN,
     ),
-    library.d_stage_3_noteheads(),
     trinton.force_accidentals_command(
         trinton.logical_ties(first=True, pitched=True, grace=False)
     ),
@@ -1603,16 +1619,24 @@ trinton.make_music(
     ),
     evans.PitchHandler(
         [
-            ["cqf'", "gqf'", "dqf''", "aqf''"],
-            ["cqf'", "gqf'", "dqf''", "aqf''"],
+            ["bf", "f'", "b'", "gs''"],
+            ["bf", "f'", "b'", "gs''"],
             "bf",
             "cqs'",
-            ["cqf'", "gqf'", "dqf''", "aqf''"],
+            ["bf", "f'", "b'", "gs''"],
             "c'''",
             "cqs'''",
             "b''",
             "cqf'''",
         ]
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override TupletBracket.direction = #DOWN", site="before"
+            )
+        ],
+        selector=abjad.select.tuplets,
     ),
     # trinton.annotate_leaves_locally(
     #     # selector=abjad.select.leaves
@@ -1634,8 +1658,14 @@ trinton.make_music(
             abjad.Tweak(r"- \tweak bound-details.right.arrow ##t"),
         ],
     ),
-    trinton.attachment_command(
-        attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+    # trinton.attachment_command(
+    #     attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+    #     selector=trinton.select_leaves_by_index(
+    #         [0, 1, 3, 4, 5, 7], pitched=True, grace=False
+    #     ),
+    # ),
+    trinton.change_notehead_command(
+        notehead="harmonic",
         selector=trinton.select_leaves_by_index(
             [0, 1, 3, 4, 5, 7], pitched=True, grace=False
         ),
@@ -1776,7 +1806,7 @@ trinton.make_music(
     ),
     evans.PitchHandler(
         [
-            ["cqf'", "gqf'", "dqf''", "aqf''"],
+            ["bf", "f'", "b'", "gs''"],
             "bf'''",
             "cqs''''",
             "c''''",
@@ -1803,7 +1833,7 @@ trinton.make_music(
     ),
     trinton.change_notehead_command(
         notehead="harmonic",
-        selector=trinton.select_leaves_by_index([1, 2, 3, 4, 5, 6], pitched=True),
+        selector=trinton.select_leaves_by_index([0, 1, 2, 3, 4, 5, 6], pitched=True),
     ),
     trinton.attachment_command(
         attachments=[
@@ -1815,7 +1845,7 @@ trinton.make_music(
     ),
     trinton.attachment_command(
         attachments=[
-            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+            # abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
             trinton.make_custom_dynamic("ffffff"),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
@@ -1856,7 +1886,7 @@ trinton.make_music(
     trinton.treat_tuplets(),
     trinton.respell_tuplets_command(rewrite_brackets=False),
     trinton.rewrite_meter_command(boundary_depth=-1),
-    evans.PitchHandler([["cqf'", "gqf'", "dqf''", "aqf''"], "cqs''''", "bf'''"]),
+    evans.PitchHandler([["bf", "f'", "b'", "gs''"], "cqs''''", "bf'''"]),
     # trinton.annotate_leaves_locally(
     #     # selector=abjad.select.leaves
     #     selector=trinton.logical_ties(first=True, pitched=True)
@@ -1877,7 +1907,7 @@ trinton.make_music(
     ),
     trinton.change_notehead_command(
         notehead="harmonic",
-        selector=trinton.select_leaves_by_index([1, 2], pitched=True),
+        selector=trinton.select_leaves_by_index([0, 1, 2], pitched=True),
     ),
     trinton.attachment_command(
         attachments=[
@@ -1889,7 +1919,7 @@ trinton.make_music(
     ),
     trinton.attachment_command(
         attachments=[
-            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+            # abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
             trinton.make_custom_dynamic("ffffff"),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
@@ -1944,7 +1974,7 @@ trinton.make_music(
     trinton.treat_tuplets(),
     trinton.respell_tuplets_command(rewrite_brackets=False),
     trinton.rewrite_meter_command(boundary_depth=-1),
-    evans.PitchHandler([["cqf'", "gqf'", "dqf''", "aqf''"], "cqs''''", "bf'''"]),
+    evans.PitchHandler([["bf", "f'", "b'", "gs''"], "cqs''''", "bf'''"]),
     # trinton.annotate_leaves_locally(
     #     # selector=abjad.select.leaves
     #     selector=trinton.logical_ties(first=True, pitched=True)
@@ -1965,7 +1995,7 @@ trinton.make_music(
     ),
     trinton.change_notehead_command(
         notehead="harmonic",
-        selector=trinton.select_leaves_by_index([1, 2], pitched=True),
+        selector=trinton.select_leaves_by_index([0, 1, 2], pitched=True),
     ),
     trinton.attachment_command(
         attachments=[
@@ -1977,7 +2007,7 @@ trinton.make_music(
     ),
     trinton.attachment_command(
         attachments=[
-            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+            # abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
             trinton.make_custom_dynamic("ffffff"),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True, grace=False),
@@ -2018,7 +2048,7 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (1, 4)),
     evans.RhythmHandler(rhythm.rhythm_c(instrument="viola", stage=2)),
     trinton.pitch_with_selector_command(
-        pitch_list=[["fqf", "cqf'", "gqf'", "dqf''"]],
+        pitch_list=[["f", "b", "g'", "d''"]],
         selector=trinton.select_leaves_by_index([2, 5, 9]),
     ),
     trinton.change_lines(
@@ -2052,6 +2082,10 @@ trinton.make_music(
         direction=abjad.UP,
     ),
     trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.pleaves(exclude=[2, 5, 9]),
+    ),
+    trinton.attachment_command(
         attachments=[
             abjad.bundle(
                 abjad.Markup(
@@ -2066,9 +2100,12 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             trinton.make_custom_dynamic("ffffff"),
-            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+            # abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
         ],
         selector=trinton.select_leaves_by_index([2, 5, 9]),
+    ),
+    trinton.change_notehead_command(
+        notehead="harmonic", selector=trinton.select_leaves_by_index([2, 5, 9])
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -2187,7 +2224,7 @@ trinton.make_music(
         ),
     ),
     trinton.pitch_with_selector_command(
-        pitch_list=[["fqf", "cqf'", "gqf'", "dqf''"]],
+        pitch_list=[["f", "b", "g'", "d''"]],
         selector=trinton.select_logical_ties_by_index(
             [0, 7, 14, 20], pitched=True, grace=False
         ),
@@ -2236,16 +2273,20 @@ trinton.make_music(
             [1, 8, 15, 21], first=True, pitched=True, grace=False
         ),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+    # trinton.attachment_command(
+    #     attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+    #     selector=trinton.select_leaves_by_index([0, 10, 20, 21, 22, 30]),
+    # ),
+    trinton.change_notehead_command(
+        notehead="harmonic",
         selector=trinton.select_leaves_by_index([0, 10, 20, 21, 22, 30]),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.Arpeggio()],
-        selector=trinton.logical_ties(
-            exclude=[0, 7, 14, 20], first=True, pitched=True, grace=False
-        ),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[abjad.Arpeggio()],
+    #     selector=trinton.logical_ties(
+    #         exclude=[0, 7, 14, 20], first=True, pitched=True, grace=False
+    #     ),
+    # ),
     trinton.force_accidentals_command(
         selector=trinton.logical_ties(first=True, pitched=True, grace=False)
     ),
@@ -2508,7 +2549,7 @@ trinton.make_music(
     evans.RhythmHandler(rhythm.rhythm_c(instrument="viola", stage=3)),
     trinton.rewrite_meter_command(boundary_depth=-1),
     trinton.pitch_with_selector_command(
-        pitch_list=[["fqf", "cqf'", "gqf'", "dqf''"]],
+        pitch_list=[["f", "b", "g'", "d''"]],
         selector=trinton.select_logical_ties_by_index([0, 5, 10, 17]),
     ),
     trinton.pitch_with_selector_command(
@@ -2553,17 +2594,14 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             trinton.make_custom_dynamic("ffffff"),
-            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+            # abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
         ],
         selector=trinton.select_logical_ties_by_index(
             [0, 5, 10, 17], first=True, pitched=True
         ),
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
-        ],
-        selector=trinton.select_leaves_by_index([-6]),
+    trinton.change_notehead_command(
+        notehead="harmonic", selector=trinton.select_leaves_by_index([0, 6, 13, 21, 22])
     ),
     trinton.attachment_command(
         attachments=[abjad.Articulation("tenuto")],
@@ -2683,7 +2721,26 @@ trinton.make_music(
         )
     ),
     trinton.rewrite_meter_command(boundary_depth=-2),
-    evans.PitchHandler([["fqf,", "cqf", "gqf", "dqf'"]]),
+    evans.PitchHandler(
+        [
+            ["cs,", "a,", "ds", "as"],
+            ["d,", "bf,", "e", "a"],
+            ["c,", "af,", "f", "b"],
+            [
+                "c,",
+                "g,",
+                "b",
+                "fs'",
+            ],
+            [
+                "cs,",
+                "g,",
+                "fs",
+                "as",
+            ],
+            ["d,", "af,", "f", "a"],
+        ]
+    ),
     trinton.linear_attachment_command(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
         selector=trinton.select_leaves_by_index([5, 6, 13, 14]),
@@ -2696,32 +2753,60 @@ trinton.make_music(
     ),
     trinton.attachment_command(
         attachments=[
+            abjad.Articulation("tenuto"),
             abjad.bundle(
-                abjad.Markup(
-                    r"""\markup \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } }"""
-                ),
-                r"""- \tweak font-name "Bodoni72 Book Italic" """,
+                abjad.Markup(r"""\markup { "Strum" }"""), r"- \tweak font-size #1"
             ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0], first=True, pitched=True, grace=False
-        ),
-        direction=abjad.DOWN,
-    ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Articulation("marcato"),
-            abjad.Articulation("half-clb"),
         ],
         selector=trinton.logical_ties(first=True, pitched=True, grace=False),
         direction=abjad.UP,
     ),
-    trinton.attachment_command(
-        attachments=[
-            trinton.make_custom_dynamic("ffffff"),
-            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
-        ],
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [abjad.Arpeggio(direction=abjad.UP), abjad.Arpeggio(direction=abjad.DOWN)]
+        ),
         selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.LaissezVibrer()],
+        selector=trinton.logical_ties(last=True, pitched=True, grace=False),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("mp"),
+            abjad.Dynamic("f"),
+            abjad.Dynamic("mp"),
+            abjad.Dynamic("f"),
+        ],
+        selector=trinton.select_leaves_by_index([0, 2, 3, 4], pitched=True),
+    ),
+    trinton.change_notehead_command(
+        notehead="harmonic", selector=trinton.select_leaves_by_index([0], pitched=True)
+    ),
+    trinton.change_notehead_command(
+        notehead="harmonic",
+        selector=trinton.notehead_selector(
+            chord_indices=list(range(1, 6)),
+            head_indices_lists=[[0, 1, 2], [1, 2, 3], [2, 3], [0, 2, 3], [0, 1, 2]],
+        ),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""Pizz.""",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=11.5,
+        direction=None,
+        right_padding=10,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 2""",
+            # r"""- \tweak bound-details.left.Y #5.5""",
+            # r"""- \tweak bound-details.right.Y #7""",
+        ],
     ),
     voice=score["cello 2 voice"],
 )
@@ -2804,7 +2889,7 @@ for voice_name, padding, end_anchor in zip(
         9,
     ],
     [
-        -2,
+        -10,
         # -1,
         20,
         -2,
@@ -3064,7 +3149,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 32 34 25)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 32 30 30)))",
                 site="absolute_before",
             ),
         ],

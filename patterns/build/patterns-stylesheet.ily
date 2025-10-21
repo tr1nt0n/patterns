@@ -68,11 +68,12 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.layer = 3
         \override Accidental.whiteout-style = #'outline
         \override Accidental.whiteout = 1
-        \override Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
+        % \override Accidental.X-extent = ##f
+        
+        % \override Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
         \override Arpeggio.whiteout-style = #'outline
         \override Arpeggio.whiteout = 1
         \override Arpeggio.layer = 2
-        % \override Accidental.X-extent = ##f
 
         \override Script.layer = 2
         \override Script.whiteout-style = #'outline
@@ -129,6 +130,8 @@ afterGraceFraction = #(cons 15 16)
         \override OttavaBracket.layer = 2
         \override OttavaBracket.whiteout-style = #'outline
         \override OttavaBracket.whiteout = 1
+
+        \override Parentheses.font-size = #1
 
         \override PianoPedalBracket.shorten-pair = #'(0 . -4)
 

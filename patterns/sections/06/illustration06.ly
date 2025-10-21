@@ -53,7 +53,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 32 34 25)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 32 30 30)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/4
             s1 * 5/4
@@ -704,7 +704,7 @@
                                             - \tweak TrillPitchHead.whiteout 1
                                             - \tweak TrillPitchHead.whiteout-style #'outline
                                             - \tweak Y-extent ##f
-                                            - \tweak bound-details.left.Y #-6
+                                            - \tweak bound-details.left.Y #-6.5
                                             - \tweak bound-details.right.Y #-6
                                             \startTrillSpan a'
                                             \override Dots.staff-position = #2
@@ -809,6 +809,7 @@
                                             \tweak style #'harmonic
                                             f'2
                                             :16
+                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -884,7 +885,6 @@
                                             \startTextSpanOne
                                             \tweak style #'cross
                                             a'16
-                                            \stopTextSpanThree
                                             \tweak style #'cross
                                             c''16
                                             \stopTextSpanOne
@@ -1890,14 +1890,17 @@
                                             \clef "treble"
                                             \voiceOne
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 gqf''!
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 bqf''!
                                             >4
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             \ppp
                                               %! +SCORE
                                             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
@@ -1910,6 +1913,10 @@
                                             \startTextSpanOne
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 gqf''
                                                 \tweak style #'harmonic
@@ -1917,6 +1924,10 @@
                                             >16.
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 a''!
                                                 \tweak style #'harmonic
@@ -1924,10 +1935,13 @@
                                             >32
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             \<
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 a''
                                                 \tweak style #'harmonic
@@ -1935,22 +1949,33 @@
                                             >8
                                             \stopTextSpanOne
                                             ]
-                                            \big-half-harmonic
-                                            <cqf'! gqf'! dqf''! aqf''!>4.
+                                            <
+                                                \tweak style #'harmonic-mixed
+                                                bf!
+                                                \tweak style #'harmonic-mixed
+                                                f'!
+                                                \tweak style #'harmonic-mixed
+                                                b'!
+                                                \tweak style #'harmonic-mixed
+                                                gs''!
+                                            >4.
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             - \tweak font-name "Bodoni72 Book Italic" 
                                             _ \markup { \hspace #-6.75 { \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } } } }
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 a''!
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 bf''!
                                             >4
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             \ppp
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
@@ -1961,6 +1986,10 @@
                                             \startTextSpanOne
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 a''
                                                 \tweak style #'harmonic
@@ -1970,6 +1999,10 @@
                                             \times 2/3
                                             {
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     a''
                                                     \tweak style #'harmonic
@@ -1977,6 +2010,10 @@
                                                 >16
                                                 [
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     bf'!
                                                     \tweak style #'harmonic
@@ -1984,11 +2021,14 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 ]
                                                 ~
                                             }
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 bf'
                                                 \tweak style #'harmonic
@@ -1996,20 +2036,36 @@
                                             >16
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 bf'
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 ef''
                                             >4
                                             \stopTextSpanOne
-                                            \big-half-harmonic
-                                            <cqf'! gqf'! dqf''! aqf''!>4..
+                                            <
+                                                \tweak style #'harmonic-mixed
+                                                bf!
+                                                \tweak style #'harmonic-mixed
+                                                f'!
+                                                \tweak style #'harmonic-mixed
+                                                b'!
+                                                \tweak style #'harmonic-mixed
+                                                gs''!
+                                            >4..
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             \times 2/3
                                             {
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     bf'!
                                                     \tweak style #'harmonic
@@ -2017,7 +2073,6 @@
                                                 >16
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 \ppp
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
@@ -2028,6 +2083,10 @@
                                                 - \tweak bound-details.right.padding -1.5
                                                 \startTextSpanOne
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     bqf'!
                                                     \tweak style #'harmonic
@@ -2035,41 +2094,71 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 ]
                                                 ~
                                             }
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 bqf'
                                                 \tweak style #'harmonic
                                                 ef''
                                             >4..
                                             \stopTextSpanOne
-                                            \big-half-harmonic
-                                            <cqf'! gqf'! dqf''! aqf''!>8
+                                            <
+                                                \tweak style #'harmonic
+                                                bf!
+                                                \tweak style #'harmonic
+                                                f'!
+                                                \tweak style #'harmonic
+                                                b'!
+                                                \tweak style #'harmonic
+                                                gs''!
+                                            >8
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             [
                                             ~
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>32
+                                            <
+                                                \tweak style #'harmonic
+                                                bf
+                                                \tweak style #'harmonic
+                                                f'
+                                                \tweak style #'harmonic
+                                                b'
+                                                \tweak style #'harmonic
+                                                gs''
+                                            >32
                                             ]
                                             ~
                                             \times 2/3
                                             {
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>8
                                                 <
-                                                    \tweak style #'harmonic-mixed
+                                                    \tweak style #'harmonic
+                                                    bf
+                                                    \tweak style #'harmonic
+                                                    f'
+                                                    \tweak style #'harmonic
+                                                    b'
+                                                    \tweak style #'harmonic
+                                                    gs''
+                                                >8
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
                                                     a''!
-                                                    \tweak style #'harmonic-mixed
+                                                    \tweak style #'harmonic
                                                     bf''!
                                                 >4
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 \ppp
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -2081,14 +2170,26 @@
                                                 ~
                                             }
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 a''
                                                 \tweak style #'harmonic
                                                 bf''
                                             >16.
                                             \stopTextSpanOne
-                                            \big-half-harmonic
-                                            <cqf'! gqf'! dqf''! aqf''!>4.
+                                            <
+                                                \tweak style #'harmonic-mixed
+                                                bf!
+                                                \tweak style #'harmonic-mixed
+                                                f'!
+                                                \tweak style #'harmonic-mixed
+                                                b'!
+                                                \tweak style #'harmonic-mixed
+                                                gs''!
+                                            >4.
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
@@ -2099,6 +2200,10 @@
                                             - \tweak bound-details.right.padding -15.5
                                             \startTextSpanThree
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 a''!
                                                 \tweak style #'harmonic
@@ -2106,7 +2211,6 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             \ppp
                                             [
                                             - \tweak font-name "Bodoni72 Book" 
@@ -2117,6 +2221,10 @@
                                             - \tweak bound-details.right.padding -1.5
                                             \startTextSpanOne
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 fqs''!
                                                 \tweak style #'harmonic
@@ -2124,32 +2232,46 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ]
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 fqs''
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 bf''
                                             >4
                                             \stopTextSpanOne
                                             \times 2/3
                                             {
-                                                \big-half-harmonic
-                                                <cqf'! gqf'! dqf''! aqf''!>8
+                                                <
+                                                    \tweak style #'harmonic
+                                                    bf!
+                                                    \tweak style #'harmonic
+                                                    f'!
+                                                    \tweak style #'harmonic
+                                                    b'!
+                                                    \tweak style #'harmonic
+                                                    gs''!
+                                                >8
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 ^ \half-clb
                                                 ^ \marcato
                                                 <
-                                                    \tweak style #'harmonic-mixed
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
                                                     bqs'!
-                                                    \tweak style #'harmonic-mixed
+                                                    \tweak style #'harmonic
                                                     cqs''!
                                                 >4
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 \ppp
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -2161,13 +2283,21 @@
                                                 ~
                                             }
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 bqs'
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 cqs''
                                             >4
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 bqs'
                                                 \tweak style #'harmonic
@@ -2175,6 +2305,10 @@
                                             >16
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 b'!
                                                 \tweak style #'harmonic
@@ -2182,7 +2316,6 @@
                                             >8.
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             \stopTextSpanOne
                                             \stopTextSpanThree
                                             ]
@@ -2545,19 +2678,36 @@
                                         }
                                     >>
                                     \oneVoice
-                                    \big-half-harmonic
-                                    <cqf' gqf' dqf'' aqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        bf
+                                        \tweak style #'harmonic-mixed
+                                        f'
+                                        \tweak style #'harmonic-mixed
+                                        b'
+                                        \tweak style #'harmonic-mixed
+                                        gs''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     r1
-                                    \big-half-harmonic
-                                    <cqf' gqf' dqf'' aqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        bf
+                                        \tweak style #'harmonic-mixed
+                                        f'
+                                        \tweak style #'harmonic-mixed
+                                        b'
+                                        \tweak style #'harmonic-mixed
+                                        gs''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     r2
                                     r4
+                                    \once \override TupletBracket.direction = #DOWN
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
@@ -2595,8 +2745,8 @@
                                         - \tweak bound-details.right.text \normale-bow-rotation
                                         \startTextSpanOne
                                         \>
-                                        \big-half-harmonic
                                         \revert Dots.staff-position
+                                        \tweak style #'harmonic
                                         cqs'16
                                         _ #(make-dynamic-script
                                             (markup
@@ -2614,22 +2764,21 @@
                                         \stopTextSpanOne
                                         \stopTextSpanTwo
                                         ]
-                                        \big-half-harmonic
                                         <
                                             \tweak style #'harmonic-mixed
-                                            cqf'
+                                            bf
                                             \tweak style #'harmonic-mixed
-                                            gqf'
+                                            f'
                                             \tweak style #'harmonic-mixed
-                                            dqf''
+                                            b'
                                             \tweak style #'harmonic-mixed
-                                            aqf''
+                                            gs''
                                         >4
                                             _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                         ^ \half-clb
                                         ^ \marcato
                                         \override Dots.staff-position = #2
-                                        \big-half-harmonic
+                                        \tweak style #'harmonic-mixed
                                         c'''4
                                         \mp
                                         (
@@ -2667,8 +2816,8 @@
                                         - \tweak bound-details.right.text \bow-tip-half-down
                                         - \tweak bound-details.right.padding 1.5
                                         \startTextSpanOne
-                                        \big-half-harmonic
                                         \afterGrace
+                                        \tweak style #'harmonic-mixed
                                         b''4
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
@@ -2685,8 +2834,16 @@
                                             \stopTextSpanTwo
                                         }
                                     }
-                                    \big-half-harmonic
-                                    <cqf' gqf' dqf'' aqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        bf
+                                        \tweak style #'harmonic-mixed
+                                        f'
+                                        \tweak style #'harmonic-mixed
+                                        b'
+                                        \tweak style #'harmonic-mixed
+                                        gs''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -2737,8 +2894,16 @@
                                             \stopTextSpanOne
                                         }
                                     }
-                                    \big-half-harmonic
-                                    <cqf' gqf' dqf'' aqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        bf
+                                        \tweak style #'harmonic-mixed
+                                        f'
+                                        \tweak style #'harmonic-mixed
+                                        b'
+                                        \tweak style #'harmonic-mixed
+                                        gs''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -2783,8 +2948,16 @@
                                         \stopTextSpanOne
                                         \stopTextSpanTwo
                                     }
-                                    \big-half-harmonic
-                                    <cqf' gqf' dqf'' aqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        bf
+                                        \tweak style #'harmonic-mixed
+                                        f'
+                                        \tweak style #'harmonic-mixed
+                                        b'
+                                        \tweak style #'harmonic-mixed
+                                        gs''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -2876,6 +3049,7 @@
                                     \once \override Staff.Clef.stencil = ##f
                                     \clef "alto"
                                     c'4
+                                    - \tenuto
                                     \ppp
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
@@ -2888,13 +3062,22 @@
                                     \startTextSpanOne
                                     \once \override Accidental.stencil = ##f
                                     c'4
+                                    - \tenuto
                                     \stopTextSpanOne
                                     \staff-line-count 5
-                                    \big-half-harmonic
                                       %! +SCORE
                                     \set Staff.forceClef = ##t
                                     \clef "alto"
-                                    <fqf cqf' gqf' dqf''>4.
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        f
+                                        \tweak style #'harmonic-mixed
+                                        b
+                                        \tweak style #'harmonic-mixed
+                                        g'
+                                        \tweak style #'harmonic-mixed
+                                        d''
+                                    >4.
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -2906,6 +3089,7 @@
                                     \once \override Accidental.stencil = ##f
                                     \clef "alto"
                                     c'4.
+                                    - \tenuto
                                     _ #(make-dynamic-script
                                         (markup
                                             #:whiteout
@@ -2928,6 +3112,7 @@
                                     \<
                                     \once \override Accidental.stencil = ##f
                                     c'4.
+                                    - \tenuto
                                     _ #(make-dynamic-script
                                         (markup
                                             #:whiteout
@@ -2942,11 +3127,19 @@
                                         )
                                     \stopTextSpanOne
                                     \staff-line-count 5
-                                    \big-half-harmonic
                                       %! +SCORE
                                     \set Staff.forceClef = ##t
                                     \clef "alto"
-                                    <fqf cqf' gqf' dqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        f
+                                        \tweak style #'harmonic-mixed
+                                        b
+                                        \tweak style #'harmonic-mixed
+                                        g'
+                                        \tweak style #'harmonic-mixed
+                                        d''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -2956,6 +3149,7 @@
                                     \once \override Accidental.stencil = ##f
                                     \clef "alto"
                                     c'4
+                                    - \tenuto
                                     \ppp
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 2
@@ -2966,15 +3160,25 @@
                                     \startTextSpanOne
                                     \once \override Accidental.stencil = ##f
                                     c'4
+                                    - \tenuto
                                     \once \override Accidental.stencil = ##f
                                     c'4
+                                    - \tenuto
                                     \stopTextSpanOne
                                     \staff-line-count 5
-                                    \big-half-harmonic
                                       %! +SCORE
                                     \set Staff.forceClef = ##t
                                     \clef "alto"
-                                    <fqf cqf' gqf' dqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        f
+                                        \tweak style #'harmonic-mixed
+                                        b
+                                        \tweak style #'harmonic-mixed
+                                        g'
+                                        \tweak style #'harmonic-mixed
+                                        d''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -2985,6 +3189,7 @@
                                     \clef "alto"
                                     \afterGrace
                                     c'4
+                                    - \tenuto
                                     _ #(make-dynamic-script
                                         (markup
                                             #:whiteout
@@ -3016,13 +3221,21 @@
                                         \context Voice = "viola 2 voice temp"
                                         {
                                             \staff-line-count 5
-                                            \big-half-harmonic
                                             \override DynamicLineSpanner.staff-padding = #13
                                               %! +SCORE
                                             \set Staff.forceClef = ##t
                                             \clef "alto"
                                             \voiceOne
-                                            <fqf! cqf'! gqf'! dqf''!>16
+                                            <
+                                                \tweak style #'harmonic
+                                                f!
+                                                \tweak style #'harmonic
+                                                b!
+                                                \tweak style #'harmonic
+                                                g'!
+                                                \tweak style #'harmonic
+                                                d''!
+                                            >16
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
@@ -3035,6 +3248,10 @@
                                               %! +SCORE
                                             \set Staff.forceClef = ##f
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 dqf''!
                                                 \tweak style #'harmonic
@@ -3042,7 +3259,6 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             \ppp
                                             ]
                                             - \tweak font-name "Bodoni72 Book" 
@@ -3054,13 +3270,21 @@
                                             \startTextSpanOne
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 dqf''
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 dqs''
                                             >4
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 dqf''
                                                 \tweak style #'harmonic
@@ -3070,6 +3294,10 @@
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 1
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 cs''!
                                                 \tweak style #'harmonic
@@ -3077,11 +3305,18 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 2
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 bf'!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 b'!
                                                 \tweak style #'harmonic
@@ -3089,10 +3324,13 @@
                                             >16..
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             \set stemLeftBeamCount = 4
                                             \set stemRightBeamCount = 1
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 dqf''!
                                                 \tweak style #'harmonic
@@ -3100,17 +3338,24 @@
                                             >64
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ~
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 3
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 dqf''
                                                 \tweak style #'harmonic
                                                 ef''
                                             >32
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 bqf'!
                                                 \tweak style #'harmonic
@@ -3118,9 +3363,16 @@
                                             >32.
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 bqf'!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 cqs''!
                                                 \tweak style #'harmonic
@@ -3128,16 +3380,27 @@
                                             >32.
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             \stopTextSpanOne
                                             ]
-                                            \big-half-harmonic
-                                            <fqf! cqf'! gqf'! dqf''!>32.
+                                            <
+                                                \tweak style #'harmonic
+                                                f!
+                                                \tweak style #'harmonic
+                                                b!
+                                                \tweak style #'harmonic
+                                                g'!
+                                                \tweak style #'harmonic
+                                                d''!
+                                            >32.
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 cqs''!
                                                 \tweak style #'harmonic
@@ -3145,7 +3408,6 @@
                                             >32.
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             \ppp
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
@@ -3157,6 +3419,10 @@
                                             \set stemLeftBeamCount = 3
                                             \set stemRightBeamCount = 1
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 c''!
                                                 \tweak style #'harmonic
@@ -3164,17 +3430,24 @@
                                             >32
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ~
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 4
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 c''
                                                 \tweak style #'harmonic
                                                 ef''
                                             >64
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 fs'!
                                                 \tweak style #'harmonic
@@ -3182,9 +3455,12 @@
                                             >16..
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             ]
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 gqf'!
                                                 \tweak style #'harmonic
@@ -3192,9 +3468,12 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 eqs'!
                                                 \tweak style #'harmonic
@@ -3202,15 +3481,22 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 eqs'
                                                 \tweak style #'harmonic
                                                 aqf'
                                             >16
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 gqf'!
                                                 \tweak style #'harmonic
@@ -3218,32 +3504,63 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ]
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 gqf'
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 aqf'
                                             >4
                                             \stopTextSpanOne
-                                            \big-half-harmonic
-                                            <fqf! cqf'! gqf'! dqf''!>2
+                                            <
+                                                \tweak style #'harmonic
+                                                f!
+                                                \tweak style #'harmonic
+                                                b!
+                                                \tweak style #'harmonic
+                                                g'!
+                                                \tweak style #'harmonic
+                                                d''!
+                                            >2
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             \stopTextSpanThree
                                             ~
-                                            \big-half-harmonic
-                                            <fqf cqf' gqf' dqf''>8
+                                            <
+                                                \tweak style #'harmonic
+                                                f
+                                                \tweak style #'harmonic
+                                                b
+                                                \tweak style #'harmonic
+                                                g'
+                                                \tweak style #'harmonic
+                                                d''
+                                            >8
                                             ~
                                             \times 2/3
                                             {
-                                                \big-half-harmonic
-                                                <fqf cqf' gqf' dqf''>8
+                                                <
+                                                    \tweak style #'harmonic
+                                                    f
+                                                    \tweak style #'harmonic
+                                                    b
+                                                    \tweak style #'harmonic
+                                                    g'
+                                                    \tweak style #'harmonic
+                                                    d''
+                                                >8
                                                 [
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     fs'!
                                                     \tweak style #'harmonic
@@ -3251,7 +3568,6 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 \ppp
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -3261,7 +3577,15 @@
                                                 - \tweak bound-details.right.padding -1.5
                                                 \startTextSpanOne
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     e'!
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     f'!
                                                     \tweak style #'harmonic
@@ -3269,12 +3593,19 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 ]
                                                 ~
                                             }
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 e'
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 f'
                                                 \tweak style #'harmonic
@@ -3282,7 +3613,15 @@
                                             >8
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 e'
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 f'
                                                 \tweak style #'harmonic
@@ -3290,6 +3629,10 @@
                                             >16
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 g'!
                                                 \tweak style #'harmonic
@@ -3297,9 +3640,16 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 cs''!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 dqs''!
                                                 \tweak style #'harmonic
@@ -3307,8 +3657,11 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 cqs''!
                                                 \tweak style #'harmonic
@@ -3316,16 +3669,27 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             \stopTextSpanOne
                                             ]
-                                            \big-half-harmonic
-                                            <fqf! cqf'! gqf'! dqf''!>16
+                                            <
+                                                \tweak style #'harmonic
+                                                f!
+                                                \tweak style #'harmonic
+                                                b!
+                                                \tweak style #'harmonic
+                                                g'!
+                                                \tweak style #'harmonic
+                                                d''!
+                                            >16
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 cs''!
                                                 \tweak style #'harmonic
@@ -3333,7 +3697,6 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             \ppp
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
@@ -3343,6 +3706,10 @@
                                             - \tweak bound-details.right.padding -1.5
                                             \startTextSpanOne
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 f'!
                                                 \tweak style #'harmonic
@@ -3350,8 +3717,11 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 e'!
                                                 \tweak style #'harmonic
@@ -3359,35 +3729,49 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             ]
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 e'
                                                 \tweak style #'harmonic
                                                 af'
                                             >8
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 g'!
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 af'!
                                             >4.
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 g'
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 af'
                                             >4
                                             ~
                                             \times 2/3
                                             {
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     g'
                                                     \tweak style #'harmonic
@@ -3395,6 +3779,10 @@
                                                 >8
                                                 [
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     e'!
                                                     \tweak style #'harmonic
@@ -3402,8 +3790,11 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     eqf'!
                                                     \tweak style #'harmonic
@@ -3411,7 +3802,6 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 \stopTextSpanOne
                                                 ]
                                                 \revert DynamicLineSpanner.staff-padding
@@ -3687,8 +4077,16 @@
                                         }
                                     >>
                                     \oneVoice
-                                    \big-half-harmonic
-                                    <fqf cqf' gqf' dqf''>2
+                                    <
+                                        \tweak style #'harmonic
+                                        f
+                                        \tweak style #'harmonic
+                                        b
+                                        \tweak style #'harmonic
+                                        g'
+                                        \tweak style #'harmonic
+                                        d''
+                                    >2
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -3735,11 +4133,19 @@
                                     \stopTextSpanOne
                                     ]
                                     \staff-line-count 5
-                                    \big-half-harmonic
                                       %! +SCORE
                                     \set Staff.forceClef = ##t
                                     \clef "alto"
-                                    <fqf cqf' gqf' dqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        f
+                                        \tweak style #'harmonic-mixed
+                                        b
+                                        \tweak style #'harmonic-mixed
+                                        g'
+                                        \tweak style #'harmonic-mixed
+                                        d''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -3806,11 +4212,19 @@
                                     c'4
                                     \stopTextSpanOne
                                     \staff-line-count 5
-                                    \big-half-harmonic
                                       %! +SCORE
                                     \set Staff.forceClef = ##t
                                     \clef "alto"
-                                    <fqf cqf' gqf' dqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        f
+                                        \tweak style #'harmonic-mixed
+                                        b
+                                        \tweak style #'harmonic-mixed
+                                        g'
+                                        \tweak style #'harmonic-mixed
+                                        d''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
@@ -3868,20 +4282,36 @@
                                     \stopTextSpanOne
                                     ]
                                     \staff-line-count 5
-                                    \big-half-harmonic
                                       %! +SCORE
                                     \set Staff.forceClef = ##t
                                     \clef "alto"
-                                    <fqf cqf' gqf' dqf''>4
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        f
+                                        \tweak style #'harmonic-mixed
+                                        b
+                                        \tweak style #'harmonic-mixed
+                                        g'
+                                        \tweak style #'harmonic-mixed
+                                        d''
+                                    >4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     ~
                                       %! +SCORE
                                     \set Staff.forceClef = ##f
-                                    \big-half-harmonic
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    <fqf cqf' gqf' dqf''>8
+                                    <
+                                        \tweak style #'harmonic
+                                        f
+                                        \tweak style #'harmonic
+                                        b
+                                        \tweak style #'harmonic
+                                        g'
+                                        \tweak style #'harmonic
+                                        d''
+                                    >8
                                     [
                                     \staff-line-count 1
                                     \once \override Accidental.stencil = ##f
@@ -4002,18 +4432,35 @@
                                     \startTextSpanThree
                                     r4
                                     \staff-line-count 5
-                                    \big-half-harmonic
+                                    \arpeggioArrowUp
                                       %! +SCORE
                                     \revert Staff.BarLine.bar-extent
                                       %! +SCORE
                                     \set Staff.forceClef = ##t
                                     \clef "bass"
-                                    <fqf, cqf gqf dqf'>4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                    ^ \half-clb
-                                    ^ \marcato
-                                    - \tweak font-name "Bodoni72 Book Italic" 
-                                    _ \markup \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } }
+                                    <
+                                        \tweak style #'harmonic-mixed
+                                        cs,
+                                        \tweak style #'harmonic-mixed
+                                        a,
+                                        \tweak style #'harmonic-mixed
+                                        ds
+                                        \tweak style #'harmonic-mixed
+                                        as
+                                    >4
+                                    \arpeggio
+                                    \laissezVibrer
+                                    \mp
+                                    ^ \tenuto
+                                    - \tweak font-size #1
+                                    ^ \markup { "Strum" }
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 2
+                                    - \tweak padding #11.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Pizz." } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -10
+                                    \startTextSpanOne
                                       %! +SCORE
                                     \set Staff.forceClef = ##f
                                     r4
@@ -4022,44 +4469,97 @@
                                     r2
                                     r8.
                                     [
-                                    \big-half-harmonic
-                                    <fqf, cqf gqf dqf'>16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                    ^ \half-clb
-                                    ^ \marcato
+                                    \arpeggioArrowDown
+                                    <
+                                        \tweak style #'harmonic
+                                        d,
+                                        \tweak style #'harmonic
+                                        bf,
+                                        \tweak style #'harmonic
+                                        e
+                                        a
+                                    >16
+                                    \arpeggio
+                                    \laissezVibrer
+                                    ^ \tenuto
+                                    - \tweak font-size #1
+                                    ^ \markup { "Strum" }
                                     ]
                                     r2
                                     r2
-                                    \big-half-harmonic
-                                    <fqf, cqf gqf dqf'>4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                    ^ \half-clb
-                                    ^ \marcato
+                                    \arpeggioArrowUp
+                                    <
+                                        c,
+                                        \tweak style #'harmonic
+                                        af,
+                                        \tweak style #'harmonic
+                                        f
+                                        \tweak style #'harmonic
+                                        b
+                                    >4
+                                    \arpeggio
+                                    \f
+                                    \laissezVibrer
+                                    ^ \tenuto
+                                    - \tweak font-size #1
+                                    ^ \markup { "Strum" }
                                     r2
                                     r2
                                     r4
                                     r16
                                     [
-                                    \big-half-harmonic
-                                    <fqf, cqf gqf dqf'>8.
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                    ^ \half-clb
-                                    ^ \marcato
+                                    \arpeggioArrowDown
+                                    <
+                                        c,
+                                        g,
+                                        \tweak style #'harmonic
+                                        b
+                                        \tweak style #'harmonic
+                                        fs'
+                                    >8.
+                                    \arpeggio
+                                    \laissezVibrer
+                                    \mp
+                                    ^ \tenuto
+                                    - \tweak font-size #1
+                                    ^ \markup { "Strum" }
                                     ]
                                     r4
                                     r2
-                                    \big-half-harmonic
-                                    <fqf, cqf gqf dqf'>4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                    ^ \half-clb
-                                    ^ \marcato
+                                    \arpeggioArrowUp
+                                    <
+                                        \tweak style #'harmonic
+                                        cs,
+                                        g,
+                                        \tweak style #'harmonic
+                                        fs
+                                        \tweak style #'harmonic
+                                        as
+                                    >4
+                                    \arpeggio
+                                    \f
+                                    \laissezVibrer
+                                    ^ \tenuto
+                                    - \tweak font-size #1
+                                    ^ \markup { "Strum" }
                                     r2
                                     r2
-                                    \big-half-harmonic
-                                    <fqf, cqf gqf dqf'>4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                    ^ \half-clb
-                                    ^ \marcato
+                                    \arpeggioArrowDown
+                                    <
+                                        \tweak style #'harmonic
+                                        d,
+                                        \tweak style #'harmonic
+                                        af,
+                                        \tweak style #'harmonic
+                                        f
+                                        a
+                                    >4
+                                    \arpeggio
+                                    \laissezVibrer
+                                    ^ \tenuto
+                                    - \tweak font-size #1
+                                    ^ \markup { "Strum" }
+                                    \stopTextSpanOne
                                     r2
                                     r2
                                       %! +SCORE

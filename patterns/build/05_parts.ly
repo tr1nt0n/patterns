@@ -756,12 +756,15 @@
                                      )
                                      #0.5
                                     <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
                                         \tweak style #'harmonic
                                         bf'''
                                         \tweak style #'harmonic
                                         dqs''''
                                     >8
-                                    \arpeggio
                                     \pppp
                                     [
                                     (
@@ -779,6 +782,10 @@
                                         \override Dots.staff-position = #2
                                         \revert Dots.staff-position
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             bf'''
                                             \tweak style #'harmonic
@@ -803,12 +810,15 @@
                                     {
                                         \override Dots.staff-position = #2
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             bf'''
                                             \tweak style #'harmonic
                                             dqs''''
                                         >8
-                                        \arpeggio
                                         \pppp
                                         [
                                         (
@@ -822,57 +832,75 @@
                                         - \tweak bound-details.right.padding -1.5
                                         \startTextSpanOne
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             aqf'''
                                             \tweak style #'harmonic
                                             e''''
                                         >8
-                                        \arpeggio
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             bf'''
                                             \tweak style #'harmonic
                                             dqs''''
                                         >8
-                                        \arpeggio
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             aqf'''
                                             \tweak style #'harmonic
                                             e''''
                                         >8
-                                        \arpeggio
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             bf'''
                                             \tweak style #'harmonic
                                             dqs''''
                                         >8
-                                        \arpeggio
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             aqf'''
                                             \tweak style #'harmonic
                                             e''''
                                         >8
-                                        \arpeggio
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             bf'''
                                             \tweak style #'harmonic
                                             dqs''''
                                         >8
-                                        \arpeggio
                                         ]
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -880,6 +908,10 @@
                                     \override Dots.staff-position = #2
                                     \revert Dots.staff-position
                                     <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
                                         \tweak style #'harmonic
                                         bf'''
                                         \tweak style #'harmonic
@@ -906,12 +938,15 @@
                                         \set stemLeftBeamCount = 1
                                         \set stemRightBeamCount = 2
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             aqf'''
                                             \tweak style #'harmonic
                                             e''''
                                         >16
-                                        \arpeggio
                                         \pppp
                                         ^ \msp
                                         - \tweak bound-details.right.arrow ##t
@@ -929,12 +964,15 @@
                                     {
                                         \override Dots.staff-position = #2
                                         <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
                                             \tweak style #'harmonic
                                             bf'''
                                             \tweak style #'harmonic
                                             dqs''''
                                         >16
-                                        \arpeggio
                                         \pppp
                                         ^ \msp
                                         - \tweak bound-details.right.arrow ##t
@@ -951,12 +989,15 @@
                                     }
                                     \override Dots.staff-position = #2
                                     <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
                                         \tweak style #'harmonic
                                         cqs''''
                                         \tweak style #'harmonic
                                         e''''
                                     >8
-                                    \arpeggio
                                     \pppp
                                     ^ \msp
                                     [
@@ -985,12 +1026,15 @@
                                     [
                                     \override Dots.staff-position = #2
                                     <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
                                         \tweak style #'harmonic
                                         bf'''
                                         \tweak style #'harmonic
                                         cqs''''
                                     >16
-                                    \arpeggio
                                     \pppp
                                     ^ \msp
                                     - \tweak bound-details.right.arrow ##t
@@ -1006,12 +1050,15 @@
                                     r16
                                     \override Dots.staff-position = #2
                                     <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
                                         \tweak style #'harmonic
                                         bf'''
                                         \tweak style #'harmonic
                                         cqs''''
                                     >16
-                                    \arpeggio
                                     \pppp
                                     ^ \msp
                                     ]
@@ -1033,7 +1080,14 @@
                                     \override NoteColumn.glissando-skip = ##t
                                       %! abjad.glissando(1)
                                     \override NoteHead.no-ledgers = ##t
-                                    <bf''' cqs''''>8
+                                    <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
+                                        bf'''
+                                        cqs''''
+                                    >8
                                     [
                                     \big-half-harmonic
                                     \revert Dots.staff-position
@@ -1060,12 +1114,15 @@
                                      )
                                      #0.5
                                     <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
                                         \tweak style #'harmonic
                                         a'''
                                         \tweak style #'harmonic
                                         cs''''
                                     >16
-                                    \arpeggio
                                     \pppp
                                     (
                                     - \abjad-zero-padding-glissando
@@ -1080,6 +1137,10 @@
                                     \override Dots.staff-position = #2
                                     \revert Dots.staff-position
                                     <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
                                         \tweak style #'harmonic
                                         a'''
                                         \tweak style #'harmonic

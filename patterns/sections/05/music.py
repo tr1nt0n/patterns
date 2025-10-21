@@ -489,12 +489,13 @@ trinton.make_music(
         attachments=itertools.cycle([abjad.StartSlur(), abjad.StopSlur()]),
         selector=trinton.select_leaves_by_index([0, 1, 3, 10, 25, 26], pitched=True),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.Arpeggio()],
-        selector=trinton.select_leaves_by_index(
-            [0, 3, 4, 5, 6, 7, 8, 9, 12, 14, 16, 20, 22, 25], pitched=True
-        ),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[abjad.Arpeggio()],
+    #     selector=trinton.select_leaves_by_index(
+    #         [0, 3, 4, 5, 6, 7, 8, 9, 12, 14, 16, 20, 22, 25], pitched=True
+    #     ),
+    # ),
+    library.double_muting(),
     trinton.continuous_glissando(
         selector=trinton.select_leaves_by_index(
             [

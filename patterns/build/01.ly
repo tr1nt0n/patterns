@@ -70,7 +70,15 @@
                                         {
                                             \voiceOne
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 c'!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 cs'!
                                                 \tweak style #'harmonic
@@ -78,7 +86,6 @@
                                             >32
                                             - \tweak padding #1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                               %! +SCORE
                                             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-10 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 16 } #1.5 } \fontsize #4 { "= 120" } } }
                                             [
@@ -95,13 +102,25 @@
                                             \times 11/12
                                             {
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     c'
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     cs'
                                                     \tweak style #'harmonic
                                                     dqs'
                                                 >8
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     aqs!
                                                     \tweak style #'harmonic
@@ -109,8 +128,11 @@
                                                 >8
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     c'!
                                                     \tweak style #'harmonic
@@ -118,11 +140,14 @@
                                                 >8
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 ]
                                                 ~
                                             }
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 c'
                                                 \tweak style #'harmonic
@@ -131,13 +156,25 @@
                                             [
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 c'
                                                 \tweak style #'harmonic
                                                 cs'
                                             >32
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 a!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 bqs!
                                                 \tweak style #'harmonic
@@ -145,10 +182,17 @@
                                             >32
                                             - \tweak padding #1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 a
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 bqs
                                                 \tweak style #'harmonic
@@ -160,7 +204,15 @@
                                             \times 6/5
                                             {
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     a
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     bqs
                                                     \tweak style #'harmonic
@@ -173,7 +225,15 @@
                                                 - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 160" } } }
                                                 \startTextSpanThree
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     eqf'!
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     gqf'!
                                                     \tweak style #'harmonic
@@ -181,8 +241,11 @@
                                                 >32
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     ef'!
                                                     \tweak style #'harmonic
@@ -190,8 +253,11 @@
                                                 >32
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     eqf'!
                                                     \tweak style #'harmonic
@@ -199,10 +265,13 @@
                                                 >32
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 \set stemLeftBeamCount = 3
                                                 \set stemRightBeamCount = 1
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     fqs'!
                                                     \tweak style #'harmonic
@@ -210,12 +279,15 @@
                                                 >32
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 ~
                                             }
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 0
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 fqs'
                                                 \tweak style #'harmonic
@@ -224,13 +296,21 @@
                                             ]
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 fqs'
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 gqs'
                                             >4
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 fqs'
                                                 \tweak style #'harmonic
@@ -238,6 +318,10 @@
                                             >16
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 f'!
                                                 \tweak style #'harmonic
@@ -245,17 +329,24 @@
                                             >8.
                                             - \tweak padding #1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             ]
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 f'
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 af'
                                             >4
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 f'
                                                 \tweak style #'harmonic
@@ -263,7 +354,15 @@
                                             >8.
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 c''!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 dqf''!
                                                 \tweak style #'harmonic
@@ -271,11 +370,18 @@
                                             >16
                                             - \tweak padding #1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ]
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 c''
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 dqf''
                                                 \tweak style #'harmonic
@@ -283,6 +389,10 @@
                                             >8
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 d''!
                                                 \tweak style #'harmonic
@@ -290,8 +400,11 @@
                                             >16
                                             - \tweak padding #1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 bqf'!
                                                 \tweak style #'harmonic
@@ -299,7 +412,6 @@
                                             >16
                                             - \tweak padding #1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ]
                                             ~
                                             \tweak text #tuplet-number::calc-fraction-text
@@ -307,6 +419,10 @@
                                             {
                                                 \once \override DynamicLineSpanner.staff-padding = #11
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     bqf'
                                                     \tweak style #'harmonic
@@ -317,7 +433,15 @@
                                                 - \tweak circled-tip ##t
                                                 _ \>
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     cqs''!
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     dqf''!
                                                     \tweak style #'harmonic
@@ -325,9 +449,16 @@
                                                 >8
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     gqf''!
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
                                                     af''!
                                                     \tweak style #'harmonic
@@ -335,11 +466,18 @@
                                                 >8
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 ~
                                             }
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 gqf''
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 af''
                                                 \tweak style #'harmonic
@@ -348,15 +486,31 @@
                                             ]
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 gqf''
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 af''
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 a''
                                             >4
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 gqf''
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 af''
                                                 \tweak style #'harmonic
@@ -364,6 +518,10 @@
                                             >32
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 gqf''!
                                                 \tweak style #'harmonic
@@ -371,8 +529,11 @@
                                             >16
                                             - \tweak padding #1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 fs''!
                                                 \tweak style #'harmonic
@@ -380,17 +541,28 @@
                                             >32
                                             - \tweak padding #1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ]
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 fs''
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 aqf''
                                             >4
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 gqf''!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 a''!
                                                 \tweak style #'harmonic
@@ -398,11 +570,14 @@
                                             >16.
                                             - \tweak padding #1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             [
                                             \set stemLeftBeamCount = 3
                                             \set stemRightBeamCount = 1
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 gqs''!
                                                 \tweak style #'harmonic
@@ -410,11 +585,14 @@
                                             >32
                                             - \tweak padding #1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ~
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 2
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 gqs''
                                                 \tweak style #'harmonic
@@ -423,6 +601,10 @@
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 1
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 af''!
                                                 \tweak style #'harmonic
@@ -430,11 +612,14 @@
                                             >16
                                             - \tweak padding #1
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             ~
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 3
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 af''
                                                 \tweak style #'harmonic
@@ -442,7 +627,15 @@
                                             >32
                                             \afterGrace
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 gqs''!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 a''!
                                                 \tweak style #'harmonic
@@ -450,7 +643,6 @@
                                             >16.
                                             - \tweak padding #1
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ]
                                             {
                                                 \once \override Stem.stencil = ##f

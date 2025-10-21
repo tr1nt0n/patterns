@@ -2765,10 +2765,16 @@
                                         \set stemRightBeamCount = 3
                                         aqs,32
                                         \big-half-harmonic
-                                        <gs,! aqs,!>16.
+                                        <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
+                                            gs,!
+                                            aqs,!
+                                        >16.
                                         - \tweak padding #1
                                         ^ \talon-to-punta
-                                        \arpeggio
                                         \big-half-harmonic
                                         \set stemLeftBeamCount = 3
                                         \set stemRightBeamCount = 1
@@ -2788,22 +2794,41 @@
                                         \big-half-harmonic
                                         aqs,16
                                         \big-half-harmonic
-                                        <gs,! bqs,!>8
+                                        <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
+                                            gs,!
+                                            bqs,!
+                                        >8
                                         - \tweak padding #1
                                         ^ \talon-to-punta
-                                        \arpeggio
                                         ]
                                         ~
                                     }
                                     \times 2/3
                                     {
                                         \big-half-harmonic
-                                        <gs, bqs,>8
+                                        <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
+                                            gs,
+                                            bqs,
+                                        >8
                                         \big-half-harmonic
-                                        <gs,! cqf!>4
+                                        <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
+                                            gs,!
+                                            cqf!
+                                        >4
                                         - \tweak padding #1
                                         ^ \punta-to-talon
-                                        \arpeggio
                                         - \tweak font-name "Bodoni72 Book" 
                                         - \tweak font-size 2
                                         - \tweak padding #13
@@ -2815,15 +2840,36 @@
                                         ~
                                     }
                                     \big-half-harmonic
-                                    <gs, cqf>4
+                                    <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
+                                        gs,
+                                        cqf
+                                    >4
                                     ~
                                     \big-half-harmonic
-                                    <gs, cqf>4
+                                    <
+                                        \tweak Accidental.font-size #-3.5
+                                        \tweak Accidental.parenthesized ##t
+                                        \tweak color #(x11-color 'LightSlateBlue)
+                                        \tweak font-size #-3.5
+                                        gs,
+                                        cqf
+                                    >4
                                     ~
                                     \times 4/5
                                     {
                                         \big-half-harmonic
-                                        <gs, cqf>32
+                                        <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
+                                            gs,
+                                            cqf
+                                        >32
                                         [
                                         \big-half-harmonic
                                         aqs,16.
@@ -2848,10 +2894,16 @@
                                         aqs,32
                                         [
                                         \big-half-harmonic
-                                        <gs,! c!>16.
+                                        <
+                                            \tweak Accidental.font-size #-3.5
+                                            \tweak Accidental.parenthesized ##t
+                                            \tweak color #(x11-color 'LightSlateBlue)
+                                            \tweak font-size #-3.5
+                                            gs,!
+                                            c!
+                                        >16.
                                         - \tweak padding #1
                                         ^ \talon-to-punta
-                                        \arpeggio
                                         \big-half-harmonic
                                         aqs,32
                                         - \tweak padding #1
@@ -2885,10 +2937,16 @@
                                                 \set stemRightBeamCount = 2
                                                 aqs,16
                                                 \big-half-harmonic
-                                                <gs,! cs!>8.
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,!
+                                                    cs!
+                                                >8.
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 \big-half-harmonic
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 1
@@ -2943,20 +3001,40 @@
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
                                                 \big-half-harmonic
-                                                <gs,! dqf!>16
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,!
+                                                    dqf!
+                                                >16
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 ]
                                                 ~
                                             }
                                             \big-half-harmonic
-                                            <gs, dqf>8.
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                gs,
+                                                dqf
+                                            >8.
                                             ~
                                             \times 2/3
                                             {
                                                 \big-half-harmonic
-                                                <gs, dqf>16
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,
+                                                    dqf
+                                                >16
                                                 [
                                                 \big-half-harmonic
                                                 aqs,8
@@ -2979,21 +3057,40 @@
                                                 \set stemRightBeamCount = 3
                                                 aqs,32
                                                 \big-half-harmonic
-                                                <gs,! d!>16.
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,!
+                                                    d!
+                                                >16.
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 \big-half-harmonic
                                                 \set stemLeftBeamCount = 3
                                                 \set stemRightBeamCount = 1
-                                                <gs,! e!>32
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,!
+                                                    e!
+                                                >32
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 ~
                                             }
                                             \big-half-harmonic
-                                            <gs, e>16
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                gs,
+                                                e
+                                            >16
                                             ]
                                             \big-half-harmonic
                                             aqs,16
@@ -3014,18 +3111,38 @@
                                                 \big-half-harmonic
                                                 \set stemLeftBeamCount = 2
                                                 \set stemRightBeamCount = 1
-                                                <gs,! eqs!>16
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,!
+                                                    eqs!
+                                                >16
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 ~
                                             }
                                             \big-half-harmonic
-                                            <gs, eqs>8.
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                gs,
+                                                eqs
+                                            >8.
                                             ]
                                             ~
                                             \big-half-harmonic
-                                            <gs, eqs>16
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                gs,
+                                                eqs
+                                            >16
                                             [
                                             ~
                                             \times 4/5
@@ -3033,7 +3150,14 @@
                                                 \big-half-harmonic
                                                 \set stemLeftBeamCount = 1
                                                 \set stemRightBeamCount = 3
-                                                <gs, eqs>32
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,
+                                                    eqs
+                                                >32
                                                 \big-half-harmonic
                                                 aqs,16.
                                                 - \tweak padding #1
@@ -3057,17 +3181,30 @@
                                                 \big-half-harmonic
                                                 aqs,16
                                                 \big-half-harmonic
-                                                <gs,! aqs,!>8
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,!
+                                                    aqs,!
+                                                >8
                                                 - \tweak padding #1
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 ]
                                                 ~
                                             }
                                             \times 2/3
                                             {
                                                 \big-half-harmonic
-                                                <gs, aqs,>8
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,
+                                                    aqs,
+                                                >8
                                                 \big-half-harmonic
                                                 aqs,4
                                                 - \tweak padding #1
@@ -3111,15 +3248,28 @@
                                                 \big-half-harmonic
                                                 \set stemLeftBeamCount = 3
                                                 \set stemRightBeamCount = 1
-                                                <gs,! fqf!>32
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    gs,!
+                                                    fqf!
+                                                >32
                                                 - \tweak padding #1
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 ~
                                             }
                                             \big-half-harmonic
                                             \afterGrace
-                                            <gs, fqf>16
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                gs,
+                                                fqf
+                                            >16
                                             ]
                                             {
                                                 \once \override Stem.stencil = ##f

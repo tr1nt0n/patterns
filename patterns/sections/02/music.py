@@ -1631,16 +1631,17 @@ trinton.make_music(
         pitch_list=[["gs,", "fqf"]],
         selector=trinton.select_logical_ties_by_index([-1]),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.Arpeggio()],
-        selector=trinton.patterned_tie_index_selector(
-            [3, 5, 6, 9, 12], 15, first=True, pitched=True
-        ),
-    ),
-    trinton.attachment_command(
-        attachments=[abjad.Arpeggio()],
-        selector=trinton.select_logical_ties_by_index([-1], first=True, pitched=True),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[abjad.Arpeggio()],
+    #     selector=trinton.patterned_tie_index_selector(
+    #         [3, 5, 6, 9, 12], 15, first=True, pitched=True
+    #     ),
+    # ),
+    # trinton.attachment_command(
+    #     attachments=[abjad.Arpeggio()],
+    #     selector=trinton.select_logical_ties_by_index([-1], first=True, pitched=True),
+    # ),
+    library.double_muting(),
     trinton.force_accidentals_command(
         selector=trinton.patterned_tie_index_selector(
             [3, 5, 6, 9, 12], 15, first=True, pitched=True

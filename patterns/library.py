@@ -201,7 +201,7 @@ def d_stage_3_noteheads(selector=abjad.select.chords):
         for chord in abjad.select.chords(selections):
             for leaf in abjad.select.leaves(chord):
                 leaf_duration = abjad.get.duration(leaf, preprolated=True)
-                if leaf_duration < abjad.Duration(
+                if leaf_duration > abjad.Duration(
                     (7, 16)
                 ) and leaf_duration > abjad.Duration((7, 32)):
                     head_shape = "harmonic-mixed"
@@ -216,6 +216,33 @@ def d_stage_3_noteheads(selector=abjad.select.chords):
                     relevant_noteheads = noteheads[1:]
                     for head in relevant_noteheads:
                         abjad.tweak(head, rf"\tweak style #'{head_shape}")
+
+                noteheads = leaf.note_heads
+                relevant_noteheads = noteheads[0:-1]
+
+                for notehead in relevant_noteheads:
+                    abjad.tweak(notehead, r"\tweak Accidental.font-size #-3.5")
+                    abjad.tweak(notehead, r"\tweak Accidental.parenthesized ##t")
+                    abjad.tweak(notehead, r"\tweak color #(x11-color 'LightSlateBlue)")
+                    abjad.tweak(notehead, r"\tweak font-size #-3.5")
+
+    return change_noteheads
+
+
+def double_muting(selector=abjad.select.chords):
+    def change_noteheads(argument):
+        selections = selector(argument)
+
+        for chord in abjad.select.chords(selections):
+            for leaf in abjad.select.leaves(chord):
+                noteheads = leaf.note_heads
+                relevant_noteheads = noteheads[0:-1]
+
+                for notehead in relevant_noteheads:
+                    abjad.tweak(notehead, r"\tweak Accidental.font-size #-3.5")
+                    abjad.tweak(notehead, r"\tweak Accidental.parenthesized ##t")
+                    abjad.tweak(notehead, r"\tweak color #(x11-color 'LightSlateBlue)")
+                    abjad.tweak(notehead, r"\tweak font-size #-3.5")
 
     return change_noteheads
 

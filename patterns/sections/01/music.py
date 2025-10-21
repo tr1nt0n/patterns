@@ -44,10 +44,10 @@ trinton.make_music(
         selector=trinton.logical_ties(pitched=True, grace=False),
     ),
     library.d_stage_3_noteheads(),
-    trinton.attachment_command(
-        attachments=[abjad.Arpeggio()],
-        selector=trinton.logical_ties(first=True, pitched=True, grace=False),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[abjad.Arpeggio()],
+    #     selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    # ),
     trinton.force_accidentals_command(
         selector=trinton.logical_ties(first=True, pitched=True, grace=False)
     ),

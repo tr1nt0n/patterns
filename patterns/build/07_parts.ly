@@ -3,7 +3,7 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (12 30 32 25)))
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (12 30 30 28)))
             \time 2/2
             s1 * 1
               %! +SCORE
@@ -23,7 +23,7 @@
               %! +SCORE
         %%% \break
               %! +SCORE
-        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (13 30 41 26)))
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (10 31 42 27)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/4
             s1 * 5/4
@@ -130,17 +130,49 @@
                                             \once \override TupletBracket.padding = #0.5
                                             \times 2/3
                                             {
-                                                \big-half-harmonic
+                                                \once \override Accidental.stencil = ##f
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \stringing-clef
                                                 \voiceOne
-                                                <cqf' gqf' dqf'' aqf''>2
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>2
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>2
-                                                - \marcato
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                _ \coda
+                                                _ \marcato
                                             }
                                             \once \override TupletBracket.padding = #0.5
                                             \times 4/6
@@ -166,30 +198,77 @@
                                         }
                                         \context Voice = "violin 1 polyrhythm voice 1"
                                         {
-                                            \big-half-harmonic
+                                            \staff-line-count 4
+                                            \once \override Accidental.stencil = ##f
+                                            \override Staff.Clef.stencil = #ly:text-interface::print
+                                            \override Staff.Clef.text = \stringing-clef
+                                            \clef "percussion"
                                             \voiceTwo
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
-                                            - \tweak padding #11.5
+                                            - \tweak padding #9
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -3
                                             \startTextSpanOne
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
                                             \stopTextSpanOne
                                             \once \override TupletBracket.padding = #0.5
                                             \times 2/3
                                             {
+                                                \staff-line-count 5
+                                                \revert Staff.Clef.stencil
+                                                \clef "treble"
                                                 bf'4
                                                 g''4
                                                 e'''4
@@ -380,25 +459,58 @@
                                         \context Voice = "violin 2 voice temp 2"
                                         {
                                             \once \override TupletBracket.padding = #0.5
+                                            \once \override TupletBracket.padding = #0.5
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/6
                                             {
-                                                \big-half-harmonic
+                                                \once \override Accidental.stencil = ##f
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \stringing-clef
                                                 \voiceOne
-                                                <cqf' gqf' dqf'' aqf''>2
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                                - \marcato
-                                                - \tweak padding #13
+                                                _ \coda
+                                                _ \marcato
+                                                - \tweak padding #11.5
                                                 - \abjad-solid-line-with-arrow
                                                 - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 80 )" } } } \hspace #0.5 }
                                                 - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 80" } } }
                                                 \startTextSpanThree
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>2
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>2
-                                                - \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                _ \coda
+                                                _ \marcato
                                             }
                                             e''4
                                             \pp
@@ -410,38 +522,95 @@
                                         }
                                         \context Voice = "violin 1 polyrhythm voice 2"
                                         {
-                                            \big-half-harmonic
+                                            \staff-line-count 4
+                                            \once \override Accidental.stencil = ##f
+                                            \override Staff.Clef.stencil = #ly:text-interface::print
+                                            \override Staff.Clef.text = \stringing-clef
+                                            \clef "percussion"
                                             \voiceTwo
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
-                                            - \tweak padding #11.5
+                                            - \tweak padding #9
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
                                             \startTextSpanOne
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
                                             \stopTextSpanOne
                                             \once \override TupletBracket.padding = #0.5
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/6
                                             {
+                                                \staff-line-count 5
+                                                \revert Staff.Clef.stencil
+                                                \clef "treble"
                                                 bf'4
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
-                                                - \tweak padding #10
+                                                - \tweak padding #9
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLB + SP" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -1.5
@@ -547,35 +716,100 @@
                                     <<
                                         \context Voice = "violin 4 voice temp"
                                         {
+                                            \once \override TupletBracket.padding = #0.5
                                             \times 4/6
                                             {
-                                                \big-half-harmonic
+                                                \staff-line-count 4
+                                                \once \override Accidental.stencil = ##f
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \stringing-clef
+                                                \clef "percussion"
                                                 \voiceOne
-                                                <cqf' gqf' dqf'' aqf''>4
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                                - \marcato
+                                                _ \coda
+                                                _ \marcato
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
-                                                - \tweak padding #13.5
+                                                - \tweak padding #9
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
                                                 \stopTextSpanOne
                                             }
                                             \times 4/5
@@ -597,13 +831,27 @@
                                                 \stopTextSpanOne
                                                 ]
                                             }
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
+                                            \staff-line-count 4
+                                            \once \override Accidental.stencil = ##f
+                                            \override Staff.Clef.stencil = #ly:text-interface::print
+                                            \override Staff.Clef.text = \stringing-clef
+                                            \clef "percussion"
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                            - \marcato
+                                            _ \coda
+                                            _ \marcato
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
-                                            - \tweak padding #11.5
+                                            - \tweak padding #8.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
@@ -612,58 +860,181 @@
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
-                                            - \tweak bound-details.right.padding -24.5
+                                            - \tweak bound-details.right.padding -27.5
                                             \startTextSpanThree
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <cqf' gqf' dqf'' aqf''>4
-                                            - \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            _ \coda
+                                            _ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            _ \coda
+                                            _ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            _ \coda
+                                            _ \marcato
                                             \stopTextSpanOne
                                             \stopTextSpanThree
                                         }
                                         \context Voice = "violin 2 polyrhythm voice"
                                         {
+                                            \once \override TupletBracket.padding = #0.5
                                             \times 4/5
                                             {
-                                                \big-half-harmonic
+                                                \staff-line-count 4
+                                                \once \override Accidental.stencil = ##f
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \stringing-clef
+                                                \clef "percussion"
                                                 \voiceTwo
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>4
-                                                - \marcato
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                ^ \coda
+                                                ^ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                ^ \coda
+                                                ^ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                ^ \coda
+                                                ^ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                ^ \coda
+                                                ^ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                ^ \coda
+                                                ^ \marcato
                                             }
+                                            \staff-line-count 5
+                                            \revert Staff.Clef.stencil
+                                            \clef "treble"
                                             a''8
                                             [
                                             fs'''8
                                             af'''8
                                             ef'''8
                                             ]
+                                            \once \override TupletBracket.padding = #0.5
                                             \times 2/3
                                             {
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>2
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>2
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <cqf' gqf' dqf'' aqf''>2
-                                                - \marcato
+                                                \staff-line-count 4
+                                                \once \override Accidental.stencil = ##f
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \stringing-clef
+                                                \clef "percussion"
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                ^ \coda
+                                                ^ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                ^ \coda
+                                                ^ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                ^ \coda
+                                                ^ \marcato
                                             }
                                         }
                                     >>
@@ -674,19 +1045,29 @@
                                             \once \override TupletBracket.padding = #0.5
                                             \times 2/3
                                             {
+                                                \staff-line-count 5
                                                 \ottava 1
                                                 \override DynamicLineSpanner.padding = #11.5
+                                                \revert Staff.Clef.stencil
+                                                \clef "treble"
                                                 \voiceOne
                                                 <
-                                                    fs'''
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    fs'''!
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
                                                     \tweak style #'harmonic
-                                                    gqs'''
+                                                    gqs'''!
                                                     \tweak style #'harmonic
-                                                    a'''
+                                                    a'''!
                                                 >8
                                                 - \tweak padding 0.5
                                                 ^ \punta-to-talon
-                                                \arpeggio
                                                 \f
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -698,24 +1079,35 @@
                                                 - \tweak stencil #constante-hairpin
                                                 \<
                                                 <
-                                                    \tweak style #'harmonic-mixed
-                                                    fs'''
-                                                    \tweak style #'harmonic-mixed
-                                                    bqf'''
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    fs'''!
+                                                    \tweak style #'harmonic
+                                                    bqf'''!
                                                 >4
                                                 - \tweak padding 0.5
                                                 ^ \talon-to-punta
-                                                \arpeggio
                                                 ~
                                             }
                                             <
-                                                \tweak style #'harmonic
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic-mixed
                                                 fs'''
-                                                \tweak style #'harmonic
+                                                \tweak style #'harmonic-mixed
                                                 bqf'''
                                             >2
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 fs'''
                                                 \tweak style #'harmonic
@@ -724,27 +1116,38 @@
                                             [
                                             \>
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
-                                                af'''
+                                                af'''!
                                                 \tweak style #'harmonic
-                                                bqf'''
+                                                bqf'''!
                                             >8
                                             - \tweak padding 0.5
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             ]
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 af'''
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 bqf'''
                                             >4
                                             ~
                                             <
-                                                \tweak style #'harmonic
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic-mixed
                                                 af'''
-                                                \tweak style #'harmonic
+                                                \tweak style #'harmonic-mixed
                                                 bqf'''
                                             >2
                                             \pp
@@ -757,6 +1160,10 @@
                                             \<
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 af'''
                                                 \tweak style #'harmonic
@@ -765,38 +1172,69 @@
                                             [
                                             \ottava 0
                                             <
-                                                fqs''
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                fqs''!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
-                                                aqf''
+                                                aqf''!
                                                 \tweak style #'harmonic
-                                                bf''
+                                                bf''!
                                             >8
                                             - \tweak padding 0.5
                                             ^ \talon-to-punta
-                                            \arpeggio
                                             ]
                                             \<
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 fqs''
-                                                \tweak style #'harmonic
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic-mixed
                                                 aqf''
-                                                \tweak style #'harmonic
+                                                \tweak style #'harmonic-mixed
                                                 bf''
                                             >2
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 fqs''
-                                                \tweak style #'harmonic
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic-mixed
                                                 aqf''
-                                                \tweak style #'harmonic
+                                                \tweak style #'harmonic-mixed
                                                 bf''
                                             >2.
                                             \f
                                             \stopTextSpanThree
                                             ~
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 fqs''
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
                                                 aqf''
                                                 \tweak style #'harmonic
@@ -804,20 +1242,27 @@
                                             >8
                                             [
                                             <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
                                                 \tweak style #'harmonic
-                                                fqs''
+                                                fqs''!
                                                 \tweak style #'harmonic
-                                                aqs''
+                                                aqs''!
                                             >8
                                             - \tweak padding 0.5
                                             ^ \punta-to-talon
-                                            \arpeggio
                                             ]
                                             ~
                                             <
-                                                \tweak style #'harmonic-mixed
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
                                                 fqs''
-                                                \tweak style #'harmonic-mixed
+                                                \tweak style #'harmonic
                                                 aqs''
                                             >4
                                             \stopTextSpanOne
@@ -2810,7 +3255,7 @@
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
-                                    - \tweak bound-details.right.padding -15
+                                    - \tweak bound-details.right.padding -17.5
                                     \startTextSpanThree
                                     \override Dots.staff-position = #2
                                     \fancy-gliss
@@ -2860,37 +3305,101 @@
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/6
                                             {
-                                                \big-half-harmonic
-                                                \clef "bass"
+                                                \staff-line-count 4
+                                                \once \override Accidental.stencil = ##f
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \stringing-clef
+                                                \clef "percussion"
                                                 \voiceOne
-                                                <fqf, cqf gqf dqf'>4
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                                - \marcato
+                                                _ \coda
+                                                _ \marcato
+                                                - \tweak font-name "Bodoni72 Book Italic" 
+                                                _ \markup \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } }
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
-                                                - \tweak padding #12
+                                                - \tweak padding #9
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>4
-                                                - \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
                                                 \stopTextSpanOne
                                             }
-                                            \clef "treble"
                                             d''4
                                             \pp
                                             - \tweak font-name "Bodoni72 Book" 
@@ -2900,7 +3409,7 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "CLB + SP" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
                                             \startTextSpanOne
-                                            - \tweak padding #13.5
+                                            - \tweak padding #11
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 80 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 80" } } }
@@ -2915,53 +3424,153 @@
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/4
                                             {
-                                                \big-half-harmonic
-                                                \clef "bass"
-                                                <fqf, cqf gqf dqf'>4
+                                                \staff-line-count 4
+                                                \once \override Accidental.stencil = ##f
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \stringing-clef
+                                                \clef "percussion"
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
-                                                - \marcato
+                                                _ \coda
+                                                _ \marcato
                                                 \stopTextSpanThree
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
-                                                - \tweak padding #12
+                                                - \tweak padding #9
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>4
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>4
-                                                - \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >4
+                                                _ \coda
+                                                _ \marcato
                                                 \stopTextSpanOne
                                             }
                                         }
                                         \context Voice = "cello polyrhythm voice"
                                         {
-                                            \big-half-harmonic
+                                            \staff-line-count 4
+                                            \once \override Accidental.stencil = ##f
+                                            \override Staff.Clef.stencil = #ly:text-interface::print
+                                            \override Staff.Clef.text = \stringing-clef
+                                            \clef "percussion"
                                             \voiceTwo
-                                            <fqf, cqf gqf dqf'>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <fqf, cqf gqf dqf'>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <fqf, cqf gqf dqf'>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <fqf, cqf gqf dqf'>4
-                                            - \marcato
-                                            \big-half-harmonic
-                                            <fqf, cqf gqf dqf'>4
-                                            - \marcato
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
+                                            \once \override Accidental.stencil = ##f
+                                            <
+                                                \tweak style #'cross
+                                                g
+                                                \tweak style #'cross
+                                                b
+                                                \tweak style #'cross
+                                                d'
+                                                \tweak style #'cross
+                                                f'
+                                            >4
+                                            ^ \coda
+                                            ^ \marcato
                                             \once \override TupletBracket.padding = #0.5
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/4
                                             {
+                                                \staff-line-count 5
+                                                \revert Staff.Clef.stencil
+                                                \clef "treble"
                                                 f''4
                                                 bf'4
                                                 b'4
@@ -2971,15 +3580,49 @@
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 5/6
                                             {
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>2
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>2
-                                                - \marcato
-                                                \big-half-harmonic
-                                                <fqf, cqf gqf dqf'>2
-                                                - \marcato
+                                                \staff-line-count 4
+                                                \once \override Accidental.stencil = ##f
+                                                \override Staff.Clef.stencil = #ly:text-interface::print
+                                                \override Staff.Clef.text = \stringing-clef
+                                                \clef "percussion"
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                ^ \coda
+                                                ^ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                ^ \coda
+                                                ^ \marcato
+                                                \once \override Accidental.stencil = ##f
+                                                <
+                                                    \tweak style #'cross
+                                                    g
+                                                    \tweak style #'cross
+                                                    b
+                                                    \tweak style #'cross
+                                                    d'
+                                                    \tweak style #'cross
+                                                    f'
+                                                >2
+                                                ^ \coda
+                                                ^ \marcato
                                             }
                                         }
                                     >>
