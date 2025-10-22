@@ -1019,6 +1019,7 @@
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
                                     r2
+                                    \once \override Staff.Clef.stencil = ##f
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -1026,58 +1027,96 @@
                                     r2.
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r4.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r1
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r4.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r2
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r1
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r1.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    \stopStaff
-                                    \once \revert Staff.StaffSymbol.line-positions
-                                    \once \override Staff.StaffSymbol.line-count = #0
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    r8.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
-                                    r8
-                                    r8.
-                                    r8
+                                    \override Dots.staff-position = #2
+                                    \set Staff.forceClef = ##t
+                                    d'''16.
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    - \tweak padding #10
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
+                                    \startTextSpanThree
+                                    a32
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    a''16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    c'16
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    d''32
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    e'16.
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \set Staff.forceClef = ##f
+                                    \times 4/5
+                                    {
+                                        d''4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        c'''4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                        a''4
+                                        - \abjad-zero-padding-glissando
+                                        \glissando
+                                    }
+                                    c'''4.
+                                    \stopTextSpanThree
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \>
+                                    a2
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    f'2
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    a2
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    e'1.
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    b2
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \afterGrace
+                                    b8
+                                    {
+                                        \revert Dots.staff-position
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        a16
+                                        \ppp
+                                    }
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -1491,22 +1530,108 @@
                                         }
                                     >>
                                     \oneVoice
-                                    r4.
-                                    - \tweak padding #3
-                                    - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
-                                    \startTextSpanThree
-                                    r1
-                                    r4.
-                                    \stopTextSpanThree
-                                    r2
-                                    r1
-                                    r1.
-                                    r8.
-                                    r8
-                                    r8.
-                                    r8
+                                    <<
+                                        \context Voice = "cello 2 voice upper"
+                                        {
+                                            \clef "treble"
+                                            \voiceOne
+                                            df'16.
+                                            [
+                                            f'16.
+                                            bf16.
+                                            b16.
+                                            ]
+                                            \times 2/3
+                                            {
+                                                d'2
+                                                g'2
+                                                fs''2
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 7/10
+                                            {
+                                                cs''4
+                                                f''4
+                                                bf'4
+                                                b4
+                                                d'4
+                                            }
+                                            \times 4/6
+                                            {
+                                                af'4
+                                                b4
+                                                cs'4
+                                                f'4
+                                                bf4
+                                                e'4
+                                            }
+                                            d'2
+                                            g'2
+                                            e''2
+                                            d''8
+                                            [
+                                            bf''8
+                                            bf'8
+                                            b''8
+                                            d''8
+                                            ]
+                                        }
+                                        \context Voice = "cello lower voice"
+                                        {
+                                            \voiceTwo
+                                            bf8
+                                            [
+                                            b8
+                                            d'8
+                                            ]
+                                            \times 4/5
+                                            {
+                                                g4
+                                                fs'4
+                                                cs''4
+                                                f''4
+                                                as'4
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 7/6
+                                            {
+                                                b'8
+                                                [
+                                                d''8
+                                                af'8
+                                                b'8
+                                                cs'8
+                                                f'8
+                                                ]
+                                            }
+                                            \times 2/3
+                                            {
+                                                bf2
+                                                e'2
+                                                d'2
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                g'4
+                                                e'4
+                                                d''4
+                                                bf''4
+                                                bf'!4
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 5/4
+                                            {
+                                                b''8
+                                                [
+                                                d''8
+                                                gs''8
+                                                e''8
+                                                ]
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE

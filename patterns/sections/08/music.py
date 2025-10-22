@@ -735,6 +735,179 @@ trinton.make_music(
     voice=score["cello legno voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Staff.Clef.stencil = ##f", site="before"
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["cello 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 15)),
+    evans.RhythmHandler(
+        evans.tuplet(
+            [
+                (3, 1, 2, 2, 1, 3),
+                (1, 1, 1, 1, 1),
+                (1,),
+                (1,),
+                (1, 1),
+                (1,),
+                (1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+                (-1,),
+            ]
+        )
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Tie(),
+        ],
+        selector=trinton.select_leaves_by_index([-2]),
+    ),
+    trinton.aftergrace_command(
+        selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False)
+    ),
+    evans.PitchHandler(
+        [
+            "d'''",
+            "a",
+            "a''",
+            "c'",
+            "d''",
+            "e'",
+            "d''",
+            "a",
+            "c'",
+            "c'''",
+            "a''",
+            "c'''",
+            "a",
+            "f'",
+            "a",
+            "e'",
+            "b",
+            "a",
+        ]
+    ),
+    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartHairpin(">"), abjad.Dynamic("ppp")],
+        selector=trinton.select_leaves_by_index([11, -1], pitched=True),
+    ),
+    voice=score["cello 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9,)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\set Staff.forceClef = ##t",
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                r"\set Staff.forceClef = ##f",
+                site="absolute_after",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+    ),
+    voice=score["cello 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 15)),
+    evans.RhythmHandler(rhythm.rhythm_e(lower_voice=False, index=13)),
+    trinton.attachment_command(
+        attachments=[abjad.Clef("treble")], selector=trinton.select_leaves_by_index([0])
+    ),
+    trinton.IntermittentVoiceHandler(
+        evans.RhythmHandler(rhythm.rhythm_e(index=13, lower_voice=True)),
+        direction=abjad.DOWN,
+        voice_name="cello lower voice",
+        preprocessor=trinton.fuse_eighths_preprocessor((3, 8, 7, 8, 12, 5)),
+        temp_name="upper",
+    ),
+    voice=score["cello 2 voice"],
+    preprocessor=trinton.fuse_eighths_preprocessor((3, 8, 7, 8, 12, 5)),
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 15)),
+    pitch.pitch_e(
+        instrument="cello", selector=trinton.pleaves(), index=3, retrograde=False
+    ),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves(), direction=abjad.UP),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_leaves_by_index([2, 3, 10, 13, 16]),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.select_leaves_by_index([6, 7, 8, 20, 21, 22, 24, 25]),
+    ),
+    trinton.respell_with_flats(selector=trinton.select_leaves_by_index([0])),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([0, 3, -5, -1]),
+    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.Dynamic("mp"), abjad.StartHairpin(">"), abjad.Dynamic("pp")],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+    #     direction=abjad.UP,
+    # ),
+    voice=score["cello 2 voice upper"],
+    # beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 15)),
+    pitch.pitch_e(
+        instrument="cello", selector=trinton.pleaves(), index=5, retrograde=False
+    ),
+    # trinton.annotate_leaves_locally(selector=trinton.pleaves(), direction=abjad.DOWN),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_leaves_by_index([0, 1, 3, 14]),
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.select_leaves_by_index([5, 6, 9, 19, 20, 22, 23, 24, 25]),
+    ),
+    trinton.respell_with_sharps(selector=trinton.select_leaves_by_index([7, 24])),
+    trinton.force_accidentals_command(selector=trinton.select_leaves_by_index([21])),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index([0, 2, 8, 13, 22, -1]),
+    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.Dynamic("mp"), abjad.StartHairpin(">"), abjad.Dynamic("pp")],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+    #     direction=abjad.UP,
+    # ),
+    voice=score["cello lower voice"],
+    # beam_meter=True,
+)
+
 # globals
 
 # final barline
@@ -804,13 +977,13 @@ for voice_name, padding, end_anchor in zip(
         "violin 2 voice",
         "violin 4 voice",
         # "viola 2 voice",
-        "cello 2 voice",
+        "cello 1 voice",
     ],
     [
         3,
         3,
         # 3,
-        3,
+        10,
     ],
     [
         -1,
