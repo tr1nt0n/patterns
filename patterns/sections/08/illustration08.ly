@@ -863,7 +863,7 @@
                                                 - \tweak padding #11
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLB" } \hspace #0.5 }
-                                                - \tweak bound-details.right.padding 0.5
+                                                - \tweak bound-details.right.padding -1.5
                                                 \startTextSpanOne
                                                 _ \>
                                                 cs'4
@@ -1032,7 +1032,13 @@
                                     d'''16.
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    - \tweak padding #10
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #6
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "ST poss." } \hspace #0.5 }
+                                    \startTextSpanOne
+                                    - \tweak padding #9.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
@@ -1075,6 +1081,13 @@
                                     \stopTextSpanThree
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #7.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLT" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanTwo
                                     \>
                                     a2
                                     - \abjad-zero-padding-glissando
@@ -1086,8 +1099,15 @@
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     e'1.
+                                    \stopTextSpanTwo
                                     - \abjad-zero-padding-glissando
                                     \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #7.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "CLT" } \hspace #0.5 }
+                                    \startTextSpanTwo
                                     b2
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -1116,6 +1136,8 @@
                                         \undo \hide NoteHead
                                         a16
                                         \ppp
+                                        \stopTextSpanOne
+                                        \stopTextSpanTwo
                                     }
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions

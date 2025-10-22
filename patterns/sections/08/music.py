@@ -393,7 +393,7 @@ trinton.make_music(
             pitched=True,
         ),
         padding=11,
-        right_padding=-0.5,
+        right_padding=1.5,
         full_string=False,
         style="dashed-line-with-hook",
         hspace=None,
@@ -813,6 +813,60 @@ trinton.make_music(
         attachments=[abjad.StartHairpin(">"), abjad.Dynamic("ppp")],
         selector=trinton.select_leaves_by_index([11, -1], pitched=True),
     ),
+    trinton.hooked_spanner_command(
+        string=r"1/2 CLT",
+        selector=trinton.select_leaves_by_index(
+            [11, 15],
+            pitched=True,
+        ),
+        padding=7.5,
+        right_padding=-0.5,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="Two",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
+    trinton.hooked_spanner_command(
+        string=r"CLT",
+        selector=trinton.select_leaves_by_index(
+            [15, -1],
+            pitched=True,
+        ),
+        padding=7.5,
+        right_padding=0,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="Two",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
+    trinton.hooked_spanner_command(
+        string=r"ST poss.",
+        selector=trinton.select_leaves_by_index(
+            [0, -1],
+            pitched=True,
+        ),
+        padding=6,
+        right_padding=0,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="One",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
     voice=score["cello 1 voice"],
 )
 
@@ -983,7 +1037,7 @@ for voice_name, padding, end_anchor in zip(
         3,
         3,
         # 3,
-        10,
+        9.5,
     ],
     [
         -1,
