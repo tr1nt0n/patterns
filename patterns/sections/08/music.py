@@ -476,8 +476,11 @@ trinton.make_music(
         initial_seed=5,
         selector=trinton.logical_ties(pitched=True, grace=False),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.Clef("bass")], selector=trinton.select_leaves_by_index([0])
+    trinton.change_lines(
+        lines=5,
+        clef="bass",
+        invisible_barlines=True,
+        selector=trinton.select_leaves_by_index([0]),
     ),
     # trinton.annotate_leaves_locally(
     #     # selector=trinton.pleaves()

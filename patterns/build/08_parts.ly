@@ -1141,7 +1141,10 @@
                             {
                                 \context Voice = "cello 2 voice"
                                 {
+                                    \staff-line-count 5
                                     \big-half-harmonic
+                                      %! +SCORE
+                                %%% \revert Staff.BarLine.bar-extent
                                     \clef "bass"
                                     g4
                                     - \tweak padding 1
