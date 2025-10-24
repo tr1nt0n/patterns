@@ -2,6 +2,8 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 33.5 22.5 19 26.5)))
             \time 2/4
             s1 * 1/2
               %! +SCORE
@@ -16,6 +18,8 @@
             s1 * 1/2
               %! +SCORE
         %%% \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 31 20 19 24)))
             \time 5/4
             s1 * 5/4
               %! +SCORE
@@ -1238,34 +1242,1133 @@
                             {
                                 \context Voice = "violin 4 voice"
                                 {
-                                    r2
+                                    \override Dots.staff-position = #2
+                                    \override DynamicLineSpanner.staff-padding = #-4
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        b'''!
+                                    >2
+                                    - \tenuto
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
                                       %! +SCORE
-                                %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
-                                    r2
-                                    r2
-                                    r2.
-                                    r2
-                                    r1
-                                    r2.
-                                    r2.
-                                    r2
-                                    r2.
-                                    r4.
+                                %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-10 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #15.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { \override #'(baseline-skip . 2) \column { \line { MSP } \line { "(hair on bridge," } \line { "wood on string)" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup { \override #'(baseline-skip . 2) \column { \line { Ord. } \line { "(hair and wood" } \line { "on string)" } } }
+                                    \startTextSpanTwo
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #20
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLT" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
+                                    - \tweak stencil #constante-hairpin
+                                    \<
+                                    \override Dots.staff-position = #2
+                                    \revert Dots.staff-position
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        \tweak style #'harmonic
+                                        f'''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        b'''!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
+                                    [
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \<
+                                    \override Dots.staff-position = #2
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        b'''!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \tweak bound-details.right.arrow ##t
+                                      %! abjad.glissando(7)
+                                    - \tweak thickness #1.5
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        b'''
+                                    >4
+                                    \override Dots.staff-position = #2
+                                    \revert Dots.staff-position
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        \tweak style #'harmonic
+                                        f'''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        b'''!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
+                                    \stopTextSpanTwo
+                                    [
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \override Dots.staff-position = #2
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        b'''!
+                                    >8
+                                    - \tenuto
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \tweak bound-details.right.arrow ##t
+                                      %! abjad.glissando(7)
+                                    - \tweak thickness #1.5
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        b'''
+                                    >8
+                                    [
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    <
+                                        \tweak style #'harmonic
+                                        f'''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        b'''!
+                                    >16
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #15
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Scratch" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanTwo
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak style #'harmonic
+                                        f'''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \natural-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        b'''!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
+                                    \stopTextSpanOne
+                                    \stopTextSpanTwo
+                                    ]
+                                    \revert DynamicLineSpanner.staff-padding
+                                    \override Dots.staff-position = #2
+                                    \override DynamicLineSpanner.staff-padding = #-4
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >4
+                                    - \tenuto
+                                    \pp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                      %! abjad.glissando(7)
+                                    - \tweak bound-details.right.arrow ##t
+                                      %! abjad.glissando(7)
+                                    - \tweak thickness #1.5
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #13.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { \override #'(baseline-skip . 2) \column { \line { Ord. } \line { "(hair and wood" } \line { "on string)" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup { \override #'(baseline-skip . 2) \column { \line { MSP } \line { "(hair on bridge," } \line { "wood on string)" } } }
+                                    \startTextSpanTwo
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #17.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLT" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1.5
+                                    \startTextSpanOne
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''
+                                    >8
+                                    [
+                                    \override Dots.staff-position = #2
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        \tweak style #'harmonic
+                                        f'''!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    ]
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \override Dots.staff-position = #2
+                                    \revert Dots.staff-position
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >4
+                                    - \tenuto
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    \stopTextSpanTwo
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Dots.staff-position
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        \tweak style #'harmonic
+                                        f'''!
+                                    >16
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    [
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #14.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Scr." } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanThree
+                                    \override Dots.staff-position = #2
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >8.
+                                    - \tenuto
+                                    \p
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    \stopTextSpanThree
+                                    ]
+                                      %! abjad.glissando(7)
+                                    - \tweak bound-details.right.arrow ##t
+                                      %! abjad.glissando(7)
+                                    - \tweak thickness #1.5
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #13.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { { \override #'(baseline-skip . 2) \column { \line { MSP } \line { "(hair on bridge," } \line { "wood on string)" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup { \override #'(baseline-skip . 2) \column { \line { Ord. } \line { "(no wood)" } } }
+                                    \startTextSpanTwo
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''
+                                    >4
+                                    \override Dots.staff-position = #2
+                                    \revert Dots.staff-position
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        \tweak style #'harmonic
+                                        f'''!
+                                    >8.
+                                    - \tenuto
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    [
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \revert Dots.staff-position
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >16
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    \stopTextSpanOne
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #14.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Scr." } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanThree
+                                    \override Dots.staff-position = #2
+                                    \big-half-harmonic
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >4
+                                    - \tenuto
+                                    \p
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    \stopTextSpanThree
+                                      %! abjad.glissando(7)
+                                    - \tweak bound-details.right.arrow ##t
+                                      %! abjad.glissando(7)
+                                    - \tweak thickness #1.5
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''
+                                    >8.
+                                    [
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >16
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #14.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Scr." } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanThree
+                                    \override Dots.staff-position = #2
+                                    \big-half-harmonic
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >4
+                                    - \tenuto
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    \stopTextSpanThree
+                                    \stopTextSpanTwo
+                                    - \tweak bound-details.right.arrow ##t
+                                    - \tweak thickness #1.5
+                                    - \abjad-zero-padding-glissando
+                                    \glissando
+                                    \override Dots.staff-position = #2
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >4
+                                    - \tenuto
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                      %! abjad.glissando(7)
+                                    - \tweak bound-details.right.arrow ##t
+                                      %! abjad.glissando(7)
+                                    - \tweak thickness #1.5
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ~
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''
+                                    >8.
+                                    [
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        \tweak style #'harmonic
+                                        f'''!
+                                    >16
+                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    ]
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 0
+                                    - \tweak padding #13.5
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "Scr." } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1.5
+                                    \startTextSpanThree
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        \tweak style #'harmonic
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        \tweak style #'harmonic
+                                        f'''!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    \stopTextSpanThree
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \sharp-one-syntonic-comma-down
+                                        as''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \abjad-natural
+                                        f'''!
+                                    >8.
+                                    - \tenuto
+                                    \mp
+                                    ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
+                                    ]
+                                    \revert DynamicLineSpanner.staff-padding
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    ]
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >2
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >2
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >4
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >16
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    ]
+                                    ~
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''
+                                    >4.
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    [
                                     - \tweak padding #3
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
                                     \startTextSpanThree
-                                    r1
-                                    r4.
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''!
+                                    >16
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { -6 }  } } }
+                                    ]
+                                    ~
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        as''
+                                    >8.
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >8.
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
+                                    ]
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >4
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''
+                                    >8.
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
+                                    ]
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >4
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >8.
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
                                     \stopTextSpanThree
-                                    r2
-                                    r1
-                                    r1.
-                                    r8.
-                                    r8
-                                    r8.
-                                    r8
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >8.
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >8
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { -6 }  }\line { \concat { +2 }  } } }
+                                    ]
+                                    ~
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
+                                        gs''
+                                    >4
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    [
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ]
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >4
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >2
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >8
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ]
+                                    ~
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'
+                                    >4
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >8
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >8
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >8.
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ]
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >4
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'
+                                    >8
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >8
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ]
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >8.
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ~
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'
+                                    >16
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ]
+                                    \override Staff.Stem.stemlet-length = 0.75
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >16
+                                    - \marcato
+                                    - \staccato
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    [
+                                    \revert Staff.Stem.stemlet-length
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b!
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'!
+                                    >8
+                                    - \tenuto
+                                    ^ \markup \center-align { \center-column { \line { \concat { +2 }  }\line { \concat { -12 }  } } }
+                                    ]
+                                    ~
+                                    <
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                                        b
+                                        \tweak Accidental.stencil #ly:text-interface::print
+                                        \tweak Accidental.text \markup { \abjad-natural  }
+                                        g'
+                                    >8
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
