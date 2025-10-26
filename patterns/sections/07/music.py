@@ -1702,7 +1702,7 @@ for measure in [4, 6]:
             trinton.change_notehead_command(
                 notehead="cross", selector=trinton.pleaves()
             ),
-            trinton.attachment_command(
+            trinton.linear_attachment_command(
                 attachments=[
                     abjad.LilyPondLiteral(
                         [
@@ -1710,9 +1710,13 @@ for measure in [4, 6]:
                             r"\override Staff.Clef.text = \stringing-clef",
                         ],
                         site="before",
-                    )
+                    ),
+                    abjad.LilyPondLiteral(
+                        r"\revert Staff.Clef.stencil",
+                        site="before",
+                    ),
                 ],
-                selector=trinton.select_leaves_by_index([0], pitched=True),
+                selector=trinton.select_leaves_by_index([0, -1], pitched=True),
             ),
             trinton.attachment_command(
                 attachments=[

@@ -3400,6 +3400,7 @@
                                                 _ \coda
                                                 _ \marcato
                                                 \once \override Accidental.stencil = ##f
+                                                \revert Staff.Clef.stencil
                                                 <
                                                     \tweak style #'cross
                                                     g
@@ -3491,6 +3492,7 @@
                                                 _ \coda
                                                 _ \marcato
                                                 \once \override Accidental.stencil = ##f
+                                                \revert Staff.Clef.stencil
                                                 <
                                                     \tweak style #'cross
                                                     g
@@ -3566,6 +3568,7 @@
                                             ^ \coda
                                             ^ \marcato
                                             \once \override Accidental.stencil = ##f
+                                            \revert Staff.Clef.stencil
                                             <
                                                 \tweak style #'cross
                                                 g
@@ -3625,6 +3628,7 @@
                                                 ^ \coda
                                                 ^ \marcato
                                                 \once \override Accidental.stencil = ##f
+                                                \revert Staff.Clef.stencil
                                                 <
                                                     \tweak style #'cross
                                                     g

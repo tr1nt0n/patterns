@@ -38,6 +38,8 @@
             s1 * 5/4
               %! +SCORE
             \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (5 25.5 27.5 28.5 13.5)))
             \time 6/8
             s1 * 3/4
               %! +SCORE
@@ -51,7 +53,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (16 39 32 33 27)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (16 40 32 33 27)))
             \time 6/16
             s1 * 3/8
             \time 2/4
@@ -802,6 +804,7 @@
                                             e''2
                                             )
                                             \override Dots.staff-position = #2
+                                            \magnifyStaff #7/8
                                             \revert Dots.staff-position
                                               %! abjad.glissando(6)
                                             \revert Accidental.stencil
@@ -850,7 +853,7 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "Scratch" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -3
                                             \startTextSpanTwo
-                                            - \tweak padding #13
+                                            - \tweak padding #12
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
@@ -914,6 +917,7 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "II" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -3
                                             \startTextSpanOne
+                                            \magnifyStaff #1
                                             \once \override DynamicLineSpanner.staff-padding = #-3.5
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -1930,6 +1934,7 @@
                                     - \tenuto
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -2 } \line { -6 } } } }
                                     \override Dots.staff-position = #2
+                                    \magnifyStaff #7/8
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
                                         \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
@@ -1964,7 +1969,7 @@
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -2 } \line { -6 } } } }
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 0
+                                    - \tweak font-size -2
                                     - \tweak padding #11
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "Scr." } \hspace #0.5 }
@@ -1996,8 +2001,8 @@
                                       %! abjad.glissando(7)
                                     \glissando
                                     - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 0
-                                    - \tweak padding #11
+                                    - \tweak font-size -2
+                                    - \tweak padding #12
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { \override #'(baseline-skip . 2) \column { \line { "1/2 CLT, MSP" } \line { "(hair on bridge," } \line { "wood on string)" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup { \override #'(baseline-skip . 2) \column { \line { "1/2 CLT, SP" } \line { "(wood and hair" } \line { "on string)" } } }
@@ -2043,7 +2048,7 @@
                                     - \tenuto
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -2 } \line { -6 } } } }
                                     [
-                                    - \tweak padding #17
+                                    - \tweak padding #18.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
@@ -2090,15 +2095,15 @@
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 0
-                                    - \tweak padding #10.25
+                                    - \tweak font-size -2
+                                    - \tweak padding #10.75
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "Scr." } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 1.5
                                     \startTextSpan
                                     - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 0
-                                    - \tweak padding #13.75
+                                    - \tweak font-size -2
+                                    - \tweak padding #14.75
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { { \override #'(baseline-skip . 2) \column { \line { "1/2 CLT, MSP" } \line { "(hair on bridge," } \line { "wood on string)" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -3
@@ -2154,8 +2159,8 @@
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
-                                    - \tweak font-size 0
-                                    - \tweak padding #10.25
+                                    - \tweak font-size -2
+                                    - \tweak padding #10.75
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "Scr." } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 1.5
@@ -2172,6 +2177,7 @@
                                     \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
                                     \stopTextSpan
+                                    \magnifyStaff #1
                                     \override Dots.staff-position = #2
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
@@ -2958,6 +2964,7 @@
                                             \big-half-harmonic
                                             af'2
                                             \big-half-harmonic
+                                            \magnifyStaff #7/8
                                             eqf'4
                                             - \tweak padding 1
                                             ^ \talon-to-punta
@@ -3041,6 +3048,7 @@
                                             eqf2
                                             \stopTextSpanOne
                                             \stopTextSpanThree
+                                            \magnifyStaff #1
                                         }
                                         \context Voice = "viola legno voice"
                                         {
@@ -3376,6 +3384,11 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    \magnifyStaff #7/8
+                                    \once \override Staff.Clef.Y-extent = ##f
+                                    \once \override Staff.Clef.Y-offset = #-2
+                                    \once \override Staff.Clef.X-extent = ##f
+                                    \once \override Staff.Clef.extra-offset = #'(4 . 0)
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
                                     \override Dots.staff-position = #2
@@ -3427,6 +3440,7 @@
                                         a''4
                                         - \abjad-zero-padding-glissando
                                         \glissando
+                                        \magnifyStaff #1
                                     }
                                     c'''4.
                                     \stopTextSpanThree
@@ -3675,7 +3689,7 @@
                                             ^ \talon-to-punta
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
-                                            - \tweak padding #13
+                                            - \tweak padding #14.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "(MSP)" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -1
@@ -3685,6 +3699,7 @@
                                             \big-half-harmonic
                                             cs'8
                                             [
+                                            \once \override TupletBracket.padding = #1
                                             \times 4/5
                                             {
                                                 \big-half-harmonic
@@ -3718,6 +3733,7 @@
                                             - \tweak padding 1
                                             ^ \punta-to-talon
                                             [
+                                            \once \override TupletBracket.padding = #1
                                             \times 4/5
                                             {
                                                 \big-half-harmonic
@@ -3767,6 +3783,7 @@
                                                 ]
                                             }
                                             \big-half-harmonic
+                                            \magnifyStaff #7/8
                                             dqf'4.
                                             - \tweak padding 1
                                             ^ \punta-to-talon
@@ -3922,6 +3939,7 @@
                                                 d'2
                                                 g'2
                                                 fs''2
+                                                \magnifyStaff #1
                                             }
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 7/10
