@@ -96,6 +96,27 @@ _scale_degree_to_cents = {
 # notation tools
 
 
+def polyrhythm_duration_lines(
+    fractions, selector=trinton.logical_ties(pitched=True, grace=False)
+):
+    def duration_lines(argument):
+        selections = selector(argument)
+
+        for selection, fraction in zip(selections, fractions):
+            duration_line_command = trinton.duration_line(
+                selector=trinton.pleaves(),
+                color=False,
+                sustained=False,
+                visible_grace=False,
+                on_beat_graces=False,
+                fraction=fraction,
+            )
+
+            duration_line_command(selection)
+
+    return duration_lines
+
+
 def color_voice(selector=trinton.select_leaves_by_index([0, -1])):
     def color(argument):
         selections = selector(argument)

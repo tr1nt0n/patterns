@@ -585,7 +585,7 @@ def rhythm_d(instrument, stage=1, index=0):
     return return_rhythm_selections
 
 
-def rhythm_e(lower_voice=False, index=0):
+def rhythm_e(lower_voice=False, index=0, shorten=False):
     def return_rhythm_selections(durations):
 
         base_polyrhythm = [6, 5, 4, 3]
@@ -621,7 +621,11 @@ def rhythm_e(lower_voice=False, index=0):
         tuplets = []
 
         for amount in relevant_amounts:
-            tuplet = [1 for _ in range(0, amount)]
+            if shorten is False:
+                tuplet = [1 for _ in range(0, amount)]
+            if shorten is True:
+                tuplet = [[1, -3] for _ in range(0, amount)]
+                tuplet = abjad.sequence.flatten(tuplet)
             tuplet = tuple(tuplet)
             tuplets.append(tuplet)
 
@@ -632,6 +636,19 @@ def rhythm_e(lower_voice=False, index=0):
         treat_tuplets = trinton.treat_tuplets()
         treat_tuplets(container)
         trinton.respell_tuplets(abjad.select.tuplets(container), rewrite_brackets=False)
+
+        # if shorten is True:
+        #     logical_ties = abjad.select.logical_ties(container, pitched=True)
+        #     for tie in logical_ties:
+        #         tie_duration = abjad.get.duration(tie, preprolated=True)
+        #         if tie_duration > abjad.Duration((1, 16)):
+        #             rest_duration = tie_duration - abjad.Duration((1, 16))
+        #             new_note = abjad.Note("c'16")
+        #             rest = abjad.Note("c'")
+        #             rest.written_duration = rest_duration
+        #             new_components = [new_note, rest]
+        #             rmakers.force_rest(new_components[-1])
+        #             abjad.mutate.replace(tie, new_components)
 
         rhythm_selections = abjad.mutate.eject_contents(container)
         return rhythm_selections
