@@ -1079,34 +1079,6 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[abjad.StopHairpin()], selector=trinton.select_leaves_by_index([-1])
     ),
-    # trinton.annotate_leaves_locally(
-    #     selector=abjad.select.leaves,
-    #     direction=abjad.UP
-    # ),
-    # trinton.manual_beam_positions(
-    #     positions=(7, 7),
-    #     selector=trinton.select_leaves_by_index(
-    #         [15, 18, 19, 21, 22, 24, 26, 28, 30, 32, 35, 37]
-    #     ),
-    # ),
-    # trinton.attachment_command(
-    #     attachments=[
-    #         abjad.Markup(
-    #             r"""\markup {
-    #                 \hspace #-2 {
-    #                     ( \note {2} #2 )
-    #                 }
-    #             }"""
-    #         )
-    #     ],
-    #     selector=trinton.select_leaves_by_index([1], pitched=True),
-    #     direction=abjad.UP,
-    # ),
-    # trinton.continuous_glissando(
-    #     zero_padding=True,
-    #     selector=trinton.pleaves(exclude=[-6, -5, -4, -3, -2, -1]),
-    #     tweaks=[abjad.Tweak(r"- \tweak color #(css-color 'darkred)")],
-    # ),
     trinton.noteheads_only(selector=trinton.pleaves(grace=True)),
     trinton.attachment_command(
         attachments=[
