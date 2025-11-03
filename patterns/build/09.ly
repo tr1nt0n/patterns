@@ -2,24 +2,54 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (12 14 20 30)))
             \time 7/8
             s1 * 7/8
+              %! +SCORE
+            \noBreak
             \time 4/4
             s1 * 1
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (12 27 27 30)))
             \time 2/4
             s1 * 1/2
+              %! +SCORE
+            \noBreak
             \time 5/4
             s1 * 5/4
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (12 23 36 36)))
             \time 7/4
             s1 * 7/4
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (12 24.5 33 34)))
             \time 5/4
             s1 * 5/4
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (13.5 26.5 26.5 35)))
             \time 6/4
             s1 * 3/2
+              %! +SCORE
+            \break
+              %! +SCORE
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 26.5 26.5 37)))
             \time 9/8
             s1 * 9/8
+              %! +SCORE
+            \noBreak
             \time 4/4
             s1 * 1
+              %! +SCORE
+            \noBreak
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
             \once \override Score.TimeSignature.stencil = ##f
@@ -202,6 +232,7 @@
                                     >8.
                                     [
                                     {
+                                        #(define afterGraceFraction (cons 15 16))
                                         \revert Dots.staff-position
                                         \once \override Flag.stroke-style = #"grace"
                                           %! abjad.glissando(6)
@@ -276,6 +307,7 @@
                                     >8.
                                     [
                                     {
+                                        #(define afterGraceFraction (cons 15 16))
                                         \revert Dots.staff-position
                                         \once \override Flag.stroke-style = #"grace"
                                           %! abjad.glissando(6)
@@ -371,6 +403,7 @@
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     {
+                                        #(define afterGraceFraction (cons 15 16))
                                         \grace-half-harmonic
                                         \revert Dots.staff-position
                                         \once \override Flag.stroke-style = #"grace"
@@ -460,15 +493,9 @@
                                             r8.
                                             - \tweak Beam.positions #'(-6 . -6)
                                             [
-                                            \once \override Voice.NoteHead.layer = 2
-                                            \once \override Voice.NoteHead.whiteout-style = #'outline
-                                            \once \override Voice.NoteHead.whiteout = 1
                                             c'''16
                                             ]
                                             ~
-                                            \once \override Voice.NoteHead.layer = 2
-                                            \once \override Voice.NoteHead.whiteout-style = #'outline
-                                            \once \override Voice.NoteHead.whiteout = 1
                                             c'''8
                                             - \tweak Beam.positions #'(-6 . -6)
                                             [
@@ -483,15 +510,9 @@
                                             r8
                                             - \tweak Beam.positions #'(-6 . -6)
                                             [
-                                            \once \override Voice.NoteHead.layer = 2
-                                            \once \override Voice.NoteHead.whiteout-style = #'outline
-                                            \once \override Voice.NoteHead.whiteout = 1
                                             c'''8
                                             ]
                                             ~
-                                            \once \override Voice.NoteHead.layer = 2
-                                            \once \override Voice.NoteHead.whiteout-style = #'outline
-                                            \once \override Voice.NoteHead.whiteout = 1
                                             c'''8
                                               %! +SCORE
                                             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-13 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
@@ -504,15 +525,9 @@
                                             r8.
                                             - \tweak Beam.positions #'(-6 . -6)
                                             [
-                                            \once \override Voice.NoteHead.layer = 2
-                                            \once \override Voice.NoteHead.whiteout-style = #'outline
-                                            \once \override Voice.NoteHead.whiteout = 1
                                             c'''16
                                             ]
                                             ~
-                                            \once \override Voice.NoteHead.layer = 2
-                                            \once \override Voice.NoteHead.whiteout-style = #'outline
-                                            \once \override Voice.NoteHead.whiteout = 1
                                             c'''8.
                                             - \tweak Beam.positions #'(-6 . -8)
                                             [
@@ -523,14 +538,8 @@
                                             r2.
                                             \once \override Rest.staff-position = #-7
                                             r1
-                                            \once \override Voice.NoteHead.layer = 2
-                                            \once \override Voice.NoteHead.whiteout-style = #'outline
-                                            \once \override Voice.NoteHead.whiteout = 1
                                             c'''8
                                             ~
-                                            \once \override Voice.NoteHead.layer = 2
-                                            \once \override Voice.NoteHead.whiteout-style = #'outline
-                                            \once \override Voice.NoteHead.whiteout = 1
                                             c'''4
                                             \once \override Rest.staff-position = #-7
                                             r2.
@@ -587,6 +596,7 @@
                                             \times 1/1
                                             {
                                                 \once \override Beam.grow-direction = #right
+                                                \tweak style #'cross
                                                 c'''16 * 31/16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
@@ -609,6 +619,7 @@
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "II + III, DP" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -3
                                                 \startTextSpanOne
+                                                \tweak style #'cross
                                                 c'''16 * 17/16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
@@ -663,15 +674,18 @@
                                             \times 1/1
                                             {
                                                 \once \override Beam.grow-direction = #right
+                                                \tweak style #'cross
                                                 c'''16 * 15/8
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
                                                 [
                                                 - \tweak color #(css-color 'darkred)
                                                 (
+                                                \tweak style #'cross
                                                 c'''16 * 21/16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
+                                                \tweak style #'cross
                                                 c'''16 * 13/16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
@@ -722,6 +736,7 @@
                                             \times 1/1
                                             {
                                                 \once \override Beam.grow-direction = #left
+                                                \tweak style #'cross
                                                 c'''16 * 43/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
@@ -730,14 +745,17 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 (
                                                 \<
+                                                \tweak style #'cross
                                                 c'''16 * 49/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
+                                                \tweak style #'cross
                                                 c'''16 * 17/16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
                                                 \mf
                                                 \>
+                                                \tweak style #'cross
                                                 c'''16 * 3/2
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
@@ -791,6 +809,7 @@
                                             \times 1/1
                                             {
                                                 \once \override Beam.grow-direction = #right
+                                                \tweak style #'cross
                                                 c'''16 * 117/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
@@ -799,17 +818,21 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 (
                                                 \<
+                                                \tweak style #'cross
                                                 c'''16 * 99/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
+                                                \tweak style #'cross
                                                 c'''16 * 69/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
                                                 \mf
                                                 \>
+                                                \tweak style #'cross
                                                 c'''16 * 13/16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
+                                                \tweak style #'cross
                                                 c'''16 * 47/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
@@ -891,19 +914,507 @@
                                 {
                                     r2..
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
                                     r1
                                     r2
-                                    r2.
-                                    r2
-                                    r1..
-                                    r2.
-                                    r2
-                                    r1.
+                                    <<
+                                        \context Voice = "violin 4 voice hair"
+                                        {
+                                            \times 2/3
+                                            {
+                                                \voiceOne
+                                                r8
+                                                [
+                                                r8
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    c''!
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    dqf''!
+                                                    \tweak style #'harmonic
+                                                    dqs''!
+                                                >8
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \mp
+                                                ]
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #13
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -3
+                                                \startTextSpanTwo
+                                                ~
+                                            }
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                c''
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic-mixed
+                                                dqf''
+                                                \tweak style #'harmonic-mixed
+                                                dqs''
+                                            >2
+                                            ~
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                c''
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                dqf''
+                                                \tweak style #'harmonic
+                                                dqs''
+                                            >8
+                                            [
+                                            r8
+                                            ]
+                                            r4
+                                            r2
+                                            r8
+                                            [
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                d''!
+                                                \tweak style #'harmonic
+                                                ef''!
+                                            >8
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ^ \mp
+                                            ]
+                                            ~
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic-mixed
+                                                d''
+                                                \tweak style #'harmonic-mixed
+                                                ef''
+                                            >2
+                                            ~
+                                            \times 2/3
+                                            {
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    d''
+                                                    \tweak style #'harmonic
+                                                    ef''
+                                                >8
+                                                [
+                                                r8
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    bqf'!
+                                                    \tweak style #'harmonic
+                                                    ef''!
+                                                >8
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                ]
+                                                ~
+                                            }
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                bqf'
+                                                \tweak style #'harmonic
+                                                ef''
+                                            >8
+                                            [
+                                            r8
+                                            ]
+                                            r8
+                                            [
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                eqs'!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                fs'!
+                                                \tweak style #'harmonic
+                                                g'!
+                                            >8
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ]
+                                            ~
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                eqs'
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic-mixed
+                                                fs'
+                                                \tweak style #'harmonic-mixed
+                                                g'
+                                            >2
+                                            ~
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                eqs'
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                fs'
+                                                \tweak style #'harmonic
+                                                g'
+                                            >8
+                                            [
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                eqs'!
+                                                \tweak style #'harmonic
+                                                fqs'!
+                                            >8
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ]
+                                            ~
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                eqs'
+                                                \tweak style #'harmonic
+                                                fqs'
+                                            >4
+                                            \stopTextSpanTwo
+                                        }
+                                        \context Voice = "violin 2 legno voice"
+                                        {
+                                            \once \override Rest.staff-position = #-8.5
+                                            \override Voice.NoteHead.color = #(css-color 'darkred)
+                                            \override Voice.Dots.color = #(css-color 'darkred)
+                                            \override Voice.Stem.color = #(css-color 'darkred)
+                                            \override Voice.Beam.color = #(css-color 'darkred)
+                                            \override Voice.Rest.color = #(css-color 'darkred)
+                                            \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
+                                            \voiceTwo
+                                            r2.
+                                            \once \override Rest.staff-position = #-8.5
+                                            r2
+                                            \once \override Rest.staff-position = #-8.5
+                                            r2
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/7
+                                            {
+                                                \override Voice.NoteHead.no-ledgers = ##t
+                                                \override Voice.Accidental.stencil = ##f
+                                                \textSpannerDown
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 2
+                                                - \tweak padding #16
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1.5
+                                                \startTextSpan
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \<
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                ]
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \mf
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \>
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            \times 4/6
+                                            {
+                                                \once \override Rest.staff-position = #-8.5
+                                                r8
+                                                [
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \<
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \mf
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/7
+                                            {
+                                                \once \override Rest.staff-position = #-8.5
+                                                r8.
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \mf
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \>
+                                                \tweak style #'cross
+                                                a32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                \once \override Rest.staff-position = #-8.5
+                                                r16
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            [
+                                            \times 2/3
+                                            {
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \mf
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \stopTextSpan
+                                                ]
+                                                \textSpannerUp
+                                                \revert Voice.NoteHead.color
+                                                \revert Voice.Dots.color
+                                                \revert Voice.Stem.color
+                                                \revert Voice.Beam.color
+                                                \revert Voice.Rest.color
+                                                \revert Voice.Tie.color
+                                                \revert Voice.TupletBracket.color
+                                                \revert Voice.TupletNumber.color
+                                                \revert Voice.NoteHead.no-ledgers
+                                                \revert Voice.Accidental.stencil
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
+                                    <<
+                                        \context Voice = "violin 4 voice upper 1"
+                                        {
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 3/4
+                                            {
+                                                \voiceOne
+                                                r2
+                                                  %! +SCORE
+                                                ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-6 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
+                                                a''8
+                                                r4.
+                                                cs''8
+                                                r2..
+                                            }
+                                        }
+                                        \context Voice = "violin 2 lower voice 1"
+                                        {
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                \voiceTwo
+                                                r4
+                                                b''16
+                                                \mp
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 2
+                                                - \tweak padding #12
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -10
+                                                \startTextSpanTwo
+                                                r8.
+                                                fs''16
+                                                \mf
+                                                \stopTextSpanTwo
+                                                r2
+                                                r8.
+                                            }
+                                        }
+                                    >>
+                                    \oneVoice
                                     r4.
                                     r4.
                                     r4.
-                                    r1
+                                    <<
+                                        \context Voice = "violin 4 voice upper 2"
+                                        {
+                                            \times 4/5
+                                            {
+                                                \voiceOne
+                                                a''16
+                                                \f
+                                                [
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 2
+                                                - \tweak padding #12
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -3
+                                                \startTextSpanTwo
+                                                \>
+                                                \once \override Rest.staff-position = #10.5
+                                                r8.
+                                                b''16
+                                                \once \override Rest.staff-position = #10.5
+                                                r8.
+                                                fs''16
+                                                \mp
+                                                \stopTextSpanTwo
+                                                ]
+                                                \once \override Rest.staff-position = #10.5
+                                                r2
+                                                \once \override Rest.staff-position = #10.5
+                                                r8.
+                                            }
+                                        }
+                                        \context Voice = "violin 2 lower voice 2"
+                                        {
+                                            \voiceTwo
+                                            ef''16
+                                            [
+                                            \once \override Rest.staff-position = #0
+                                            r8.
+                                            a''16
+                                            \once \override Rest.staff-position = #0
+                                            r8.
+                                            ]
+                                            \once \override Rest.staff-position = #0
+                                            r2
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -954,19 +1465,674 @@
                             {
                                 \context Voice = "viola 2 voice"
                                 {
-                                    r2..
-                                    r1
-                                    r2
-                                    r2.
-                                    r2
-                                    r1..
-                                    r2.
-                                    r2
-                                    r1.
-                                    r4.
-                                    r4.
-                                    r4.
-                                    r1
+                                    <<
+                                        \context Voice = "viola 2 voice strings"
+                                        {
+                                            \clef "alto"
+                                            \voiceOne
+                                            r4.
+                                              %! +SCORE
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
+                                            \times 2/3
+                                            {
+                                                \big-half-harmonic
+                                                aqf8
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \mp
+                                                [
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #13
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -3
+                                                \startTextSpanTwo
+                                                \big-half-harmonic
+                                                a8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                r8
+                                                ]
+                                            }
+                                            r16
+                                            [
+                                            \big-half-harmonic
+                                            aqf16
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            \big-half-harmonic
+                                            aqs16
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            \big-half-harmonic
+                                            b16
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            b16
+                                            [
+                                            r16
+                                            \big-half-harmonic
+                                            bf16
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            r16
+                                            ]
+                                            r8
+                                            [
+                                            \big-half-harmonic
+                                            aqs8
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            aqs2
+                                            \big-half-harmonic
+                                            cs'4
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ~
+                                            \big-half-harmonic
+                                            cs'16
+                                            [
+                                            \times 2/3
+                                            {
+                                                \big-half-harmonic
+                                                \set stemLeftBeamCount = 1
+                                                \set stemRightBeamCount = 2
+                                                bqs16
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                aqf16
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \set stemLeftBeamCount = 2
+                                                \set stemRightBeamCount = 1
+                                                r16
+                                            }
+                                            r16
+                                            ]
+                                            \big-half-harmonic
+                                            b16
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            [
+                                            \big-half-harmonic
+                                            aqf16
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            \big-half-harmonic
+                                            a16
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            \big-half-harmonic
+                                            aqf16
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            aqf8
+                                            [
+                                            r8
+                                            ]
+                                            r4
+                                            r4
+                                            \times 2/3
+                                            {
+                                                \big-half-harmonic
+                                                eqf8
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                [
+                                                \big-half-harmonic
+                                                e8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \big-half-harmonic
+                                                cqs8
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                ]
+                                                ~
+                                            }
+                                            \times 2/3
+                                            {
+                                                \big-half-harmonic
+                                                cqs4
+                                                \big-half-harmonic
+                                                dqs4
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                r4
+                                            }
+                                            r8
+                                            [
+                                            \big-half-harmonic
+                                            dqf''8
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ^ \mp
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            dqf''2
+                                            r8
+                                            [
+                                            \big-half-harmonic
+                                            c''8
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ]
+                                            \big-half-harmonic
+                                            dqs''8
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            [
+                                            \big-half-harmonic
+                                            b'8
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            b'16
+                                            [
+                                            r16
+                                            r16
+                                            \big-half-harmonic
+                                            eqs'16
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            eqs'2
+                                            ~
+                                            \big-half-harmonic
+                                            eqs'8
+                                            [
+                                            \times 2/3
+                                            {
+                                                r8
+                                                r8
+                                                \big-half-harmonic
+                                                fqs'8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                ~
+                                            }
+                                            \big-half-harmonic
+                                            fqs'8
+                                            ]
+                                            r4
+                                              %! +SCORE
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
+                                            r8
+                                            [
+                                            \big-half-harmonic
+                                            cqs'8
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            cqs'4
+                                            r2.
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 9/8
+                                            {
+                                                r4
+                                                \big-half-harmonic
+                                                bqf4
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                \mp
+                                                \big-half-harmonic
+                                                bf4
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                \big-half-harmonic
+                                                c'4
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                ^ \mp
+                                                ~
+                                            }
+                                            \big-half-harmonic
+                                            c'16
+                                            [
+                                            \big-half-harmonic
+                                            bqf16
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            \big-half-harmonic
+                                            dqs'16
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            r16
+                                            ]
+                                            r8
+                                            [
+                                            \big-half-harmonic
+                                            gqf8
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ]
+                                            ~
+                                            \big-half-harmonic
+                                            gqf2
+                                            \stopTextSpanTwo
+                                        }
+                                        \context Voice = "viola legno voice"
+                                        {
+                                            \once \override Rest.staff-position = #-8.5
+                                            \override Voice.NoteHead.color = #(css-color 'darkred)
+                                            \override Voice.Dots.color = #(css-color 'darkred)
+                                            \override Voice.Stem.color = #(css-color 'darkred)
+                                            \override Voice.Beam.color = #(css-color 'darkred)
+                                            \override Voice.Rest.color = #(css-color 'darkred)
+                                            \override Voice.Tie.color = #(css-color 'darkred)
+                                            \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                            \override Voice.TupletNumber.color = #(css-color 'darkred)
+                                            \voiceTwo
+                                            r4.
+                                            \times 2/3
+                                            {
+                                                \override Voice.NoteHead.no-ledgers = ##t
+                                                \override Voice.Accidental.stencil = ##f
+                                                \textSpannerDown
+                                                g,4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 2
+                                                - \tweak padding #15.5
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1.5
+                                                \startTextSpan
+                                                \once \override Rest.staff-position = #-8.5
+                                                r8
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r16
+                                            [
+                                            g,16
+                                            ~
+                                            g,8
+                                            ]
+                                            ~
+                                            g,16
+                                            \stopTextSpan
+                                            [
+                                            \textSpannerUp
+                                            \once \override Rest.staff-position = #-8.5
+                                            \textSpannerDown
+                                            r16
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #12
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -1.5
+                                            \startTextSpan
+                                            \tweak style #'cross
+                                            g,16
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            \once \override Rest.staff-position = #-8.5
+                                            r16
+                                            ]
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            \stopTextSpan
+                                            [
+                                            \textSpannerUp
+                                            \textSpannerDown
+                                            g,8
+                                            ]
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 2
+                                            - \tweak padding #13
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -1.5
+                                            \startTextSpan
+                                            ~
+                                            g,2
+                                            g,4
+                                            ~
+                                            g,8
+                                            [
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            ]
+                                            g,4
+                                            ~
+                                            g,8
+                                            [
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            ]
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            g,4
+                                            ~
+                                            \times 2/3
+                                            {
+                                                g,2
+                                                \stopTextSpan
+                                                \textSpannerUp
+                                                \once \override Rest.staff-position = #-8.5
+                                                r4
+                                            }
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                \once \override Rest.staff-position = #-8.5
+                                                r8
+                                                [
+                                                \textSpannerDown
+                                                \tweak style #'cross
+                                                g,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 2
+                                                - \tweak padding #17
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1.5
+                                                \startTextSpan
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \<
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                ]
+                                                \tweak style #'cross
+                                                g,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \mf
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \>
+                                                \tweak style #'cross
+                                                g,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                g,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/7
+                                            {
+                                                \once \override Rest.staff-position = #-8.5
+                                                r16
+                                                [
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \<
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \mf
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \>
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                \once \override Rest.staff-position = #-8.5
+                                                r16
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                \once \override Rest.staff-position = #-8.5
+                                                r16
+                                                [
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \<
+                                                \tweak style #'cross
+                                                g,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                g,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \mf
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \>
+                                                \tweak style #'cross
+                                                g,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                g,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            \once \override Rest.staff-position = #-8.5
+                                            r4
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            [
+                                            \tweak style #'cross
+                                            g,32
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \p
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \<
+                                            \tweak style #'cross
+                                            g,32
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            \tweak style #'cross
+                                            g,32
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            \tweak style #'cross
+                                            g,32
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \mf
+                                            ]
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \>
+                                            \tweak style #'cross
+                                            g,8
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            [
+                                            \tweak style #'cross
+                                            g,8
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \p
+                                            ]
+                                            \once \override Rest.staff-position = #-8.5
+                                            r8
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 6/5
+                                            {
+                                                \once \override Rest.staff-position = #-8.5
+                                                r16
+                                                [
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \mf
+                                                \tweak style #'cross
+                                                g,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                \stopTextSpan
+                                                \textSpannerUp
+                                                \once \override Rest.staff-position = #-8.5
+                                                r16
+                                                ]
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r2.
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 9/8
+                                            {
+                                                \once \override Rest.staff-position = #-8.5
+                                                r4
+                                                \textSpannerDown
+                                                g,2
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 2
+                                                - \tweak padding #16
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding 1.5
+                                                \startTextSpan
+                                                \textSpannerDown
+                                                \tweak style #'cross
+                                                g,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                \stopTextSpan
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 2
+                                                - \tweak padding #17
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1.5
+                                                \startTextSpan
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \<
+                                                \textSpannerUp
+                                                \tweak style #'cross
+                                                g,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                ]
+                                            }
+                                            \times 2/3
+                                            {
+                                                \tweak style #'cross
+                                                g,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \f
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \>
+                                                \tweak style #'cross
+                                                g,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                g,8
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \p
+                                                \stopTextSpan
+                                                ]
+                                                \textSpannerUp
+                                                \revert Voice.NoteHead.no-ledgers
+                                                \revert Voice.Accidental.stencil
+                                            }
+                                            \once \override Rest.staff-position = #-8.5
+                                            r2.
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -1095,6 +2261,7 @@
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         {
+                                            #(define afterGraceFraction (cons 15 16))
                                             \revert Dots.staff-position
                                             \once \override Flag.stroke-style = #"grace"
                                             \tweak style #'harmonic
@@ -1208,6 +2375,7 @@
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     {
+                                        #(define afterGraceFraction (cons 15 16))
                                         \revert Dots.staff-position
                                         \once \override Flag.stroke-style = #"grace"
                                         \tweak style #'harmonic
@@ -1231,6 +2399,7 @@
                                         - \abjad-zero-padding-glissando
                                         \glissando
                                         {
+                                            #(define afterGraceFraction (cons 15 16))
                                             \revert Dots.staff-position
                                             \once \override Flag.stroke-style = #"grace"
                                             d''16
