@@ -307,15 +307,39 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (4, 6)),
-    evans.RhythmHandler(rhythm.rhythm_e(index=20)),
+    evans.RhythmHandler(rhythm.rhythm_e(index=20, shorten=True)),
     pitch.pitch_e(instrument="violin 1", index=0),
     trinton.rewrite_meter_command(boundary_depth=-2),
+    # trinton.annotate_leaves_locally(
+    #     selector=abjad.select.leaves,
+    #     direction=abjad.UP
+    # ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                3,
+                4,
+                6,
+                7,
+                10,
+                11,
+                13,
+            ]
+        ),
+    ),
+    trinton.manual_beam_positions(
+        positions=(11.5, 11.5), selector=trinton.select_leaves_by_index([0, 3])
+    ),
     # trinton.annotate_leaves_locally(
     #     selector=trinton.logical_ties(first=True, pitched=True),
     #     direction=abjad.UP
     # ),
     library.tablature_staff(
-        selector=trinton.select_leaves_by_index([0]), reset_staff_lines=5, reset=True
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+        reset_staff_lines=5,
+        reset=True,
     ),
     trinton.octavation(octave=2, selector=trinton.pleaves()),
     trinton.octavation(
@@ -342,10 +366,11 @@ trinton.make_music(
     # ),
     # trinton.respell_with_sharps(selector=trinton.select_leaves_by_index([-3])),
     trinton.IntermittentVoiceHandler(
-        evans.RhythmHandler(rhythm.rhythm_e(index=20, lower_voice=True)),
+        evans.RhythmHandler(rhythm.rhythm_e(index=20, lower_voice=True, shorten=True)),
         direction=abjad.DOWN,
         voice_name="violin 1 polyrhythm voice",
         preprocessor=trinton.fuse_quarters_preprocessor((6, 4, 7)),
+        temp_name="temp 2",
     ),
     voice=score["violin 2 voice"],
 )
@@ -355,9 +380,23 @@ trinton.make_music(
     pitch.pitch_e(instrument="violin 1", index=0, retrograde=True),
     trinton.rewrite_meter_command(boundary_depth=-2),
     # trinton.annotate_leaves_locally(
-    #     selector=trinton.logical_ties(first=True, pitched=True, grace=False),
+    #     selector=abjad.select.leaves,
     #     direction=abjad.DOWN
     # ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
+        selector=trinton.select_leaves_by_index(
+            [
+                2,
+                4,
+                8,
+                15,
+            ]
+        ),
+    ),
+    trinton.manual_beam_positions(
+        positions=(-5, -5), selector=trinton.select_leaves_by_index([8, 15])
+    ),
     trinton.octavation(octave=2, selector=trinton.pleaves()),
     trinton.octavation(
         octave=1,
@@ -395,6 +434,32 @@ trinton.make_music(
     ),
     # trinton.respell_with_sharps(selector=trinton.select_leaves_by_index([-3])),
     voice=score["violin 1 polyrhythm voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #13", site="before"
+            ),
+        ],
+        selector=abjad.select.rests,
+    ),
+    voice=score["violin 2 voice temp 2"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #17", site="before"
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([-1]),
+    ),
+    voice=score["violin 2 voice temp 2"],
 )
 
 # second violin music

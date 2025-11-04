@@ -2422,9 +2422,9 @@
                                         \context Voice = "viola 2 voice temp"
                                         {
                                             \voiceOne
-                                            b'4
+                                            b'16
                                             _ \ppp
-                                            _ \staccato
+                                            [
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
                                             - \tweak padding #12
@@ -2432,53 +2432,72 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -5
                                             \startTextSpanOne
-                                            af'4
-                                            _ \staccato
-                                            a'4
-                                            _ \staccato
-                                            a'4
-                                            _ \staccato
+                                            r8.
+                                            af'16
+                                            r8.
+                                            a'16
+                                            r8.
+                                            a'16
+                                            r8.
+                                            ]
                                             \times 4/5
                                             {
-                                                df''4
-                                                - \staccato
-                                                e'4
-                                                _ \staccato
-                                                g'4
-                                                _ \staccato
-                                                g4
-                                                _ \staccato
-                                                ef'4
-                                                _ \staccato
+                                                df''16
+                                                [
+                                                r8.
+                                                e'16
+                                                r8.
+                                                g'16
+                                                r8.
+                                                g16
+                                                r8.
+                                                ef'16
+                                                r8.
+                                                ]
                                             }
                                             \times 4/5
                                             {
-                                                ef''4
-                                                - \staccato
-                                                ef''4
-                                                - \staccato
-                                                g''4
-                                                - \staccato
-                                                ef''4
-                                                - \staccato
-                                                a''4
-                                                - \staccato
+                                                ef''16
+                                                [
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                ef''16
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                g''16
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                ef''16
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                a''16
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                ]
                                             }
                                             \times 4/6
                                             {
-                                                fs''4
-                                                - \staccato
-                                                g''4
-                                                _ \staccato
-                                                af''4
-                                                _ \staccato
-                                                c''4
-                                                _ \staccato
-                                                bf''4
-                                                _ \staccato
-                                                af''4
-                                                _ \staccato
+                                                fs''16
+                                                [
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                g''16
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                af''16
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                c''16
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                bf''16
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                af''16
                                                 \stopTextSpanOne
+                                                \once \override Rest.staff-position = #12.5
+                                                r8.
+                                                ]
                                             }
                                         }
                                         \context Voice = "viola polyrhythm voice"
@@ -2487,46 +2506,61 @@
                                             {
                                                 \clef "alto"
                                                 \voiceTwo
-                                                b2
-                                                ^ \staccato
-                                                a'2
-                                                ^ \staccato
-                                                c'2
-                                                ^ \staccato
+                                                b8
+                                                r4.
+                                                a'8
+                                                r4.
+                                                c'8
+                                                r4.
                                             }
-                                            bf'4
-                                            - \staccato
-                                            c'4
-                                            ^ \staccato
-                                            fs'4
-                                            ^ \staccato
-                                            fs4
-                                            ^ \staccato
+                                            bf'16
+                                            [
+                                            \once \override Rest.staff-position = #-4
+                                            r8.
+                                            c'16
+                                            \once \override Rest.staff-position = #-4
+                                            r8.
+                                            fs'16
+                                            \once \override Rest.staff-position = #-4
+                                            r8.
+                                            fs16
+                                            \once \override Rest.staff-position = #-4
+                                            r8.
+                                            ]
                                             \times 4/5
                                             {
-                                                b'4
-                                                - \staccato
-                                                af'4
-                                                - \staccato
-                                                a'4
-                                                - \staccato
-                                                a'4
-                                                - \staccato
-                                                cs''4
-                                                - \staccato
+                                                b'16
+                                                [
+                                                r8.
+                                                af'16
+                                                r8.
+                                                a'16
+                                                r8.
+                                                a'16
+                                                r8.
+                                                cs''16
+                                                r8.
+                                                ]
                                             }
                                             \times 4/5
                                             {
-                                                e''4
-                                                - \staccato
-                                                g'4
-                                                ^ \staccato
-                                                g''4
-                                                ^ \staccato
-                                                ef''4
-                                                ^ \staccato
-                                                ef''4
-                                                ^ \staccato
+                                                e''16
+                                                [
+                                                \once \override Rest.staff-position = #3
+                                                r8.
+                                                g'16
+                                                \once \override Rest.staff-position = #3
+                                                r8.
+                                                g''16
+                                                \once \override Rest.staff-position = #3
+                                                r8.
+                                                ef''16
+                                                \once \override Rest.staff-position = #3
+                                                r8.
+                                                ef''16
+                                                \once \override Rest.staff-position = #3
+                                                r8.
+                                                ]
                                             }
                                         }
                                     >>

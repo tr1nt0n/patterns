@@ -1412,17 +1412,34 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (9, 12)),
-    evans.RhythmHandler(rhythm.rhythm_e(index=22)),
+    evans.RhythmHandler(rhythm.rhythm_e(index=22, shorten=True)),
     pitch.pitch_e(instrument="viola", index=0),
-    # trinton.annotate_leaves_locally(selector=trinton.pleaves(), direction=abjad.UP),
+    # trinton.annotate_leaves_locally(
+    #     # selector=trinton.pleaves(),
+    #     selector=abjad.select.leaves,
+    #     direction=abjad.UP
+    # ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.StartBeam(),
+                abjad.StopBeam(),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index([0, 7, 8, 17, 18, 27, 28, 39]),
+    ),
     trinton.octavation(
         octave=1,
         selector=trinton.select_leaves_by_index(
-            [4, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+            [4, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], pitched=True
         ),
     ),
-    trinton.octavation(octave=-1, selector=trinton.select_leaves_by_index([7])),
-    trinton.respell_with_flats(selector=trinton.select_leaves_by_index([4])),
+    trinton.octavation(
+        octave=-1, selector=trinton.select_leaves_by_index([7], pitched=True)
+    ),
+    trinton.respell_with_flats(
+        selector=trinton.select_leaves_by_index([4], pitched=True)
+    ),
     trinton.hooked_spanner_command(
         string="""1/2 CLB""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -1440,7 +1457,7 @@ trinton.make_music(
         ],
     ),
     trinton.IntermittentVoiceHandler(
-        evans.RhythmHandler(rhythm.rhythm_e(index=20, lower_voice=True)),
+        evans.RhythmHandler(rhythm.rhythm_e(index=20, shorten=True, lower_voice=True)),
         direction=abjad.DOWN,
         voice_name="viola polyrhythm voice",
         preprocessor=trinton.fuse_quarters_preprocessor((4,)),
@@ -1451,19 +1468,8 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (9, 12)),
     trinton.attachment_command(
-        attachments=[abjad.Articulation("staccato")],
-        selector=trinton.logical_ties(
-            first=True, pitched=True, exclude=[4, 9, 10, 11, 12, 13, 14]
-        ),
-        direction=abjad.DOWN,
-    ),
-    trinton.attachment_command(
-        attachments=[abjad.Articulation("staccato")],
-        selector=trinton.select_leaves_by_index([4, 9, 10, 11, 12, 13, 14]),
-    ),
-    trinton.attachment_command(
         attachments=[abjad.Dynamic("ppp")],
-        selector=trinton.select_leaves_by_index([0]),
+        selector=trinton.select_leaves_by_index([0], pitched=True),
         direction=abjad.DOWN,
     ),
     voice=score["viola 2 voice temp"],
@@ -1472,28 +1478,69 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (9, 12)),
     pitch.pitch_e(instrument="viola", index=-7),
-    # trinton.annotate_leaves_locally(selector=trinton.pleaves(), direction=abjad.DOWN),
+    # trinton.annotate_leaves_locally(
+    #     # selector=trinton.pleaves(),
+    #     selector=abjad.select.leaves,
+    #     direction=abjad.DOWN
+    # ),
+    trinton.linear_attachment_command(
+        attachments=itertools.cycle(
+            [
+                abjad.StartBeam(),
+                abjad.StopBeam(),
+            ]
+        ),
+        selector=trinton.select_leaves_by_index([6, 13, 14, 23, 24, 33]),
+    ),
     trinton.octavation(
         octave=1,
-        selector=trinton.select_leaves_by_index([11, 12, 14, 15, 16]),
+        selector=trinton.select_leaves_by_index([11, 12, 14, 15, 16], pitched=True),
     ),
     trinton.octavation(
         octave=-1,
-        selector=trinton.select_leaves_by_index([0, 6]),
-    ),
-    trinton.attachment_command(
-        attachments=[abjad.Articulation("staccato")],
-        selector=trinton.logical_ties(
-            first=True, pitched=True, exclude=[3, 7, 8, 9, 10, 11, 12]
-        ),
-        direction=abjad.UP,
-    ),
-    trinton.attachment_command(
-        attachments=[abjad.Articulation("staccato")],
-        selector=trinton.select_leaves_by_index([3, 7, 8, 9, 10, 11, 12]),
+        selector=trinton.select_leaves_by_index([0, 6], pitched=True),
     ),
     trinton.attachment_command(
         attachments=[abjad.Clef("alto")], selector=trinton.select_leaves_by_index([0])
+    ),
+    voice=score["viola polyrhythm voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #-4", site="before"
+            )
+        ],
+        selector=abjad.select.rests,
+    ),
+    voice=score["viola polyrhythm voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (11, 12)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #12.5", site="before"
+            )
+        ],
+        selector=abjad.select.rests,
+    ),
+    voice=score["viola 2 voice temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (12,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #3", site="before"
+            )
+        ],
+        selector=abjad.select.rests,
     ),
     voice=score["viola polyrhythm voice"],
 )

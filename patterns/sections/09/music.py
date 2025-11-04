@@ -427,7 +427,7 @@ trinton.make_music(
     voice=score["violin 2 voice"],
 )
 
-# second violin  music
+# second violin music
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (4, 6)),

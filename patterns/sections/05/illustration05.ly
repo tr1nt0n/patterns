@@ -592,7 +592,7 @@
                                     >>
                                     \oneVoice
                                     <<
-                                        \context Voice = "violin 2 voice temp"
+                                        \context Voice = "violin 2 voice temp 2"
                                         {
                                             \staff-line-count 5
                                             \revert Staff.StaffSymbol.line-positions
@@ -600,38 +600,65 @@
                                             \revert Staff.NoteHead.no-ledgers
                                             \revert Staff.Clef.stencil
                                             \voiceOne
-                                            cs''''4
+                                            cs''''16
+                                            - \tweak Beam.positions #'(11.5 . 11.5)
+                                            [
                                             \override Staff.BarLine.bar-extent = #'(-2 . 2)
-                                            a'''8
-                                            ~
-                                            a'''8
-                                            bf'''4
-                                            e'''4
-                                            a'''8
-                                            ~
-                                            a'''8
-                                            d'''4
+                                            \once \override Rest.staff-position = #13
+                                            r8.
+                                            a'''16
+                                            \once \override Rest.staff-position = #13
+                                            r16
+                                            ]
+                                            \once \override Rest.staff-position = #13
+                                            r8
+                                            [
+                                            bf'''16
+                                            \once \override Rest.staff-position = #13
+                                            r8.
+                                            ]
+                                            e'''16
+                                            [
+                                            \once \override Rest.staff-position = #13
+                                            r8.
+                                            a'''16
+                                            \once \override Rest.staff-position = #13
+                                            r16
+                                            ]
+                                            \once \override Rest.staff-position = #13
+                                            r8
+                                            [
+                                            d'''16
+                                            \once \override Rest.staff-position = #13
+                                            r8.
+                                            ]
                                             \times 2/3
                                             {
-                                                d'''2
-                                                f'''2
-                                                c'''2
+                                                d'''8
+                                                r4.
+                                                f'''8
+                                                r4.
+                                                c'''8
+                                                \once \override Rest.staff-position = #17
+                                                r4.
                                             }
-                                            e'''4..
-                                            g'''16
-                                            ~
-                                            g'''4
-                                            ~
-                                            g'''8
-                                            bf'''4.
-                                            ~
-                                            bf'''16
-                                            d'''4..
+                                            \tweak text #tuplet-number::calc-fraction-text
+                                            \times 7/8
+                                            {
+                                                e'''8
+                                                r4.
+                                                g'''8
+                                                r4.
+                                                bf'''8
+                                                r4.
+                                                d'''8
+                                                r4.
+                                            }
                                         }
                                         \context Voice = "violin 1 polyrhythm voice"
                                         {
                                             \voiceTwo
-                                            c'''4.
+                                            c'''8
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
                                             - \tweak padding #13.5
@@ -639,27 +666,40 @@
                                             - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -4
                                             \startTextSpanOne
-                                            ~
-                                            c'''8
-                                            fs'''4
-                                            ~
-                                            fs'''4
+                                            r4
+                                            r8
+                                            [
+                                            fs'''8
+                                            r8
+                                            ]
+                                            r4
                                             c''''8
-                                            ~
-                                            c''''4.
-                                            d'''4
-                                            e'''4
-                                            d'''4
-                                            g'''4
+                                            r4.
+                                            d'''16
+                                            - \tweak Beam.positions #'(-5 . -5)
+                                            [
+                                            r8.
+                                            e'''16
+                                            r8.
+                                            d'''16
+                                            r8.
+                                            g'''16
+                                            r8.
+                                            ]
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 7/10
                                             {
-                                                e''2
-                                                a'''2
-                                                bf'''2
-                                                d''''2
-                                                ef'''2
+                                                e''8
+                                                r4.
+                                                a'''8
+                                                r4.
+                                                bf'''8
+                                                r4.
+                                                d''''8
+                                                r4.
+                                                ef'''8
                                                 \stopTextSpanOne
+                                                r4.
                                             }
                                         }
                                     >>

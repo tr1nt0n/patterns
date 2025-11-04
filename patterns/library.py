@@ -102,6 +102,8 @@ def polyrhythm_duration_lines(
     def duration_lines(argument):
         selections = selector(argument)
 
+        selection_length = len(selections)
+        selection_counter = 0
         for selection, fraction in zip(selections, fractions):
             duration_line_command = trinton.duration_line(
                 selector=trinton.pleaves(),
@@ -113,6 +115,15 @@ def polyrhythm_duration_lines(
             )
 
             duration_line_command(selection)
+
+            if selection_counter == selection_length:
+                reset_literal = abjad.LilyPondLiteral(
+                    r"#(define afterGraceFraction (cons 15 16))",
+                    site="absolute_after",
+                )
+                abjad.attach(reset_literal, selection)
+
+            selection_counter += 1
 
     return duration_lines
 
