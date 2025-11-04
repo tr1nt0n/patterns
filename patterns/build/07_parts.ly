@@ -803,17 +803,19 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 _ \coda
                                                 _ \marcato
+                                                [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
-                                                - \tweak padding #9
+                                                - \tweak padding #9.5
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -824,9 +826,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -837,9 +840,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -850,9 +854,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -863,9 +868,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -876,28 +882,41 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
                                                 \stopTextSpanOne
+                                                r8.
+                                                ]
                                             }
                                             \times 4/5
                                             {
-                                                fs''8
+                                                fs''32
                                                 \pp
+                                                - \tweak Beam.positions #'(13 . 13)
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
-                                                - \tweak padding #15
+                                                - \tweak padding #17
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLB + SP" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -1.5
                                                 \startTextSpanOne
-                                                d'''8
-                                                g'''8
-                                                fs'''8
-                                                b''8
+                                                \once \override Rest.staff-position = #17
+                                                r16.
+                                                d'''32
+                                                \once \override Rest.staff-position = #17
+                                                r16.
+                                                g'''32
+                                                \once \override Rest.staff-position = #17
+                                                r16.
+                                                fs'''32
+                                                \once \override Rest.staff-position = #17
+                                                r16.
+                                                b''32
                                                 \stopTextSpanOne
+                                                \once \override Rest.staff-position = #17
+                                                r16.
                                                 ]
                                             }
                                             \staff-line-count 4
@@ -914,13 +933,14 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             _ \coda
                                             _ \marcato
+                                            [
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
-                                            - \tweak padding #8.5
+                                            - \tweak padding #9
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
@@ -929,8 +949,9 @@
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
-                                            - \tweak bound-details.right.padding -27.5
+                                            - \tweak bound-details.right.padding -24
                                             \startTextSpanThree
+                                            r8.
                                             \once \override Accidental.stencil = ##f
                                             <
                                                 \tweak style #'cross
@@ -941,9 +962,10 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                             _ \coda
                                             _ \marcato
+                                            r8.
                                             \once \override Accidental.stencil = ##f
                                             <
                                                 \tweak style #'cross
@@ -954,9 +976,10 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                             _ \coda
                                             _ \marcato
+                                            r8.
                                             \once \override Accidental.stencil = ##f
                                             <
                                                 \tweak style #'cross
@@ -967,11 +990,13 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                             _ \coda
                                             _ \marcato
                                             \stopTextSpanOne
+                                            r8.
                                             \stopTextSpanThree
+                                            ]
                                         }
                                         \context Voice = "violin 2 polyrhythm voice"
                                         {
@@ -993,9 +1018,13 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 ^ \coda
                                                 ^ \marcato
+                                                - \tweak Beam.positions #'(-9 . -9)
+                                                [
+                                                \once \override Rest.staff-position = #-11
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -1006,9 +1035,11 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 ^ \coda
                                                 ^ \marcato
+                                                \once \override Rest.staff-position = #-11
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -1019,9 +1050,11 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 ^ \coda
                                                 ^ \marcato
+                                                \once \override Rest.staff-position = #-11
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -1032,9 +1065,11 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 ^ \coda
                                                 ^ \marcato
+                                                \once \override Rest.staff-position = #-11
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -1045,24 +1080,37 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 ^ \coda
                                                 ^ \marcato
+                                                \once \override Rest.staff-position = #-11
+                                                r8.
+                                                ]
                                             }
                                             \staff-line-count 5
                                             \revert Staff.Clef.stencil
                                             \clef "treble"
-                                            a''8
+                                            a''32
+                                            - \tweak Beam.positions #'(-5 . -5)
                                             [
-                                            fs'''8
-                                            af'''8
-                                            ef'''8
+                                            \once \override Rest.staff-position = #0
+                                            r16.
+                                            fs'''32
+                                            \once \override Rest.staff-position = #0
+                                            r16.
+                                            af'''32
+                                            \once \override Rest.staff-position = #0
+                                            r16.
+                                            ef'''32
+                                            \once \override Rest.staff-position = #0
+                                            r16.
                                             ]
                                             \once \override TupletBracket.padding = #0.5
                                             \times 2/3
                                             {
                                                 \staff-line-count 4
                                                 \once \override Accidental.stencil = ##f
+                                                \once \override Voice.Stem.length = 22
                                                 \override Staff.Clef.stencil = #ly:text-interface::print
                                                 \override Staff.Clef.text = \stringing-clef
                                                 \clef "percussion"
@@ -1075,9 +1123,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >2
+                                                >8
                                                 ^ \coda
                                                 ^ \marcato
+                                                r4.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -1088,9 +1137,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >2
+                                                >8
                                                 ^ \coda
                                                 ^ \marcato
+                                                r4.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -1101,9 +1151,11 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >2
+                                                >8
                                                 ^ \coda
                                                 ^ \marcato
+                                                \once \override Rest.staff-position = #-16
+                                                r4.
                                             }
                                         }
                                     >>
@@ -3389,19 +3441,21 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 _ \coda
                                                 _ \marcato
                                                 - \tweak font-name "Bodoni72 Book Italic" 
                                                 _ \markup \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } }
+                                                [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
-                                                - \tweak padding #9
+                                                - \tweak padding #9.5
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -3412,9 +3466,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -3425,9 +3480,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -3438,9 +3494,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -3451,9 +3508,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 \revert Staff.Clef.stencil
                                                 <
@@ -3465,13 +3523,17 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
                                                 \stopTextSpanOne
+                                                r8.
+                                                ]
                                             }
-                                            d''4
+                                            d''16
                                             \pp
+                                            - \tweak Beam.positions #'(7.5 . 7.5)
+                                            [
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
                                             - \tweak padding #9.5
@@ -3484,15 +3546,21 @@
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 80 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 80" } } }
                                             \startTextSpanThree
-                                            e''4
-                                            g''4
-                                            cs'''4
-                                            b''4
+                                            r8.
+                                            e''16
+                                            r8.
+                                            g''16
+                                            r8.
+                                            cs'''16
+                                            r8.
+                                            b''16
                                             \stopTextSpanOne
+                                            r8.
+                                            ]
                                             \once \override TupletBracket.padding = #0.5
                                             \once \override TupletBracket.padding = #0.5
                                             \tweak text #tuplet-number::calc-fraction-text
-                                            \times 5/4
+                                            \times 10/8
                                             {
                                                 \staff-line-count 4
                                                 \once \override Accidental.stencil = ##f
@@ -3508,18 +3576,20 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 _ \coda
                                                 _ \marcato
                                                 \stopTextSpanThree
+                                                [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
-                                                - \tweak padding #9
+                                                - \tweak padding #9.5
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -3530,9 +3600,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -3543,9 +3614,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
+                                                r8.
                                                 \once \override Accidental.stencil = ##f
                                                 \revert Staff.Clef.stencil
                                                 <
@@ -3557,10 +3629,12 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >4
+                                                >16
                                                 _ \coda
                                                 _ \marcato
                                                 \stopTextSpanOne
+                                                r8.
+                                                ]
                                             }
                                         }
                                         \context Voice = "cello polyrhythm voice"
@@ -3580,9 +3654,13 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                             ^ \coda
                                             ^ \marcato
+                                            - \tweak Beam.positions #'(-8.5 . -8.5)
+                                            [
+                                            \once \override Rest.staff-position = #-10
+                                            r8.
                                             \once \override Accidental.stencil = ##f
                                             <
                                                 \tweak style #'cross
@@ -3593,9 +3671,11 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                             ^ \coda
                                             ^ \marcato
+                                            \once \override Rest.staff-position = #-10
+                                            r8.
                                             \once \override Accidental.stencil = ##f
                                             <
                                                 \tweak style #'cross
@@ -3606,9 +3686,11 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                             ^ \coda
                                             ^ \marcato
+                                            \once \override Rest.staff-position = #-10
+                                            r8.
                                             \once \override Accidental.stencil = ##f
                                             <
                                                 \tweak style #'cross
@@ -3619,9 +3701,11 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                             ^ \coda
                                             ^ \marcato
+                                            \once \override Rest.staff-position = #-10
+                                            r8.
                                             \once \override Accidental.stencil = ##f
                                             \revert Staff.Clef.stencil
                                             <
@@ -3633,20 +3717,29 @@
                                                 d'
                                                 \tweak style #'cross
                                                 f'
-                                            >4
+                                            >16
                                             ^ \coda
                                             ^ \marcato
+                                            \once \override Rest.staff-position = #-10
+                                            r8.
+                                            ]
                                             \once \override TupletBracket.padding = #0.5
                                             \tweak text #tuplet-number::calc-fraction-text
-                                            \times 5/4
+                                            \times 10/8
                                             {
                                                 \staff-line-count 5
                                                 \revert Staff.Clef.stencil
                                                 \clef "treble"
-                                                f''4
-                                                bf'4
-                                                b'4
-                                                d''4
+                                                f''16
+                                                [
+                                                r8.
+                                                bf'16
+                                                r8.
+                                                b'16
+                                                r8.
+                                                d''16
+                                                r8.
+                                                ]
                                             }
                                             \once \override TupletBracket.padding = #0.5
                                             \tweak text #tuplet-number::calc-fraction-text
@@ -3657,6 +3750,7 @@
                                                 \override Staff.Clef.stencil = #ly:text-interface::print
                                                 \override Staff.Clef.text = \stringing-clef
                                                 \clef "percussion"
+                                                \once \override Voice.Stem.length = 22
                                                 <
                                                     \tweak style #'cross
                                                     g
@@ -3666,9 +3760,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >2
+                                                >8
                                                 ^ \coda
                                                 ^ \marcato
+                                                r4.
                                                 \once \override Accidental.stencil = ##f
                                                 <
                                                     \tweak style #'cross
@@ -3679,9 +3774,10 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >2
+                                                >8
                                                 ^ \coda
                                                 ^ \marcato
+                                                r4.
                                                 \once \override Accidental.stencil = ##f
                                                 \revert Staff.Clef.stencil
                                                 <
@@ -3693,9 +3789,11 @@
                                                     d'
                                                     \tweak style #'cross
                                                     f'
-                                                >2
+                                                >8
                                                 ^ \coda
                                                 ^ \marcato
+                                                \once \override Rest.staff-position = #-16
+                                                r4.
                                             }
                                         }
                                     >>

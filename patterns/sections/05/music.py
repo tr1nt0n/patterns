@@ -259,6 +259,7 @@ trinton.make_music(
             [1, 5, 6, 7], pitched=True, grace=False
         ),
         color=r"(css-color 'darkred)",
+        fraction=(15, 16),
     ),
     trinton.noteheads_only(selector=trinton.pleaves(grace=True)),
     trinton.attachment_command(

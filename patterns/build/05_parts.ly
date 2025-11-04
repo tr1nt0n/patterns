@@ -355,6 +355,7 @@
                                             >8
                                             [
                                             {
+                                                #(define afterGraceFraction (cons 15 16))
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override Dots.staff-position = #2
                                                 \once \override NoteHead.no-ledgers = ##t
@@ -436,6 +437,7 @@
                                               %! abjad.glissando(7)
                                             \glissando
                                             {
+                                                #(define afterGraceFraction (cons 15 16))
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override Dots.staff-position = #2
                                                 \once \override NoteHead.no-ledgers = ##t
@@ -484,6 +486,7 @@
                                               %! abjad.glissando(7)
                                             \glissando
                                             {
+                                                #(define afterGraceFraction (cons 15 16))
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override Dots.staff-position = #2
                                                 \once \override NoteHead.no-ledgers = ##t
@@ -537,6 +540,7 @@
                                               %! abjad.glissando(7)
                                             \glissando
                                             {
+                                                #(define afterGraceFraction (cons 15 16))
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override Dots.staff-position = #2
                                                 \once \override NoteHead.no-ledgers = ##t
