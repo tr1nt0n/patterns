@@ -69,7 +69,7 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.whiteout-style = #'outline
         \override Accidental.whiteout = 1
         % \override Accidental.X-extent = ##f
-        
+
         % \override Arpeggio.stencil = #ly:arpeggio::brew-chord-bracket
         \override Arpeggio.whiteout-style = #'outline
         \override Arpeggio.whiteout = 1
@@ -122,7 +122,7 @@ afterGraceFraction = #(cons 15 16)
         \override MeasureSpanner.thickness = #1.5
         \override MeasureSpanner.font-size = 7
         \override MeasureSpanner.font-name = "Bodoni72 Book"
-        \override MeasureSpanner.padding = 11
+        \override MeasureSpanner.padding = 4
 
         \override NoteCollision.merge-differently-dotted = ##t
         \override NoteCollision.merge-differently-headed = ##t
@@ -303,7 +303,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override Accidental.font-size = 2
 
-        \override MeasureSpanner.staff-padding = 12
+        \override MeasureSpanner.staff-padding = 7
     }
 
 }
