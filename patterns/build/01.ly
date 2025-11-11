@@ -417,7 +417,6 @@
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 15/12
                                             {
-                                                \once \override DynamicLineSpanner.staff-padding = #11
                                                 <
                                                     \tweak Accidental.font-size #-3.5
                                                     \tweak Accidental.parenthesized ##t
@@ -430,8 +429,6 @@
                                                 >8
                                                 \stopTextSpanThree
                                                 [
-                                                - \tweak circled-tip ##t
-                                                _ \>
                                                 <
                                                     \tweak Accidental.font-size #-3.5
                                                     \tweak Accidental.parenthesized ##t
@@ -651,7 +648,6 @@
                                                 \once \override Accidental.stencil = ##f
                                                 \once \override NoteHead.transparent = ##t
                                                 c'16
-                                                \!
                                                 \stopTextSpan
                                             }
                                         }
@@ -668,7 +664,6 @@
                                             \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \voiceTwo
                                             r32
-                                            \pp
                                             - \tweak Beam.positions #'(-12 . -10.5)
                                             [
                                             \override Voice.NoteHead.no-ledgers = ##t
@@ -933,8 +928,6 @@
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak circled-tip ##t
-                                        \<
                                         \big-half-harmonic
                                         dqs'8
                                         - \tweak bound-details.right.arrow ##t
@@ -965,7 +958,6 @@
                                         \revert Staff.Stem.stemlet-length
                                         \tweak style #'harmonic
                                         d'8
-                                        \pp
                                         ]
                                         (
                                         - \tweak bound-details.right.arrow ##t
@@ -1009,8 +1001,6 @@
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak circled-tip ##t
-                                        \>
                                         \big-half-harmonic
                                         \revert Staff.Stem.stemlet-length
                                         \afterGrace
@@ -1025,7 +1015,6 @@
                                             \once \override Flag.stroke-style = #"grace"
                                             \tweak style #'harmonic
                                             dqs''16
-                                            \!
                                             )
                                         }
                                     }
@@ -1305,13 +1294,11 @@
                                             \override Voice.NoteHead.no-ledgers = ##t
                                             \override Voice.Accidental.stencil = ##f
                                             \textSpannerDown
-                                            \once \override DynamicLineSpanner.staff-padding = 14
                                             \voiceTwo
                                             \tweak style #'cross
                                             e,32
                                             - \tweak color #(css-color 'darkred)
                                             ^ \staccato
-                                            \pp
                                             - \tweak Beam.positions #'(-12 . -10.5)
                                             [
                                             - \tweak color #(css-color 'darkred)
@@ -1681,7 +1668,6 @@
                                             \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             \voiceOne
                                             r32
-                                            _ \pp
                                             - \tweak color #(css-color 'darkred)
                                             - \markup \fontsize #2 { \hspace #-4.5 \raise #4 { "Bow:" } }
                                             - \tweak Beam.positions #'(9 . 6)
@@ -1837,8 +1823,6 @@
                                     \startTextSpanThree
                                     \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                     <a, bqf,>4
-                                    - \tweak circled-tip ##t
-                                    \<
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
                                     - \tweak padding #6.5
@@ -1851,7 +1835,6 @@
                                     [
                                     \override Dots.staff-position = #2
                                     <a, bqf,>8.
-                                    \pp
                                     ]
                                     (
                                       %! abjad.glissando(7)
@@ -1896,8 +1879,6 @@
                                         - \tweak padding #1
                                         ^ \punta-to-talon
                                         \stopTextSpanThree
-                                        - \tweak circled-tip ##t
-                                        _ \>
                                         - \tweak font-name "Bodoni72 Book" 
                                         - \tweak font-size 2
                                         - \tweak padding #12
@@ -1970,7 +1951,6 @@
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.transparent = ##t
                                         <a, bqf,>16
-                                        \!
                                         \stopTextSpan
                                     }
                                       %! +SCORE

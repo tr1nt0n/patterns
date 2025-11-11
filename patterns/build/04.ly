@@ -247,7 +247,6 @@
                                     \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                     c'16
                                     - \tenuto
-                                    \p
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
@@ -300,11 +299,7 @@
                                     ]
                                     c'4
                                     - \accent
-                                    - \tweak circled-tip ##t
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     r4
-                                    \!
                                     - \tweak padding #11.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
@@ -312,7 +307,6 @@
                                     \startTextSpanThree
                                     c'2
                                     - \tenuto
-                                    \p
                                     r8.
                                     [
                                     c'16
@@ -329,9 +323,6 @@
                                     - \accent
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -49 }\line { +0 }} } }
                                     [
-                                    - \tweak circled-tip ##t
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
                                     - \tweak padding #10
@@ -342,7 +333,6 @@
                                     ]
                                     <cs'! ds'!>2
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
                                     r2
                                     <cs'! ds'!>8.
@@ -354,15 +344,10 @@
                                     <cs'! ds'!>4
                                     - \accent
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
-                                    - \tweak circled-tip ##t
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     r16
-                                    \!
                                     [
                                     <cs'! ds'!>16
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
                                     r16
                                     <cs'! ds'!>16
@@ -373,17 +358,11 @@
                                     \stopTextSpanThree
                                     <cs'! ds'!>2
                                     - \accent
-                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +32 }} } }
-                                    - \tweak circled-tip ##t
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     r8.
-                                    \!
                                     [
                                     <cs'! ds'!>16
                                     - \accent
-                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { +32 }} } }
                                     \stopTextSpanOne
                                     ]
@@ -477,7 +456,6 @@
                                     <bf'! gf''!>4
                                     - \accent
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -34 }} } }
-                                    \<
                                     r16
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
@@ -499,11 +477,7 @@
                                     \stopTextSpanTwo
                                     <gf''! d'''!>2
                                     - \accent
-                                    \p
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 }\line { +8 }} } }
-                                    - \tweak circled-tip ##t
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     - \tweak padding #13.5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
@@ -513,10 +487,8 @@
                                     [
                                     <gf''! d'''!>16
                                     - \accent
-                                    \p
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 }\line { +8 }} } }
                                     ]
-                                    \<
                                     r4
                                     d'''!16
                                     - \accent
@@ -537,13 +509,9 @@
                                     r4
                                     d'''!4
                                     - \accent
-                                    \mf
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 } } } }
                                     \stopTextSpanOne
                                     \stopTextSpanTwo
-                                    - \tweak circled-tip ##t
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -576,7 +544,7 @@
                                     \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { V2 }
                                     g'4.
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #4 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     - \tweak font-name "Bodoni72 Book" 
@@ -942,7 +910,6 @@
                                                 \revert Staff.Clef.stencil
                                                 \voiceOne
                                                 b'4
-                                                ^ \p
                                                 \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                                 fs'4
                                                 g4
@@ -969,7 +936,6 @@
                                             \times 4/6
                                             {
                                                 a'4
-                                                ^ \>
                                                 fs'4
                                                 g4
                                                 ef'4
@@ -977,7 +943,6 @@
                                                 b4
                                             }
                                             fs'16
-                                            ^ \pp
                                             [
                                             \once \override Dots.staff-position = #2
                                             \afterGrace
@@ -1187,7 +1152,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                            ^ \>
                                             {
                                                 #(define afterGraceFraction (cons 15 16))
                                                 \once \override Accidental.stencil = ##f
@@ -1309,7 +1273,6 @@
                                                 \once \override Dots.staff-position = #2
                                                 \afterGrace
                                                 fs''8
-                                                ^ \ppp
                                                 [
                                                   %! abjad.glissando(7)
                                                 - \abjad-zero-padding-glissando
@@ -2555,7 +2518,6 @@
                                             >16
                                             - \tweak color #(css-color 'darkred)
                                             - \staccato
-                                            _ \ppp
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
                                             - \tweak padding #11
@@ -2796,7 +2758,6 @@
                                             - \staccato
                                             - \tweak Beam.positions #'(8 . 8)
                                             [
-                                            _ \<
                                             \once \override Rest.staff-position = #10
                                             r8.
                                             \once \override Rest.staff-position = #10
@@ -2837,7 +2798,6 @@
                                             >16
                                             - \tweak color #(css-color 'darkred)
                                             _ \staccato
-                                            _ \p
                                             - \tweak Beam.positions #'(8 . 8)
                                             [
                                             - \tweak font-name "Bodoni72 Book" 
@@ -2881,7 +2841,6 @@
                                             ]
                                             \once \override Rest.staff-position = #10
                                             r4
-                                            _ \<
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
                                             \once \override Voice.Glissando.thickness = #8.25
@@ -2925,7 +2884,6 @@
                                             [
                                             \once \override Rest.staff-position = #10
                                             r8.
-                                            _ \mf
                                             \stopTextSpanOne
                                             ]
                                             \revert Voice.NoteHead.color
@@ -3005,239 +2963,145 @@
                                     \override Staff.Clef.stencil = ##f
                                     \clef "percussion"
                                     c'4.
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "p"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    - \upbow
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #7.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
                                     (
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #3.5
+                                    - \tweak padding #4.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "flaut." } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "OP" }
+                                    \startTextSpanTwo
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #6.25
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "Tailpiece" } \hspace #0.5 }
-                                    - \tweak bound-details.right.padding -2
-                                    \startTextSpan
-                                    \<
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpanOne
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'16
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     c'16
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    \stopTextSpanTwo
                                     ]
-                                    - \tweak circled-tip ##t
-                                    \>
                                     ~
                                     c'4
                                     ~
                                     c'4.
                                     )
                                     c'4.
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "pp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    - \downbow
                                     (
-                                    \<
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "OP" } \hspace #0.5 }
+                                    \startTextSpanTwo
                                     ~
                                     c'8
                                     c'4
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mf"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    \>
+                                    \stopTextSpanTwo
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "flaut." } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "norm." }
+                                    \startTextSpanTwo
                                     ~
                                     c'4
                                     c'8
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    \<
+                                    \stopTextSpanTwo
                                     ~
                                     c'4.
                                     )
                                     c'2
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mf"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    - \downbow
                                     (
-                                    \>
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "OP" } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "norm." }
+                                    \startTextSpanTwo
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'8
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     c'8
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "pp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    \stopTextSpanTwo
                                     ]
                                     ~
                                     c'2
                                     )
                                     c'4..
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    - \upbow
                                     (
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "flaut." } \hspace #0.5 }
+                                    \startTextSpanTwo
                                     - \tweak padding #12
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 125 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
                                     \startTextSpanThree
-                                    \>
                                     c'16
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mf"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
+                                    \stopTextSpanTwo
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "OP" } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "flaut." }
+                                    \startTextSpanTwo
                                     ~
                                     c'4
                                     c'4
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "p"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     )
+                                    \stopTextSpanTwo
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'8
+                                    - \upbow
                                     [
                                     (
-                                    \>
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "flaut." } \hspace #0.5 }
+                                    \startTextSpanTwo
                                     \revert Staff.Stem.stemlet-length
                                     c'8
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "pp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     )
+                                    \stopTextSpanTwo
                                     ]
-                                    \<
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "norm." } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "OP" }
+                                    \startTextSpanTwo
                                     c'4
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    \stopTextSpan
+                                    - \downbow
+                                    \stopTextSpanOne
+                                    \stopTextSpanTwo
                                     \staff-line-count 5
                                     \revert Staff.Clef.stencil
                                     \clef "alto"
                                     <g a>2
-                                    - \accent
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
-                                    - \tweak circled-tip ##t
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
                                     - \tweak padding #11
@@ -3248,60 +3112,43 @@
                                     <g a>2
                                     <g a>4
                                     - \accent
-                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
                                     (
-                                    \<
                                     <g a>4
-                                    \p
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
-                                    \>
                                     <g a>4
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
                                     )
-                                    - \tweak circled-tip ##t
-                                    \>
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <g a>8.
                                     - \accent
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
                                     \stopTextSpanThree
                                     [
                                     (
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     \revert Staff.Stem.stemlet-length
                                     <g a>16
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
                                     ]
-                                    \>
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <g a>8
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     <g a>8
-                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +0 }} } }
                                     )
                                     ]
                                     <a cs'>2
                                     - \accent
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +16 }} } }
                                     (
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <a cs'>8.
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     <a cs'>16
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +16 }} } }
                                     \stopTextSpanOne
                                     ]
@@ -3312,50 +3159,36 @@
                                     - \tweak bound-details.left.text \markup \concat { \upright { "molto tasto" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -8
                                     \startTextSpanOne
-                                    \>
                                     ~
                                     <a cs'>4
                                     ~
                                     <a cs'>4
                                     <a cs'>4
-                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +16 }} } }
                                     )
                                     <d cs'>4
                                     - \accent
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +39 }} } }
                                     (
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     <d cs'>4
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +39 }} } }
-                                    \>
                                     ~
                                     <d cs'>4..
                                     <d cs'>16
-                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -41 }\line { +39 }} } }
                                     ~
                                     <d cs'>1
                                     )
                                     <f d'>2
                                     - \accent
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 }\line { +8 }} } }
                                     (
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <f d'>8.
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 }\line { +8 }} } }
                                     [
-                                    \>
                                     \revert Staff.Stem.stemlet-length
                                     <f d'>16
-                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +39 }\line { +8 }} } }
                                     ]
                                     ~
@@ -3363,39 +3196,27 @@
                                     )
                                     <d' a'>4
                                     - \accent
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +39 }} } }
                                     (
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     <d' a'>2.
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +39 }} } }
-                                    \>
                                     <d' a'>2
-                                    \ppp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +16 }\line { +39 }} } }
                                     )
                                     <a' e''>4
                                     - \accent
-                                    \mf
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { +16 }} } }
                                     (
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <a' e''>16
                                     [
                                     <a' e''>16
-                                    \p
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { +16 }} } }
-                                    \>
                                     ~
                                     <a' e''>16
                                     \revert Staff.Stem.stemlet-length
                                     <a' e''>16
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { +16 }} } }
                                     ]
                                     ~
@@ -3406,7 +3227,6 @@
                                     \clef "treble"
                                     bf'4
                                     - \accent
-                                    \mf
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     (
                                     - \tweak font-name "Bodoni72 Book" 
@@ -3421,35 +3241,24 @@
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
                                     \startTextSpanThree
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     \override Staff.Stem.stemlet-length = 0.75
                                     bf'8.
-                                    \p
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     [
-                                    \>
                                     \revert Staff.Stem.stemlet-length
                                     bf'16
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     )
                                     ]
                                     ef''2
                                     - \accent
-                                    \f
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 } } } }
                                     (
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     ~
                                     ef''16
                                     ef''4..
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 } } } }
-                                    \>
                                     ef''2
-                                    \p
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 } } } }
                                     )
                                     \stopTextSpanOne
@@ -3514,9 +3323,8 @@
                                     \override Dots.staff-position = #2
                                     \clef "bass"
                                     gs8.
-                                    \p
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #9.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 100" } } }
                                     [
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
@@ -3743,7 +3551,6 @@
                                         - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
                                         - \tweak bound-details.right.padding -8
                                         \startTextSpanThree
-                                        \>
                                         \times 2/3
                                         {
                                             \tweak style #'harmonic
@@ -3806,7 +3613,6 @@
                                     \big-half-harmonic
                                     \clef "tenor"
                                     b32
-                                    \pp
                                     [
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
@@ -3973,7 +3779,6 @@
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    \<
                                     \tweak style #'harmonic
                                     fs'8
                                     - \accent
@@ -4053,7 +3858,6 @@
                                         \revert Dots.staff-position
                                         \tweak style #'harmonic
                                         bqf''16
-                                        \f
                                         \stopTextSpanThree
                                         ]
                                     }
@@ -4070,8 +3874,6 @@
                                             - \tweak bound-details.left.text \markup \concat { { "CLB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -4
                                             \startTextSpanOne
-                                            - \tweak stencil #abjad-flared-hairpin
-                                            \>
                                             \once \override Rest.staff-position = #9.5
                                             r16.
                                             f''32
@@ -4085,7 +3887,6 @@
                                             r16.
                                             ]
                                             a''8
-                                            \ppp
                                             \once \override Rest.staff-position = #9.5
                                             r4.
                                             cs'''8
@@ -4140,7 +3941,6 @@
                                             {
                                                 bf16
                                                 [
-                                                \<
                                                 r8.
                                                 f16
                                                 r8.
@@ -4159,7 +3959,7 @@
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 50 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
-                                            - \tweak bound-details.right.padding -16
+                                            - \tweak bound-details.right.padding -11
                                             \startTextSpanThree
                                             \once \override Rest.staff-position = #1
                                             r16.
@@ -4174,7 +3974,6 @@
                                             r16.
                                             ]
                                             d16
-                                            \mf
                                             [
                                             r8.
                                             b,16

@@ -31,9 +31,9 @@ trinton.make_music(
     trinton.linear_attachment_command(
         attachments=[
             abjad.bundle(abjad.Articulation("talon-to-punta"), r"- \tweak padding 0.5"),
-            abjad.Dynamic("fff"),
-            abjad.StartSlur(),
-            abjad.StopSlur(),
+            # abjad.Dynamic("fff"),
+            # abjad.StartSlur(),
+            # abjad.StopSlur(),
         ],
         selector=trinton.select_leaves_by_index([0, 0, 0, -1]),
     ),
@@ -215,20 +215,20 @@ trinton.make_music(
         ),
         direction=abjad.DOWN,
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #12.5",
-                site="before",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("ffff"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-        direction=abjad.DOWN,
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #12.5",
+    #             site="before",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("ffff"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0]),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.hooked_spanner_command(
         string="CLB OB",
         selector=trinton.select_leaves_by_index([0, -1], grace=False, pitched=True),
@@ -262,9 +262,9 @@ trinton.make_music(
         attachments=[abjad.Articulation(">")],
         selector=trinton.logical_ties(first=True, pitched=True),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.Dynamic("fff")], selector=trinton.select_leaves_by_index([0])
-    ),
+    # trinton.attachment_command(
+    #     attachments=[abjad.Dynamic("fff")], selector=trinton.select_leaves_by_index([0])
+    # ),
     trinton.hooked_spanner_command(
         string="SP moltiss. + scratch",
         selector=trinton.select_leaves_by_index(
@@ -379,7 +379,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.Markup(
-                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed + pressure may result in slight pitch bending. This is desired. The left hand position need not be adjusted to accomodate this." }"""
+                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed may result in slight distortions of the tone. This is desired. The left hand position need not be adjusted to accomodate this." }"""
             ),
             abjad.StopHairpin(),
         ],
@@ -397,28 +397,28 @@ trinton.make_music(
     ),
     evans.PitchHandler(["c'''", "e''", "b'", "a'", "c'", "g"]),
     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #0.5",
-                site="before",
-            ),
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("f"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("pp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin(">o"),
-            abjad.StopHairpin(),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5], first=True, pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #0.5",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("f"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("pp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("mp"),
+    #         abjad.StartHairpin(">o"),
+    #         abjad.StopHairpin(),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5], first=True, pitched=True
+    #     ),
+    # ),
     voice=score["violin 1 voice"],
 )
 
@@ -500,28 +500,28 @@ trinton.make_music(
     # trinton.annotate_leaves_locally(
     #     selector=trinton.logical_ties(first=True, pitched=True)
     # ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic("fff"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("mf"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("ff"),
-            abjad.StartHairpin(">"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 2, 2, 8, 8], first=True, pitched=True, grace=False
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("fff"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("mf"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("ff"),
+    #         abjad.StartHairpin(">"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 2, 2, 8, 8], first=True, pitched=True, grace=False
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
-        string="SP, 1/2 Scratch",
+        string="SP",
         selector=trinton.select_leaves_by_index(
             [0, -1],
             pitched=True,
             grace=False,
         ),
         padding=13,
-        right_padding=1.5,
+        right_padding=1,
         full_string=False,
         style="dashed-line-with-hook",
         hspace=None,
@@ -560,20 +560,20 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0]),
     ),
     trinton.artificial_harmonics(selector=trinton.pleaves(exclude=[0])),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("--"),
-            abjad.StopHairpin(),
-        ],
-        selector=trinton.select_leaves_by_index(
-            [
-                0,
-                0,
-                -1,
-            ]
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StopHairpin(),
+    #     ],
+    #     selector=trinton.select_leaves_by_index(
+    #         [
+    #             0,
+    #             0,
+    #             -1,
+    #         ]
+    #     ),
+    # ),
     voice=score["violin 4 voice"],
     beam_meter=True,
 )
@@ -594,7 +594,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.Markup(
-                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed + pressure may result in slight pitch bending. This is desired. The left hand position need not be adjusted to accomodate this." }"""
+                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed may result in slight distortions of the tone. This is desired. The left hand position need not be adjusted to accomodate this." }"""
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
@@ -620,28 +620,28 @@ trinton.make_music(
     ),
     evans.PitchHandler(["c'''", "a''", "e''", "g'", "d'", "b"]),
     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #0.5",
-                site="before",
-            ),
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("pp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mp"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5], first=True, pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #0.5",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mp"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("pp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mp"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5], first=True, pitched=True
+    #     ),
+    # ),
     voice=score["violin 3 voice"],
 )
 
@@ -709,12 +709,12 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
-    trinton.attachment_command(
-        attachments=[trinton.make_custom_dynamic("ffffff")],
-        selector=trinton.select_leaves_by_index([0], pitched=True),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[trinton.make_custom_dynamic("ffffff")],
+    #     selector=trinton.select_leaves_by_index([0], pitched=True),
+    # ),
     trinton.hooked_spanner_command(
-        string=r"1/2 CLB",
+        string=r"1/2 CLB + ST poss.",
         selector=trinton.select_leaves_by_index(
             [0, -1],
         ),
@@ -843,17 +843,17 @@ trinton.make_music(
         selector=trinton.logical_ties(first=True, pitched=True, grace=False),
         direction=abjad.UP,
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #15.25",
-                site="before",
-            ),
-            abjad.Dynamic("mf"),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-        direction=abjad.UP,
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #15.25",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("mf"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0]),
+    #     direction=abjad.UP,
+    # ),
     trinton.hooked_spanner_command(
         string=r"""MSP""",
         selector=trinton.select_leaves_by_index(
@@ -932,20 +932,20 @@ trinton.make_music(
         ),
         direction=abjad.DOWN,
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #15",
-                site="before",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("ffff"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-        direction=abjad.DOWN,
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #15",
+    #             site="before",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("ffff"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0]),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.hooked_spanner_command(
         string="CLB OB",
         selector=trinton.select_leaves_by_index([0, -1], grace=False, pitched=True),
@@ -1037,14 +1037,14 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic("fff"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("ppp"),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("fff"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("ppp"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+    # ),
     voice=score["viola lower voice 1"],
 )
 
@@ -1061,14 +1061,14 @@ trinton.make_music(
         attachments=[abjad.Tie()], selector=trinton.select_leaves_by_index([0])
     ),
     trinton.artificial_harmonics(selector=trinton.pleaves(exclude=[0])),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("--"),
-            abjad.StopHairpin(),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, -1]),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StopHairpin(),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1]),
+    # ),
     voice=score["viola 2 voice"],
     beam_meter=True,
 )
@@ -1083,7 +1083,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.Markup(
-                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed + pressure may result in slight pitch bending. This is desired. The left hand position need not be adjusted to accomodate this." }"""
+                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed may result in slight distortions of the tone. This is desired. The left hand position need not be adjusted to accomodate this." }"""
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
@@ -1109,24 +1109,24 @@ trinton.make_music(
     ),
     evans.PitchHandler(["c'''", "f''", "a'", "f'", "c'"]),
     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #0.5",
-                site="before",
-            ),
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("--"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin("--"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 0, 1, 2, 2, 3, 4], first=True, pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #0.5",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mp"),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 0, 1, 2, 2, 3, 4], first=True, pitched=True
+    #     ),
+    # ),
     voice=score["viola 1 voice"],
 )
 
@@ -1199,28 +1199,28 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #15.5",
-                site="before",
-            ),
-            abjad.Dynamic("fff"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("ppp"),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, 0, -1]),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #15.5",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("fff"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("ppp"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 0, 0, -1]),
+    # ),
     trinton.IntermittentVoiceHandler(
         evans.RhythmHandler(
             evans.tuplet(
                 [
                     (1,),
-                    (1, 1, 1, 1, 1),
+                    (-1, -1, 1, -1, 1),
                     (1, 1, 1),
-                    (1, 1, 1, 1, 1),
-                    (1, 1, 1),
-                    (1, 1, 1),
+                    (1, -1, -1, 1, -1),
+                    (-1, 1, 1),
+                    (-1, 1, -1),
                 ]
             )
         ),
@@ -1238,6 +1238,14 @@ trinton.make_music(
     trinton.respell_tuplets_command(rewrite_brackets=False),
     trinton.rewrite_meter_command(boundary_depth=-1),
     evans.PitchHandler(["b,,"]),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #-10", site="before"
+            )
+        ],
+        selector=abjad.select.rests,
+    ),
     trinton.change_notehead_command(notehead="cross", selector=trinton.pleaves()),
     trinton.linear_attachment_command(
         attachments=[
@@ -1285,7 +1293,7 @@ trinton.make_music(
             ),
         ],
         selector=trinton.patterned_tie_index_selector(
-            [0, 3, 5, 6, 9, 12], 15, first=True, pitched=True
+            [0, 3, 5, 6, 9, 12], 15, first=True
         ),
         direction=abjad.DOWN,
     ),
@@ -1333,14 +1341,14 @@ trinton.make_music(
         attachments=[abjad.Tie()], selector=trinton.select_leaves_by_index([0])
     ),
     trinton.artificial_harmonics(selector=trinton.pleaves(exclude=[0])),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("--"),
-            abjad.StopHairpin(),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, -1]),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StopHairpin(),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1]),
+    # ),
     voice=score["cello 2 voice"],
     beam_meter=True,
 )
@@ -1355,7 +1363,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.Markup(
-                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed + pressure may result in slight pitch bending. This is desired. The left hand position need not be adjusted to accomodate this." }"""
+                r"""\markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed may result in slight distortions of the tone. This is desired. The left hand position need not be adjusted to accomodate this." }"""
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
@@ -1381,29 +1389,29 @@ trinton.make_music(
     ),
     evans.PitchHandler(["c'''", "b''", "e''", "b'", "g'", "e'", "a"]),
     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #0.5",
-                site="before",
-            ),
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-            abjad.StartHairpin("--"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("pp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("p"),
-            abjad.StartHairpin(">o"),
-            abjad.StopHairpin(),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5, 6], first=True, pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #0.5",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("pp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mp"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("p"),
+    #         abjad.StartHairpin(">o"),
+    #         abjad.StopHairpin(),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5, 6], first=True, pitched=True
+    #     ),
+    # ),
     voice=score["cello 1 voice"],
 )
 
@@ -1453,7 +1461,7 @@ trinton.make_music(
             ),
             abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
             trinton.boxed_markup(
-                string="Dreaming About Ghosts",
+                string="Dreams About Ghosts",
                 tweaks=[r"- \tweak padding 9"],
                 column="\center-column",
                 font_name="Bodoni72 Book Italic",
@@ -1622,7 +1630,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (6 14 13 11 13 11 13 11)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (8 11 15 10 15 10 15 10)))",
                 site="absolute_before",
             ),
         ],

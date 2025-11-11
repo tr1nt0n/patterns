@@ -129,23 +129,23 @@ trinton.make_music(
         selector=abjad.select.rests,
     ),
     library.color_voice(),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #-4.5",
-                site="before",
-            ),
-            abjad.Dynamic("pp"),
-            abjad.StartHairpin("--"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mp"),
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #-5", site="before"
-            ),
-            trinton.make_custom_dynamic("s. f"),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, 0, 1, 2, 3, 3]),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #-4.5",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("pp"),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mp"),
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #-5", site="before"
+    #         ),
+    #         trinton.make_custom_dynamic("s. f"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 0, 0, 1, 2, 3, 3]),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""III""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -315,23 +315,23 @@ trinton.make_music(
         selector=abjad.select.rests,
     ),
     library.color_voice(),
-    trinton.linear_attachment_command(
-        attachments=[
-            # abjad.LilyPondLiteral(
-            #     r"\once \override DynamicLineSpanner.staff-padding = #-4.5",
-            #     site="before"
-            # ),
-            abjad.Dynamic("pp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mp"),
-            # abjad.LilyPondLiteral(
-            #     r"\once \override DynamicLineSpanner.staff-padding = #-5",
-            #     site="before"
-            # ),
-            trinton.make_custom_dynamic("s. f"),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, 2, 3]),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         # abjad.LilyPondLiteral(
+    #         #     r"\once \override DynamicLineSpanner.staff-padding = #-4.5",
+    #         #     site="before"
+    #         # ),
+    #         abjad.Dynamic("pp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mp"),
+    #         # abjad.LilyPondLiteral(
+    #         #     r"\once \override DynamicLineSpanner.staff-padding = #-5",
+    #         #     site="before"
+    #         # ),
+    #         trinton.make_custom_dynamic("s. f"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 0, 2, 3]),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""III""",
         selector=trinton.select_leaves_by_index([0, 2], pitched=True),
@@ -513,25 +513,25 @@ trinton.make_music(
         selector=abjad.select.rests,
     ),
     library.color_voice(),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #-4.5",
-                site="before",
-            ),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("pp"),
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #-3.5",
-                site="before",
-            ),
-            trinton.make_custom_dynamic("s. f"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 0, 2, 3, 3], first=True, pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #-4.5",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("mp"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("pp"),
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #-3.5",
+    #             site="before",
+    #         ),
+    #         trinton.make_custom_dynamic("s. f"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 0, 2, 3, 3], first=True, pitched=True
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""IV""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -714,23 +714,23 @@ trinton.make_music(
         selector=abjad.select.rests,
     ),
     library.color_voice(),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #-3.5",
-                site="before",
-            ),
-            abjad.Dynamic("pp"),
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #-3.5",
-                site="before",
-            ),
-            trinton.make_custom_dynamic("s. f"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 1, 1], first=True, pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #-3.5",
+    #             site="before",
+    #         ),
+    #         abjad.Dynamic("pp"),
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #-3.5",
+    #             site="before",
+    #         ),
+    #         trinton.make_custom_dynamic("s. f"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 1, 1], first=True, pitched=True
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""II""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -891,24 +891,24 @@ trinton.make_music(
         selector=abjad.select.rests,
     ),
     library.color_voice(),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\override DynamicLineSpanner.staff-padding = #-3.5", site="before"
-            ),
-            abjad.Dynamic("mp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-            abjad.LilyPondLiteral(
-                r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
-            ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 1, 5, 6, -1], first=True, pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\override DynamicLineSpanner.staff-padding = #-3.5", site="before"
+    #         ),
+    #         abjad.Dynamic("mp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("ppp"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #         abjad.LilyPondLiteral(
+    #             r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
+    #         ),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 1, 5, 6, -1], first=True, pitched=True
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""IV""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -1140,24 +1140,24 @@ trinton.make_music(
             abjad.Tweak(r"- \tweak bound-details.right.arrow ##t"),
         ],
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
-            ),
-            abjad.Dynamic("pp"),
-            abjad.StartHairpin("--"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.LilyPondLiteral(
-                r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
-            ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 0, 1, 4, 5, -1], first=True, pitched=True, grace=False
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
+    #         ),
+    #         abjad.Dynamic("pp"),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.LilyPondLiteral(
+    #             r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
+    #         ),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 0, 1, 4, 5, -1], first=True, pitched=True, grace=False
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"Scratch",
         selector=trinton.select_leaves_by_index(
@@ -1380,28 +1380,28 @@ trinton.make_music(
             abjad.Tweak(r"- \tweak bound-details.right.arrow ##t"),
         ],
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
-            ),
-            abjad.Dynamic("pp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("p"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("p"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("mp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("mp"),
-            abjad.LilyPondLiteral(
-                r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
-            ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 3, 4, 6, 7, 8, 9, 11, 13, -1], first=True, pitched=True, grace=False
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
+    #         ),
+    #         abjad.Dynamic("pp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("p"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("p"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("mp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("mp"),
+    #         abjad.LilyPondLiteral(
+    #             r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
+    #         ),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 3, 4, 6, 7, 8, 9, 11, 13, -1], first=True, pitched=True, grace=False
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"Scr.",
         selector=trinton.select_logical_ties_by_index(
@@ -1554,23 +1554,23 @@ trinton.make_music(
             abjad.Tweak(r"- \tweak bound-details.right.arrow ##t"),
         ],
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
-            ),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("pp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("pp"),
-            abjad.LilyPondLiteral(
-                r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
-            ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 4, 5, 6, -1], first=True, pitched=True, grace=False
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
+    #         ),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("pp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("pp"),
+    #         abjad.LilyPondLiteral(
+    #             r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
+    #         ),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 4, 5, 6, -1], first=True, pitched=True, grace=False
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""\markup { \override #'(baseline-skip . 2) \column { \line { "1/2 CLT, MSP" } \line { "(hair on bridge," } \line { "wood on string)" } } }""",
         selector=trinton.select_logical_ties_by_index(
@@ -1663,25 +1663,25 @@ trinton.make_music(
             abjad.Tweak(r"- \tweak bound-details.right.arrow ##t"),
         ],
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
-            ),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("pp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("pp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("pp"),
-            abjad.LilyPondLiteral(
-                r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
-            ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 1, 3, 4, 7, 8, -1], first=True, pitched=True, grace=False
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
+    #         ),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("pp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("pp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("pp"),
+    #         abjad.LilyPondLiteral(
+    #             r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
+    #         ),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 1, 3, 4, 7, 8, -1], first=True, pitched=True, grace=False
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""\markup { \override #'(baseline-skip . 2) \column { \line { "1/2 CLT, MSP" } \line { "(hair on bridge," } \line { "wood on string)" } } }""",
         selector=trinton.select_leaves_by_index(
@@ -1763,34 +1763,34 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0, 1, 2, 3, 6, 9, 10, 12, 15, 18, 19]),
     ),
     # trinton.annotate_leaves_locally(selector=trinton.logical_ties(first=True, pitched=True)),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
-            ),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("mp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("mp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("mp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("mp"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("mf"),
-            trinton.make_custom_dynamic("s. f"),
-            abjad.Dynamic("mf"),
-            abjad.LilyPondLiteral(
-                r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
-            ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 4, 6, 7, 8, 10, 11, 12, 13, 14, 15, 17, -1],
-            first=True,
-            pitched=True,
-            grace=False,
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\override DynamicLineSpanner.staff-padding = #-4", site="before"
+    #         ),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("mp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("mp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("mp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("mp"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("mf"),
+    #         trinton.make_custom_dynamic("s. f"),
+    #         abjad.Dynamic("mf"),
+    #         abjad.LilyPondLiteral(
+    #             r"\revert DynamicLineSpanner.staff-padding", site="absolute_after"
+    #         ),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 4, 6, 7, 8, 10, 11, 12, 13, 14, 15, 17, -1],
+    #         first=True,
+    #         pitched=True,
+    #         grace=False,
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"Scr.",
         selector=trinton.select_logical_ties_by_index(
@@ -1935,11 +1935,11 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([3, 4, 6, 8, 10, 12, 13, 15, 16, 19]),
     ),
     trinton.respell_with_flats(selector=trinton.select_leaves_by_index([11, 17, 20])),
-    trinton.linear_attachment_command(
-        attachments=[abjad.Dynamic("mp"), abjad.StartHairpin(">"), abjad.Dynamic("pp")],
-        selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
-        direction=abjad.UP,
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.Dynamic("mp"), abjad.StartHairpin(">"), abjad.Dynamic("pp")],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+    #     direction=abjad.UP,
+    # ),
     voice=score["viola 2 voice temp 1"],
     beam_meter=True,
 )
@@ -2308,14 +2308,14 @@ trinton.make_music(
         ),
         direction=abjad.DOWN,
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(r"\once \override DynamicLineSpanner.padding = #5.5"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, -1]),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(r"\once \override DynamicLineSpanner.padding = #5.5"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1]),
+    # ),
     trinton.hooked_spanner_command(
         string="CLB OB",
         selector=trinton.select_leaves_by_index(
@@ -2377,11 +2377,11 @@ trinton.make_music(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
         selector=trinton.select_leaves_by_index([0, 9, 24, 35]),
     ),
-    trinton.linear_attachment_command(
-        attachments=[abjad.StartHairpin(">"), abjad.Dynamic("ppp")],
-        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
-        direction=abjad.DOWN,
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.StartHairpin(">"), abjad.Dynamic("ppp")],
+    #     selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.hooked_spanner_command(
         string=r"CLB",
         selector=trinton.select_leaves_by_index(
@@ -2559,12 +2559,12 @@ trinton.make_music(
         attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
         selector=trinton.pleaves(),
     ),
-    trinton.linear_attachment_command(
-        attachments=[abjad.Dynamic("mp"), abjad.StartHairpin(">"), abjad.Dynamic("pp")],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 27], first=True, pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.Dynamic("mp"), abjad.StartHairpin(">"), abjad.Dynamic("pp")],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 27], first=True, pitched=True
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"MST",
         selector=trinton.select_leaves_by_index(
@@ -2618,16 +2618,16 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (6, 8)),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.padding = #12.25"
-            ),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, -1]),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.padding = #12.25"
+    #         ),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1]),
+    # ),
     trinton.hooked_spanner_command(
         string=r"(MSP)",
         selector=trinton.select_leaves_by_index(
@@ -2816,10 +2816,10 @@ trinton.make_music(
         ]
     ),
     trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
-    trinton.linear_attachment_command(
-        attachments=[abjad.StartHairpin(">"), abjad.Dynamic("ppp")],
-        selector=trinton.select_leaves_by_index([11, -1], pitched=True),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.StartHairpin(">"), abjad.Dynamic("ppp")],
+    #     selector=trinton.select_leaves_by_index([11, -1], pitched=True),
+    # ),
     trinton.hooked_spanner_command(
         string=r"1/2 CLT",
         selector=trinton.select_leaves_by_index(
@@ -3324,7 +3324,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 32 22.5 19 26.5)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 30 22.5 17 26.5)))",
                 site="absolute_before",
             ),
         ],
@@ -3339,7 +3339,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 30 20 19 24)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 30 20 17 24)))",
                 site="absolute_before",
             ),
         ],
@@ -3446,7 +3446,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (16 40 32 34 28)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (10 31 26 25 17)))",
                 site="absolute_before",
             ),
         ],
@@ -3461,7 +3461,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 25 24 21 20)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 25 24 21 14.5)))",
                 site="absolute_before",
             ),
         ],

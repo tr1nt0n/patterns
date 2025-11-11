@@ -273,7 +273,6 @@
                                                 \tweak style #'la
                                                 f'
                                             >8.
-                                            _ \mp
                                             ]
                                               %! abjad.glissando(7)
                                             - \tweak color #(css-color 'darkred)
@@ -369,7 +368,6 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "III" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding 1
                                             \startTextSpanOne
-                                            _ \>
                                             ~
                                             \once \override Dots.staff-position = #2
                                             \once \override NoteHead.X-offset = 0
@@ -419,7 +417,6 @@
                                                     \tweak style #'la
                                                     f'
                                                 >16
-                                                _ \ppp
                                             }
                                             \once \override Rest.staff-position = #10
                                             r8
@@ -638,7 +635,6 @@
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
                                             _ \staccato
-                                            _ \mp
                                             ]
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
@@ -723,23 +719,10 @@
                                             r16
                                             \override Dots.staff-position = #2
                                             \big-half-harmonic
-                                            \once \override DynamicLineSpanner.staff-padding = #5.5
                                             \once \override Staff.Clef.X-extent = #'(-1 . 2)
                                             \clef "treble"
                                             cs'16
                                             - \accent
-                                            _ #(make-dynamic-script
-                                                (markup
-                                                    #:whiteout
-                                                    #:line (
-                                                        #:general-align Y -2 #:normal-text #:larger "“"
-                                                        #:hspace -0.1
-                                                        #:dynamic "mf"
-                                                        #:hspace -0.2
-                                                        #:general-align Y -2 #:normal-text #:larger "”"
-                                                        )
-                                                    )
-                                                )
                                             (
                                             - \abjad-zero-padding-glissando
                                             \glissando
@@ -754,8 +737,6 @@
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
                                             \startTextSpanOne
-                                            - \tweak stencil #abjad-flared-hairpin
-                                            \>
                                             \big-half-harmonic
                                             d'16
                                             - \abjad-zero-padding-glissando
@@ -781,18 +762,6 @@
                                         \override Dots.staff-position = #2
                                         c'8
                                         - \tenuto
-                                        _ #(make-dynamic-script
-                                            (markup
-                                                #:whiteout
-                                                #:line (
-                                                    #:general-align Y -2 #:normal-text #:larger "“"
-                                                    #:hspace -0.1
-                                                    #:dynamic "p"
-                                                    #:hspace -0.25
-                                                    #:general-align Y -2 #:normal-text #:larger "”"
-                                                    )
-                                                )
-                                            )
                                         \stopTextSpanOne
                                         (
                                         - \abjad-zero-padding-glissando
@@ -802,7 +771,6 @@
                                         - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
                                         - \tweak bound-details.right.text \normale-bow-rotation
                                         \startTextSpanOne
-                                        \>
                                     }
                                     \times 2/3
                                     {
@@ -821,18 +789,6 @@
                                     \revert Dots.staff-position
                                     af4
                                     - \tenuto
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "pp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     \stopTextSpanOne
                                     \stopTextSpanThree
                                     \stopTextSpanTwo
@@ -916,7 +872,6 @@
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
                                                 _ \staccato
-                                                _ \ppp
                                                 ]
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
@@ -1031,18 +986,6 @@
                                     \big-half-harmonic
                                     \clef "alto"
                                     f2
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "ff"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -1058,8 +1001,6 @@
                                     - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
                                     - \tweak bound-details.right.padding 0.5
                                     \startTextSpanOne
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     _ (
                                     ~
                                       %! abjad.glissando(1)
@@ -1094,7 +1035,6 @@
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "" } \hspace #0.5 }
                                     \startTextSpanOne
-                                    \>
                                     ~
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -1121,18 +1061,6 @@
                                       %! abjad.glissando(6)
                                     \undo \hide NoteHead
                                     a2.
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "p"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     \stopTextSpanOne
                                     \stopTextSpanTwo
                                     - \abjad-zero-padding-glissando
@@ -1153,22 +1081,9 @@
                                     - \tweak bound-details.left.text \markup \concat { \bow-tip-half-down \hspace #0.5 }
                                     - \tweak bound-details.right.padding 0.5
                                     \startTextSpanOne
-                                    \<
                                     \override Dots.staff-position = #2
                                     \revert Dots.staff-position
                                     d'2.
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mf"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     \stopTextSpanOne
                                     - \abjad-zero-padding-glissando
                                     \glissando
@@ -1176,21 +1091,7 @@
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "" } \hspace #0.5 }
                                     \startTextSpanOne
-                                    - \tweak stencil #abjad-flared-hairpin
-                                    \>
                                     g4.
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "pf"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     \stopTextSpanOne
                                     \stopTextSpanThree
                                     \stopTextSpanTwo
@@ -1206,8 +1107,6 @@
                                     - \tweak bound-details.left.text \markup \concat { \bow-tip-up \hspace #0.5 }
                                     - \tweak bound-details.right.padding 0.5
                                     \startTextSpanOne
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     ~
                                     \override Staff.Stem.stemlet-length = 0.75
                                     g8
@@ -1236,7 +1135,6 @@
                                     - \tweak bound-details.left.text \markup \concat { { "" } \hspace #0.5 }
                                     - \tweak bound-details.right.text \bow-tip-half-up
                                     \startTextSpanOne
-                                    \>
                                     ~
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -1263,19 +1161,8 @@
                                         \revert NoteHead.no-ledgers
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
+                                        \tweak style #'harmonic
                                         dqf16
-                                        _ #(make-dynamic-script
-                                            (markup
-                                                #:whiteout
-                                                #:line (
-                                                    #:general-align Y -2 #:normal-text #:larger "“"
-                                                    #:hspace -0.1
-                                                    #:dynamic "pp"
-                                                    #:hspace -0.25
-                                                    #:general-align Y -2 #:normal-text #:larger "”"
-                                                    )
-                                                )
-                                            )
                                         \stopTextSpanOne
                                         \stopTextSpanTwo
                                     }
@@ -1328,7 +1215,6 @@
                                     <c! fs!>16
                                     - \tweak padding #1
                                     ^ \talon-to-punta
-                                    \mf
                                     ^ \accent
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { -34 }} } }
                                     [
@@ -1339,8 +1225,6 @@
                                     - \tweak bound-details.left.text \markup \concat { { \column { \line { "diagonal bow," } \line { "touching bridge" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -4
                                     \startTextSpanOne
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     r8.
                                     ]
                                     \override Dots.staff-position = #2
@@ -1400,7 +1284,6 @@
                                     <c! fs!>8
                                     - \tweak padding #1
                                     ^ \talon-to-punta
-                                    \!
                                     ^ \accent
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +33 }\line { -34 }} } }
                                     \stopTextSpanOne

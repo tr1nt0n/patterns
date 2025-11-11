@@ -140,8 +140,6 @@
                                     - \tweak bound-details.left.text \markup \concat { \upright { "CLT, SP" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 0.5
                                     \startTextSpanTwo
-                                    - \tweak circled-tip ##t
-                                    \<
                                     ~
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
@@ -429,7 +427,6 @@
                                             \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                                             ds'''!
                                         >16
-                                        \f
                                         ^ \markup \center-align { \center-column { \line { \concat { -4 }  }\line { \concat { -14 }  } } }
                                         )
                                         \stopTextSpanTwo
@@ -614,7 +611,6 @@
                                                 c'''16 * 31/16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                \mp
                                                 [
                                                 - \tweak color #(css-color 'darkred)
                                                 (
@@ -754,11 +750,9 @@
                                                 c'''16 * 43/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                \p
                                                 [
                                                 - \tweak color #(css-color 'darkred)
                                                 (
-                                                \<
                                                 \tweak style #'cross
                                                 c'''16 * 49/64
                                                 - \tweak color #(css-color 'darkred)
@@ -767,13 +761,10 @@
                                                 c'''16 * 17/16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                \mf
-                                                \>
                                                 \tweak style #'cross
                                                 c'''16 * 3/2
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                \p
                                                 )
                                                 ]
                                             }
@@ -827,11 +818,9 @@
                                                 c'''16 * 117/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                \p
                                                 [
                                                 - \tweak color #(css-color 'darkred)
                                                 (
-                                                \<
                                                 \tweak style #'cross
                                                 c'''16 * 99/64
                                                 - \tweak color #(css-color 'darkred)
@@ -840,8 +829,6 @@
                                                 c'''16 * 69/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                \mf
-                                                \>
                                                 \tweak style #'cross
                                                 c'''16 * 13/16
                                                 - \tweak color #(css-color 'darkred)
@@ -850,7 +837,6 @@
                                                 c'''16 * 47/64
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                \p
                                                 )
                                                 \stopTextSpanOne
                                                 \stopTextSpanTwo
@@ -957,7 +943,6 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \mp
                                                 ]
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -1018,7 +1003,6 @@
                                             >8
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            ^ \mp
                                             ]
                                             ~
                                             <
@@ -1182,8 +1166,6 @@
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 [
                                                 - \tweak color #(css-color 'darkred)
                                                 - \tweak font-name "Bodoni72 Book" 
@@ -1193,8 +1175,6 @@
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -1.5
                                                 \startTextSpan
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \<
                                                 \tweak style #'cross
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
@@ -1208,11 +1188,7 @@
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \mf
                                                 [
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \>
                                                 \tweak style #'cross
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
@@ -1225,8 +1201,6 @@
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 ]
                                             }
                                             \once \override Rest.staff-position = #-8.5
@@ -1240,10 +1214,6 @@
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \<
                                                 \tweak style #'cross
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
@@ -1256,8 +1226,6 @@
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \mf
                                                 ]
                                             }
                                             \once \override Rest.staff-position = #-8.5
@@ -1273,11 +1241,7 @@
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \mf
                                                 [
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \>
                                                 \tweak style #'cross
                                                 a32
                                                 - \tweak color #(css-color 'darkred)
@@ -1290,8 +1254,6 @@
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 \once \override Rest.staff-position = #-8.5
                                                 r16
                                                 ]
@@ -1309,8 +1271,6 @@
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \mf
                                                 \tweak style #'cross
                                                 a16
                                                 - \tweak color #(css-color 'darkred)
@@ -1360,7 +1320,6 @@
                                                 \voiceTwo
                                                 r4
                                                 b''16
-                                                \mp
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
                                                 - \tweak padding #12
@@ -1370,7 +1329,6 @@
                                                 \startTextSpanTwo
                                                 r8.
                                                 fs''16
-                                                \mf
                                                 \stopTextSpanTwo
                                                 r2
                                                 r8.
@@ -1388,7 +1346,6 @@
                                             {
                                                 \voiceOne
                                                 a''16
-                                                \f
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
@@ -1397,14 +1354,12 @@
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -3
                                                 \startTextSpanTwo
-                                                \>
                                                 \once \override Rest.staff-position = #10.5
                                                 r8.
                                                 b''16
                                                 \once \override Rest.staff-position = #10.5
                                                 r8.
                                                 fs''16
-                                                \mp
                                                 \stopTextSpanTwo
                                                 ]
                                                 \once \override Rest.staff-position = #10.5
@@ -1493,7 +1448,6 @@
                                                 aqf8
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \mp
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -1631,7 +1585,6 @@
                                             dqf''8
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            ^ \mp
                                             ]
                                             ~
                                             \big-half-harmonic
@@ -1706,7 +1659,6 @@
                                                 bqf4
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \mp
                                                 \big-half-harmonic
                                                 bf4
                                                 - \tweak padding 1
@@ -1715,7 +1667,6 @@
                                                 c'4
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                ^ \mp
                                                 ~
                                             }
                                             \big-half-harmonic
@@ -1765,7 +1716,7 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #15.5
+                                                - \tweak padding #14
                                                 - \abjad-dashed-line-with-up-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -1.5
@@ -1861,17 +1812,13 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
                                                 - \tweak color #(css-color 'darkred)
-                                                _ \p
-                                                - \tweak color #(css-color 'darkred)
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #17
+                                                - \tweak padding #15
                                                 - \abjad-dashed-line-with-up-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -1.5
                                                 \startTextSpan
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \<
                                                 \tweak style #'cross
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
@@ -1881,11 +1828,7 @@
                                                 g,32
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \mf
                                                 [
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \>
                                                 \tweak style #'cross
                                                 g,32
                                                 - \tweak color #(css-color 'darkred)
@@ -1894,8 +1837,6 @@
                                                 g,32
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 ]
                                             }
                                             \once \override Rest.staff-position = #-8.5
@@ -1912,10 +1853,6 @@
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \<
                                                 \tweak style #'cross
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
@@ -1924,10 +1861,6 @@
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \mf
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \>
                                                 \tweak style #'cross
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
@@ -1936,8 +1869,6 @@
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 \once \override Rest.staff-position = #-8.5
                                                 r16
                                                 ]
@@ -1956,10 +1887,6 @@
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \<
                                                 \tweak style #'cross
                                                 g,32
                                                 - \tweak color #(css-color 'darkred)
@@ -1972,10 +1899,6 @@
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \mf
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \>
                                                 \tweak style #'cross
                                                 g,32
                                                 - \tweak color #(css-color 'darkred)
@@ -1984,8 +1907,6 @@
                                                 g,32
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 ]
                                             }
                                             \once \override Rest.staff-position = #-8.5
@@ -1999,10 +1920,6 @@
                                             g,32
                                             - \tweak color #(css-color 'darkred)
                                             ^ \staccato
-                                            - \tweak color #(css-color 'darkred)
-                                            _ \p
-                                            - \tweak color #(css-color 'darkred)
-                                            _ \<
                                             \tweak style #'cross
                                             g,32
                                             - \tweak color #(css-color 'darkred)
@@ -2015,11 +1932,7 @@
                                             g,32
                                             - \tweak color #(css-color 'darkred)
                                             ^ \staccato
-                                            - \tweak color #(css-color 'darkred)
-                                            _ \mf
                                             ]
-                                            - \tweak color #(css-color 'darkred)
-                                            _ \>
                                             \tweak style #'cross
                                             g,8
                                             - \tweak color #(css-color 'darkred)
@@ -2029,8 +1942,6 @@
                                             g,8
                                             - \tweak color #(css-color 'darkred)
                                             ^ \staccato
-                                            - \tweak color #(css-color 'darkred)
-                                            _ \p
                                             ]
                                             \once \override Rest.staff-position = #-8.5
                                             r8
@@ -2044,20 +1955,14 @@
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 \tweak style #'cross
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \mf
                                                 \tweak style #'cross
                                                 g,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 \stopTextSpan
                                                 \textSpannerUp
                                                 \once \override Rest.staff-position = #-8.5
@@ -2076,7 +1981,7 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #16
+                                                - \tweak padding #14
                                                 - \abjad-dashed-line-with-up-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding 1.5
@@ -2086,20 +1991,16 @@
                                                 g,8
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 \stopTextSpan
                                                 [
                                                 - \tweak color #(css-color 'darkred)
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #17
+                                                - \tweak padding #15
                                                 - \abjad-dashed-line-with-up-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -1.5
                                                 \startTextSpan
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \<
                                                 \textSpannerUp
                                                 \tweak style #'cross
                                                 g,8
@@ -2113,11 +2014,7 @@
                                                 g,8
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \f
                                                 [
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \>
                                                 \tweak style #'cross
                                                 g,8
                                                 - \tweak color #(css-color 'darkred)
@@ -2126,8 +2023,6 @@
                                                 g,8
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \p
                                                 \stopTextSpan
                                                 ]
                                                 \textSpannerUp
@@ -2210,8 +2105,6 @@
                                         (
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak circled-tip ##t
-                                        \<
                                         - \tweak font-name "Bodoni72 Book" 
                                         - \tweak font-size 1
                                         - \tweak padding #6
@@ -2458,7 +2351,6 @@
                                     >16
                                     - \accent
                                     - \staccato
-                                    \f
                                     ^ \markup \center-align { \center-column { \line { \concat { -4 }  }\line { \concat { +0 }  } } }
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
@@ -2478,7 +2370,6 @@
                                         \tweak style #'harmonic
                                         ds''!
                                     >8.
-                                    \mp
                                     ^ \markup \center-align { \center-column { \line { \concat { -4 }  }\line { \concat { +0 }  } } }
                                     \stopTextSpanTwo
                                     ]
@@ -2516,7 +2407,6 @@
                                     >16
                                     - \accent
                                     - \staccato
-                                    \f
                                     ^ \markup \center-align { \center-column { \line { \concat { -4 }  }\line { \concat { +0 }  } } }
                                     ]
                                     <
@@ -2529,7 +2419,6 @@
                                         \tweak style #'harmonic-mixed
                                         ds''!
                                     >4
-                                    \mp
                                     ^ \markup \center-align { \center-column { \line { \concat { -4 }  }\line { \concat { +0 }  } } }
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
@@ -2568,7 +2457,6 @@
                                     >16
                                     - \accent
                                     - \staccato
-                                    \f
                                     ^ \markup \center-align { \center-column { \line { \concat { +0 }  }\line { \concat { -10 }  } } }
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
@@ -2587,7 +2475,6 @@
                                         \tweak Accidental.text \markup { \abjad-natural  }
                                         c''!
                                     >8
-                                    \mp
                                     ^ \markup \center-align { \center-column { \line { \concat { +0 }  }\line { \concat { -10 }  } } }
                                     \stopTextSpanTwo
                                     ]
@@ -2669,7 +2556,6 @@
                                     >16
                                     - \accent
                                     - \staccato
-                                    \f
                                     ^ \markup \center-align { \center-column { \line { \concat { +0 }  }\line { \concat { -10 }  } } }
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
@@ -2687,7 +2573,6 @@
                                         \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                                         fs'!
                                     >2
-                                    \mp
                                     ^ \markup \center-align { \center-column { \line { \concat { -10 }  }\line { \concat { -8 }  } } }
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
@@ -2703,7 +2588,6 @@
                                     >16
                                     - \accent
                                     - \staccato
-                                    \f
                                     ^ \markup \center-align { \center-column { \line { \concat { -10 }  }\line { \concat { -8 }  } } }
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
@@ -2734,7 +2618,6 @@
                                         \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                                         fs'!
                                     >8
-                                    \mp
                                     ^ \markup \center-align { \center-column { \line { \concat { -10 }  }\line { \concat { -8 }  } } }
                                     \stopTextSpanTwo
                                     ]
@@ -2923,7 +2806,6 @@
                                     >16
                                     - \accent
                                     - \staccato
-                                    \f
                                     ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { +6 }  } } }
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
@@ -2954,7 +2836,6 @@
                                         \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                                         as!
                                     >8
-                                    \mp
                                     ^ \markup \center-align { \center-column { \line { \concat { -2 }  }\line { \concat { +6 }  } } }
                                     \stopTextSpanTwo
                                     ]

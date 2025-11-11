@@ -3,7 +3,7 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 32 22.5 19 26.5)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 30 22.5 17 26.5)))
             \time 2/4
             s1 * 1/2
               %! +SCORE
@@ -19,7 +19,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 30 20 19 24)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 30 20 17 24)))
             \time 5/4
             s1 * 5/4
               %! +SCORE
@@ -53,7 +53,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (16 40 32 34 28)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (10 31 26 25 17)))
             \time 6/16
             s1 * 3/8
               %! +SCORE
@@ -67,7 +67,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 25 24 21 20)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (9 25 24 21 14.5)))
             \time 6/4
             s1 * 3/2
               %! +SCORE
@@ -444,7 +444,6 @@
                                         \context Voice = "violin 1 bow voice"
                                         {
                                             \override Dots.staff-position = #2
-                                            \once \override DynamicLineSpanner.staff-padding = #-4.5
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
                                             \once \override Voice.Glissando.thickness = #8.25
@@ -469,7 +468,6 @@
                                                 \tweak style #'la
                                                 f''
                                             >2
-                                            \pp
                                               %! +SCORE
                                             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-8.5 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
                                             - \tweak color #(css-color 'darkred)
@@ -492,8 +490,6 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "III" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -3
                                             \startTextSpanOne
-                                            - \tweak stencil #constante-hairpin
-                                            \<
                                             \override Dots.staff-position = #2
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -517,11 +513,9 @@
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
                                             \startTextSpanTwo
-                                            \<
                                             \override Dots.staff-position = #2
                                             \revert Dots.staff-position
                                             d''8
-                                            \mp
                                             )
                                             \stopTextSpanTwo
                                             - \tweak color #(css-color 'darkred)
@@ -535,7 +529,6 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "Norm." } \hspace #0.5 }
                                             - \tweak bound-details.right.padding 0.5
                                             \startTextSpanTwo
-                                            \once \override DynamicLineSpanner.staff-padding = #-5
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
                                             \once \override Voice.Glissando.thickness = #8.25
@@ -545,7 +538,6 @@
                                                 \tweak style #'la
                                                 d''
                                             >8
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                             - \tweak color #(css-color 'darkred)
                                             ^ \accent
                                             - \tweak color #(css-color 'darkred)
@@ -614,7 +606,6 @@
                                                 \tweak style #'la
                                                 a'
                                             >2.
-                                            \pp
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak color #(css-color 'darkred)
                                             - \tweak thickness #1.5
@@ -637,7 +628,6 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "III" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -43
                                             \startTextSpanOne
-                                            \<
                                             \override Dots.staff-position = #2
                                             \revert Dots.staff-position
                                             c''2
@@ -647,7 +637,6 @@
                                             - \abjad-zero-padding-glissando
                                             \glissando
                                             c''1
-                                            \mp
                                             \stopTextSpanOne
                                             - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
@@ -663,7 +652,6 @@
                                                     \tweak style #'la
                                                     c''
                                                 >8
-                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \accent
                                                 - \tweak color #(css-color 'darkred)
@@ -747,7 +735,6 @@
                                             \revert Voice.TupletBracket.color
                                             \revert Voice.TupletNumber.color
                                             \override Dots.staff-position = #2
-                                            \once \override DynamicLineSpanner.staff-padding = #-4.5
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
                                             \once \override Voice.Glissando.thickness = #8.25
@@ -764,7 +751,6 @@
                                                 \tweak style #'la
                                                 f''
                                             >8
-                                            \mp
                                             [
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak color #(css-color 'darkred)
@@ -788,7 +774,6 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "IV" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -3
                                             \startTextSpanOne
-                                            \>
                                             \override Dots.staff-position = #2
                                             e''8
                                             \stopTextSpanTwo
@@ -825,7 +810,6 @@
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
                                             c''2.
-                                            \pp
                                             - \tweak bound-details.right.arrow ##t
                                             - \tweak color #(css-color 'darkred)
                                             - \tweak thickness #1.5
@@ -838,7 +822,6 @@
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \upright { "(Norm.)" } \hspace #0.5 }
                                             \startTextSpanTwo
-                                            \once \override DynamicLineSpanner.staff-padding = #-3.5
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
                                             \once \override Voice.Glissando.thickness = #8.25
@@ -848,7 +831,6 @@
                                                 \tweak style #'la
                                                 f''
                                             >16
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                             - \tweak color #(css-color 'darkred)
                                             ^ \accent
                                             - \tweak color #(css-color 'darkred)
@@ -906,7 +888,6 @@
                                             \revert Voice.TupletBracket.color
                                             \revert Voice.TupletNumber.color
                                             \override Dots.staff-position = #2
-                                            \once \override DynamicLineSpanner.staff-padding = #-3.5
                                             \override Voice.NoteHead.color = #(css-color 'darkred)
                                             \override Voice.Dots.color = #(css-color 'darkred)
                                             \override Voice.Stem.color = #(css-color 'darkred)
@@ -916,7 +897,6 @@
                                             \override Voice.TupletBracket.color = #(css-color 'darkred)
                                             \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             f''1
-                                            \pp
                                             - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
@@ -928,7 +908,6 @@
                                             - \tweak bound-details.right.padding -3
                                             \startTextSpanOne
                                             \magnifyStaff #1
-                                            \once \override DynamicLineSpanner.staff-padding = #-3.5
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
                                             \once \override Voice.Glissando.thickness = #8.25
@@ -938,7 +917,6 @@
                                                 \tweak style #'la
                                                 d''
                                             >8.
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                             - \tweak color #(css-color 'darkred)
                                             ^ \accent
                                             - \tweak color #(css-color 'darkred)
@@ -1005,7 +983,6 @@
                                             \revert Voice.TupletBracket.color
                                             \revert Voice.TupletNumber.color
                                             \override Dots.staff-position = #2
-                                            \override DynamicLineSpanner.staff-padding = #-3.5
                                             \override Voice.NoteHead.color = #(css-color 'darkred)
                                             \override Voice.Dots.color = #(css-color 'darkred)
                                             \override Voice.Stem.color = #(css-color 'darkred)
@@ -1015,7 +992,6 @@
                                             \override Voice.TupletBracket.color = #(css-color 'darkred)
                                             \override Voice.TupletNumber.color = #(css-color 'darkred)
                                             d''1
-                                            \mp
                                             - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
@@ -1038,7 +1014,6 @@
                                                     \tweak style #'la
                                                     g''
                                                 >8
-                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \accent
                                                 - \tweak color #(css-color 'darkred)
@@ -1097,7 +1072,6 @@
                                                     \tweak style #'la
                                                     g''
                                                 >8
-                                                \ppp
                                                 \stopTextSpanTwo
                                                 ]
                                                   %! abjad.glissando(7)
@@ -1155,7 +1129,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                            \<
                                             ~
                                             \revert Dots.staff-position
                                               %! abjad.glissando(1)
@@ -1180,7 +1153,6 @@
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
                                                 d''16
-                                                \mf
                                                 )
                                                 \stopTextSpanOne
                                             }
@@ -1263,7 +1235,6 @@
                                 \context Voice = "violin 4 voice"
                                 {
                                     \override Dots.staff-position = #2
-                                    \override DynamicLineSpanner.staff-padding = #-4
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
                                         \tweak Accidental.text \abjad-natural
@@ -1273,7 +1244,6 @@
                                         b'''!
                                     >2
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-10 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
@@ -1288,8 +1258,6 @@
                                     - \tweak bound-details.left.text \markup \concat { { \override #'(baseline-skip . 2) \column { \line { "1/2 CLT, MSP" } \line { "(hair on bridge," } \line { "wood on string)" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup { \override #'(baseline-skip . 2) \column { \line { "1/2 CLT, Ord." } \line { "(hair and wood" } \line { "on string)" } } }
                                     \startTextSpanTwo
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     \override Dots.staff-position = #2
                                     \revert Dots.staff-position
                                     \override Staff.Stem.stemlet-length = 0.75
@@ -1310,7 +1278,6 @@
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
                                     \glissando
-                                    \<
                                     \override Dots.staff-position = #2
                                     \revert Staff.Stem.stemlet-length
                                     <
@@ -1390,7 +1357,6 @@
                                         b'''!
                                     >8
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
                                     ]
                                       %! abjad.glissando(7)
@@ -1438,7 +1404,6 @@
                                         \tweak style #'harmonic
                                         b'''!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
@@ -1463,9 +1428,7 @@
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
                                     \stopTextSpanTwo
                                     ]
-                                    \revert DynamicLineSpanner.staff-padding
                                     \override Dots.staff-position = #2
-                                    \override DynamicLineSpanner.staff-padding = #-4
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
                                         \tweak Accidental.text \sharp-one-syntonic-comma-down
@@ -1475,7 +1438,6 @@
                                         f'''!
                                     >4
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
                                       %! abjad.glissando(7)
                                     - \tweak bound-details.right.arrow ##t
@@ -1568,7 +1530,6 @@
                                         \tweak style #'harmonic
                                         f'''!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
@@ -1591,7 +1552,6 @@
                                         f'''!
                                     >8.
                                     - \tenuto
-                                    \p
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
                                     \stopTextSpanThree
                                     ]
@@ -1665,7 +1625,6 @@
                                         \tweak Accidental.text \abjad-natural
                                         f'''!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
@@ -1688,7 +1647,6 @@
                                         f'''!
                                     >4
                                     - \tenuto
-                                    \p
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
                                     \stopTextSpanThree
                                       %! abjad.glissando(7)
@@ -1736,7 +1694,6 @@
                                         \tweak Accidental.text \abjad-natural
                                         f'''!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
@@ -1759,7 +1716,6 @@
                                         f'''!
                                     >4
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
                                     \stopTextSpanThree
                                     \stopTextSpanTwo
@@ -1826,7 +1782,6 @@
                                         \tweak style #'harmonic
                                         f'''!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
@@ -1864,12 +1819,9 @@
                                         f'''!
                                     >8.
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +0 } \line { -2 } } } }
                                     ]
-                                    \revert DynamicLineSpanner.staff-padding
                                     \override Dots.staff-position = #2
-                                    \override DynamicLineSpanner.staff-padding = #-4
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
@@ -1893,7 +1845,6 @@
                                     - \tweak bound-details.left.text \markup \concat { { \override #'(baseline-skip . 2) \column { \line { "1/2 CLT, MSP" } \line { "(hair on bridge," } \line { "wood on string)" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -3
                                     \startTextSpanTwo
-                                    \>
                                     \override Dots.staff-position = #2
                                     \revert Dots.staff-position
                                     \revert Staff.Stem.stemlet-length
@@ -1956,7 +1907,6 @@
                                         as''!
                                     >4
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -2 } \line { -6 } } } }
                                     \stopTextSpanTwo
                                     - \tweak bound-details.right.arrow ##t
@@ -1973,7 +1923,6 @@
                                         \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                                         as''!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -2 } \line { -6 } } } }
@@ -1998,7 +1947,6 @@
                                         as''!
                                     >16
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -2 } \line { -6 } } } }
                                     \stopTextSpanTwo
                                     ]
@@ -2078,7 +2026,6 @@
                                     \stopTextSpanTwo
                                     ]
                                     ~
-                                    \revert DynamicLineSpanner.staff-padding
                                     \big-half-harmonic
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
@@ -2089,7 +2036,6 @@
                                         as''
                                     >8.
                                     \big-half-harmonic
-                                    \override DynamicLineSpanner.staff-padding = #-4
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
@@ -2099,7 +2045,6 @@
                                         \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                                         gs''!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
@@ -2128,7 +2073,6 @@
                                         gs''!
                                     >8.
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
                                     \stopTextSpan
                                     ]
@@ -2163,7 +2107,6 @@
                                         \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                                         gs''!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
@@ -2184,7 +2127,6 @@
                                         gs''!
                                     >4
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
                                     \stopTextSpan
                                     \magnifyStaff #1
@@ -2227,7 +2169,6 @@
                                         \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                                         gs''!
                                     >8
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
@@ -2249,12 +2190,10 @@
                                         gs''!
                                     >8
                                     - \tenuto
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -6 } \line { +2 } } } }
                                     \stopTextSpan
                                     ]
                                     ~
-                                    \revert DynamicLineSpanner.staff-padding
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
                                         \tweak Accidental.text \markup { \abjad-natural  }
@@ -2265,7 +2204,6 @@
                                     >4
                                     \stopTextSpanTwo
                                     \big-half-harmonic
-                                    \override DynamicLineSpanner.staff-padding = #-4
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
@@ -2275,7 +2213,6 @@
                                         \tweak Accidental.text \markup { \abjad-natural  }
                                         g'!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
@@ -2340,7 +2277,6 @@
                                         g'!
                                     >4
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
                                     \stopTextSpanTwo
                                     <
@@ -2363,7 +2299,6 @@
                                         \tweak Accidental.text \markup { \abjad-natural  }
                                         g'!
                                     >8
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
@@ -2385,7 +2320,6 @@
                                         g'!
                                     >8
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
                                     \stopTextSpanTwo
                                     ]
@@ -2408,7 +2342,6 @@
                                         \tweak Accidental.text \markup { \abjad-natural  }
                                         g'!
                                     >8
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
@@ -2444,7 +2377,6 @@
                                         g'!
                                     >8.
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
                                     \stopTextSpanOne
                                     \stopTextSpanTwo
@@ -2466,7 +2398,6 @@
                                         \tweak Accidental.text \markup { \abjad-natural  }
                                         g'!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
@@ -2487,7 +2418,6 @@
                                         g'!
                                     >4
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
                                     \stopTextSpanTwo
                                     ~
@@ -2511,7 +2441,6 @@
                                         \tweak Accidental.text \markup { \abjad-natural  }
                                         g'!
                                     >8
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
@@ -2532,7 +2461,6 @@
                                         g'!
                                     >8.
                                     - \tenuto
-                                    \mf
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
                                     \stopTextSpanTwo
                                     ~
@@ -2556,7 +2484,6 @@
                                         \tweak Accidental.text \markup { \abjad-natural  }
                                         g'!
                                     >16
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                     - \marcato
                                     - \staccato
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
@@ -2592,13 +2519,11 @@
                                         g'!
                                     >8
                                     - \tenuto
-                                    \mf
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +2 } \line { -12 } } } }
                                     \stopTextSpanOne
                                     \stopTextSpanTwo
                                     ]
                                     ~
-                                    \revert DynamicLineSpanner.staff-padding
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
                                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
@@ -2823,13 +2748,11 @@
                                             \voiceOne
                                             \afterGrace
                                             a'8
-                                            ^ \mp
                                             [
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                            ^ \>
                                             {
                                                 #(define afterGraceFraction (cons 5 6))
                                                 \once \override Accidental.stencil = ##f
@@ -3551,7 +3474,6 @@
                                             \once \override Dots.staff-position = #2
                                             \afterGrace
                                             cs'4
-                                            ^ \pp
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -4327,7 +4249,6 @@
                                             \override Voice.NoteHead.no-ledgers = ##t
                                             \override Voice.Accidental.stencil = ##f
                                             \textSpannerDown
-                                            \once \override DynamicLineSpanner.padding = #5.5
                                             \voiceTwo
                                             \tweak style #'cross
                                             a,8.
@@ -4342,7 +4263,6 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -1.5
                                             \startTextSpan
-                                            \<
                                             \tweak style #'cross
                                             a,8.
                                             - \tweak color #(css-color 'darkred)
@@ -4454,7 +4374,6 @@
                                                 ^ \staccato
                                                 - \tweak color #(css-color 'darkred)
                                                 _ \accent
-                                                \mf
                                                 \stopTextSpan
                                                 \textSpannerUp
                                                 \revert Voice.NoteHead.color
@@ -4489,7 +4408,6 @@
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLB" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -1.5
                                                 \startTextSpanOne
-                                                _ \>
                                                 r8.
                                                 cs'16
                                                 r8.
@@ -4537,7 +4455,6 @@
                                                 af32
                                                 r16.
                                                 gf'32
-                                                _ \ppp
                                                 \stopTextSpanOne
                                                 r16.
                                                 ]
@@ -4751,7 +4668,6 @@
                                     - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLT" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 0.5
                                     \startTextSpanTwo
-                                    \>
                                     a2
                                     - \abjad-zero-padding-glissando
                                     \glissando
@@ -4798,7 +4714,6 @@
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
                                         a16
-                                        \ppp
                                         \stopTextSpanOne
                                         \stopTextSpanTwo
                                     }
@@ -4826,7 +4741,6 @@
                                     g4
                                     - \tweak padding 1
                                     ^ \punta-to-talon
-                                    \mp
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
                                     - \tweak font-name "Bodoni72 Book" 
@@ -4836,7 +4750,6 @@
                                     - \tweak bound-details.left.text \markup \concat { \upright { "MST" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 0.5
                                     \startTextSpanOne
-                                    \>
                                     ~
                                     \big-half-harmonic
                                     g8
@@ -4971,7 +4884,6 @@
                                         bqs,16
                                         \big-half-harmonic
                                         cs16
-                                        \pp
                                         )
                                         \stopTextSpanOne
                                         ]
@@ -4980,7 +4892,6 @@
                                         \context Voice = "cello 2 voice temp"
                                         {
                                             \big-half-harmonic
-                                            \once \override DynamicLineSpanner.padding = #12.25
                                             \voiceOne
                                             cs'4
                                             - \tweak padding 1
@@ -4992,7 +4903,6 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "(MSP)" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -1
                                             \startTextSpanOne
-                                            \<
                                             ~
                                             \big-half-harmonic
                                             cs'8
@@ -5111,7 +5021,6 @@
                                                 dqs'16
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \mf
                                                 \stopTextSpanOne
                                                 ]
                                             }

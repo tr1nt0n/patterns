@@ -27,7 +27,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (12.5 30.5 41 28)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (12.5 30.5 37 31)))
             \time 2/2
             s1 * 1
               %! +SCORE
@@ -37,7 +37,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (10 31 42 27)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (10 31 37 27)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/4
             s1 * 5/4
@@ -159,7 +159,6 @@
                                                     \tweak style #'cross
                                                     f'
                                                 >8
-                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 _ \coda
                                                 _ \marcato
                                                 r4.
@@ -197,7 +196,6 @@
                                             \times 4/6
                                             {
                                                 e''32
-                                                \pp
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -253,7 +251,7 @@
                                             - \tweak font-size 1
                                             - \tweak padding #8.5
                                             - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB + ST poss." } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -3
                                             \startTextSpanOne
                                             \once \override Rest.staff-position = #-11
@@ -336,7 +334,6 @@
                                         \tweak Accidental.text \markup { \abjad-natural  }
                                         a'''!
                                     >2
-                                    \mp
                                     ^ \markup \center-align { \center-column { \line { \concat { +6 }  }\line { \concat { -14 }  } } }
                                     (
                                     - \tweak bound-details.right.arrow ##t
@@ -354,8 +351,6 @@
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
                                     \startTextSpanThree
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     \override Dots.staff-position = #2
                                     \fancy-gliss
                                        #'(
@@ -500,7 +495,6 @@
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
                                         <ds''' fs'''>16
-                                        \!
                                         )
                                         \stopTextSpanOne
                                         \ottava 0
@@ -527,7 +521,6 @@
                                                     \tweak style #'cross
                                                     f'
                                                 >8
-                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 _ \coda
                                                 _ \marcato
                                                 - \tweak padding #11.5
@@ -566,7 +559,6 @@
                                                 r4.
                                             }
                                             e''16
-                                            \pp
                                             \stopTextSpanThree
                                             - \tweak Beam.positions #'(6 . 12)
                                             [
@@ -607,7 +599,7 @@
                                             - \tweak font-size 1
                                             - \tweak padding #9
                                             - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB + ST poss." } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
                                             \startTextSpanOne
                                             \once \override Rest.staff-position = #-11
@@ -818,7 +810,6 @@
                                                     \tweak style #'cross
                                                     f'
                                                 >16
-                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 _ \coda
                                                 _ \marcato
                                                 [
@@ -826,7 +817,7 @@
                                                 - \tweak font-size 1
                                                 - \tweak padding #9.5
                                                 - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB + ST poss." } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
                                                 r8.
@@ -906,7 +897,6 @@
                                             \times 4/5
                                             {
                                                 fs''32
-                                                \pp
                                                 - \tweak Beam.positions #'(13 . 13)
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
@@ -948,7 +938,6 @@
                                                 \tweak style #'cross
                                                 f'
                                             >16
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             _ \coda
                                             _ \marcato
                                             [
@@ -956,7 +945,7 @@
                                             - \tweak font-size 1
                                             - \tweak padding #9
                                             - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB + ST poss." } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
                                             \startTextSpanOne
                                             - \tweak padding #17
@@ -1182,7 +1171,6 @@
                                             {
                                                 \staff-line-count 5
                                                 \ottava 1
-                                                \override DynamicLineSpanner.padding = #11.5
                                                 \revert Staff.Clef.stencil
                                                 \clef "treble"
                                                 \voiceOne
@@ -1203,7 +1191,6 @@
                                                 >8
                                                 - \tweak padding 0.5
                                                 ^ \punta-to-talon
-                                                \f
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
                                                 - \tweak padding #15
@@ -1211,8 +1198,6 @@
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
-                                                - \tweak stencil #constante-hairpin
-                                                \<
                                                 <
                                                     \tweak Accidental.font-size #-3.5
                                                     \tweak Accidental.parenthesized ##t
@@ -1249,7 +1234,6 @@
                                                 bqf'''
                                             >8
                                             [
-                                            \>
                                             <
                                                 \tweak Accidental.font-size #-3.5
                                                 \tweak Accidental.parenthesized ##t
@@ -1285,14 +1269,11 @@
                                                 \tweak style #'harmonic-mixed
                                                 bqf'''
                                             >2
-                                            \pp
                                             - \tweak padding #11
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 80 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 80" } } }
                                             \startTextSpanThree
-                                            - \tweak stencil #constante-hairpin
-                                            \<
                                             ~
                                             <
                                                 \tweak Accidental.font-size #-3.5
@@ -1324,7 +1305,6 @@
                                             - \tweak padding 0.5
                                             ^ \talon-to-punta
                                             ]
-                                            \<
                                             ~
                                             <
                                                 \tweak Accidental.font-size #-3.5
@@ -1357,7 +1337,6 @@
                                                 \tweak style #'harmonic-mixed
                                                 bf''
                                             >2.
-                                            \f
                                             \stopTextSpanThree
                                             ~
                                             <
@@ -1401,7 +1380,6 @@
                                                 aqs''
                                             >4
                                             \stopTextSpanOne
-                                            \revert DynamicLineSpanner.padding
                                         }
                                         \context Voice = "violin 2 legno voice"
                                         {
@@ -1717,7 +1695,7 @@
                                                     \tweak style #'harmonic-mixed
                                                     b'
                                                 >4
-                                                - \tweak padding #18
+                                                - \tweak padding #15
                                                 - \abjad-solid-line-with-arrow
                                                 - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { "= 60 )" } } } \hspace #0.5 }
                                                 - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 60" } } }
@@ -1901,7 +1879,7 @@
                                             \pitchedTrill
                                             c'''4
                                             :8
-                                            - \tweak padding #18
+                                            - \tweak padding #15.5
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 80 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 80" } } }
@@ -2031,16 +2009,11 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #12.5
+                                                - \tweak padding #9
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "IV" } \hspace #0.5 }
                                                 \startTextSpanOne
@@ -2078,13 +2051,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2119,13 +2087,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2160,13 +2123,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2202,16 +2160,11 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #12.5
+                                                - \tweak padding #10
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "III" } \hspace #0.5 }
                                                 \startTextSpanOne
@@ -2253,13 +2206,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2294,13 +2242,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2336,16 +2279,11 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #16
+                                                - \tweak padding #10
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "II" } \hspace #0.5 }
                                                 \startTextSpanOne
@@ -2384,13 +2322,8 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             {
                                                 \once \override NoteHead.X-offset = 0
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -2426,16 +2359,11 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
-                                            - \tweak padding #16
+                                            - \tweak padding #10
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "I" } \hspace #0.5 }
                                             \startTextSpanOne
@@ -2473,13 +2401,8 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             {
                                                 \once \override NoteHead.X-offset = 0
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -2514,13 +2437,8 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             {
                                                 \once \override NoteHead.X-offset = 0
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -2560,16 +2478,11 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #16
+                                                - \tweak padding #12.5
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "I, DP" } \hspace #0.5 }
                                                 \startTextSpanOne
@@ -2607,13 +2520,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2648,13 +2556,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2690,16 +2593,11 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #16
+                                                - \tweak padding #12.5
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "III, DP" } \hspace #0.5 }
                                                 \startTextSpanOne
@@ -2738,16 +2636,11 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #16
+                                                - \tweak padding #12.5
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "II, DP" } \hspace #0.5 }
                                                 \startTextSpanOne
@@ -2786,16 +2679,11 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #16
+                                                - \tweak padding #12.5
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "IV, DP" } \hspace #0.5 }
                                                 \startTextSpanOne
@@ -2838,13 +2726,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2879,13 +2762,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2920,13 +2798,8 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 {
                                                     \once \override NoteHead.X-offset = 0
                                                     \once \override Staff.Accidental.stencil = ##f
@@ -2962,16 +2835,11 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 - \accent
                                                 - \tweak color #(css-color 'darkred)
-                                                ^ \fp
-                                                - \tweak color #(css-color 'darkred)
                                                 - \abjad-zero-padding-glissando
                                                 \glissando
-                                                - \tweak color #(css-color 'darkred)
-                                                - \tweak circled-tip ##t
-                                                ^ \>
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
-                                                - \tweak padding #16
+                                                - \tweak padding #12.5
                                                 - \abjad-dashed-line-with-hook
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "I, DP" } \hspace #0.5 }
                                                 \startTextSpanOne
@@ -3011,16 +2879,11 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
-                                            - \tweak padding #16
+                                            - \tweak padding #12.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "IV, DP" } \hspace #0.5 }
                                             \startTextSpanOne
@@ -3059,16 +2922,11 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
-                                            - \tweak padding #16
+                                            - \tweak padding #12.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "III, DP" } \hspace #0.5 }
                                             \startTextSpanOne
@@ -3107,16 +2965,11 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
-                                            - \tweak padding #16
+                                            - \tweak padding #12.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "I, DP" } \hspace #0.5 }
                                             \startTextSpanOne
@@ -3155,16 +3008,11 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
-                                            - \tweak padding #16
+                                            - \tweak padding #12.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "II, DP" } \hspace #0.5 }
                                             \startTextSpanOne
@@ -3203,16 +3051,11 @@
                                             - \tweak color #(css-color 'darkred)
                                             - \accent
                                             - \tweak color #(css-color 'darkred)
-                                            ^ \fp
-                                            - \tweak color #(css-color 'darkred)
                                             - \abjad-zero-padding-glissando
                                             \glissando
-                                            - \tweak color #(css-color 'darkred)
-                                            - \tweak circled-tip ##t
-                                            ^ \>
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
-                                            - \tweak padding #16
+                                            - \tweak padding #12.5
                                             - \abjad-dashed-line-with-hook
                                             - \tweak bound-details.left.text \markup \concat { \upright { "I, DP" } \hspace #0.5 }
                                             \startTextSpanOne
@@ -3237,7 +3080,6 @@
                                                     \tweak style #'la
                                                     c'''
                                                 >16
-                                                \!
                                                 \stopTextSpanOne
                                                 \revert Voice.NoteHead.color
                                                 \revert Voice.Dots.color
@@ -3308,7 +3150,6 @@
                                     \clef "bass"
                                     fs,2
                                     - \accent
-                                    \mp
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
@@ -3323,8 +3164,6 @@
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \normale-bow-rotation \hspace #0.5 }
                                     \startTextSpanOne
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     \once \override Staff.Clef.X-extent = #'(-1 . 4)
                                     \clef "tenor"
                                     \tweak style #'harmonic
@@ -3427,7 +3266,6 @@
                                         \revert Dots.staff-position
                                         \once \override NoteHead.transparent = ##t
                                         <fs'' cs'''>16
-                                        \!
                                         )
                                         \stopTextSpanOne
                                         \stopTextSpanThree
@@ -3456,17 +3294,14 @@
                                                     \tweak style #'cross
                                                     f'
                                                 >16
-                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 _ \coda
                                                 _ \marcato
-                                                - \tweak font-name "Bodoni72 Book Italic" 
-                                                _ \markup \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } }
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
                                                 - \tweak padding #9.5
                                                 - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB + ST poss." } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
                                                 r8.
@@ -3545,7 +3380,6 @@
                                                 ]
                                             }
                                             d''16
-                                            \pp
                                             - \tweak Beam.positions #'(7.5 . 7.5)
                                             [
                                             - \tweak font-name "Bodoni72 Book" 
@@ -3555,7 +3389,7 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "CLB + SP" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -2
                                             \startTextSpanOne
-                                            - \tweak padding #11
+                                            - \tweak padding #12
                                             - \abjad-solid-line-with-arrow
                                             - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 80 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 80" } } }
@@ -3591,7 +3425,6 @@
                                                     \tweak style #'cross
                                                     f'
                                                 >16
-                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 _ \coda
                                                 _ \marcato
                                                 \stopTextSpanThree
@@ -3600,7 +3433,7 @@
                                                 - \tweak font-size 1
                                                 - \tweak padding #9.5
                                                 - \abjad-dashed-line-with-hook
-                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB + ST poss." } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanOne
                                                 r8.

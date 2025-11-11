@@ -211,7 +211,6 @@
                                         {
                                             \big-half-harmonic
                                             \once \override Dots.staff-position = #-1
-                                            \once \override DynamicLineSpanner.padding = #5
                                             \once \override Rest.staff-position = #-7
                                             \once \override StemTremolo.stencil = #ly:text-interface::print
                                             \once \override StemTremolo.text = \markup {
@@ -238,7 +237,6 @@
                                             \pitchedTrill
                                             f''8.
                                             :32
-                                            \ppp
                                             - \markup \fontsize #2 { \hspace #-10.5 { "Fng. Perc.:" } }
                                               %! +SCORE
                                             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #9.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
@@ -1887,7 +1885,6 @@
                                             >4
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \ppp
                                               %! +SCORE
                                             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
                                             - \tweak font-name "Bodoni72 Book" 
@@ -1921,7 +1918,6 @@
                                             >32
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \<
                                             ~
                                             <
                                                 \tweak Accidental.font-size #-3.5
@@ -1945,7 +1941,6 @@
                                                 \tweak style #'harmonic-mixed
                                                 gs''!
                                             >4.
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             - \tweak font-name "Bodoni72 Book Italic" 
@@ -1962,7 +1957,6 @@
                                             >4
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \ppp
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
                                             - \tweak padding #13.5
@@ -2042,7 +2036,6 @@
                                                 \tweak style #'harmonic-mixed
                                                 gs''!
                                             >4..
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             \times 2/3
@@ -2059,7 +2052,6 @@
                                                 >16
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \ppp
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -2104,7 +2096,6 @@
                                                 \tweak style #'harmonic
                                                 gs''!
                                             >8
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             [
@@ -2145,7 +2136,6 @@
                                                 >4
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \ppp
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
                                                 - \tweak padding #16
@@ -2176,7 +2166,6 @@
                                                 \tweak style #'harmonic-mixed
                                                 gs''!
                                             >4.
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             - \tweak padding #13
@@ -2197,7 +2186,6 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \ppp
                                             [
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
@@ -2243,7 +2231,6 @@
                                                     \tweak style #'harmonic
                                                     gs''!
                                                 >8
-                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                                 ^ \half-clb
                                                 ^ \marcato
                                                 <
@@ -2258,7 +2245,6 @@
                                                 >4
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
-                                                \ppp
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
                                                 - \tweak padding #16
@@ -2674,7 +2660,6 @@
                                         \tweak style #'harmonic-mixed
                                         gs''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     r1
@@ -2688,7 +2673,6 @@
                                         \tweak style #'harmonic-mixed
                                         gs''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     r2
@@ -2700,18 +2684,6 @@
                                         \override Dots.staff-position = #2
                                         \tweak style #'harmonic
                                         bf8.
-                                        _ #(make-dynamic-script
-                                            (markup
-                                                #:whiteout
-                                                #:line (
-                                                    #:general-align Y -2 #:normal-text #:larger "“"
-                                                    #:hspace -0.4
-                                                    #:dynamic "f"
-                                                    #:hspace -0.2
-                                                    #:general-align Y -2 #:normal-text #:larger "”"
-                                                    )
-                                                )
-                                            )
                                         [
                                         (
                                         - \tweak bound-details.right.arrow ##t
@@ -2730,22 +2702,9 @@
                                         - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
                                         - \tweak bound-details.right.text \normale-bow-rotation
                                         \startTextSpanOne
-                                        \>
                                         \revert Dots.staff-position
                                         \tweak style #'harmonic
                                         cqs'16
-                                        _ #(make-dynamic-script
-                                            (markup
-                                                #:whiteout
-                                                #:line (
-                                                    #:general-align Y -2 #:normal-text #:larger "“"
-                                                    #:hspace -0.1
-                                                    #:dynamic "ppp"
-                                                    #:hspace -0.25
-                                                    #:general-align Y -2 #:normal-text #:larger "”"
-                                                    )
-                                                )
-                                            )
                                         )
                                         \stopTextSpanOne
                                         \stopTextSpanTwo
@@ -2760,20 +2719,16 @@
                                             \tweak style #'harmonic-mixed
                                             gs''
                                         >4
-                                            _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                         ^ \half-clb
                                         ^ \marcato
                                         \override Dots.staff-position = #2
                                         \tweak style #'harmonic-mixed
                                         c'''4
-                                        \mp
                                         (
                                         - \tweak bound-details.right.arrow ##t
                                         - \tweak thickness #1.5
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak circled-tip ##t
-                                        \>
                                         - \tweak font-name "Bodoni72 Book" 
                                         - \tweak font-size 1
                                         - \tweak padding #8
@@ -2814,7 +2769,6 @@
                                             \once \override Flag.stroke-style = #"grace"
                                             \tweak style #'harmonic
                                             cqf'''16
-                                            \!
                                             )
                                             \stopTextSpanOne
                                             \stopTextSpanTwo
@@ -2830,7 +2784,6 @@
                                         \tweak style #'harmonic-mixed
                                         gs''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     r2
@@ -2839,7 +2792,6 @@
                                         \override Dots.staff-position = #2
                                         \tweak style #'harmonic
                                         bf'''8
-                                        \ppp
                                         [
                                         (
                                         - \abjad-zero-padding-glissando
@@ -2851,7 +2803,6 @@
                                         - \tweak bound-details.left.text \markup \concat { MSP \hspace #0.5 }
                                         - \tweak bound-details.right.padding -1
                                         \startTextSpanOne
-                                        \<
                                         \tweak style #'harmonic
                                         cqs''''8
                                         - \abjad-zero-padding-glissando
@@ -2875,7 +2826,6 @@
                                             \once \override Flag.stroke-style = #"grace"
                                             \tweak style #'harmonic
                                             c''''16
-                                            \mp
                                             )
                                             \stopTextSpanOne
                                         }
@@ -2890,7 +2840,6 @@
                                         \tweak style #'harmonic-mixed
                                         gs''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     r2
@@ -2900,18 +2849,6 @@
                                         \override Dots.staff-position = #2
                                         \tweak style #'harmonic-mixed
                                         cqs''''4
-                                        _ #(make-dynamic-script
-                                            (markup
-                                                #:whiteout
-                                                #:line (
-                                                    #:general-align Y -2 #:normal-text #:larger "“"
-                                                    #:hspace -0.4
-                                                    #:dynamic "f"
-                                                    #:hspace -0.2
-                                                    #:general-align Y -2 #:normal-text #:larger "”"
-                                                    )
-                                                )
-                                            )
                                         (
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -2944,7 +2881,6 @@
                                         \tweak style #'harmonic-mixed
                                         gs''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     r2
@@ -2954,7 +2890,6 @@
                                         \override Dots.staff-position = #2
                                         \tweak style #'harmonic-mixed
                                         cqs''''4
-                                        \mp
                                         (
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -2965,11 +2900,9 @@
                                         - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
                                         - \tweak bound-details.right.padding -2
                                         \startTextSpanTwo
-                                        \>
                                         \revert Dots.staff-position
                                         \tweak style #'harmonic
                                         bf'''8
-                                        \ppp
                                         )
                                         \stopTextSpanTwo
                                     }
@@ -3036,7 +2969,6 @@
                                     \clef "alto"
                                     c'4
                                     - \tenuto
-                                    \ppp
                                       %! +SCORE
                                     ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
                                     - \tweak font-name "Bodoni72 Book" 
@@ -3064,7 +2996,6 @@
                                         \tweak style #'harmonic-mixed
                                         d''
                                     >4.
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     - \tweak font-name "Bodoni72 Book Italic" 
@@ -3076,18 +3007,6 @@
                                     \clef "alto"
                                     c'4.
                                     - \tenuto
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "ppp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 2
                                     - \tweak padding #3
@@ -3095,22 +3014,9 @@
                                     - \tweak bound-details.left.text \markup \concat { \upright { "tailpiece" } \hspace #0.5 }
                                     - \tweak bound-details.right.padding -3
                                     \startTextSpanOne
-                                    \<
                                     \once \override Accidental.stencil = ##f
                                     c'4.
                                     - \tenuto
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "ff"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     \stopTextSpanOne
                                     \staff-line-count 5
                                       %! +SCORE
@@ -3126,7 +3032,6 @@
                                         \tweak style #'harmonic-mixed
                                         d''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                       %! +SCORE
@@ -3136,7 +3041,6 @@
                                     \clef "alto"
                                     c'4
                                     - \tenuto
-                                    \ppp
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 2
                                     - \tweak padding #3
@@ -3165,7 +3069,6 @@
                                         \tweak style #'harmonic-mixed
                                         d''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                       %! +SCORE
@@ -3176,18 +3079,6 @@
                                     \afterGrace
                                     c'4
                                     - \tenuto
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "ff"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 2
                                     - \tweak padding #3
@@ -3222,7 +3113,6 @@
                                                 \tweak style #'harmonic
                                                 d''!
                                             >16
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             [
@@ -3245,7 +3135,6 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \ppp
                                             ]
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
@@ -3378,7 +3267,6 @@
                                                 \tweak style #'harmonic
                                                 d''!
                                             >32.
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             [
@@ -3394,7 +3282,6 @@
                                             >32.
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \ppp
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
                                             - \tweak padding #17.5
@@ -3513,7 +3400,6 @@
                                                 \tweak style #'harmonic
                                                 d''!
                                             >2
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             \stopTextSpanThree
@@ -3554,7 +3440,6 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \ppp
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
                                                 - \tweak padding #15.5
@@ -3667,7 +3552,6 @@
                                                 \tweak style #'harmonic
                                                 d''!
                                             >16
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             ^ \half-clb
                                             ^ \marcato
                                             [
@@ -3683,7 +3567,6 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \punta-to-talon
-                                            \ppp
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
                                             - \tweak padding #15.5
@@ -4073,7 +3956,6 @@
                                         \tweak style #'harmonic
                                         d''
                                     >2
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     \staff-line-count 1
@@ -4082,18 +3964,6 @@
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'8.
                                     - \tenuto
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 2
@@ -4132,7 +4002,6 @@
                                         \tweak style #'harmonic-mixed
                                         d''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                       %! +SCORE
@@ -4142,7 +4011,6 @@
                                     \clef "alto"
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'16
-                                    \ppp
                                     [
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
@@ -4150,7 +4018,6 @@
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "bridge" } \hspace #0.5 }
                                     \startTextSpanOne
-                                    \<
                                     \once \override Accidental.stencil = ##f
                                     \revert Staff.Stem.stemlet-length
                                     c'8.
@@ -4167,7 +4034,6 @@
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <gf af>16
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
                                     \stopTextSpanOne
                                     [
@@ -4211,7 +4077,6 @@
                                         \tweak style #'harmonic-mixed
                                         d''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                       %! +SCORE
@@ -4221,18 +4086,6 @@
                                     \clef "alto"
                                     c'4
                                     - \tenuto
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 2
                                     - \tweak padding #3
@@ -4281,7 +4134,6 @@
                                         \tweak style #'harmonic-mixed
                                         d''
                                     >4
-                                        _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                     ^ \half-clb
                                     ^ \marcato
                                     ~
@@ -4305,7 +4157,6 @@
                                     \revert Staff.Stem.stemlet-length
                                     c'8
                                     - \tenuto
-                                    \ppp
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
@@ -4313,7 +4164,6 @@
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { "bridge" } \hspace #0.5 }
                                     \startTextSpanOne
-                                    \<
                                     ~
                                     c'4
                                     \once \override Accidental.stencil = ##f
@@ -4326,7 +4176,6 @@
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <gf af>16
                                     - \tenuto
-                                    \mp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { +8 }\line { -41 }} } }
                                     \stopTextSpanOne
                                     [
@@ -4436,7 +4285,6 @@
                                     >4
                                     \arpeggio
                                     \laissezVibrer
-                                    \mp
                                     ^ \tenuto
                                     - \tweak font-size #1
                                     ^ \markup { "Strum" }
@@ -4484,7 +4332,6 @@
                                         b
                                     >4
                                     \arpeggio
-                                    \f
                                     \laissezVibrer
                                     ^ \tenuto
                                     - \tweak font-size #1
@@ -4505,7 +4352,6 @@
                                     >8.
                                     \arpeggio
                                     \laissezVibrer
-                                    \mp
                                     ^ \tenuto
                                     - \tweak font-size #1
                                     ^ \markup { "Strum" }
@@ -4523,7 +4369,6 @@
                                         as
                                     >4
                                     \arpeggio
-                                    \f
                                     \laissezVibrer
                                     ^ \tenuto
                                     - \tweak font-size #1

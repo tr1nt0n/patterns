@@ -51,13 +51,13 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (6 14 13 11 13 11 13 11)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (8 11 15 10 15 10 15 10)))
             \tweak text " 37\" " \startMeasureSpanner
             \once \override Score.TimeSignature.stencil = ##f
             \time 11/4
             s1 * 11/4
             - \tweak padding 9
-            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Dreaming About Ghosts }
+            ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #4 \box \line { Dreams About Ghosts }
             \bar "||"
               %! +SCORE
             \pageBreak
@@ -93,19 +93,14 @@
                                     \times 11/17
                                     {
                                         \override Dots.staff-position = #2
-                                        \once \override DynamicLineSpanner.staff-padding = #0.5
                                         c'''2.
-                                        \ppp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         e''1
-                                        \f
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                        \>
                                         ~
                                           %! abjad.glissando(1)
                                         \hide NoteHead
@@ -125,23 +120,16 @@
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
                                         b'4
-                                        \pp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         a'2.
-                                        \mf
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \>
                                         c'1
-                                        \mp
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                        - \tweak circled-tip ##t
-                                        \>
                                         ~
                                           %! abjad.glissando(1)
                                         \hide NoteHead
@@ -165,7 +153,6 @@
                                               %! abjad.glissando(6)
                                             \undo \hide NoteHead
                                             g16
-                                            \!
                                         }
                                     }
                                 }
@@ -186,10 +173,8 @@
                                                 \voiceOne
                                                 cs''4
                                                 - \talon-to-punta
-                                                \fff
                                                   %! +SCORE
                                                 ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
-                                                (
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
                                                 - \tweak padding #12.25
@@ -202,7 +187,6 @@
                                                 e''4
                                                 a'4
                                                 d'4
-                                                )
                                                 \stopTextSpanTwo
                                             }
                                         }
@@ -297,7 +281,6 @@
                                         }
                                         \context Voice = "violin 1 legno voice"
                                         {
-                                            \once \override DynamicLineSpanner.staff-padding = #12.5
                                             \override Voice.NoteHead.color = #(css-color 'darkred)
                                             \override Voice.Dots.color = #(css-color 'darkred)
                                             \override Voice.Stem.color = #(css-color 'darkred)
@@ -316,8 +299,6 @@
                                             ^ \staccato
                                             - \tweak color #(css-color 'darkred)
                                             _ \accent
-                                            - \tweak color #(css-color 'darkred)
-                                            _ \ffff
                                             [
                                             - \tweak color #(css-color 'darkred)
                                             - \tweak font-name "Bodoni72 Book" 
@@ -403,7 +384,6 @@
                                     \oneVoice
                                     g'''2
                                     - \accent
-                                    \fff
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 2
                                     - \tweak padding #9
@@ -451,7 +431,7 @@
                                     fs''16
                                     \!
                                     ^ \markup \center-align { \concat { -10 } }
-                                    _ \markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed + pressure may result in slight pitch bending. This is desired. The left hand position need not be adjusted to accomodate this." }
+                                    _ \markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed may result in slight distortions of the tone. This is desired. The left hand position need not be adjusted to accomodate this." }
                                     ~
                                     \once \override Dots.staff-position = #2
                                     \once \override RepeatTie.transparent = ##t
@@ -552,29 +532,20 @@
                                     \times 11/15
                                     {
                                         \override Dots.staff-position = #2
-                                        \once \override DynamicLineSpanner.staff-padding = #0.5
                                         c'''2
-                                        \ppp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         a''2.
-                                        \mp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \>
                                         e''2
-                                        \pp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         g'1
-                                        \mf
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                        \>
                                         ~
                                           %! abjad.glissando(1)
                                         \hide NoteHead
@@ -595,15 +566,12 @@
                                         \undo \hide NoteHead
                                         \afterGrace
                                         d'2.
-                                        \ppp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         {
                                             #(define afterGraceFraction (cons 15 16))
                                             \revert Dots.staff-position
                                             b16
-                                            \mp
                                         }
                                     }
                                 }
@@ -623,7 +591,6 @@
                                         cs''''4
                                         - \tweak padding 0.5
                                         ^ \talon-to-punta
-                                        \fff
                                           %! +SCORE
                                         ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
                                         (
@@ -633,10 +600,9 @@
                                         - \tweak font-size 2
                                         - \tweak padding #13
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "SP, 1/2 Scratch" } \hspace #0.5 }
-                                        - \tweak bound-details.right.padding -1.5
+                                        - \tweak bound-details.left.text \markup \concat { \upright { "SP" } \hspace #0.5 }
+                                        - \tweak bound-details.right.padding -1
                                         \startTextSpan
-                                        \>
                                         \big-half-harmonic
                                         c'''4
                                         - \abjad-zero-padding-glissando
@@ -647,10 +613,8 @@
                                     {
                                         \big-half-harmonic
                                         fs'''4
-                                        \mf
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         \times 4/5
                                         {
                                             \big-half-harmonic
@@ -678,10 +642,8 @@
                                         }
                                         \big-half-harmonic
                                         e''4
-                                        \ff
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \>
                                     }
                                     \big-half-harmonic
                                     ef'16
@@ -726,11 +688,8 @@
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
                                     b!8
-                                    \ppp
                                     ^ \markup \center-align { \concat { -12 } }
                                     [
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     ~
                                     \revert Staff.Stem.stemlet-length
                                     <
@@ -770,7 +729,6 @@
                                         \tweak style #'harmonic
                                         e'
                                     >1
-                                    \!
                                     ~
                                     \once \override Dots.staff-position = #2
                                     \once \override RepeatTie.transparent = ##t
@@ -785,7 +743,7 @@
                                         \tweak style #'harmonic
                                         e'
                                     >\breve
-                                    _ \markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed + pressure may result in slight pitch bending. This is desired. The left hand position need not be adjusted to accomodate this." }
+                                    _ \markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed may result in slight distortions of the tone. This is desired. The left hand position need not be adjusted to accomodate this." }
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -864,19 +822,14 @@
                                     \times 11/15
                                     {
                                         \override Dots.staff-position = #2
-                                        \once \override DynamicLineSpanner.staff-padding = #0.5
                                         c'''1
-                                        \ppp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak stencil #constante-hairpin
-                                        \<
                                         f''1
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                        \<
                                         ~
                                           %! abjad.glissando(1)
                                         \hide NoteHead
@@ -896,21 +849,16 @@
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
                                         a'2.
-                                        \mp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak stencil #constante-hairpin
-                                        \<
                                         \afterGrace
                                         f'2.
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         {
                                             #(define afterGraceFraction (cons 15 16))
                                             \revert Dots.staff-position
                                             c'16
-                                            \mf
                                         }
                                     }
                                 }
@@ -941,7 +889,6 @@
                                                 \tweak style #'cross
                                                 f'
                                             >16
-                                                _ #(make-dynamic-script (markup #:whiteout #:italic "ffffff"))
                                             _ \coda
                                             _ \marcato
                                               %! +SCORE
@@ -952,7 +899,7 @@
                                             - \tweak font-size 1
                                             - \tweak padding #12
                                             - \abjad-dashed-line-with-hook
-                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB" } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "1/2 CLB + ST poss." } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -0.5
                                             \startTextSpanOne
                                             \once \override Rest.staff-position = #15
@@ -1215,7 +1162,6 @@
                                             {
                                                 \staff-line-count 5
                                                 \big-half-harmonic
-                                                \once \override DynamicLineSpanner.staff-padding = #15.25
                                                 \revert Staff.Clef.stencil
                                                 \once \override Staff.Clef.X-extent = ##f
                                                 \once \override Staff.Clef.X-offset = #-2.5
@@ -1224,7 +1170,6 @@
                                                 af'4
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                ^ \mf
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
                                                 - \tweak padding #15
@@ -1272,7 +1217,6 @@
                                             \tweak text #tuplet-number::calc-fraction-text
                                             \times 3/4
                                             {
-                                                \once \override DynamicLineSpanner.staff-padding = #15
                                                 \override Voice.NoteHead.color = #(css-color 'darkred)
                                                 \override Voice.Dots.color = #(css-color 'darkred)
                                                 \override Voice.Stem.color = #(css-color 'darkred)
@@ -1291,8 +1235,6 @@
                                                 ^ \staccato
                                                 - \tweak color #(css-color 'darkred)
                                                 _ \accent
-                                                - \tweak color #(css-color 'darkred)
-                                                _ \ffff
                                                 - \tweak color #(css-color 'darkred)
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
@@ -1377,7 +1319,6 @@
                                             {
                                                 \voiceTwo
                                                 g'4
-                                                \fff
                                                 (
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -1386,7 +1327,6 @@
                                                 - \tweak bound-details.left.text \markup \concat { \upright { "CLT" } \hspace #0.5 }
                                                 - \tweak bound-details.right.padding -2
                                                 \startTextSpanTwo
-                                                \>
                                                 ef'4
                                                 )
                                                 a'!4
@@ -1396,7 +1336,6 @@
                                                 g4
                                                 (
                                                 gs4
-                                                \ppp
                                                 )
                                                 \stopTextSpanTwo
                                             }
@@ -1404,9 +1343,6 @@
                                     >>
                                     \oneVoice
                                     f8
-                                    \ppp
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     ~
                                     <
                                         f
@@ -1419,7 +1355,6 @@
                                         \tweak style #'harmonic
                                         bf
                                     >2
-                                    \!
                                     ~
                                     \once \override Dots.staff-position = #2
                                     \once \override RepeatTie.transparent = ##t
@@ -1434,7 +1369,7 @@
                                         \tweak style #'harmonic
                                         bf
                                     >\breve
-                                    _ \markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed + pressure may result in slight pitch bending. This is desired. The left hand position need not be adjusted to accomodate this." }
+                                    _ \markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed may result in slight distortions of the tone. This is desired. The left hand position need not be adjusted to accomodate this." }
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
@@ -1513,14 +1448,11 @@
                                     \times 11/21
                                     {
                                         \override Dots.staff-position = #2
-                                        \once \override DynamicLineSpanner.staff-padding = #0.5
                                         c'''1
-                                        \ppp
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                        \<
                                         ~
                                           %! abjad.glissando(1)
                                         \hide NoteHead
@@ -1540,27 +1472,19 @@
                                           %! abjad.glissando(6)
                                         \undo \hide NoteHead
                                         b''2.
-                                        \mf
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak stencil #constante-hairpin
-                                        \<
                                         e''2.
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \>
                                         b'1
-                                        \pp
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        \<
                                         g'1
-                                        \mp
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                        \>
                                         ~
                                           %! abjad.glissando(1)
                                         \hide NoteHead
@@ -1581,16 +1505,12 @@
                                         \undo \hide NoteHead
                                         \afterGrace
                                         e'4
-                                        \p
                                         - \abjad-zero-padding-glissando
                                         \glissando
-                                        - \tweak circled-tip ##t
-                                        \>
                                         {
                                             #(define afterGraceFraction (cons 15 16))
                                             \revert Dots.staff-position
                                             a16
-                                            \!
                                         }
                                     }
                                 }
@@ -1605,7 +1525,6 @@
                                     <<
                                         \context Voice = "cello 2 voice hair"
                                         {
-                                            \once \override DynamicLineSpanner.staff-padding = #15.5
                                             \clef "bass"
                                             \voiceOne
                                             <
@@ -1625,7 +1544,6 @@
                                             >16
                                             - \tweak padding 1
                                             ^ \talon-to-punta
-                                            \fff
                                               %! +SCORE
                                             ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
                                             [
@@ -1636,7 +1554,6 @@
                                             - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
                                             - \tweak bound-details.right.padding -1.5
                                             \startTextSpanTwo
-                                            \>
                                             ~
                                             \times 4/5
                                             {
@@ -1859,7 +1776,6 @@
                                                 >8
                                                 - \tweak padding 1
                                                 ^ \talon-to-punta
-                                                \ppp
                                                 \stopTextSpanTwo
                                                 ]
                                             }
@@ -1894,25 +1810,19 @@
                                             \startTextSpan
                                             \times 4/5
                                             {
-                                                \tweak style #'cross
-                                                b,,16
-                                                - \tweak color #(css-color 'darkred)
-                                                ^ \staccato
+                                                \once \override Rest.staff-position = #-10
+                                                r16
                                                 [
-                                                \tweak style #'cross
-                                                b,,16
-                                                - \tweak color #(css-color 'darkred)
-                                                ^ \staccato
+                                                \once \override Rest.staff-position = #-10
+                                                r16
                                                 \tweak style #'cross
                                                 b,,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
                                                 - \tweak color #(css-color 'darkred)
                                                 _ \accent
-                                                \tweak style #'cross
-                                                b,,16
-                                                - \tweak color #(css-color 'darkred)
-                                                ^ \staccato
+                                                \once \override Rest.staff-position = #-10
+                                                r16
                                                 \tweak style #'cross
                                                 b,,16
                                                 - \tweak color #(css-color 'darkred)
@@ -1949,30 +1859,22 @@
                                                 - \tweak color #(css-color 'darkred)
                                                 _ \accent
                                                 [
-                                                \tweak style #'cross
-                                                b,,16
-                                                - \tweak color #(css-color 'darkred)
-                                                ^ \staccato
-                                                \tweak style #'cross
-                                                b,,16
-                                                - \tweak color #(css-color 'darkred)
-                                                ^ \staccato
+                                                \once \override Rest.staff-position = #-10
+                                                r16
+                                                \once \override Rest.staff-position = #-10
+                                                r16
                                                 \tweak style #'cross
                                                 b,,16
                                                 - \tweak color #(css-color 'darkred)
                                                 ^ \staccato
                                                 - \tweak color #(css-color 'darkred)
                                                 _ \accent
-                                                \tweak style #'cross
-                                                b,,16
-                                                - \tweak color #(css-color 'darkred)
-                                                ^ \staccato
+                                                \once \override Rest.staff-position = #-10
+                                                r16
                                                 ]
                                             }
-                                            \tweak style #'cross
-                                            b,,16
-                                            - \tweak color #(css-color 'darkred)
-                                            ^ \staccato
+                                            \once \override Rest.staff-position = #-10
+                                            r16
                                             [
                                             \tweak style #'cross
                                             b,,16
@@ -1987,10 +1889,8 @@
                                             ]
                                             \times 2/3
                                             {
-                                                \tweak style #'cross
-                                                b,,8
-                                                - \tweak color #(css-color 'darkred)
-                                                ^ \staccato
+                                                \once \override Rest.staff-position = #-10
+                                                r8
                                                 [
                                                 \tweak style #'cross
                                                 b,,8
@@ -1998,13 +1898,13 @@
                                                 ^ \staccato
                                                 - \tweak color #(css-color 'darkred)
                                                 _ \accent
-                                                \tweak style #'cross
-                                                b,,8
-                                                - \tweak color #(css-color 'darkred)
-                                                ^ \staccato
                                                 \stopTextSpan
-                                                ]
                                                 \textSpannerUp
+                                                \revert Voice.NoteHead.no-ledgers
+                                                \revert Voice.Accidental.stencil
+                                                \once \override Rest.staff-position = #-10
+                                                r8
+                                                ]
                                                 \revert Voice.NoteHead.color
                                                 \revert Voice.Dots.color
                                                 \revert Voice.Stem.color
@@ -2013,8 +1913,6 @@
                                                 \revert Voice.Tie.color
                                                 \revert Voice.TupletBracket.color
                                                 \revert Voice.TupletNumber.color
-                                                \revert Voice.NoteHead.no-ledgers
-                                                \revert Voice.Accidental.stencil
                                             }
                                         }
                                     >>
@@ -2028,11 +1926,8 @@
                                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
                                         e!
                                     >8
-                                    \ppp
                                     ^ \markup \center-align { \center-column { \line { \concat { -14 }  }\line { \concat { +0 }  } } }
                                     [
-                                    - \tweak stencil #constante-hairpin
-                                    \<
                                     ~
                                     \revert Staff.Stem.stemlet-length
                                     <
@@ -2070,7 +1965,6 @@
                                         \tweak style #'harmonic
                                         a
                                     >1
-                                    \!
                                     ~
                                     \once \override Dots.staff-position = #2
                                     \once \override RepeatTie.transparent = ##t
@@ -2086,7 +1980,7 @@
                                         \tweak style #'harmonic
                                         a
                                     >\breve
-                                    _ \markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed + pressure may result in slight pitch bending. This is desired. The left hand position need not be adjusted to accomodate this." }
+                                    _ \markup \override #'(font-name . "Bodoni72 Book Italic") \fontsize #1 { "Changes in bow speed may result in slight distortions of the tone. This is desired. The left hand position need not be adjusted to accomodate this." }
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)

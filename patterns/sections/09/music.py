@@ -126,10 +126,10 @@ trinton.make_music(
         attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
         selector=trinton.select_leaves_by_index([18, 19, 20, 21], pitched=True),
     ),
-    trinton.linear_attachment_command(
-        attachments=[abjad.StartHairpin("o<"), abjad.Dynamic("f")],
-        selector=trinton.select_leaves_by_index([0, 17], pitched=True),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.StartHairpin("o<"), abjad.Dynamic("f")],
+    #     selector=trinton.select_leaves_by_index([0, 17], pitched=True),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""CLT, SP""",
         selector=trinton.select_logical_ties_by_index(
@@ -351,31 +351,31 @@ trinton.make_music(
         selector=abjad.select.rests,
     ),
     library.color_voice(),
-    trinton.linear_attachment_command(
-        attachments=[
-            # abjad.LilyPondLiteral(
-            #     r"\once \override DynamicLineSpanner.staff-padding = #-4.5",
-            #     site="before",
-            # ),
-            abjad.Dynamic("mp"),
-            abjad.Dynamic("p"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("p"),
-            abjad.Dynamic("p"),
-            abjad.StartHairpin("<"),
-            abjad.Dynamic("mf"),
-            abjad.StartHairpin(">"),
-            abjad.Dynamic("p"),
-            # abjad.LilyPondLiteral(
-            #     r"\once \override DynamicLineSpanner.staff-padding = #-5", site="before"
-            # ),
-        ],
-        selector=trinton.select_leaves_by_index(
-            [0, 5, 5, 7, 7, 8, 9, 9, 11, 11, 13], pitched=True
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         # abjad.LilyPondLiteral(
+    #         #     r"\once \override DynamicLineSpanner.staff-padding = #-4.5",
+    #         #     site="before",
+    #         # ),
+    #         abjad.Dynamic("mp"),
+    #         abjad.Dynamic("p"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("p"),
+    #         abjad.Dynamic("p"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic("mf"),
+    #         abjad.StartHairpin(">"),
+    #         abjad.Dynamic("p"),
+    #         # abjad.LilyPondLiteral(
+    #         #     r"\once \override DynamicLineSpanner.staff-padding = #-5", site="before"
+    #         # ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index(
+    #         [0, 5, 5, 7, 7, 8, 9, 9, 11, 11, 13], pitched=True
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""II + III, DP""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -492,19 +492,19 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("mp"),
-        ],
-        selector=trinton.select_leaves_by_index([2]),
-    ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("mp"),
-        ],
-        selector=trinton.select_leaves_by_index([9]),
-        direction=abjad.UP,
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("mp"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([2]),
+    # ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("mp"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([9]),
+    #     direction=abjad.UP,
+    # ),
     trinton.IntermittentVoiceHandler(
         evans.RhythmHandler(
             evans.tuplet(
@@ -582,62 +582,62 @@ trinton.make_music(
         attachments=itertools.cycle([abjad.StartBeam(), abjad.StopBeam()]),
         selector=trinton.select_leaves_by_index([4, 6, 7, 10, 12, 16, 20, 24, 27, -1]),
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin("<"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin(">"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin("<"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin(">"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 0, 3, 3, 6, 7, 7, 10, 11, 11, 14, 15], first=True, pitched=True
-        ),
-        direction=abjad.DOWN,
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin("<"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin(">"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin("<"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin(">"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 0, 3, 3, 6, 7, 7, 10, 11, 11, 14, 15], first=True, pitched=True
+    #     ),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.hooked_spanner_command(
         string="CLB OB",
         selector=trinton.select_leaves_by_index([0, -1], grace=False, pitched=True),
@@ -712,10 +712,10 @@ trinton.make_music(
         attachments=[abjad.LilyPondLiteral(r"\voiceTwo")],
         selector=trinton.select_leaves_by_index([0]),
     ),
-    trinton.linear_attachment_command(
-        attachments=[abjad.Dynamic("mp"), abjad.Dynamic("mf")],
-        selector=trinton.pleaves(),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.Dynamic("mp"), abjad.Dynamic("mf")],
+    #     selector=trinton.pleaves(),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""1/2 CLB""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -757,10 +757,10 @@ trinton.make_music(
         ],
         selector=abjad.select.rests,
     ),
-    trinton.linear_attachment_command(
-        attachments=[abjad.Dynamic("f"), abjad.StartHairpin(">"), abjad.Dynamic("mp")],
-        selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.Dynamic("f"), abjad.StartHairpin(">"), abjad.Dynamic("mp")],
+    #     selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""CLB""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -923,23 +923,23 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("mp"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, 25], first=True, pitched=True
-        ),
-    ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("mp"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [18, 27], first=True, pitched=True
-        ),
-        direction=abjad.UP,
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("mp"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, 25], first=True, pitched=True
+    #     ),
+    # ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("mp"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [18, 27], first=True, pitched=True
+    #     ),
+    #     direction=abjad.UP,
+    # ),
     trinton.IntermittentVoiceHandler(
         evans.RhythmHandler(
             evans.tuplet(
@@ -1105,163 +1105,163 @@ trinton.make_music(
             ]
         ),
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin("<"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin(">"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin("<"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin(">"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin("<"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin(">"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin("<"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin(">"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("mf"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin("<"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("f"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.StartHairpin(">"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-            abjad.bundle(
-                abjad.Dynamic("p"),
-                r"""- \tweak color #(css-color 'darkred)""",
-            ),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [
-                7,
-                7,
-                9,
-                9,
-                11,
-                12,
-                12,
-                14,
-                14,
-                16,
-                17,
-                17,
-                20,
-                20,
-                22,
-                23,
-                23,
-                26,
-                26,
-                28,
-                29,
-                30,
-                31,
-                33,
-                33,
-                35,
-                35,
-                37,
-            ],
-            first=True,
-            pitched=True,
-        ),
-        direction=abjad.DOWN,
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin("<"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin(">"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin("<"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin(">"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin("<"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin(">"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin("<"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin(">"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("mf"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin("<"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("f"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.StartHairpin(">"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #         abjad.bundle(
+    #             abjad.Dynamic("p"),
+    #             r"""- \tweak color #(css-color 'darkred)""",
+    #         ),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [
+    #             7,
+    #             7,
+    #             9,
+    #             9,
+    #             11,
+    #             12,
+    #             12,
+    #             14,
+    #             14,
+    #             16,
+    #             17,
+    #             17,
+    #             20,
+    #             20,
+    #             22,
+    #             23,
+    #             23,
+    #             26,
+    #             26,
+    #             28,
+    #             29,
+    #             30,
+    #             31,
+    #             33,
+    #             33,
+    #             35,
+    #             35,
+    #             37,
+    #         ],
+    #         first=True,
+    #         pitched=True,
+    #     ),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.hooked_spanner_command(
         string="CLT DP",
         selector=trinton.select_leaves_by_index(
             [1, 6],
         ),
-        padding=15.5,
+        padding=14,
         direction="down",
         right_padding=1.5,
         full_string=False,
@@ -1307,7 +1307,7 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index(
             [65, 66],
         ),
-        padding=16,
+        padding=14,
         direction="down",
         right_padding=-1.5,
         full_string=False,
@@ -1353,7 +1353,7 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index(
             [25, 61, 66, 70],
         ),
-        padding=17,
+        padding=15,
         direction="down",
         right_padding=1.5,
         full_string=False,
@@ -1508,12 +1508,12 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.StartHairpin("o<"),
-        ],
-        selector=trinton.select_logical_ties_by_index([0], first=True, pitched=True),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.StartHairpin("o<"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index([0], first=True, pitched=True),
+    # ),
     voice=score["cello 2 voice"],
 )
 
@@ -1630,22 +1630,22 @@ trinton.make_music(
             abjad.Tweak(r"- \tweak bound-details.right.arrow ##t"),
         ],
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("f"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [2, 5, 9, 14, 16, 25], first=True, pitched=True
-        ),
-    ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("mp"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [3, 6, 10, 15, 18, 27], first=True, pitched=True
-        ),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("f"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [2, 5, 9, 14, 16, 25], first=True, pitched=True
+    #     ),
+    # ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("mp"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [3, 6, 10, 15, 18, 27], first=True, pitched=True
+    #     ),
+    # ),
     trinton.hooked_spanner_command(
         string=r"""1/2 CLT""",
         selector=trinton.select_leaves_by_index(

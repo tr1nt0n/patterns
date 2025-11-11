@@ -397,8 +397,6 @@
                                         {
                                             \voiceTwo
                                             e'4
-                                            - \tweak circled-tip ##t
-                                            ^ \<
                                             g4
                                             bf4
                                             d'4
@@ -406,7 +404,6 @@
                                             g4
                                             e'4
                                             a'4
-                                            ^ \ppp
                                             cs'4
                                             \times 2/3
                                             {
@@ -419,12 +416,10 @@
                                             {
                                                 cs''4
                                                 a'4
-                                                ^ \<
                                                 e''4
                                                 d''4
                                                 as'4
                                                 f'4
-                                                ^ \p
                                             }
                                         }
                                     >>
@@ -463,7 +458,6 @@
                                             \pitchedTrill
                                             b'16
                                             :32
-                                            \pp
                                             ]
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -598,7 +592,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                            \<
                                             ~
                                             - \tweak TrillPitchAccidental.stencil ##f
                                             - \tweak TrillPitchHead.layer 5
@@ -640,7 +633,6 @@
                                                 \undo \hide NoteHead
                                                 \tweak style #'harmonic
                                                 c'16
-                                                \p
                                                 \stopTrillSpan
                                             }
                                             \once \override Rest.staff-position = #-7
@@ -668,7 +660,6 @@
                                             \tweak style #'harmonic
                                             g'16
                                             :32
-                                            \pp
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -1452,7 +1443,6 @@
                                     [
                                     \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                     c'!8.
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 } } } }
                                     ]
                                     - \tweak font-name "Bodoni72 Book" 
@@ -1929,27 +1919,20 @@
                                             \times 2/3
                                             {
                                                 a''2
-                                                ^ \p
-                                                ^ \>
                                                 a''2
                                                 af''2
-                                                ^ \ppp
                                             }
                                             f''4
-                                            ^ \<
                                             fs''4
                                             e''''4
                                             a'''4
-                                            ^ \p
                                             a'4
                                             gs'4
-                                            ^ \>
                                             \times 4/5
                                             {
                                                 c'''4
                                                 gf'4
                                                 fs'4
-                                                ^ \pp
                                                 a'4
                                                 fs'4
                                             }
@@ -2038,90 +2021,67 @@
                                     \override Staff.Clef.stencil = ##f
                                     \clef "percussion"
                                     c'4
+                                    - \upbow
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 99" } } }
                                     (
-                                    - \tweak circled-tip ##t
-                                    \<
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #3.5
+                                    - \tweak padding #4.25
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "norm." } \hspace #0.5 }
+                                    \startTextSpanTwo
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #6.25
                                     - \abjad-dashed-line-with-hook
                                     - \tweak bound-details.left.text \markup \concat { \upright { "Tailpiece" } \hspace #0.5 }
-                                    \startTextSpan
+                                    \startTextSpanOne
                                     c'8
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    \>
+                                    \stopTextSpanTwo
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.25
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "OP" } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "norm." }
+                                    \startTextSpanTwo
                                     ~
                                     c'16
                                     [
                                     c'16
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "ppp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    \stopTextSpanTwo
                                     ]
                                     ~
                                     c'4
                                     )
                                     c'4
+                                    - \upbow
                                     (
-                                    \<
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "flaut." } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "OP" }
+                                    \startTextSpanTwo
                                     c'2
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
                                     )
-                                    - \tweak circled-tip ##t
-                                    \>
+                                    \stopTextSpanTwo
                                     c'8
+                                    - \upbow
                                     (
-                                    - \tweak circled-tip ##t
-                                    \<
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.25
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "norm." } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "OP" }
+                                    \startTextSpanTwo
                                     ~
                                     c'8
                                     c'4
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    \>
+                                    \stopTextSpanTwo
                                     ~
                                     c'8
                                     [
@@ -2129,107 +2089,75 @@
                                     c'16
                                     )
                                     c'16
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "ppp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    - \downbow
                                     ]
-                                    - \tweak stencil #constante-hairpin
-                                    \<
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.25
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "OP" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanTwo
                                     ~
                                     c'4
                                     c'16
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "f"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    - \downbow
+                                    \stopTextSpanTwo
                                     [
                                     (
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.25
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
+                                    \startTextSpanTwo
                                     c'8.
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "p"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    \stopTextSpanTwo
                                     ]
-                                    - \tweak circled-tip ##t
-                                    \>
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.25
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "flaut." } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 1
+                                    \startTextSpanTwo
                                     ~
                                     c'4
                                     )
                                     c'16
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.4
-                                                #:dynamic "ff"
-                                                #:hspace -0.2
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    - \upbow
+                                    \stopTextSpanTwo
                                     [
                                     (
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.75
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "" } \hspace #0.5 }
+                                    \startTextSpanTwo
                                     c'8.
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
+                                    \stopTextSpanTwo
                                     ]
-                                    - \tweak circled-tip ##t
-                                    \>
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.75
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "norm." } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \upright { "OP" }
+                                    \startTextSpanTwo
                                     c'4.
                                     )
-                                    - \tweak circled-tip ##t
-                                    \<
+                                    \stopTextSpanTwo
                                     \afterGrace
                                     c'1
-                                    _ #(make-dynamic-script
-                                        (markup
-                                            #:whiteout
-                                            #:line (
-                                                #:general-align Y -2 #:normal-text #:larger "“"
-                                                #:hspace -0.1
-                                                #:dynamic "mp"
-                                                #:hspace -0.25
-                                                #:general-align Y -2 #:normal-text #:larger "”"
-                                                )
-                                            )
-                                        )
-                                    \<
+                                    - \downbow
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #4.25
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "OP" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding 0.5
+                                    \startTextSpanTwo
                                     {
                                         \once \override Stem.stencil = ##f
                                         \once \override Flag.stencil = ##f
@@ -2237,25 +2165,13 @@
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.transparent = ##t
                                         c'16
-                                        _ #(make-dynamic-script
-                                            (markup
-                                                #:whiteout
-                                                #:line (
-                                                    #:general-align Y -2 #:normal-text #:larger "“"
-                                                    #:hspace -0.4
-                                                    #:dynamic "fff"
-                                                    #:hspace -0.2
-                                                    #:general-align Y -2 #:normal-text #:larger "”"
-                                                    )
-                                                )
-                                            )
-                                        \stopTextSpan
+                                        \stopTextSpanOne
+                                        \stopTextSpanTwo
                                     }
                                     \staff-line-count 5
                                     \revert Staff.Clef.stencil
                                     \clef "alto"
                                     dqs''4
-                                    \ppp
                                     (
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
@@ -2285,7 +2201,6 @@
                                     - \tweak thickness #1.5
                                       %! abjad.glissando(7)
                                     \glissando
-                                    \<
                                     ~
                                       %! abjad.glissando(1)
                                     \hide NoteHead
@@ -2342,7 +2257,6 @@
                                     \glissando
                                     \tweak style #'harmonic-mixed
                                     f'4
-                                    \p
                                     )
                                     \stopTextSpanOne
                                     \stopTextSpanTwo
@@ -2357,7 +2271,6 @@
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
-                                    \>
                                     \tweak style #'harmonic
                                     a''16
                                     [
@@ -2378,7 +2291,6 @@
                                     \glissando
                                     \big-half-harmonic
                                     cqs'''16
-                                    \ppp
                                     ]
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
@@ -2395,7 +2307,6 @@
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
-                                    \<
                                     \tweak style #'harmonic-mixed
                                     fs''4
                                     - \tweak bound-details.right.arrow ##t
@@ -2408,7 +2319,6 @@
                                     \glissando
                                     \tweak style #'harmonic-mixed
                                     a'''4
-                                    \p
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
@@ -2417,8 +2327,6 @@
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     \glissando
-                                    - \tweak circled-tip ##t
-                                    \>
                                     \afterGrace
                                     \tweak style #'harmonic-mixed
                                     af'4
@@ -2429,7 +2337,6 @@
                                         \grace-half-harmonic
                                         \once \override Flag.stroke-style = #"grace"
                                         gqs'16
-                                        \!
                                         )
                                     }
                                     <<
@@ -2437,7 +2344,6 @@
                                         {
                                             \voiceOne
                                             b'16
-                                            _ \ppp
                                             [
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1
@@ -2645,8 +2551,6 @@
                                     [
                                     <a,! bqf,!>16
                                     ]
-                                    - \tweak circled-tip ##t
-                                    \<
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
                                     - \tweak padding #13.5
@@ -2656,11 +2560,9 @@
                                     ~
                                     <a, bqf,>8
                                     r8
-                                    \pp
                                     r16
                                     [
                                     <a,! bqf,!>16
-                                    \ppp
                                     ]
                                     r4
                                     <a,! bqf,!>8
@@ -2673,7 +2575,6 @@
                                     r8
                                     r8
                                     <a,! bqf,!>4
-                                    \pp
                                     \stopTextSpanOne
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
@@ -2681,12 +2582,10 @@
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { { \column { \line { "MSP, 1/2 hair on strings" } \line { "1/2 hair on bridge" } } } \hspace #0.5 }
                                     \startTextSpanOne
-                                    \>
                                     ~
                                     <a, bqf,>8
                                     [
                                     r16
-                                    \ppp
                                     <a,! bqf,!>16
                                     ]
                                     r4
@@ -2709,9 +2608,7 @@
                                     - \tweak bound-details.left.text \markup \concat { { \column { \line { "all hair on bridge," } \line { "but allowing strings to ring" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 1
                                     \startTextSpanOne
-                                    \<
                                     r2
-                                    \pp
                                     <bqf,! c!>8
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +0 }} } }
                                     \stopTextSpanOne
@@ -2748,15 +2645,12 @@
                                     r8
                                     <g,! c!>4
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +8 }} } }
-                                    \<
                                     ~
                                     <g, c>8
                                     [
                                     r8
-                                    \p
                                     ]
                                     <g,! c!>4
-                                    \pp
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -34 }\line { +8 }} } }
                                     \stopTextSpanOne
                                     \big-half-harmonic

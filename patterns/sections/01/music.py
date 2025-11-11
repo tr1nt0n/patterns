@@ -139,18 +139,18 @@ trinton.make_music(
         invisible=True,
         selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False),
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = #11",
-                site="before",
-            ),
-            abjad.StartHairpin(">o"),
-            abjad.StopHairpin(),
-        ],
-        selector=trinton.select_leaves_by_index([-16, -16, -1], pitched=True),
-        direction=abjad.DOWN,
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = #11",
+    #             site="before",
+    #         ),
+    #         abjad.StartHairpin(">o"),
+    #         abjad.StopHairpin(),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([-16, -16, -1], pitched=True),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.hooked_spanner_command(
         string="""MSP""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
@@ -439,12 +439,12 @@ trinton.make_music(
             # r"""- \tweak bound-details.right.Y #-6.5""",
         ],
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("pp"),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("pp"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0]),
+    # ),
     library.color_voice(),
     voice=score["violin 1 legno voice"],
 )
@@ -536,15 +536,15 @@ trinton.make_music(
     #     full_string=True,
     #     command="One",
     # ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.StartHairpin("o<"),
-            abjad.Dynamic("pp"),
-            abjad.StartHairpin(">o"),
-            abjad.StopHairpin(),
-        ],
-        selector=trinton.select_leaves_by_index([0, 4, -3, -1], pitched=True),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.StartHairpin("o<"),
+    #         abjad.Dynamic("pp"),
+    #         abjad.StartHairpin(">o"),
+    #         abjad.StopHairpin(),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, 4, -3, -1], pitched=True),
+    # ),
     voice=score["violin 4 voice"],
     beam_meter=True,
 )
@@ -1001,15 +1001,15 @@ trinton.make_music(
             # r"""- \tweak bound-details.right.Y #-6.5""",
         ],
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override DynamicLineSpanner.staff-padding = 14"
-            ),
-            abjad.Dynamic("pp"),
-        ],
-        selector=trinton.select_leaves_by_index([0]),
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.LilyPondLiteral(
+    #             r"\once \override DynamicLineSpanner.staff-padding = 14"
+    #         ),
+    #         abjad.Dynamic("pp"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0]),
+    # ),
     library.color_voice(),
     voice=score["viola legno voice"],
 )
@@ -1202,17 +1202,17 @@ trinton.make_music(
         ),
         direction=abjad.DOWN,
     ),
-    trinton.attachment_command(
-        attachments=[
-            abjad.Dynamic("pp"),
-        ],
-        selector=trinton.select_leaves_by_index(
-            [
-                0,
-            ]
-        ),
-        direction=abjad.DOWN,
-    ),
+    # trinton.attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic("pp"),
+    #     ],
+    #     selector=trinton.select_leaves_by_index(
+    #         [
+    #             0,
+    #         ]
+    #     ),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.hooked_spanner_command(
         string="""II""",
         selector=trinton.select_leaves_by_index(
@@ -1295,15 +1295,15 @@ trinton.make_music(
             r"""- \tweak font-size 1""",
         ],
     ),
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.StartHairpin("o<"),
-            abjad.Dynamic("pp"),
-        ],
-        selector=trinton.select_logical_ties_by_index(
-            [0, -1], first=True, pitched=True, grace=False
-        ),
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.StartHairpin("o<"),
+    #         abjad.Dynamic("pp"),
+    #     ],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, -1], first=True, pitched=True, grace=False
+    #     ),
+    # ),
     voice=score["cello 2 voice"],
 )
 
@@ -1340,13 +1340,13 @@ trinton.make_music(
         ],
         selector=trinton.pleaves(),
     ),
-    trinton.linear_attachment_command(
-        attachments=[abjad.StartHairpin(">o"), abjad.StopHairpin()],
-        selector=trinton.select_logical_ties_by_index(
-            [0, -1], first=True, pitched=True
-        ),
-        direction=abjad.DOWN,
-    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[abjad.StartHairpin(">o"), abjad.StopHairpin()],
+    #     selector=trinton.select_logical_ties_by_index(
+    #         [0, -1], first=True, pitched=True
+    #     ),
+    #     direction=abjad.DOWN,
+    # ),
     trinton.hooked_spanner_command(
         string="""MSP""",
         selector=trinton.select_leaves_by_index([0, -1], pitched=True),
