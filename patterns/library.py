@@ -537,4 +537,4 @@ def whiteout_empty_staves(score, voice_names=["violin 1 voice", "violin 3 voice"
 
         for shard in relevant_shards:
             abjad.attach(reset, shard[0])
-            abjad.attach(reset_2, shard[0])
+            abjad.attach(reset_2, shard[-1])
