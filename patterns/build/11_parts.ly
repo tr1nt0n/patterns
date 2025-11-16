@@ -2,6 +2,8 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (14 17 17 17 17)))
             \time 9/8
             s1 * 9/8
               %! +SCORE
@@ -10,6 +12,8 @@
             s1 * 5/4
               %! +SCORE
         %%% \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (14 17 16 19)))
             \time 10/8
             s1 * 5/4
               %! +SCORE
@@ -18,6 +22,8 @@
             s1 * 1/2
               %! +SCORE
         %%% \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 20 30 30)))
             \time 4/4
             s1 * 1
               %! +SCORE
@@ -31,6 +37,8 @@
             s1 * 3/4
               %! +SCORE
         %%% \break
+              %! +SCORE
+        %%% \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 17 27 24)))
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
@@ -1092,6 +1100,12 @@
                                             }
                                             \once \override Rest.staff-position = #8
                                             r2
+                                            - \tweak padding #11
+                                            - \abjad-solid-line-with-arrow
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 59 )" } } } \hspace #0.5 }
+                                            - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 59" } } }
+                                            - \tweak bound-details.right.padding -58
+                                            \startTextSpanThree
                                             \once \override Dots.staff-position = #2
                                             \afterGrace
                                             <c'>2
@@ -1140,6 +1154,7 @@
                                                   %! abjad.glissando(6)
                                                 \undo \hide NoteHead
                                                 <c'>16
+                                                \stopTextSpanThree
                                                 \stopTextSpanTwo
                                                 \revert Voice.NoteHead.color
                                                 \revert Voice.Dots.color
@@ -1153,10 +1168,329 @@
                                         }
                                     >>
                                     \oneVoice
-                                    r2.
-                                    r2.
-                                    r2.
-                                    r2
+                                    <<
+                                        \context Voice = "violin 4 voice hair"
+                                        {
+                                            \once \override TupletBracket.padding = #3.5
+                                            \times 2/3
+                                            {
+                                                \set Staff.forceClef = ##t
+                                                \staff-line-count 5
+                                                \revert Staff.StaffSymbol.line-positions
+                                                \revert Staff.Accidental.stencil
+                                                \revert Staff.NoteHead.no-ledgers
+                                                \revert Staff.Clef.stencil
+                                                \voiceOne
+                                                r8
+                                                [
+                                                \override Staff.BarLine.bar-extent = #'(-2 . 2)
+                                                \big-half-harmonic
+                                                dqs'8
+                                                - \tweak padding 1
+                                                ^ \talon-to-punta
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #9.5
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -3
+                                                \startTextSpanTwo
+                                                _ (
+                                                \set Staff.forceClef = ##f
+                                                \big-half-harmonic
+                                                aqf8
+                                                )
+                                                ]
+                                            }
+                                            r4
+                                            \big-half-harmonic
+                                            bqf16
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            [
+                                            _ (
+                                            \big-half-harmonic
+                                            cqs'8.
+                                            )
+                                            ]
+                                            r8
+                                            [
+                                            \big-half-harmonic
+                                            cs'8
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ]
+                                            _ (
+                                            \big-half-harmonic
+                                            a8.
+                                            )
+                                            [
+                                            r16
+                                            ]
+                                            r8.
+                                            [
+                                            \big-half-harmonic
+                                            b16
+                                            - \tweak padding 1
+                                            ^ \punta-to-talon
+                                            ]
+                                            _ (
+                                            \big-half-harmonic
+                                            cs'8
+                                            )
+                                            [
+                                            r8
+                                            ]
+                                            \big-half-harmonic
+                                            aqf4
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            _ (
+                                            ~
+                                            \big-half-harmonic
+                                            aqf16
+                                            [
+                                            \big-half-harmonic
+                                            b8.
+                                            ]
+                                            \big-half-harmonic
+                                            cqs'8
+                                            [
+                                            \big-half-harmonic
+                                            c'8
+                                            ]
+                                            \big-half-harmonic
+                                            dqs'16.
+                                            [
+                                            \big-half-harmonic
+                                            aqf32
+                                            ~
+                                            \big-half-harmonic
+                                            aqf8
+                                            )
+                                            \stopTextSpanTwo
+                                            ]
+                                        }
+                                        \context Voice = "violin 2 legno voice"
+                                        {
+                                            \times 2/3
+                                            {
+                                                \once \override Rest.staff-position = #-16
+                                                \override Voice.NoteHead.color = #(css-color 'darkred)
+                                                \override Voice.Dots.color = #(css-color 'darkred)
+                                                \override Voice.Stem.color = #(css-color 'darkred)
+                                                \override Voice.Beam.color = #(css-color 'darkred)
+                                                \override Voice.Rest.color = #(css-color 'darkred)
+                                                \override Voice.Tie.color = #(css-color 'darkred)
+                                                \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                                \override Voice.TupletNumber.color = #(css-color 'darkred)
+                                                \textSpannerDown
+                                                \voiceTwo
+                                                r8
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #16.5
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding 2
+                                                \startTextSpan
+                                                \override Voice.NoteHead.no-ledgers = ##t
+                                                \override Voice.Accidental.stencil = ##f
+                                                a,4
+                                            }
+                                            \times 4/5
+                                            {
+                                                \textSpannerDown
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \stopTextSpan
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #18.5
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1
+                                                \startTextSpan
+                                                \textSpannerUp
+                                                \once \override Rest.staff-position = #-16
+                                                r8
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \accent
+                                                \stopTextSpan
+                                                ]
+                                                \textSpannerUp
+                                            }
+                                            \textSpannerDown
+                                            a,4
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #13.5
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding 2
+                                            \startTextSpan
+                                            \textSpannerDown
+                                            \tweak style #'cross
+                                            a,16
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \accent
+                                            \stopTextSpan
+                                            [
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #17
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \column { \line { "CLB" } \line { "OB" } } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding 2
+                                            \startTextSpan
+                                            \textSpannerUp
+                                            \tweak style #'cross
+                                            a,16
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \accent
+                                            \textSpannerDown
+                                            a,8
+                                            \stopTextSpan
+                                            ]
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #14
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -3
+                                            \startTextSpan
+                                            ~
+                                            \textSpannerUp
+                                            a,8.
+                                            \stopTextSpan
+                                            \textSpannerUp
+                                            \times 4/6
+                                            {
+                                                \textSpannerDown
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                [
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #18.5
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1
+                                                \startTextSpan
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \accent
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \once \override Rest.staff-position = #-16
+                                                r8
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \stopTextSpan
+                                                ]
+                                                \textSpannerUp
+                                            }
+                                            \textSpannerDown
+                                            a,16
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \accent
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #15.5
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -3
+                                            \startTextSpan
+                                            ~
+                                            a,8
+                                            \stopTextSpan
+                                            [
+                                            \textSpannerUp
+                                            \times 4/5
+                                            {
+                                                \textSpannerDown
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #18.5
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \column { \line { "CLB" } \line { "OB" } } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -2
+                                                \startTextSpan
+                                                \tweak style #'cross
+                                                a,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                a,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \stopTextSpan
+                                                ]
+                                                \textSpannerUp
+                                            }
+                                            \textSpannerDown
+                                            a,2
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #13.5
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -5
+                                            \startTextSpan
+                                            ~
+                                            a,2
+                                            \stopTextSpan
+                                            \textSpannerUp
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
+                                            \revert Voice.NoteHead.no-ledgers
+                                            \revert Voice.Accidental.stencil
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -1699,6 +2033,12 @@
                                     \revert Staff.Clef.stencil
                                     \clef "bass"
                                     r2
+                                    - \tweak padding #17.5
+                                    - \abjad-solid-line-with-arrow
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 59 )" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 59" } } }
+                                    - \tweak bound-details.right.padding -9
+                                    \startTextSpanThree
                                     \override Staff.BarLine.bar-extent = #'(-2 . 2)
                                     \big-half-harmonic
                                     c2
@@ -1722,11 +2062,382 @@
                                     \big-half-harmonic
                                     c16
                                     - \tenuto
+                                    \stopTextSpanThree
                                     \stopTextSpanTwo
                                     ]
-                                    r2.
-                                    r2.
-                                    r2
+                                    <<
+                                        \context Voice = "cello 2 voice hair"
+                                        {
+                                            \once \override TupletBracket.padding = #4.25
+                                            \times 4/5
+                                            {
+                                                \voiceOne
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    bf!
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    cs'!
+                                                    \tweak style #'harmonic
+                                                    eqf'!
+                                                >16
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                [
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #15.5
+                                                - \abjad-dashed-line-with-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "MSP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1
+                                                \startTextSpanTwo
+                                                _ (
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    c'!
+                                                    \tweak style #'harmonic
+                                                    ef'!
+                                                >8.
+                                                )
+                                                r16
+                                                ]
+                                            }
+                                            r8.
+                                            [
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                cs'!
+                                                \tweak style #'harmonic
+                                                ef'!
+                                            >16
+                                            - \tweak padding 1
+                                            ^ \talon-to-punta
+                                            ]
+                                            ~
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                cs'
+                                                \tweak style #'harmonic
+                                                ef'
+                                            >8.
+                                            [
+                                            r16
+                                            ]
+                                            r16
+                                            [
+                                            \once \override TupletBracket.padding = #5
+                                            \times 4/5
+                                            {
+                                                \set stemLeftBeamCount = 1
+                                                \set stemRightBeamCount = 2
+                                                r16
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    cqs'!
+                                                    \tweak style #'harmonic
+                                                    d'!
+                                                >8.
+                                                - \tweak padding 1
+                                                ^ \punta-to-talon
+                                                _ (
+                                                \set stemLeftBeamCount = 2
+                                                \set stemRightBeamCount = 1
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    dqf'!
+                                                    \tweak style #'harmonic
+                                                    ef'!
+                                                >16
+                                                ~
+                                            }
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                dqf'
+                                                \tweak style #'harmonic
+                                                ef'
+                                            >8.
+                                            ]
+                                            ~
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                dqf'
+                                                \tweak style #'harmonic
+                                                ef'
+                                            >16
+                                            [
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                b!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                cqs'!
+                                                \tweak style #'harmonic
+                                                d'!
+                                            >8.
+                                            ]
+                                            ~
+                                            \times 2/3
+                                            {
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    b
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    cqs'
+                                                    \tweak style #'harmonic
+                                                    d'
+                                                >8
+                                                <
+                                                    \tweak Accidental.font-size #-3.5
+                                                    \tweak Accidental.parenthesized ##t
+                                                    \tweak color #(x11-color 'LightSlateBlue)
+                                                    \tweak font-size #-3.5
+                                                    \tweak style #'harmonic
+                                                    dqf'!
+                                                    \tweak style #'harmonic
+                                                    eqf'!
+                                                >4
+                                                ~
+                                            }
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                dqf'
+                                                \tweak style #'harmonic
+                                                eqf'
+                                            >8
+                                            [
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                b!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                c'!
+                                                \tweak style #'harmonic
+                                                ef'!
+                                            >16.
+                                            <
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                bf!
+                                                \tweak Accidental.font-size #-3.5
+                                                \tweak Accidental.parenthesized ##t
+                                                \tweak color #(x11-color 'LightSlateBlue)
+                                                \tweak font-size #-3.5
+                                                \tweak style #'harmonic
+                                                cs'!
+                                                \tweak style #'harmonic
+                                                eqf'!
+                                            >32
+                                            )
+                                            \stopTextSpanTwo
+                                            ]
+                                        }
+                                        \context Voice = "cello legno voice"
+                                        {
+                                            \times 4/5
+                                            {
+                                                \override Voice.NoteHead.color = #(css-color 'darkred)
+                                                \override Voice.Dots.color = #(css-color 'darkred)
+                                                \override Voice.Stem.color = #(css-color 'darkred)
+                                                \override Voice.Beam.color = #(css-color 'darkred)
+                                                \override Voice.Rest.color = #(css-color 'darkred)
+                                                \override Voice.Tie.color = #(css-color 'darkred)
+                                                \override Voice.TupletBracket.color = #(css-color 'darkred)
+                                                \override Voice.TupletNumber.color = #(css-color 'darkred)
+                                                \override Voice.NoteHead.no-ledgers = ##t
+                                                \override Voice.Accidental.stencil = ##f
+                                                \textSpannerDown
+                                                \voiceTwo
+                                                c,4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #14
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding 2
+                                                \startTextSpan
+                                                \textSpannerDown
+                                                \tweak style #'cross
+                                                c,16
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \stopTextSpan
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #13
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -1
+                                                \startTextSpan
+                                                \textSpannerUp
+                                            }
+                                            \tweak style #'cross
+                                            c,16
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            [
+                                            \tweak style #'cross
+                                            c,16
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \accent
+                                            \once \override Rest.staff-position = #-8
+                                            r16
+                                            \stopTextSpan
+                                            \textSpannerUp
+                                            \textSpannerDown
+                                            c,16
+                                            ]
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #11
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding 2
+                                            \startTextSpan
+                                            ~
+                                            c,8.
+                                            [
+                                            \textSpannerDown
+                                            \tweak style #'cross
+                                            c,32
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \accent
+                                            \stopTextSpan
+                                            - \tweak color #(css-color 'darkred)
+                                            - \tweak font-name "Bodoni72 Book" 
+                                            - \tweak font-size 1
+                                            - \tweak padding #12
+                                            - \abjad-dashed-line-with-up-hook
+                                            - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                            - \tweak bound-details.right.padding -1
+                                            \startTextSpan
+                                            \textSpannerUp
+                                            \tweak style #'cross
+                                            c,32
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            - \tweak color #(css-color 'darkred)
+                                            _ \accent
+                                            ]
+                                            \tweak style #'cross
+                                            c,16
+                                            - \tweak color #(css-color 'darkred)
+                                            ^ \staccato
+                                            [
+                                            \times 4/5
+                                            {
+                                                \set stemLeftBeamCount = 1
+                                                \set stemRightBeamCount = 3
+                                                \tweak style #'cross
+                                                c,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                \tweak style #'cross
+                                                c,32
+                                                - \tweak color #(css-color 'darkred)
+                                                ^ \staccato
+                                                - \tweak color #(css-color 'darkred)
+                                                _ \accent
+                                                \stopTextSpan
+                                                ]
+                                                \textSpannerUp
+                                                \textSpannerDown
+                                                c,4
+                                                - \tweak color #(css-color 'darkred)
+                                                - \tweak font-name "Bodoni72 Book" 
+                                                - \tweak font-size 1
+                                                - \tweak padding #15
+                                                - \abjad-dashed-line-with-up-hook
+                                                - \tweak bound-details.left.text \markup \concat { \upright { "CLT DP" } \hspace #0.5 }
+                                                - \tweak bound-details.right.padding -4
+                                                \startTextSpan
+                                                ~
+                                            }
+                                            c,8.
+                                            ~
+                                            c,4
+                                            ~
+                                            c,2
+                                            \stopTextSpan
+                                            \textSpannerUp
+                                            \revert Voice.NoteHead.color
+                                            \revert Voice.Dots.color
+                                            \revert Voice.Stem.color
+                                            \revert Voice.Beam.color
+                                            \revert Voice.Rest.color
+                                            \revert Voice.Tie.color
+                                            \revert Voice.TupletBracket.color
+                                            \revert Voice.TupletNumber.color
+                                            \revert Voice.NoteHead.no-ledgers
+                                            \revert Voice.Accidental.stencil
+                                        }
+                                    >>
+                                    \oneVoice
                                       %! +SCORE
                                 %%% \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
