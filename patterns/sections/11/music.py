@@ -25,6 +25,38 @@ score = library.patterns_score(
 
 # first violin music
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 9)),
+    evans.RhythmHandler(evans.talea([-1, 1000], 2)),
+    trinton.change_lines(lines=1, clef="percussion", invisible_barlines=False),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(r"\override Staff.Clef.stencil = ##f", site="before"),
+            abjad.LilyPondLiteral(r"\revert Staff.Clef.stencil", site="before"),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""bridge""",
+        selector=trinton.select_leaves_by_index(
+            [0, -1],
+            pitched=True,
+        ),
+        padding=3,
+        right_padding=5,
+        full_string=False,
+        style="dashed-line-with-hook",
+        hspace=None,
+        command="Two",
+        tag=None,
+        tweaks=[
+            r"""- \tweak font-name "Bodoni72 Book" """,
+            r"""- \tweak font-size 1""",
+        ],
+    ),
+    voice=score["violin 2 voice"],
+)
+
 # second violin music
 
 trinton.make_music(
@@ -824,6 +856,34 @@ trinton.make_music(
 
 # viola music
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 9)),
+    evans.RhythmHandler(evans.talea([-1, 1000], 2)),
+    trinton.rewrite_meter_command(boundary_depth=-1),
+    trinton.aftergrace_command(
+        slash=True, selector=trinton.select_logical_ties_by_index([-1], pitched=True)
+    ),
+    evans.PitchHandler(["cqs", "g''"]),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Clef("alto"),
+            abjad.StartSlur(),
+            abjad.LilyPondLiteral(r"\big-half-harmonic", site="before"),
+            abjad.StopSlur(),
+            abjad.LilyPondLiteral(
+                r"\once \override Stem.direction = #DOWN", site="before"
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, 0, 0, -1, -1], pitched=True),
+        direction=abjad.UP,
+    ),
+    trinton.change_notehead_command(
+        notehead="highest", selector=trinton.select_leaves_by_index([-1], pitched=True)
+    ),
+    trinton.continuous_glissando(zero_padding=True, selector=trinton.pleaves()),
+    voice=score["viola 2 voice"],
+)
+
 # cello music
 
 trinton.make_music(
@@ -855,6 +915,15 @@ trinton.make_music(
     evans.RhythmHandler(evans.talea([3], 8)),
     trinton.aftergrace_command(
         selector=trinton.select_logical_ties_by_index([-1], pitched=True, grace=False)
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Staff.BarLine.transparent = ##f",
+                site="absolute_before",
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
     ),
     evans.PitchHandler(["a", "c'", "a", "b"]),
     trinton.continuous_glissando(selector=trinton.pleaves(), zero_padding=True),
@@ -1535,6 +1604,23 @@ trinton.make_music(
 
 # globals
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.BarLine(".|:", site="before"),
+            abjad.BarLine(":|.", site="after"),
+            abjad.LilyPondLiteral(
+                r"""\tweak text \markup { \center-column { \line { "×3" } \override #'(font-name . "Bodoni72 Book Italic") \override #'(font-size . 1.5) \line { "rit. moltiss. sempre" } } } \startMeasureSpanner""",
+                site="absolute_before",
+            ),
+            abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["Global Context"],
+)
+
 # final barline
 
 trinton.make_music(
@@ -1568,11 +1654,42 @@ trinton.fermata_measures(
 
 for voice_name, padding, hspace in zip(
     ["violin 2 voice", "violin 4 voice", "viola 2 voice", "cello 1 voice"],
-    [1.5, 1, 1.5, 2.5],
-    [-6, -8.5, -6, -6],
+    [1.5, 5, 1.5, 3],
+    [0, 0, 0, 0],
 ):
     trinton.make_music(
         lambda _: trinton.select_target(_, (1,)),
+        trinton.attachment_command(
+            attachments=[
+                trinton.tempo_markup(
+                    note_value=4,
+                    tempo=92,
+                    padding=padding,
+                    note_head_fontsize=0.5,
+                    stem_length=1.5,
+                    text_fontsize=4,
+                    dotted=True,
+                    fraction=None,
+                    tempo_change=None,
+                    site="after",
+                    hspace=hspace,
+                    string_only=False,
+                ),
+            ],
+            selector=trinton.select_leaves_by_index([0]),
+            direction=abjad.UP,
+            tag=abjad.Tag("+SCORE"),
+        ),
+        voice=score[voice_name],
+    )
+
+for voice_name, padding, hspace in zip(
+    ["violin 2 voice", "violin 4 voice", "viola 2 voice", "cello 2 voice"],
+    [1.5, 8.5, 1.5, 10],
+    [0, 0, 0, 0],
+):
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (2,)),
         trinton.attachment_command(
             attachments=[
                 trinton.tempo_markup(
@@ -1605,9 +1722,9 @@ for voice_name, padding, end_anchor in zip(
         # "cello 1 voice",
     ],
     [
-        3,
+        5,
         # 18.5,
-        3,
+        6,
         # 9.5,
     ],
     [
@@ -1797,7 +1914,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (14 17 17 17 17)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3 23 25 17 17)))",
                 site="absolute_before",
             ),
         ],
@@ -1827,7 +1944,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 20 30 30)))",
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 23 33 30)))",
                 site="absolute_before",
             ),
         ],

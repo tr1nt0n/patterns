@@ -17,11 +17,15 @@
         \context TimeSignatureContext = "Global Context"
         {
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (14 17 17 17 17)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (3 23 25 17 17)))
+            \tweak text \markup { \center-column { \line { "×3" } \override #'(font-name . "Bodoni72 Book Italic") \override #'(font-size . 1.5) \line { "rit. moltiss. sempre" } } } \startMeasureSpanner
+            \bar ".|:"
             \time 9/8
             s1 * 9/8
+            \bar ":|."
               %! +SCORE
             \noBreak
+            \stopMeasureSpanner
             \time 5/4
             s1 * 5/4
               %! +SCORE
@@ -37,7 +41,7 @@
               %! +SCORE
             \break
               %! +SCORE
-            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (11 20 30 30)))
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((alignment-distances . (7 23 33 30)))
             \time 4/4
             s1 * 1
               %! +SCORE
@@ -118,27 +122,46 @@
                                 {
                                     r4.
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-6 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 138" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 92" } } }
                                     r4.
                                     r4.
                                     r2.
+                                      %! +SCORE
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 138" } } }
                                     r2
                                     r4.
                                     r4
                                     r4.
                                     r4
                                     r2
-                                    r1
-                                    - \tweak padding #3
+                                    r2
+                                    - \tweak padding #5
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 59 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 59" } } }
                                     \startTextSpanThree
-                                    r2.
-                                    r2.
+                                    \staff-line-count 1
+                                    \override Staff.Clef.stencil = ##f
+                                    \clef "percussion"
+                                    c'2
+                                    - \tweak font-name "Bodoni72 Book" 
+                                    - \tweak font-size 1
+                                    - \tweak padding #3
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \upright { "bridge" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -5
+                                    \startTextSpanTwo
+                                    ~
+                                    c'2.
+                                    ~
+                                    c'2.
                                     \stopTextSpanThree
-                                    r2.
-                                    r2
+                                    ~
+                                    c'2.
+                                    ~
+                                    \revert Staff.Clef.stencil
+                                    c'2
+                                    \stopTextSpanTwo
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -193,7 +216,7 @@
                                 {
                                     d'8
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-8.5 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 138" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 92" } } }
                                     (
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
@@ -240,6 +263,8 @@
                                             \set Staff.forceClef = ##t
                                             \voiceTwo
                                             r16
+                                              %! +SCORE
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #8.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 138" } } }
                                             - \tweak Beam.positions #'(-9 . -9)
                                             [
                                             \once \override StemTremolo.stencil = #ly:text-interface::print
@@ -1619,27 +1644,70 @@
                                 {
                                     r4.
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-6 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 138" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 92" } } }
                                     r4.
                                     r4.
                                     r2.
+                                      %! +SCORE
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 138" } } }
                                     r2
                                     r4.
                                     r4
                                     r4.
                                     r4
                                     r2
-                                    r1
-                                    - \tweak padding #3
+                                    r2
+                                    - \tweak padding #6
                                     - \abjad-solid-line-with-arrow
                                     - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " rit. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { "= 59 )" } } } \hspace #0.5 }
                                     - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 59" } } }
                                     \startTextSpanThree
-                                    r2.
-                                    r2.
+                                    \override Dots.staff-position = #2
+                                    \big-half-harmonic
+                                    \clef "alto"
+                                    cqs2
+                                      %! abjad.glissando(7)
+                                    - \abjad-zero-padding-glissando
+                                      %! abjad.glissando(7)
+                                    \glissando
+                                    ^ (
+                                    ~
+                                      %! abjad.glissando(1)
+                                    \hide NoteHead
+                                      %! abjad.glissando(1)
+                                    \override Accidental.stencil = ##f
+                                      %! abjad.glissando(1)
+                                    \override NoteColumn.glissando-skip = ##t
+                                      %! abjad.glissando(1)
+                                    \override NoteHead.no-ledgers = ##t
+                                    cqs2.
+                                    ~
+                                    cqs2.
                                     \stopTextSpanThree
-                                    r2.
-                                    r2
+                                    ~
+                                    cqs2.
+                                    ~
+                                    \afterGrace
+                                    cqs2
+                                    {
+                                        \once \override NoteHead.stencil = #(lambda (grob) (let ((dur (ly:grob-property grob 'duration-log))) (if (= dur 0) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bb)) (if (= dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0bc)) (if (> dur 1) (grob-interpret-markup grob (markup #:ekmelos-char #xe0be)))))))
+                                        \once \override Stem.direction = #DOWN
+                                        \revert Dots.staff-position
+                                        \once \override Flag.stroke-style = #"grace"
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.stem-attachment = #'(0 . 0.75)
+                                        \once \override Staff.AccidentalPlacement.right-padding = #0.6
+                                          %! abjad.glissando(6)
+                                        \revert Accidental.stencil
+                                          %! abjad.glissando(6)
+                                        \revert NoteColumn.glissando-skip
+                                          %! abjad.glissando(6)
+                                        \revert NoteHead.no-ledgers
+                                          %! abjad.glissando(6)
+                                        \undo \hide NoteHead
+                                        g''16
+                                        )
+                                    }
                                       %! +SCORE
                                     \once \override MultiMeasureRest.transparent = ##t
                                       %! +SCORE
@@ -1664,13 +1732,14 @@
                             {
                                 \context Voice = "cello 1 voice"
                                 {
+                                    \once \override Staff.BarLine.transparent = ##f
                                     \override Dots.staff-position = #2
                                     \set GrandStaff.instrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { Violoncello }
                                       %! +SCORE
                                     \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { VC }
                                     a4.
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-6 \raise #2.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 138" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 92" } } }
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     - \tweak font-name "Bodoni72 Book" 
@@ -1827,6 +1896,8 @@
                                             {
                                                 \voiceOne
                                                 df,16
+                                                  %! +SCORE
+                                                ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #10 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 138" } } }
                                                 - \tweak Beam.positions #'(5 . 7)
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
