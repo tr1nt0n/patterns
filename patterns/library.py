@@ -97,7 +97,7 @@ _scale_degree_to_cents = {
 
 
 def polyrhythm_duration_lines(
-    fractions, selector=trinton.logical_ties(pitched=True, grace=False)
+    fractions, selector=trinton.logical_ties(pitched=True, grace=False), color=False
 ):
     def duration_lines(argument):
         selections = selector(argument)
@@ -107,7 +107,7 @@ def polyrhythm_duration_lines(
         for selection, fraction in zip(selections, fractions):
             duration_line_command = trinton.duration_line(
                 selector=trinton.pleaves(),
-                color=False,
+                color=color,
                 sustained=False,
                 visible_grace=False,
                 on_beat_graces=False,
