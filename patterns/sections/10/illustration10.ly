@@ -175,6 +175,7 @@
                                                 - \talon-to-punta
                                                   %! +SCORE
                                                 ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
+                                                (
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
                                                 - \tweak padding #12.25
@@ -187,6 +188,7 @@
                                                 e''4
                                                 a'4
                                                 d'4
+                                                )
                                                 \stopTextSpanTwo
                                             }
                                         }

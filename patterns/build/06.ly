@@ -110,10 +110,10 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r4.
+                                    r4.
+                                    r4.
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r4.
-                                    r4.
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -147,49 +147,49 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -1770,10 +1770,10 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r4.
+                                    r4.
+                                    r4.
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r4.
-                                    r4.
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -1807,49 +1807,49 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -1943,8 +1943,6 @@
                                             >4.
                                             ^ \half-clb
                                             ^ \marcato
-                                            - \tweak font-name "Bodoni72 Book Italic" 
-                                            _ \markup { \hspace #-6.75 { \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } } } }
                                             <
                                                 \tweak Accidental.font-size #-3.5
                                                 \tweak Accidental.parenthesized ##t
@@ -2998,8 +2996,6 @@
                                     >4.
                                     ^ \half-clb
                                     ^ \marcato
-                                    - \tweak font-name "Bodoni72 Book Italic" 
-                                    _ \markup { \hspace #-6.75 { \center-column { \line { "extremely strong battuto," } \line { "striking so hard as to hit all strings at once" } } } }
                                       %! +SCORE
                                     \set Staff.forceClef = ##f
                                     \staff-line-count 1

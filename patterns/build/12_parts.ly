@@ -2391,9 +2391,9 @@
                                     - \tweak color #(css-color 'darkred)
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
-                                    - \tweak padding #8.75
+                                    - \tweak padding #4.5
                                     - \abjad-dashed-line-with-hook
-                                    - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                    - \tweak bound-details.left.text \markup \concat { \column { \line { "CLB" } \line { "OB" } } \hspace #0.5 }
                                     - \tweak bound-details.right.padding 1.5
                                     \startTextSpan
                                     \tweak style #'cross
@@ -2630,9 +2630,9 @@
                                         - \tweak color #(css-color 'darkred)
                                         - \tweak font-name "Bodoni72 Book" 
                                         - \tweak font-size 1
-                                        - \tweak padding #8.75
+                                        - \tweak padding #4.5
                                         - \abjad-dashed-line-with-hook
-                                        - \tweak bound-details.left.text \markup \concat { \upright { "CLB OB" } \hspace #0.5 }
+                                        - \tweak bound-details.left.text \markup \concat { \column { \line { "CLB" } \line { "OB" } } \hspace #0.5 }
                                         - \tweak bound-details.right.padding 1.5
                                         \startTextSpan
                                         \tweak style #'cross

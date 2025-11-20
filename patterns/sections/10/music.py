@@ -31,11 +31,10 @@ trinton.make_music(
     trinton.linear_attachment_command(
         attachments=[
             abjad.bundle(abjad.Articulation("talon-to-punta"), r"- \tweak padding 0.5"),
-            # abjad.Dynamic("fff"),
-            # abjad.StartSlur(),
-            # abjad.StopSlur(),
+            abjad.StartSlur(),
+            abjad.StopSlur(),
         ],
-        selector=trinton.select_leaves_by_index([0, 0, 0, -1]),
+        selector=trinton.select_leaves_by_index([0, 0, -1]),
     ),
     trinton.IntermittentVoiceHandler(
         evans.RhythmHandler(rhythm.rhythm_e(index=4, lower_voice=True, shorten=False)),

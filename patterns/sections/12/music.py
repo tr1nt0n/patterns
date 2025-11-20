@@ -933,14 +933,14 @@ trinton.make_music(
         ],
     ),
     trinton.hooked_spanner_command(
-        string="CLB OB",
+        string="""\markup \column { \line { "CLB" } \line { "OB" } }""",
         selector=trinton.select_leaves_by_index(
             [4, 6, 37, 40],
         ),
-        padding=8.75,
+        padding=4.5,
         # direction="down",
         right_padding=-1.5,
-        full_string=False,
+        full_string=True,
         style="dashed-line-with-hook",
         hspace=None,
         command="",
