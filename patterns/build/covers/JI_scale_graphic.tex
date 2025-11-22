@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+%\usepackage{fontspec}
+%\usepackage[utf8]{inputenc}
+%\setmainfont{Bodoni 72 Book}
+\usepackage{cancel}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns, positioning, quotes,graphs,graphs.standard,}
+
+\begin{document}
+\pagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \rotatebox{90}{
+    \resizebox{8in}{!}{
+\begin{tikzpicture}[
+node distance = 25mm and 15mm,
+every edge quotes/.style = {font=\footnotesize, rectangle, draw, fill=white}
+                    ]
+    \node(1) {C[0]};
+    \node[right of=1] (2) {E[4]};
+    \node[right of=2] (3) {G[7]};
+    \node[right of=3] (4) {B}[11];
+    \node[right of=4] (5) {D[2]};
+    \node[right of=5] (6) {F\#[6]};
+    \node[right of=6] (7) {A[9]};
+    \node[right of=7] (8) {C\#[1]};
+    \node[right of=8] (9) {\cancel{E}};
+    \node[right of=9] (10) {G\#[8]};
+    \node[right of=10] (11) {\cancel{B}};
+    \node[right of=11] (12) {Eb[3]};
+    \node[right of=12] (13) {\cancel{F\#}};
+    \node[right of=13] (14) {Bb[10]};
+    \node[right of=14] (15) {\cancel{C\#}};
+    \node[right of=15] (16) {F[5]};
+    \draw[-, thick]
+    (1) edge[red, out=45, in=135, looseness=1, "5:4"] (2)
+    (2) edge[red, out=45, in=135, looseness=1, "6:5"] (3)
+    (3) edge[red, out=45, in=135, looseness=1, "5:4"] (4)
+    (4) edge[red, out=45, in=135, looseness=1, "6:5"] (5)
+    (5) edge[red, out=45, in=135, looseness=1, "5:4"] (6)
+    (6) edge[red, out=45, in=135, looseness=1, "6:5"] (7)
+    (7) edge[red, out=45, in=135, looseness=1, "5:4"] (8)
+    (8) edge[red, out=45, in=135, looseness=1, "6:5"] (9)
+    (9) edge[red, out=45, in=135, looseness=1, "5:4"] (10)
+    (10) edge[red, out=45, in=135, looseness=1, "6:5"] (11)
+    (11) edge[red, out=45, in=135, looseness=1, "5:4"] (12)
+    (12) edge[red, out=45, in=135, looseness=1, "6:5"] (13)
+    (13) edge[red, out=45, in=135, looseness=1, "5:4"] (14)
+    (14) edge[red, out=45, in=135, looseness=1, "6:5"] (15)
+    (15) edge[red, out=45, in=135, looseness=1, "5:4"] (16)
+    ;
+
+    \draw[-, thick]
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "10935:512"] (16)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "3645:256"] (14)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "1215:128"] (12)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "405:64"] (10)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "135:32"] (8)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "27:8"] (7)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "45:16"] (6)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "9:4"] (5)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "15:8"] (4)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "3:2"] (3)
+    (1) edge[cyan, out=-45, in=-135, looseness=1, "5:4"] (2)
+    ;
+
+    \draw[-, thick]
+    (1) edge[black, out=75, in=105, looseness=1, "3:2"] (3)
+    (2) edge[black, out=75, in=105, looseness=1, "3:2"] (4)
+    (3) edge[black, out=75, in=105, looseness=1, "3:2"] (5)
+    (4) edge[black, out=75, in=105, looseness=1, "3:2"] (6)
+    (5) edge[black, out=75, in=105, looseness=1, "3:2"] (7)
+    (6) edge[black, out=75, in=105, looseness=1, "3:2"] (8)
+    (7) edge[black, out=75, in=105, looseness=1, "3:2"] (9)
+    (8) edge[black, out=75, in=105, looseness=1, "3:2"] (10)
+    (9) edge[black, out=75, in=105, looseness=1, "3:2"] (11)
+    (10) edge[black, out=75, in=105, looseness=1, "3:2"] (12)
+    (11) edge[black, out=75, in=105, looseness=1, "3:2"] (13)
+    (12) edge[black, out=75, in=105, looseness=1, "3:2"] (14)
+    (13) edge[black, out=75, in=105, looseness=1, "3:2"] (15)
+    (14) edge[black, out=75, in=105, looseness=1, "3:2"] (16)
+    ;
+
+\end{tikzpicture}
+}
+}
+\end{figure}
+
+\newpage
+\begin{figure}[p]
+    \centering
+    \rotatebox{90}{
+    \resizebox{8in}{!}{
+\begin{tikzpicture}[
+node distance = 25mm and 15mm,
+every edge quotes/.style = {font=\footnotesize, rectangle, draw, fill=white}
+                    ]
+    \node(1) {0};
+    \node[right of=1] (2) {$1$};
+    \node[right of=2] (3) {$2$};
+    \node[right of=3] (4) {$3$};
+    \node[right of=4] (5) {$4$};
+    \node[right of=5] (6) {$5$};
+    \node[right of=6] (7) {$6$};
+    \node[right of=7] (8) {$7$};
+    \node[right of=8] (9) {$8$};
+    \node[right of=9] (10) {$9$};
+    \node[right of=10] (11) {$10$};
+    \node[right of=11] (12) {$11$};
+
+    \node[below=1] (13) {$\frac{1}{1}$};
+    \node[right of=13] (14) {$\frac{135}{128}$};
+    \node[right of=14] (15) {$\frac{9}{8}$};
+    \node[right of=15] (16) {$\frac{1215}{1024}$};
+    \node[right of=16] (17) {$\frac{5}{4}$};
+    \node[right of=17] (18) {$\frac{10935}{8192}$};
+    \node[right of=18] (19) {$\frac{45}{32}$};
+    \node[right of=19] (20) {$\frac{3}{2}$};
+    \node[right of=20] (21) {$\frac{405}{256}$};
+    \node[right of=21] (22) {$\frac{27}{16}$};
+    \node[right of=22] (23) {$\frac{3645}{2048}$};
+    \node[right of=23] (24) {$\frac{15}{8}$};
+
+    \node[below=2, right of=17] (25) {sounds like equal tempered F};
+
+
+\end{tikzpicture}
+}
+}
+\end{figure}
+
+\end{document}

@@ -1125,7 +1125,7 @@ trinton.make_music(
     ),
     trinton.attachment_command(
         attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
-        selector=trinton.select_leaves_by_index([0, 1], pitched=True),
+        selector=trinton.select_leaves_by_index([1], pitched=True),
     ),
     trinton.attachment_command(
         attachments=[abjad.LilyPondLiteral(r"\grace-half-harmonic", site="before")],

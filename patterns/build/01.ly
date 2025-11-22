@@ -1570,7 +1570,6 @@
                                     <<
                                         \context Voice = "cello 2 voice temp"
                                         {
-                                            \big-half-harmonic
                                             \override Staff.Clef.stencil = #ly:text-interface::print
                                             \override Staff.Clef.text = \string-clef
                                             \staff-line-count 4

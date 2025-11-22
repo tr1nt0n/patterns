@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bodoni 72 Book}
+\usepackage[paperwidth=11in,paperheight=8.5in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begingroup
+\begin{center}
+\huge NOTES FOR THE INTERPRETERS
+\end{center}
+\endgroup
+
+\begingroup
+\large \textbf{\circled{I} GENERAL:} \\
+\normalsize \circled{1} After temporary \textbf{accidentals}, cancellation marks are printed also in the following measure (for notes in the same octave) and, in the same measure, for notes in other octaves, but they are printed again if the same note appears later in the same measure, except if the note is immediately repeated. \\
+\circled{2} All music should be played \textbf{as quietly as possible}. The threshold of audibility will be higher for some sounds than others, resulting in dynamic variance. Interpreters are also afforded some expressive freedom with volume, although within extremely quiet dynamic range. \\
+\circled{3} The instruments should be \textbf{amplified extremely subtly} to bring out fine details of the sound, but only when played in large halls. More intimate chamber settings should require no amplification. \\
+\circled{4} \textbf{Dashed, hooked lines} indicate that a playing technique should be \textbf{sustained}, whereas \textbf{solid lines with arrows} indicate a \textbf{gradual transition} from one playing technique to another. \\
+\circled{5} This score follows the notational example of Luigi Nono, who used the familiar, round-arched \textbf{fermata} as an orientation point. To \textbf{triangulate} the arch indicates to \textbf{shorten} the fermata, and to \textbf{square} the arch indicates to \textbf{lengthen} the fermata. The \textbf{addition of arches} increases the relative length or shortness of the fermata. Interpreters are discouraged from developing a timing system for counting the relative length of the fermate. A fermata should be taken as an invitation to wait rather than to count, the shape of the symbol indicating the breadth of the waiting space. \\
+\endgroup
+
+\begingroup
+\large \textbf{\circled{II} BOWING:} \\
+\normalsize \circled{1} \textbf{Bow pressures} are indicated as: \\ 
+\circled{a} \textbf{Flautando}: Light as possible. \\
+\circled{b} \textbf{Normale}: Standard bow pressure. \\
+\circled{c} \textbf{Overpressure}: As much pressure as possible. \\
+\textbf{Scratch}, or scratch-tone, is distinguished from overpressure as a bowing so hard that any pitch associated with the sound is always distorted into noise, whereas there may still be some pitch with overpressure, depending on context. \\
+\newpage
+\circled{2} \textbf{Degrees of spazzolato} are used to indicate a \textbf{diagonal bowing}, wherein full spazzolato draws the bow vertically up and down the string, half spazzolato draws the bow diagonally across the string, and normale draws the bow horizontally across the string. Fractions above or below \textbf{1/2} spazzolato may be used as approximate bow-draw directions between the three. It is important to note that these directions apply \textbf{only to the draw of the bow} and not the direction the bow is pointed. This is indicated with the following symbols: \\  
+\circled{a} \includegraphics[scale=0.035]{bow_normale.png} Point the tip of the bow \textbf{perpendicular} to the instrument. \\
+\circled{b} \includegraphics[scale=0.035]{bow_one_hundred_thirty_five_degrees.png} Point the tip of the bow \textbf{towards the bottom of the instrument}.\\
+\circled{c} \includegraphics[scale=0.035]{bow_forty_five_degrees.png} Point the tip of the bow \textbf{towards the top of the instrument}.\\
+\circled{d} \includegraphics[scale=0.035]{bow_up.png} Point the tip of the bow \textbf{directly towards the scroll}, parallel with the strings.\\ 
+Degrees of spazzolato and bow-tip-direction articulations are combined to create distortions of the fingered pitches, resulting in a sound on a spectrum between scraping and moaning. \\
+\circled{3} \textbf{Red music beneath the staff}, as below, from measure 38 of the viola: \\ 
+\begin{center}
+ \includegraphics[scale=0.4]{legno.png}
+ \end{center}
+indicates to play either on the bridge (crossed note heads) or behind the bridge (round note heads) with the wood of the bow \textbf{while also playing on the string in front of the bridge with the hair of the bow, molto sul ponticello}. This is accomplished with a downward rotation of the bow such that the wood makes contact with the desired area. In some contexts, this motion may disturb the continuity of the sound from the bow hair and strings in front of the bridge. Though this is to be avoided in principle, slight, unavoidable distortions are not unwelcome. \\
+\endgroup
+
+\begingroup
+\large \textbf{\circled{III} NOTE HEADS:}\\
+\normalsize \circled{1} \textbf{Finger pressure of the left hand} is indicated with \textbf{note head shapes} as follows: \\
+\circled{a} \includegraphics[scale=0.05]{harmonic.png} Harmonic pressure (These note heads will be coloured in if they are attached to quarter notes. Otherwise, they are transparent.) \\
+\circled{b} \includegraphics[scale=0.065]{half_harmonic_half_note.png} Half harmonic pressure (half notes and larger durations) \\
+\circled{c} \includegraphics[scale=0.05]{half_harmonic_quarter_note.png} Half harmonic pressure (quarter notes and smaller durations) \\
+\circled{d} \includegraphics[scale=0.05]{cross.png} Percussive actions \\
+\circled{2} \textbf{Transitions between finger pressures} are indicated using arrows between note heads, as bellow, from measure 22 of the cello: \\
+\begin{center}
+\includegraphics[scale=0.16]{finger_pressure_arrows.png}
+\end{center}
+ These arrows \textbf{double as glissandi} when spanning between two different pitches. \\
+ \circled{3} \textbf{Multiple muting} of the string is accomplished by \textbf{fingering two or more places on the same string at once.} This is indicated with \textbf{small, blue note heads} beneath the upper node, as bellow, from measure 51 of the second viola: \\
+\begin{center}
+\includegraphics[scale=0.16]{muting.png}
+\end{center}
+Multiple finger pressures may be used, as in the first and third notes of the above example. 
+\endgroup
+
+\newpage
+
+\begingroup 
+\large \textbf{\circled{IV} STAVES AND CLEFS:}\\
+\normalsize \circled{1} \includegraphics[scale=0.15]{tablature_clef.png} A four-line staff wherein the bottom line represents the lower end of the finger board, the second line represents halfway up the finger board, the third line represents the bridge, and the fourth line represents the strings behind the bridge. When playing in this clef, two voices are read, as below, from measure 65 of the first violin: \\
+\begin{center}
+\includegraphics[scale=0.35]{tab_example.png}
+\end{center}
+The red voice with upward-pointing stems indicates the actions of the bow in the right hand. The bow is always drawn horizontally, as normal, with different positions on the string. Square-shaped lines and note heads indicate scratch tone, round note-heads indicate normale bowing. Lines with arrows in the staff indicate a transition from scratch tone to normale. Short square-shaped note heads, especially with staccati, indicate only clicks of the bow, whereas elongated square lines indicate continuous scratch tone. \\
+The black voice with downward-pointing stems indicates the actions of the left hand. Cross-shaped noteheads indicate finger percussion, and all other finger-pressure variances noted in \textbf{III.1} apply. \\
+All actions should be performed on the same string, shown above the staff in a spanner. There is an exception to this in measures 45-56 of the first violin, wherein the red spanner above the staff indicates the stringing of the bow, and the black spanners below the staff indicate the stringing of the left hand. \newpage
+In this idiom, trills appear throughout the score, as below, from measure 49 of the first violin: \\
+\begin{center}
+\includegraphics[scale=0.2]{trill_example.png}
+\end{center}
+The arrow attached to the stem of the first note indicates that for the duration of the trill, the fundamental should be held down, rather than alternated with the trill pitch. In the case of glissandi, the position of the trill pitch relative to the moving fundamental should be maintained. The finger pressure of the trill pitch, indicated by note head shape, should also be noted and maintained through the course of the trill. \\
+\circled{2} \includegraphics[scale=0.15]{stringing_clef.png} A four-line staff wherein the top line indicates to play on string I, the next on string II, and so on. \\
+\circled{3} \includegraphics[scale=0.15]{bow_clef.png} A three-line staff used to indicate bow speed and bow contact points. The top line represents au talon, the center line represents the middle of the bow, and the bottom line represents punta d'arco. When this staff appears above a traditional 5-line staff, the bow should be drawn gradually and evenly between the approximate contact points connected by lines in the bowing staff. The speed of the bow draw is indicated with spatial notation rather than precisely rhythmed,  though it should be syncronised to the notes they vertically align with in the lower staff. 
+\endgroup
+
+\newpage
+
+\begingroup
+\large \textbf{\circled{V} MICROTONES:}\\
+\normalsize \circled{1} The microtones present in this score are \textbf{quarter tones, a spectrally derived scale,} and \textbf{rational intervals}. Quarter tones are indicated using the following accidentals: \\
+\circled{a} \includegraphics[scale=0.05]{qt_flat.png} A quarter-tone flat \\ 
+\circled{b} \includegraphics[scale=0.05]{qt_sharp.png} A quarter-tone sharp \\
+\circled{2} \textbf{A tuning system derived from spectral analysis of struck metal's overtones} is intermittently present from measures 2-56 of the score. They are indicated with \textbf{cent deviations from the equally tempered note in the staff} to be achieved either through the use of electric tuners, or approximated, depending on the resources and discretion of the interpreters. Below is the scale from an \textbf{A fundamental}: \\
+\begin{center}
+\includegraphics[scale=0.5]{gamelan_scale.png}
+\end{center}
+\newpage
+\circled{3} \textbf{A just tuning system derived from alternating ratios of 5:4 and 6:5} is intermittently present from measures 60-98 of the score. A chromatic scale was devised by following this ratio pattern, and assigning the lowest appearance of a particular pitch to the final scale. This is illustrated below: \\
+\begin{center}
+\includegraphics[scale=0.5]{JI_scale_graphic.png}
+\end{center}
+Below are the scales written on a staff as they would be in score, with Helmholtz-Ellis accidentals and cent deviations from equal temperament, as with the scale in \textbf{V.1}. 
+\begin{center}
+\includegraphics[scale=0.5]{JI_scale.png}
+\end{center}
+\hspace {19mm} 1:1 \hspace{6mm} 135:128 \hspace{7mm} 9:8 \hspace{4mm} 1215:1024 \hspace{3mm} 5:4\hspace{1.5mm}(sounds like ET F)\hspace{0.5mm}45:32 \hspace{6mm} 3:2 \hspace{6mm} 405:256 \hspace{4mm} 27:16 \hspace{2mm} 3645:2048 \hspace{2mm} 15:8
+\endgroup
+
+\newpage
+
+\begingroup
+\large \textbf{\circled{VII} INTERRUPTIVE POLYPHONY:}\\
+\normalsize \circled{1} Lines emanating from a note within a polyrhythm, as below, from measure 66 of the viola: \\
+\begin{center}
+\includegraphics[scale=0.3]{ip.png}
+\end{center}
+indicate to cut off the note approximately where the line ends spatially, rather than hold the note for the entire duration. These lines always terminate at the beginning of the following note in the polyrhythm. 
+
+\newpage
+
+\large \textbf{\circled{VII} SYMBOLS:}\\
+\normalsize \circled{1} \includegraphics[scale=0.05]{damp.png} Damp strings so as to resonate as little as possible. \\
+\circled{2} \circled{a} \includegraphics[scale=0.06]{talon_punta.png} Draw the bow gradually and evenly from au talon to punta d'arco over the course of the articulated note. \\
+\circled{b} \includegraphics[scale=0.04]{punta_talon.png} As above, only from punta d'arco to au talon. \\
+\textbf{VI.2.a} and \textbf{VI.2.b} are to be interpreted \textbf{``as possible,"} meaning that in the event a duration is too short to draw across the full length of the bow, the interpreter may choose to either bow as quickly as possible, or to allow the bow to slightly skip off the string as it is fully drawn. 
+\\ \\
+\large \textbf{\circled{VIII} Abbreviations}\\
+\normalsize \circled{1} CLB: Col legno battuto \\
+\circled{2} CLT: Col legno tratto \\
+\circled{3} MSP: Molto sul ponticello \\
+\circled{4} SP: Sul ponticello \\
+\circled{5} Ord.: Ordinario (cancels string contact point directions) \\
+\circled{6} ST: Sul tasto \\
+\circled{7} MST: Molto sul tasto \\
+\circled{8} Flaut.: Flautando \\ 
+\circled{9} Norm.: Normale (cancels bow pressure directions) \\
+\circled{10} OP: Overpressure \\
+\circled{11} Scr.: Scratch \\
+\circled{12} OB: On the bridge (play directly on the bridge) \\
+\circled{13} Spz.: Spazzolato (vertical bowing, see \textbf{II.2}) \\
+\circled{14} Moltiss.: Moltissimo  \\
+\circled{15} Poss.: Possibile (as possible)
+\endgroup
+
+\end{document}
