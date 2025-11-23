@@ -93,6 +93,11 @@
                                     \times 11/17
                                     {
                                         \override Dots.staff-position = #2
+                                        \stopStaff
+                                        \once \override Staff.BarLine.transparent = ##f
+                                        \override StaffSymbol.line-count = #3
+                                        \override StaffSymbol.line-positions = #'(9 0 -9)
+                                        \startStaff
                                         c'''2.
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -534,6 +539,11 @@
                                     \times 11/15
                                     {
                                         \override Dots.staff-position = #2
+                                        \stopStaff
+                                        \once \override Staff.BarLine.transparent = ##f
+                                        \override StaffSymbol.line-count = #3
+                                        \override StaffSymbol.line-positions = #'(9 0 -9)
+                                        \startStaff
                                         c'''2
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -824,6 +834,11 @@
                                     \times 11/15
                                     {
                                         \override Dots.staff-position = #2
+                                        \stopStaff
+                                        \once \override Staff.BarLine.transparent = ##f
+                                        \override StaffSymbol.line-count = #3
+                                        \override StaffSymbol.line-positions = #'(9 0 -9)
+                                        \startStaff
                                         c'''1
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -1450,6 +1465,11 @@
                                     \times 11/21
                                     {
                                         \override Dots.staff-position = #2
+                                        \stopStaff
+                                        \once \override Staff.BarLine.transparent = ##f
+                                        \override StaffSymbol.line-count = #3
+                                        \override StaffSymbol.line-positions = #'(9 0 -9)
+                                        \startStaff
                                         c'''1
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando

@@ -267,6 +267,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override StaffSymbol.line-count = #3
         \override StaffSymbol.line-positions = #'(9 0 -9)
+        
         \override Stem.stencil = ##f
 
         \override Rest.transparent = ##t

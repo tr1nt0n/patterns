@@ -528,11 +528,16 @@ def whiteout_empty_staves(score, voice_names=["violin 1 voice", "violin 3 voice"
         shards = abjad.select.group_by_measure(voice)
         relevant_shards = []
         for shard in shards:
+            leaves = abjad.select.leaves(shard)
             if (
-                all(isinstance(leaf, abjad.Rest) for leaf in shard)
-                or all(isinstance(leaf, abjad.MultimeasureRest) for leaf in shard)
-                or all(isinstance(leaf, abjad.Skip) for leaf in shard)
+                all(isinstance(leaf, abjad.Rest) for leaf in leaves)
+                or all(isinstance(leaf, abjad.MultimeasureRest) for leaf in leaves)
+                or all(isinstance(leaf, abjad.Skip) for leaf in leaves)
             ):
+                # print("")
+                # print(shard)
+                # print(leaves)
+                # print("")
                 relevant_shards.append(shard)
 
         for shard in relevant_shards:

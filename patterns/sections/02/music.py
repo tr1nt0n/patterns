@@ -2500,6 +2500,32 @@ library.write_short_instrument_names(score=score)
 trinton.remove_redundant_time_signatures(score=score)
 library.whiteout_empty_staves(score=score)
 
+for voice_name in [
+    "violin 1 voice",
+    "violin 3 voice",
+    "viola 1 voice",
+    "cello 1 voice",
+]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (7,)),
+        trinton.attachment_command(
+            attachments=[
+                abjad.LilyPondLiteral(
+                    [
+                        r"\stopStaff",
+                        r"\once \override Staff.BarLine.transparent = ##f",
+                        r"\override StaffSymbol.line-count = #3",
+                        r"\override StaffSymbol.line-positions = #'(9 0 -9)",
+                        r"\startStaff",
+                    ],
+                    site="absolute_before",
+                )
+            ],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score[voice_name],
+    )
+
 # extract parts
 
 trinton.extract_parts(score=score)

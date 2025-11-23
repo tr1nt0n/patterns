@@ -284,6 +284,11 @@
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
                                     \stopStaff
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \override StaffSymbol.line-count = #3
+                                    \override StaffSymbol.line-positions = #'(9 0 -9)
+                                    \startStaff
+                                    \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
@@ -1623,6 +1628,11 @@
                                     \times 2/3
                                     {
                                         \override Dots.staff-position = #2
+                                        \stopStaff
+                                        \once \override Staff.BarLine.transparent = ##f
+                                        \override StaffSymbol.line-count = #3
+                                        \override StaffSymbol.line-positions = #'(9 0 -9)
+                                        \startStaff
                                         e''1
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -1987,6 +1997,11 @@
                                     r4.
                                     r4
                                     r4
+                                    \stopStaff
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \override StaffSymbol.line-count = #3
+                                    \override StaffSymbol.line-positions = #'(9 0 -9)
+                                    \startStaff
                                     r1
                                     r1.
                                     r1
@@ -2514,6 +2529,11 @@
                                     r4.
                                     r4
                                     r4
+                                    \stopStaff
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \override StaffSymbol.line-count = #3
+                                    \override StaffSymbol.line-positions = #'(9 0 -9)
+                                    \startStaff
                                     r1
                                     r1.
                                     r1
