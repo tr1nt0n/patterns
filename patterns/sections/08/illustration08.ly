@@ -483,7 +483,7 @@
                                                 f''
                                             >2
                                               %! +SCORE
-                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-8.5 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-8.5 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 62" } } }
                                             - \tweak color #(css-color 'darkred)
                                             (
                                             - \tweak color #(css-color 'darkred)
@@ -861,8 +861,8 @@
                                             \startTextSpanTwo
                                             - \tweak padding #12
                                             - \abjad-solid-line-with-arrow
-                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
-                                            - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { " . = 137 )" } } } \hspace #0.5 }
+                                            - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { " . = 137" } } }
                                             \startTextSpanThree
                                             \once \override NoteHead.X-offset = 0
                                             \once \override Staff.Accidental.stencil = ##f
@@ -1260,7 +1260,7 @@
                                     - \tenuto
                                     ^ \markup \fontsize #0.1 { \override #'(baseline-skip . 2) { \center-column { \line { -12 } \line { +0 } } } }
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-10 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-10 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 62" } } }
                                     - \tweak bound-details.right.arrow ##t
                                     - \tweak thickness #1.5
                                     - \abjad-zero-padding-glissando
@@ -2022,8 +2022,8 @@
                                     [
                                     - \tweak padding #18.5
                                     - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { " . = 137 )" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { " . = 137" } } }
                                     \startTextSpanThree
                                     \big-half-harmonic
                                     \revert Staff.Stem.stemlet-length
@@ -2576,7 +2576,7 @@
                                     \set GrandStaff.shortInstrumentName = \markup \fontsize #2 \override #'(font-name . "Bodoni72 Book") { VA }
                                     c'1
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #4 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #4 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 62" } } }
                                     - \abjad-zero-padding-glissando
                                     \glissando
                                     - \tweak font-name "Bodoni72 Book" 
@@ -2675,9 +2675,9 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -2732,11 +2732,11 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r8.
-                                    \once \override Staff.BarLine.transparent = ##f
-                                    \startStaff
                                     r8
                                     r8.
                                     r8
+                                    \once \override Staff.BarLine.transparent = ##f
+                                    \startStaff
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -4200,7 +4200,7 @@
                                             [
                                             - \tweak padding #10
                                             - \abjad-solid-line-with-arrow
-                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
+                                            - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { " . = 137 )" } } } \hspace #0.5 }
                                             - \tweak bound-details.right.text \markup {}
                                             - \tweak bound-details.right.padding -30
                                             \startTextSpanThree
@@ -4413,7 +4413,7 @@
                                                 \voiceOne
                                                 a'16
                                                   %! +SCORE
-                                                ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #10 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
+                                                ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #10 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { " . = 137" } } }
                                                 [
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -4582,9 +4582,9 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
                                     \once \override Staff.StaffSymbol.line-count = #0
@@ -4604,9 +4604,9 @@
                                     \once \override Staff.StaffSymbol.line-count = #0
                                     \once \override Staff.BarLine.transparent = ##f
                                     r2.
+                                    r2
                                     \once \override Staff.BarLine.transparent = ##f
                                     \startStaff
-                                    r2
                                     \once \override Staff.Clef.stencil = ##f
                                     \stopStaff
                                     \once \revert Staff.StaffSymbol.line-positions
@@ -4633,8 +4633,8 @@
                                     \startTextSpanOne
                                     - \tweak padding #9.5
                                     - \abjad-solid-line-with-arrow
-                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 4 } #1.5 } \fontsize #3 { " . = 153 )" } } } \hspace #0.5 }
-                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { " . = 153" } } }
+                                    - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book Italic") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #3 { " accel. ( to " } \fontsize #-0.5 { \note { 8 } #1.5 } \fontsize #3 { " . = 137 )" } } } \hspace #0.5 }
+                                    - \tweak bound-details.right.text \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { " . = 137" } } }
                                     \startTextSpanThree
                                     a32
                                     - \abjad-zero-padding-glissando
@@ -4756,7 +4756,7 @@
                                     - \tweak padding 1
                                     ^ \punta-to-talon
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 100" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 62" } } }
                                     - \tweak font-name "Bodoni72 Book" 
                                     - \tweak font-size 1
                                     - \tweak padding #7.5

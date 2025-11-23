@@ -2055,37 +2055,6 @@ trinton.fermata_measures(
 
 # tempi
 
-# for voice_name, padding, hspace in zip(
-#     ["violin 2 voice temp", "violin 4 voice", "viola 2 voice", "cello 2 voice"],
-#     [9.5, 3, 3, 3],
-#     [0, -9, -7, -7],
-# ):
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (1,)),
-#         trinton.attachment_command(
-#             attachments=[
-#                 trinton.tempo_markup(
-#                     note_value=4,
-#                     tempo=99,
-#                     padding=padding,
-#                     note_head_fontsize=0.5,
-#                     stem_length=1.5,
-#                     text_fontsize=4,
-#                     dotted=False,
-#                     fraction=None,
-#                     tempo_change=None,
-#                     site="after",
-#                     hspace=hspace,
-#                     string_only=False,
-#                 ),
-#             ],
-#             selector=trinton.select_leaves_by_index([0]),
-#             direction=abjad.UP,
-#             tag=abjad.Tag("+SCORE"),
-#         ),
-#         voice=score[voice_name],
-#     )
-
 for voice_name, padding, end_anchor in zip(
     [
         "violin 2 voice",
@@ -2235,8 +2204,8 @@ for voice_name, padding, end_anchor in zip(
         trinton.spanner_command(
             strings=[
                 trinton.tempo_markup(
-                    note_value=4,
-                    tempo=80,
+                    note_value=8,
+                    tempo=100,
                     padding=0,
                     note_head_fontsize=-0.5,
                     stem_length=1.5,
@@ -2249,8 +2218,8 @@ for voice_name, padding, end_anchor in zip(
                     string_only=True,
                 ),
                 trinton.tempo_markup(
-                    note_value=4,
-                    tempo=80,
+                    note_value=8,
+                    tempo=100,
                     padding=0,
                     note_head_fontsize=0.5,
                     stem_length=1.5,

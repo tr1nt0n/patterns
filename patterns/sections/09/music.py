@@ -1771,7 +1771,7 @@ for voice_name, padding, hspace in zip(
         0,
         0,
         0,
-        -7,
+        -8,
     ],
 ):
     trinton.make_music(
@@ -1779,8 +1779,8 @@ for voice_name, padding, hspace in zip(
         trinton.attachment_command(
             attachments=[
                 trinton.tempo_markup(
-                    note_value=4,
-                    tempo=50,
+                    note_value=8,
+                    tempo=72,
                     padding=padding,
                     note_head_fontsize=0.5,
                     stem_length=1.5,
@@ -1825,8 +1825,8 @@ for voice_name, padding, hspace in zip(
         trinton.attachment_command(
             attachments=[
                 trinton.tempo_markup(
-                    note_value=4,
-                    tempo=125,
+                    note_value=8,
+                    tempo=120,
                     padding=padding,
                     note_head_fontsize=0.5,
                     stem_length=1.5,

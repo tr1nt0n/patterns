@@ -118,7 +118,7 @@
                                 {
                                     r4.
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 72" } } }
                                     <
                                         \tweak Accidental.stencil #ly:text-interface::print
                                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
@@ -526,7 +526,7 @@
                                             ~
                                             c'''8
                                               %! +SCORE
-                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-13 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-13 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 120" } } }
                                             - \tweak Beam.positions #'(-6 . -6)
                                             [
                                             \once \override Rest.staff-position = #-7
@@ -914,7 +914,7 @@
                                 {
                                     r2..
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #0.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 72" } } }
                                     r1
                                     r2
                                     <<
@@ -1305,7 +1305,7 @@
                                                 \voiceOne
                                                 r2
                                                   %! +SCORE
-                                                ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-6 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
+                                                ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-6 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 120" } } }
                                                 a''8
                                                 r4.
                                                 cs''8
@@ -1441,7 +1441,7 @@
                                             \voiceOne
                                             r4.
                                               %! +SCORE
-                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 72" } } }
                                             \times 2/3
                                             {
                                                 \big-half-harmonic
@@ -1639,7 +1639,7 @@
                                             ]
                                             r4
                                               %! +SCORE
-                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #2 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 120" } } }
                                             r8
                                             [
                                             \big-half-harmonic
@@ -2100,7 +2100,7 @@
                                         \clef "bass"
                                         cs,8
                                           %! +SCORE
-                                        ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #0.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 50" } } }
+                                        ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-8 \raise #0.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 72" } } }
                                         [
                                         (
                                         - \abjad-zero-padding-glissando
@@ -2575,7 +2575,7 @@
                                     >2
                                     ^ \markup \center-align { \center-column { \line { \concat { -10 }  }\line { \concat { -8 }  } } }
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 125" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #0 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 120" } } }
                                     \stopTextSpanTwo
                                     \big-half-harmonic
                                     <

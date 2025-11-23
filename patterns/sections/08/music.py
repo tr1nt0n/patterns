@@ -3126,7 +3126,7 @@ for voice_name, padding, hspace in zip(
             attachments=[
                 trinton.tempo_markup(
                     note_value=4,
-                    tempo=100,
+                    tempo=62,
                     padding=padding,
                     note_head_fontsize=0.5,
                     stem_length=1.5,
@@ -3171,8 +3171,8 @@ for voice_name, padding, end_anchor in zip(
         trinton.spanner_command(
             strings=[
                 trinton.tempo_markup(
-                    note_value=4,
-                    tempo=153,
+                    note_value=8,
+                    tempo=137,
                     padding=0,
                     note_head_fontsize=-0.5,
                     stem_length=1.5,
@@ -3185,8 +3185,8 @@ for voice_name, padding, end_anchor in zip(
                     string_only=True,
                 ),
                 trinton.tempo_markup(
-                    note_value=4,
-                    tempo=153,
+                    note_value=8,
+                    tempo=137,
                     padding=0,
                     note_head_fontsize=0.5,
                     stem_length=1.5,
@@ -3216,8 +3216,8 @@ trinton.make_music(
     trinton.spanner_command(
         strings=[
             trinton.tempo_markup(
-                note_value=4,
-                tempo=153,
+                note_value=8,
+                tempo=137,
                 padding=0,
                 note_head_fontsize=-0.5,
                 stem_length=1.5,
@@ -3248,8 +3248,8 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             trinton.tempo_markup(
-                note_value=4,
-                tempo=153,
+                note_value=8,
+                tempo=137,
                 padding=10,
                 note_head_fontsize=0.5,
                 stem_length=1.5,

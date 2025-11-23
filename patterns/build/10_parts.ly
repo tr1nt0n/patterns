@@ -160,7 +160,7 @@
                                                 cs''4
                                                 - \talon-to-punta
                                                   %! +SCORE
-                                            %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
+                                            %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 86" } } }
                                                 (
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 1
@@ -580,7 +580,7 @@
                                         - \tweak padding 0.5
                                         ^ \talon-to-punta
                                           %! +SCORE
-                                    %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
+                                    %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 86" } } }
                                         (
                                         - \abjad-zero-padding-glissando
                                         \glissando
@@ -880,7 +880,7 @@
                                             _ \coda
                                             _ \marcato
                                               %! +SCORE
-                                        %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
+                                        %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 86" } } }
                                             - \tweak Beam.positions #'(10 . 10)
                                             [
                                             - \tweak font-name "Bodoni72 Book" 
@@ -1533,7 +1533,7 @@
                                             - \tweak padding 1
                                             ^ \talon-to-punta
                                               %! +SCORE
-                                        %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 83" } } }
+                                        %%% ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-9 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 8 } #1.5 } \fontsize #4 { "= 86" } } }
                                             [
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 1

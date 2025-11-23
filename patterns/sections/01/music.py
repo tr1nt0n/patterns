@@ -1461,7 +1461,7 @@ for voice_name, padding, end_anchor in zip(
             strings=[
                 trinton.tempo_markup(
                     note_value=8,
-                    tempo=160,
+                    tempo=100,
                     padding=0,
                     note_head_fontsize=-0.5,
                     stem_length=1.5,
@@ -1475,7 +1475,7 @@ for voice_name, padding, end_anchor in zip(
                 ),
                 trinton.tempo_markup(
                     note_value=8,
-                    tempo=160,
+                    tempo=100,
                     padding=0,
                     note_head_fontsize=0.5,
                     stem_length=1.5,

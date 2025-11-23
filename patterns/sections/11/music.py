@@ -1663,7 +1663,7 @@ for voice_name, padding, hspace in zip(
             attachments=[
                 trinton.tempo_markup(
                     note_value=4,
-                    tempo=92,
+                    tempo=58,
                     padding=padding,
                     note_head_fontsize=0.5,
                     stem_length=1.5,
@@ -1694,7 +1694,7 @@ for voice_name, padding, hspace in zip(
             attachments=[
                 trinton.tempo_markup(
                     note_value=4,
-                    tempo=138,
+                    tempo=87,
                     padding=padding,
                     note_head_fontsize=0.5,
                     stem_length=1.5,
@@ -1740,7 +1740,7 @@ for voice_name, padding, end_anchor in zip(
             strings=[
                 trinton.tempo_markup(
                     note_value=4,
-                    tempo=59,
+                    tempo=52,
                     padding=0,
                     note_head_fontsize=-0.5,
                     stem_length=1.5,
@@ -1754,7 +1754,7 @@ for voice_name, padding, end_anchor in zip(
                 ),
                 trinton.tempo_markup(
                     note_value=4,
-                    tempo=59,
+                    tempo=52,
                     padding=0,
                     note_head_fontsize=0.5,
                     stem_length=1.5,
@@ -1785,7 +1785,7 @@ trinton.make_music(
         strings=[
             trinton.tempo_markup(
                 note_value=4,
-                tempo=59,
+                tempo=52,
                 padding=0,
                 note_head_fontsize=-0.5,
                 stem_length=1.5,
@@ -1799,7 +1799,7 @@ trinton.make_music(
             ),
             trinton.tempo_markup(
                 note_value=4,
-                tempo=59,
+                tempo=52,
                 padding=0,
                 note_head_fontsize=0.5,
                 stem_length=1.5,
@@ -1831,7 +1831,7 @@ trinton.make_music(
         strings=[
             trinton.tempo_markup(
                 note_value=4,
-                tempo=59,
+                tempo=52,
                 padding=0,
                 note_head_fontsize=-0.5,
                 stem_length=1.5,
@@ -1845,7 +1845,7 @@ trinton.make_music(
             ),
             trinton.tempo_markup(
                 note_value=4,
-                tempo=59,
+                tempo=52,
                 padding=0,
                 note_head_fontsize=0.5,
                 stem_length=1.5,

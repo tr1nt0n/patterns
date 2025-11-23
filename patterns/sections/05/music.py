@@ -1881,8 +1881,8 @@ for voice_name, padding, hspace in zip(
         trinton.attachment_command(
             attachments=[
                 trinton.tempo_markup(
-                    note_value=2,
-                    tempo=69,
+                    note_value=4,
+                    tempo=87,
                     padding=padding,
                     note_head_fontsize=0.5,
                     stem_length=1.5,

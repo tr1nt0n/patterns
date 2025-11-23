@@ -152,7 +152,7 @@
                                             \voiceTwo
                                             r2
                                               %! +SCORE
-                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 87" } } }
                                             \once \override Rest.staff-position = #-7
                                             r8
                                             - \markup \fontsize #2 { \hspace #-10.5 { "Fng. Perc.:" } }
@@ -793,7 +793,7 @@
                                 {
                                     r\breve
                                       %! +SCORE
-                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
+                                    ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #1.5 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 87" } } }
                                     r1.
                                     r4
                                     \override Dots.staff-position = #2
@@ -1403,7 +1403,7 @@
                                             - \tweak padding 1
                                             - \punta-to-talon
                                               %! +SCORE
-                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-8 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
+                                            ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-8 \raise #6 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 87" } } }
                                             - \tweak font-name "Bodoni72 Book" 
                                             - \tweak font-size 2
                                             - \tweak padding #9.5
@@ -2097,7 +2097,7 @@
                                                 - \tweak padding 1
                                                 ^ \punta-to-talon
                                                   %! +SCORE
-                                                ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 2 } #1.5 } \fontsize #4 { "= 69" } } }
+                                                ^ \markup \override #'(font-name . "Bodoni72 Book") { \hspace #-7 \raise #3 \with-dimensions-from \null \concat { \fontsize #0.5 { \note { 4 } #1.5 } \fontsize #4 { "= 87" } } }
                                                 - \tweak font-name "Bodoni72 Book" 
                                                 - \tweak font-size 2
                                                 - \tweak padding #15
