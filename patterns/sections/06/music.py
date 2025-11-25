@@ -1658,12 +1658,10 @@ trinton.make_music(
             abjad.Tweak(r"- \tweak bound-details.right.arrow ##t"),
         ],
     ),
-    # trinton.attachment_command(
-    #     attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
-    #     selector=trinton.select_leaves_by_index(
-    #         [0, 1, 3, 4, 5, 7], pitched=True, grace=False
-    #     ),
-    # ),
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\big-half-harmonic", site="before")],
+        selector=trinton.select_leaves_by_index([3, 5, 7], pitched=True, grace=False),
+    ),
     trinton.change_notehead_command(
         notehead="harmonic",
         selector=trinton.select_leaves_by_index(

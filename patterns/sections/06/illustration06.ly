@@ -2714,6 +2714,7 @@
                                         - \tweak bound-details.left.text \markup \concat { \bow-tip-half-up \hspace #0.5 }
                                         - \tweak bound-details.right.text \normale-bow-rotation
                                         \startTextSpanOne
+                                        \big-half-harmonic
                                         \revert Dots.staff-position
                                         \tweak style #'harmonic
                                         cqs'16
@@ -2734,6 +2735,7 @@
                                         ^ \half-clb
                                         ^ \marcato
                                         \override Dots.staff-position = #2
+                                        \big-half-harmonic
                                         \tweak style #'harmonic-mixed
                                         c'''4
                                         (
@@ -2769,6 +2771,7 @@
                                         - \tweak bound-details.right.text \bow-tip-half-down
                                         - \tweak bound-details.right.padding 1.5
                                         \startTextSpanOne
+                                        \big-half-harmonic
                                         \afterGrace
                                         \tweak style #'harmonic-mixed
                                         b''4
